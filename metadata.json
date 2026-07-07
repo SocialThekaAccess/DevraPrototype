@@ -1,0 +1,6 @@
+{
+  "name": "DEVRA Architects",
+  "description": "Premium luxury architecture, interior design, and design-to-build studio based in Chandigarh and New Chandigarh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
