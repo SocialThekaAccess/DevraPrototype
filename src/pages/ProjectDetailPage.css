@@ -195,14 +195,17 @@
 
 .proj-gallery__row--full .proj-gallery__cell {
   aspect-ratio: 21 / 9;
+  max-height: 400px;
 }
 
 .proj-gallery__row--two .proj-gallery__cell {
   aspect-ratio: 3 / 2;
+  max-height: 350px;
 }
 
 .proj-gallery__row--three .proj-gallery__cell {
   aspect-ratio: 4 / 3;
+  max-height: 300px;
 }
 
 .proj-gallery__img {
