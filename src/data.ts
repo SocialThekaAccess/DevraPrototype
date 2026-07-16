@@ -535,7 +535,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     size: "",
     scope: "School Architecture & Planning",
-    heroImage: schJp1,
+    heroImage: schJp3,
     description: "A modern educational facility designed with student-centric planning and climate-responsive architecture.",
     narrative: {
       site: "Educational campus in Punjab designed for optimal learning environment.",
@@ -544,7 +544,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "North-facing classrooms with clerestory windows for glare-free natural lighting.",
       execution: "Efficient planning ensures comfortable learning spaces throughout the year."
     },
-    images: [schJp2, schJp3]
+    images: [schJp1, schJp2]
   }
 ];
 
