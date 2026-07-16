@@ -1,37 +1,6 @@
 import SEOMeta from '../components/SEOMeta'
 import './ProjectDetailPage.css'
 
-function buildRows(images) {
-  const rows = []
-  const patterns = ['two', 'full', 'three', 'full', 'two', 'full', 'three']
-  let imageIndex = 0
-  let patternIndex = 0
-
-  while (imageIndex < images.length) {
-    const pattern = patterns[patternIndex % patterns.length]
-
-    if (pattern === 'full') {
-      rows.push({ type: 'full', items: [images[imageIndex]] })
-      imageIndex += 1
-    } else if (pattern === 'two') {
-      const slice = images.slice(imageIndex, imageIndex + 2)
-      rows.push({ type: slice.length === 1 ? 'full' : 'two', items: slice })
-      imageIndex += slice.length
-    } else {
-      const slice = images.slice(imageIndex, imageIndex + 3)
-      rows.push({
-        type: slice.length === 1 ? 'full' : slice.length === 2 ? 'two' : 'three',
-        items: slice,
-      })
-      imageIndex += slice.length
-    }
-
-    patternIndex += 1
-  }
-
-  return rows
-}
-
 export default function ProjectDetailPage({
   title,
   location,
@@ -43,7 +12,7 @@ export default function ProjectDetailPage({
   images = [],
 }) {
   const heroImg = images[0]
-  const rows = buildRows(images.slice(1))
+  const galleryImages = images.slice(1)
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
 
   return (
@@ -113,21 +82,17 @@ export default function ProjectDetailPage({
         </div>
       </section>
 
-      {rows.length > 0 && (
+      {galleryImages.length > 0 && (
         <section className="proj-gallery">
-          {rows.map((row, rowIndex) => (
-            <div key={`${row.type}-${rowIndex}`} className={`proj-gallery__row proj-gallery__row--${row.type}`}>
-              {row.items.map((image, imageIndex) => (
-                <div key={`${rowIndex}-${imageIndex}`} className="proj-gallery__cell">
-                  <img
-                    src={image}
-                    alt={`${title} image ${rowIndex * 3 + imageIndex + 2}`}
-                    className="proj-gallery__img"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              ))}
+          {galleryImages.map((image, index) => (
+            <div key={index} className="proj-gallery__cell">
+              <img
+                src={image}
+                alt={`${title} image ${index + 2}`}
+                className="proj-gallery__img"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
             </div>
           ))}
         </section>
