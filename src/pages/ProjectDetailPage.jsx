@@ -56,13 +56,15 @@ export default function ProjectDetailPage({
       />
       
       <section className="proj-hero">
-        <img
-          src={heroImg}
-          alt={title}
-          className="proj-hero__img"
-          referrerPolicy="no-referrer"
-          loading="eager"
-        />
+        <div className="proj-hero__img-wrapper">
+          <img
+            src={heroImg}
+            alt={title}
+            className="proj-hero__img"
+            referrerPolicy="no-referrer"
+            loading="eager"
+          />
+        </div>
         <div className="proj-hero__overlay" />
         <div className="proj-hero__title-wrap">
           <h1 className="proj-hero__title">{title}</h1>
