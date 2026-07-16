@@ -53,11 +53,90 @@ import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
 
+// New Projects Imports
+import comDevraArch1 from "../assets/projects/com-devra-arch-1.jpg";
+import comDevraArch2 from "../assets/projects/com-devra-arch-2.jpg";
+import comDevraArch3 from "../assets/projects/com-devra-arch-3.jpg";
+import comDevraArch4 from "../assets/projects/com-devra-arch-4.jpg";
+import comDevraArch5 from "../assets/projects/com-devra-arch-5.jpg";
+import comDevraArch6 from "../assets/projects/com-devra-arch-6.jpg";
+import comDevraArch7 from "../assets/projects/com-devra-arch-7.avif";
+import comDevraArch8 from "../assets/projects/com-devra-arch-8.jpg";
+import comDevraArch9 from "../assets/projects/com-devra-arch-9.jpg";
+
+import comFortofino1 from "../assets/projects/com-fortofino-1.avif";
+import comFortofino2 from "../assets/projects/com-fortofino-2.avif";
+import comFortofino3 from "../assets/projects/com-fortofino-3.avif";
+import comFortofino4 from "../assets/projects/com-fortofino-4.avif";
+import comFortofino5 from "../assets/projects/com-fortofino-5.avif";
+import comFortofino6 from "../assets/projects/com-fortofino-6.avif";
+import comFortofino7 from "../assets/projects/com-fortofino-7.avif";
+import comFortofino8 from "../assets/projects/com-fortofino-8.avif";
+import comFortofino9 from "../assets/projects/com-fortofino-9.avif";
+
+import comMilkPoint1 from "../assets/projects/com-milk-point-1.avif";
+import comMilkPoint2 from "../assets/projects/com-milk-point-2.avif";
+
+import fhGills1 from "../assets/projects/fh-gills-1.avif";
+import fhGills2 from "../assets/projects/fh-gills-2.avif";
+import fhGills3 from "../assets/projects/fh-gills-3.avif";
+import fhGills4 from "../assets/projects/fh-gills-4.avif";
+import fhGills5 from "../assets/projects/fh-gills-5.avif";
+import fhGills6 from "../assets/projects/fh-gills-6.avif";
+import fhGills7 from "../assets/projects/fh-gills-7.avif";
+import fhGills8 from "../assets/projects/fh-gills-8.avif";
+
+import hosCg1 from "../assets/projects/hos-cg-1.avif";
+import hosCg2 from "../assets/projects/hos-cg-2.avif";
+import hosCg3 from "../assets/projects/hos-cg-3.avif";
+import hosCg4 from "../assets/projects/hos-cg-4.avif";
+import hosCg5 from "../assets/projects/hos-cg-5.avif";
+import hosCg6 from "../assets/projects/hos-cg-6.avif";
+import hosCg7 from "../assets/projects/hos-cg-7.avif";
+import hosCg8 from "../assets/projects/hos-cg-8.avif";
+import hosCg9 from "../assets/projects/hos-cg-9.avif";
+
+import res121122 from "../assets/projects/res-121-122.avif";
+import res1211222 from "../assets/projects/res-121-122-2.avif";
+import res1211223 from "../assets/projects/res-121-122-3.avif";
+
+import resMidhas from "../assets/projects/res-midhas.avif";
+import resMidhas2 from "../assets/projects/res-midhas-2.avif";
+import resMidhas3 from "../assets/projects/res-midhas-3.avif";
+
+import resMinzs from "../assets/projects/res-minzs.jpg";
+import resMinzs2 from "../assets/projects/res-minzs-2.jpg";
+import resMinzs3 from "../assets/projects/res-minzs-3.jpg";
+import resMinzs4 from "../assets/projects/res-minzs-4.jpg";
+import resMinzs5 from "../assets/projects/res-minzs-5.jpg";
+import resMinzs6 from "../assets/projects/res-minzs-6.jpg";
+import resMinzs7 from "../assets/projects/res-minzs-7.jpg";
+import resMinzs8 from "../assets/projects/res-minzs-8.jpg";
+import resMinzs9 from "../assets/projects/res-minzs-9.jpg";
+
+import resVilla303 from "../assets/projects/res-villa-303.jpg";
+import resVilla3032 from "../assets/projects/res-villa-303-2.jpg";
+import resVilla3033 from "../assets/projects/res-villa-303-3.jpg";
+import resVilla3034 from "../assets/projects/res-villa-303-4.jpg";
+import resVilla3035 from "../assets/projects/res-villa-303-5.avif";
+import resVilla3036 from "../assets/projects/res-villa-303-6.avif";
+import resVilla3037 from "../assets/projects/res-villa-303-7.avif";
+import resVilla3038 from "../assets/projects/res-villa-303-8.avif";
+import resVilla3039 from "../assets/projects/res-villa-303-9.avif";
+
+import fhNagra1 from "../assets/projects/fh-nagra-1.avif";
+import fhNagra2 from "../assets/projects/fh-nagra-2.avif";
+import fhNagra3 from "../assets/projects/fh-nagra-3.avif";
+
+import schJp1 from "../assets/projects/sch-jp-1.avif";
+import schJp2 from "../assets/projects/sch-jp-2.avif";
+import schJp3 from "../assets/projects/sch-jp-3.avif";
+
 export const PROJECTS: Project[] = [
   {
     id: "sansarg",
     title: "Sansarg",
-    category: "Residential",
+    category: "Housing",
     location: "Patiala, Punjab",
     year: "2022",
     size: "6,500 sq. ft.",
@@ -112,7 +191,7 @@ export const PROJECTS: Project[] = [
   {
     id: "villa-201d",
     title: "Villa 201D",
-    category: "Interiors",
+    category: "Residential",
     location: "Chandigarh",
     year: "2022",
     size: "4,800 sq. ft.",
@@ -257,6 +336,215 @@ export const PROJECTS: Project[] = [
       houPanchkula7,
       houPanchkula8
     ]
+  },
+  {
+    id: "devra-architects",
+    title: "Devra Architects",
+    category: "Commercial",
+    location: "PH-1 Cassia, New Chandigarh",
+    year: "2025",
+    size: "",
+    scope: "Office Interior Design",
+    heroImage: comDevraArch1,
+    description: "A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette—shaping an environment that feels inviting, efficient, and elevated.",
+    narrative: {
+      site: "Located in New Chandigarh's premium commercial hub, this workspace redesign was focused on creating a contemporary office that balances professionalism with warmth.",
+      planning: "From reception to work bays, meeting rooms, and lounges, the interiors express a unified design language of warm textures, seamless lines, and ambient lighting.",
+      materials: "Soft neutral palette with curved forms and textured finishes create an inviting workspace.",
+      lightVentilation: "Soft, layered lighting throughout creates comfort and reduces eye strain for daily operations.",
+      execution: "Thoughtful spatial planning brings clarity and comfort to daily operations, creating a workspace that inspires focus, collaboration, and a sense of effortless sophistication."
+    },
+    images: [comDevraArch2, comDevraArch3, comDevraArch4, comDevraArch5, comDevraArch6, comDevraArch7, comDevraArch8, comDevraArch9]
+  },
+  {
+    id: "fortofino",
+    title: "FortoFino",
+    category: "Commercial",
+    location: "Srinagar",
+    year: "2024",
+    size: "",
+    scope: "Boutique Interior Design",
+    heroImage: comFortofino1,
+    description: "A refined boutique interior crafted in soft neutrals, sculpted arches, and warm lighting—creating an atmosphere of quiet luxury.",
+    narrative: {
+      site: "A premium jewellery boutique location in Srinagar requiring an elevated shopping experience.",
+      planning: "Every display, surface, and detail is designed to elevate the jewellery itself, offering an experience that feels exclusive, graceful, and timeless.",
+      materials: "Soft neutrals, sculpted arches, artisanal textures, and curated lighting create premium atmosphere.",
+      lightVentilation: "Warm, controlled lighting highlights displays and creates intimate shopping zones.",
+      execution: "From intimate display zones to lounge-like seating, each corner reflects sophistication and comfort, shaping a boutique that feels both premium and inviting."
+    },
+    images: [comFortofino2, comFortofino3, comFortofino4, comFortofino5, comFortofino6, comFortofino7, comFortofino8, comFortofino9]
+  },
+  {
+    id: "milk-point",
+    title: "Milk Point",
+    category: "Commercial",
+    location: "Chandigarh",
+    year: "2020",
+    size: "",
+    scope: "Retail Interior Design",
+    heroImage: comMilkPoint1,
+    description: "A refined retail interior blending warm materials, clean geometry, and controlled lighting.",
+    narrative: {
+      site: "A commercial retail location in Chandigarh focused on premium product display.",
+      planning: "The space balances display clarity with experiential movement, using layered shelving, soft illumination, and subtle human activity.",
+      materials: "Warm materials with clean geometry and neutral tones establish high-end retail identity.",
+      lightVentilation: "Controlled, integrated lighting enhances product visibility and customer engagement.",
+      execution: "A contemporary commercial setup focused on realism, material richness, and spatial flow, making the space feel active, functional, and naturally immersive."
+    },
+    images: [comMilkPoint2]
+  },
+  {
+    id: "gills-farmhouse",
+    title: "Gill's Farmhouse",
+    category: "Farm Houses",
+    location: "Baddi Road",
+    year: "2020",
+    size: "1200 gaj",
+    scope: "Architecture, Interiors & Landscape",
+    heroImage: fhGills1,
+    description: "A composition of solid brick volumes and light, open frames, creating a balance between mass and transparency.",
+    narrative: {
+      site: "Multi-acre site near Baddi Road offering expansive views and quiet surroundings.",
+      planning: "Perforated jaali walls and deep recesses introduce layered depth, allowing natural light to filter softly through spaces, regarded among the best farmhouse designs in India.",
+      materials: "Locally baked wire-cut bricks left exposed, creating honest tactile character.",
+      lightVentilation: "Thick brick cavity walls provide outstanding thermal mass, keeping interiors cool during scorching summers.",
+      execution: "The architecture extends seamlessly into the landscape through shaded decks, pergola structures, and large glazed openings."
+    },
+    images: [fhGills2, fhGills3, fhGills4, fhGills5, fhGills6, fhGills7, fhGills8]
+  },
+  {
+    id: "castle-grey",
+    title: "Castle Grey",
+    category: "Hospitality",
+    location: "Rohtak, Haryana",
+    year: "2019",
+    size: "135 GAJ",
+    scope: "Restaurant Interior Design",
+    heroImage: hosCg1,
+    description: "A refined space where geometry and warmth are balanced through slatted walls, layered ceilings, and suspended greens.",
+    narrative: {
+      site: "A hospitality venue in Rohtak requiring a sophisticated dining atmosphere.",
+      planning: "Filtered daylight enhances textures, while earthy tones create a calm, crafted, and upscale dining experience.",
+      materials: "Slatted walls, dark ceilings, warm furnishings and cascading greens add depth and sophistication.",
+      lightVentilation: "Precise lighting creates intimate yet open atmosphere with natural filtered daylight.",
+      execution: "A modern interior defined by clean lines, exposed systems, and warm furnishings, creating an intimate yet open, sophisticated environment."
+    },
+    images: [hosCg2, hosCg3, hosCg4, hosCg5, hosCg6, hosCg7, hosCg8, hosCg9]
+  },
+  {
+    id: "121-122",
+    title: "121 & 122",
+    category: "Residential",
+    location: "PH-1 OMAXE, New Chandigarh",
+    year: "2024",
+    size: "300 + 300 SQYD",
+    scope: "Architecture & Planning",
+    heroImage: res121122,
+    description: "A contemporary residence defined by strong horizontal planes and interlocking volumes.",
+    narrative: {
+      site: "Twin plots in New Chandigarh's premium residential sector.",
+      planning: "The design balances solidity and transparency with a controlled, modern architectural language.",
+      materials: "Clean contemporary materials with layered depth create modern residential character.",
+      lightVentilation: "The façade composition is clean yet layered, creating depth without unnecessary complexity.",
+      execution: "Strong horizontal planes define the modern architectural expression."
+    },
+    images: [res1211222, res1211223]
+  },
+  {
+    id: "the-midhas",
+    title: "The Midha's",
+    category: "Residential",
+    location: "PH-3 Cassia, New Chandigarh",
+    year: "2025",
+    size: "300 SQYD",
+    scope: "Architecture & Design",
+    heroImage: resMidhas,
+    description: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes.",
+    narrative: {
+      site: "A premium plot in New Chandigarh's Cassia sector.",
+      planning: "The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony.",
+      materials: "Dark material palette with warm illuminated volumes adds depth and modern edge.",
+      lightVentilation: "Strategic lighting creates dramatic nighttime character and welcoming atmosphere.",
+      execution: "Deep frames and sculpted elements add character and a distinctly modern edge."
+    },
+    images: [resMidhas2, resMidhas3]
+  },
+  {
+    id: "the-minzs",
+    title: "The Minz's",
+    category: "Residential",
+    location: "PH-3 Cassia, New Chandigarh",
+    year: "2024",
+    size: "300 SQYD",
+    scope: "Architecture & Interior Design",
+    heroImage: resMinzs,
+    description: "A warm contemporary home defined by its pitched roofline, clean geometry, and tropical landscape setting.",
+    narrative: {
+      site: "Residential plot in New Chandigarh surrounded by lush greenery.",
+      planning: "Natural materials, deep overhangs, and generous glazing create a balanced façade — modern in expression yet grounded in earthy simplicity.",
+      materials: "Textured walls, crafted partitions, and warm natural materials throughout.",
+      lightVentilation: "Soft lighting and generous glazing create naturally lit, warm living spaces.",
+      execution: "Inside, the home blends artistry and comfort—every room reflects a warm, personal character with inviting lived-in charm."
+    },
+    images: [resMinzs2, resMinzs3, resMinzs4, resMinzs5, resMinzs6, resMinzs7, resMinzs8, resMinzs9]
+  },
+  {
+    id: "villa-303",
+    title: "Villa 303",
+    category: "Residential",
+    location: "PH-1 Cassia, New Chandigarh",
+    year: "2023",
+    size: "500 SQYD",
+    scope: "Architecture & Interior Design",
+    heroImage: resVilla303,
+    description: "A striking contemporary façade anchored by a bold sculpted terrace and a floating living room cantilevered elegantly above the pool.",
+    narrative: {
+      site: "A 500 sq yd premium plot in New Chandigarh's exclusive Cassia sector.",
+      planning: "Clean lines, warm soffit textures, and deep overhangs shape a resort-like character — balancing openness, privacy, and architectural drama.",
+      materials: "Soft luxury materials with expressive details, refined lighting, and signature feature walls.",
+      lightVentilation: "Double-height volumes and strategic openings create naturally ventilated, light-filled spaces.",
+      execution: "The interiors blend soft luxury with expressive details—calm colours, warm materials, and purposeful layouts create curated, comfortable, unmistakably elegant spaces."
+    },
+    images: [resVilla3032, resVilla3033, resVilla3034, resVilla3035, resVilla3036, resVilla3037, resVilla3038, resVilla3039]
+  },
+  {
+    id: "nagra-farmhouse",
+    title: "Nagra Farmhouse",
+    category: "Farm Houses",
+    location: "Punjab",
+    year: "2023",
+    size: "",
+    scope: "Architecture & Landscape",
+    heroImage: fhNagra1,
+    description: "A serene farmhouse retreat that blends contemporary design with natural surroundings.",
+    narrative: {
+      site: "Situated in rural Punjab with expansive agricultural views.",
+      planning: "The farmhouse is designed to embrace the landscape with open terraces and covered verandahs.",
+      materials: "Natural local materials with contemporary architectural expression.",
+      lightVentilation: "Large openings and deep overhangs ensure natural ventilation and shaded outdoor spaces.",
+      execution: "Seamless indoor-outdoor transition creates a relaxing retreat atmosphere."
+    },
+    images: [fhNagra2, fhNagra3]
+  },
+  {
+    id: "jp-international",
+    title: "J P International",
+    category: "Schools",
+    location: "Punjab",
+    year: "2023",
+    size: "",
+    scope: "School Architecture & Planning",
+    heroImage: schJp1,
+    description: "A modern educational facility designed with student-centric planning and climate-responsive architecture.",
+    narrative: {
+      site: "Educational campus in Punjab designed for optimal learning environment.",
+      planning: "Classrooms organized around central courtyards for natural light and ventilation.",
+      materials: "Durable, low-maintenance materials suitable for institutional use.",
+      lightVentilation: "North-facing classrooms with clerestory windows for glare-free natural lighting.",
+      execution: "Efficient planning ensures comfortable learning spaces throughout the year."
+    },
+    images: [schJp2, schJp3]
   }
 ];
 

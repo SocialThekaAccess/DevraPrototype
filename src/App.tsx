@@ -16,9 +16,25 @@ import IntroDoorway from "./components/IntroDoorway";
 import { PROJECTS } from "./data";
 import { MessageSquare, PhoneCall } from "lucide-react";
 
+// Import new project pages
+import ComDevraArchPage from "./Project/ComDevraArchPage";
+import ComFortofinoPage from "./Project/ComFortofinoPage";
+import ComMilkPointPage from "./Project/ComMilkPointPage";
+import FhGillsFarmhousePage from "./Project/FhGillsFarmhousePage";
+import HosCastleGreyPage from "./Project/HosCastleGreyPage";
+import HouPanchkulaPage from "./Project/HouPanchkulaPage";
+import Res121122Page from "./Project/Res121122Page";
+import ResMidhasPage from "./Project/ResMidhasPage";
+import ResMinzsPage from "./Project/ResMinzsPage";
+import ResSupreetPage from "./Project/ResSupreetPage";
+import ResVilla201DPage from "./Project/ResVilla201DPage";
+import ResVilla303Page from "./Project/ResVilla303Page";
+import ResVilla361Page from "./Project/ResVilla361Page";
+import SchMsSchoolPage from "./Project/SchMsSchoolPage";
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState("home");
-  const [selectedProjectId, setSelectedProjectId] = useState("sansarg");
+  const [, setSelectedProjectId] = useState("sansarg");
   const [showIntro, setShowIntro] = useState(() => {
     try {
       return !sessionStorage.getItem("devra_intro_seen");
@@ -43,6 +59,23 @@ export default function App() {
 
   // Routing Handler
   const renderPage = () => {
+    // New project pages
+    if (currentPath === "project-devra-architects") return <ComDevraArchPage />;
+    if (currentPath === "project-fortofino") return <ComFortofinoPage />;
+    if (currentPath === "project-milk-point") return <ComMilkPointPage />;
+    if (currentPath === "project-gills-farmhouse") return <FhGillsFarmhousePage />;
+    if (currentPath === "project-castle-grey") return <HosCastleGreyPage />;
+    if (currentPath === "project-panchkula-housing") return <HouPanchkulaPage />;
+    if (currentPath === "project-121-122") return <Res121122Page />;
+    if (currentPath === "project-midhas") return <ResMidhasPage />;
+    if (currentPath === "project-minzs") return <ResMinzsPage />;
+    if (currentPath === "project-col-supreet") return <ResSupreetPage />;
+    if (currentPath === "project-villa-201d") return <ResVilla201DPage />;
+    if (currentPath === "project-villa-303") return <ResVilla303Page />;
+    if (currentPath === "project-villa-361") return <ResVilla361Page />;
+    if (currentPath === "project-ms-school") return <SchMsSchoolPage />;
+    
+    // Existing project detail pages from data.ts
     if (currentPath.startsWith("project-")) {
       const id = currentPath.replace("project-", "");
       const project = PROJECTS.find((p) => p.id === id) || PROJECTS[0];

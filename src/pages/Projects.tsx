@@ -8,7 +8,7 @@ interface ProjectsProps {
   onSelectProject: (id: string) => void;
 }
 
-const CATEGORIES = ["All", "Residential", "Interiors", "Farm Houses", "Housing", "Schools"];
+const CATEGORIES = ["All", "Residential", "Housing", "Commercial", "Schools", "Hospitality", "Farm Houses"];
 
 export default function Projects({ onNavigate, onSelectProject }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
