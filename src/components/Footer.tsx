@@ -1,4 +1,5 @@
 import { ArrowUp, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import logoImg from "../../assets/DevraFavicon.svg";
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -26,7 +27,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="space-y-4">
               <div className="flex flex-col items-start -ml-4">
                 <img 
-                  src="/assets/DevraFavicon.svg" 
+                  src={logoImg} 
                   alt="DEVRA Architects" 
                   className="w-[280px] h-[100px] object-contain"
                 />

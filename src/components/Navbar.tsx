@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import logoImg from "../../assets/DEVRAlogo.png";
 
 interface NavbarProps {
   currentPath: string;
@@ -45,7 +46,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           className="flex items-center cursor-pointer group"
         >
           <img 
-            src="/assets/DEVRAlogo.png" 
+            src={logoImg} 
             alt="DEVRA Architects" 
             className="w-[200px] h-[70px] object-contain transition-opacity group-hover:opacity-80"
           />
