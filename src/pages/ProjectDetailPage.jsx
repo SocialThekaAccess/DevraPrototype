@@ -23,7 +23,7 @@ export default function ProjectDetailPage({
         keywords={[category, location, title]}
         path={`project-${title.toLowerCase().replace(/\s+/g, '-')}`}
       />
-      
+
       <section className="proj-hero">
         <div className="proj-hero__img-wrapper">
           <img

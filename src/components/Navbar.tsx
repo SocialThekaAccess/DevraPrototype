@@ -42,14 +42,13 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
         <button
           id="nav-logo"
           onClick={() => handleNavClick("home")}
-          className="flex flex-col items-start cursor-pointer text-left group"
+          className="flex items-center cursor-pointer group"
         >
-          <span className="font-serif text-2xl tracking-widest text-stone-900 transition-colors group-hover:text-stone-600">
-            D E V R A
-          </span>
-          <span className="text-[9px] tracking-[0.25em] uppercase text-stone-500 font-sans mt-0.5">
-            ARCHITECTS
-          </span>
+          <img 
+            src="/assets/DEVRAlogo.png" 
+            alt="DEVRA Architects" 
+            className="w-[200px] h-[70px] object-contain transition-opacity group-hover:opacity-80"
+          />
         </button>
 
         {/* Desktop Navigation */}

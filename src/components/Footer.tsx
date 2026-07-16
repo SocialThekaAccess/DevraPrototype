@@ -22,19 +22,20 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-stone-800/80">
           
           {/* Column 1: Studio Identity (Span 4) */}
-          <div className="md:col-span-4 space-y-6">
-            <div className="flex flex-col">
-              <span className="font-serif text-3xl tracking-widest text-stone-50">
-                D E V R A
-              </span>
-              <span className="text-[10px] tracking-[0.25em] uppercase text-stone-400 font-sans mt-1">
-                ARCHITECTS
-              </span>
+          <div className="md:col-span-4">
+            <div className="space-y-4">
+              <div className="flex flex-col items-start -ml-4">
+                <img 
+                  src="/assets/DevraFavicon.svg" 
+                  alt="DEVRA Architects" 
+                  className="w-[280px] h-[100px] object-contain"
+                />
+              </div>
+              <p className="text-stone-400 text-xs leading-relaxed max-w-sm">
+                DEVRA Architects is a New Chandigarh-based architecture and interior design studio creating luxury homes, interiors, housing, and design-to-build projects. We balance artistic modern expression with extreme practical execution.
+              </p>
             </div>
-            <p className="text-stone-400 text-xs leading-relaxed max-w-sm">
-              DEVRA Architects is a New Chandigarh-based architecture and interior design studio creating luxury homes, interiors, housing, and design-to-build projects. We balance artistic modern expression with extreme practical execution.
-            </p>
-            <div className="flex flex-col space-y-2 pt-2 text-xs">
+            <div className="flex flex-col space-y-2 pt-6 text-xs">
               <a 
                 href="mailto:info@devra.in" 
                 className="flex items-center gap-2 text-stone-400 hover:text-stone-100 transition-colors"
