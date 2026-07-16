@@ -8,7 +8,7 @@
 .proj-hero {
   position: relative;
   width: 100%;
-  background: var(--color-parchment);
+  background: transparent;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -18,18 +18,18 @@
 .proj-hero__img-wrapper {
   position: relative;
   width: 100%;
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  background: var(--color-parchment);
+  overflow: visible;
+  background: transparent;
 }
 
 .proj-hero__img {
   width: 100%;
   height: auto;
-  max-height: 85vh;
+  max-height: none;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -281,11 +281,7 @@
 
 @media (max-width: 640px) {
   .proj-hero__img-wrapper {
-    min-height: 50vh;
-  }
-  
-  .proj-hero__img {
-    max-height: 70vh;
+    min-height: 40vh;
   }
 
   .proj-meta-strip__item {
