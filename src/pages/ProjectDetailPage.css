@@ -3,7 +3,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 80px;
 }
 
 .proj-hero {
@@ -13,7 +12,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-top: -80px;
 }
 
 .proj-hero__img,
@@ -66,6 +64,9 @@
 .proj-meta-strip {
   background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 80px;
+  position: relative;
+  z-index: 10;
 }
 
 .proj-meta-strip__inner {
