@@ -27,6 +27,9 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     };
   }, [isOpen]);
 
+  const isHome = currentPath === "home";
+  const showWhiteText = isHome && !isScrolled;
+
   const navItems = [
     { label: "Projects", path: "projects" },
     { label: "Services", path: "services" },
@@ -45,23 +48,23 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   return (
     <header
       id="devra-header"
-      className={`fixed top-0 left-0 w-full z-50 py-4 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 py-0.5 md:py-1 transition-all duration-500 ${
         isScrolled 
           ? 'bg-stone-50 border-b border-stone-200 shadow-sm' 
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="w-full px-0 md:px-2 flex items-center justify-between">
         {/* Brand Logo */}
         <button
           id="nav-logo"
           onClick={() => handleNavClick("home")}
-          className="flex items-center cursor-pointer group"
+          className="flex items-center cursor-pointer group -ml-2 md:-ml-4"
         >
           <img 
             src="/assets/DEVRAlogo.png" 
             alt="DEVRA Architects" 
-            className="w-[120px] h-[42px] md:w-[200px] md:h-[70px] object-contain transition-opacity group-hover:opacity-80"
+            className="w-[180px] h-[63px] md:w-[280px] md:h-[98px] object-contain transition-opacity group-hover:opacity-80"
           />
         </button>
 
@@ -74,13 +77,15 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 key={item.path}
                 id={`nav-link-${item.path}`}
                 onClick={() => handleNavClick(item.path)}
-                className={`text-xs uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer ${
-                  isActive ? "text-stone-900" : isScrolled ? "text-stone-500 hover:text-stone-900" : "text-white/90 hover:text-white"
+                className={`text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer ${
+                  isActive
+                    ? showWhiteText ? "text-white" : "text-stone-900"
+                    : showWhiteText ? "text-white/90 hover:text-white" : "text-stone-700 hover:text-stone-900"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-stone-900 transition-all" />
+                  <span className={`absolute bottom-0 left-0 w-full h-[1px] transition-all ${showWhiteText ? "bg-white" : "bg-stone-900"}`} />
                 )}
               </button>
             );
@@ -93,9 +98,9 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             id="nav-cta-button"
             onClick={() => handleNavClick("contact")}
             className={`flex items-center gap-1 text-[11px] uppercase tracking-widest font-sans font-medium px-5 py-2.5 rounded-none transition-all duration-300 cursor-pointer ${
-              isScrolled
-                ? 'border border-stone-900/10 hover:border-stone-900 text-stone-900 bg-transparent hover:bg-stone-900 hover:text-stone-50'
-                : 'border border-white/30 hover:border-white text-white bg-transparent hover:bg-white hover:text-stone-900'
+              showWhiteText
+                ? 'border border-white/30 hover:border-white text-white bg-transparent hover:bg-white hover:text-stone-900'
+                : 'border border-stone-900/10 hover:border-stone-900 text-stone-900 bg-transparent hover:bg-stone-900 hover:text-stone-50'
             }`}
           >
             Start a Project
