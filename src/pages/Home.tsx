@@ -75,8 +75,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
@@ -87,7 +87,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               src={HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </motion.div>
         </AnimatePresence>

@@ -7,6 +7,21 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+/* Layout Variables for Responsive Design */
+:root {
+  --content-max: 1280px;
+  --content-wide: 1440px;
+  --page-gutter: clamp(1.5rem, 5vw, 3rem);
+  --section-space-sm: clamp(3rem, 8vw, 5rem);
+  --section-space-md: clamp(5rem, 10vw, 8rem);
+  --section-space-lg: clamp(8rem, 15vw, 12rem);
+  --color-parchment: #fcfbf9;
+  --color-purple: #6d28d9;
+  --fs-h1: clamp(2rem, 5vw, 4rem);
+  --fs-h2: clamp(1.5rem, 4vw, 3rem);
+  --fs-p: clamp(0.875rem, 1.5vw, 1.125rem);
+}
+
 /* Base style refinements */
 html {
   scroll-behavior: smooth;
@@ -14,7 +29,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #fcfbf9; /* Soft off-white / ivory background */
+  background-color: var(--color-parchment);
 }
 
 /* Custom scrollbar to keep it sleek and professional */
