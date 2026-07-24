@@ -26,7 +26,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="space-y-4">
               <button 
                 onClick={() => handleNavClick("home")}
-                className="flex flex-col items-start -ml-4 -mt-26 cursor-pointer group transition-opacity hover:opacity-80"
+                className="flex flex-col items-start -ml-4 -mt-19 cursor-pointer group transition-opacity hover:opacity-80"
 >
                 <img 
                   src="/assets/DevraFavicon.svg" 
