@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 interface NavbarProps {
@@ -9,6 +10,9 @@ interface NavbarProps {
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const isHomePage = currentPath === 'home';
+  const shouldShowWhiteLogo = isHomePage && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,31 +49,43 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return (
+  return createPortal(
     <header
       id="devra-header"
-      className={`fixed top-0 left-0 w-full z-50 py-0.5 md:py-1 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-stone-50 border-b border-stone-200 shadow-sm' 
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="w-full px-0 md:px-2 flex items-center justify-between">
-        {/* Brand Logo */}
+      <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
+        {/* Brand Logo - Two separate logos for different states */}
         <button
           id="nav-logo"
           onClick={() => handleNavClick("home")}
-          className="flex items-center cursor-pointer group -ml-2 md:-ml-4"
+          className="flex items-center cursor-pointer group shrink-0 -ml-2 md:-ml-4 overflow-visible relative"
         >
+          {/* White Logo - for transparent navbar */}
           <img 
-            src="/assets/DEVRAlogo.png" 
+            src="/assets/DevraWhiteLogo.png"
             alt="DEVRA Architects" 
-            className="w-[180px] h-[63px] md:w-[280px] md:h-[98px] object-contain transition-opacity group-hover:opacity-80"
+            className={`w-[180px] h-auto object-contain transition-opacity ${
+              shouldShowWhiteLogo ? 'opacity-100' : 'opacity-0 absolute inset-0'
+            } group-hover:opacity-80`}
+          />
+          
+          {/* Black Logo - for scrolled navbar */}
+          <img 
+            src="/assets/DEVRAlogo.png"
+            alt="DEVRA Architects" 
+            className={`w-[150px] h-auto object-contain transition-opacity ${
+              shouldShowWhiteLogo ? 'opacity-0 absolute inset-0' : 'opacity-100'
+            } group-hover:opacity-80`}
           />
         </button>
 
         {/* Desktop Navigation */}
-        <nav id="desktop-nav" className="hidden md:flex items-center space-x-8">
+        <nav id="desktop-nav" className="hidden lg:flex items-center h-full flex-nowrap space-x-5 xl:space-x-8 shrink-0">
           {navItems.map((item) => {
             const isActive = currentPath === item.path;
             return (
@@ -77,7 +93,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 key={item.path}
                 id={`nav-link-${item.path}`}
                 onClick={() => handleNavClick(item.path)}
-                className={`text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer ${
+                className={`whitespace-nowrap text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer ${
                   isActive
                     ? showWhiteText ? "text-white" : "text-stone-900"
                     : showWhiteText ? "text-white/90 hover:text-white" : "text-stone-700 hover:text-stone-900"
@@ -93,11 +109,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg:flex items-center h-full shrink-0">
           <button
             id="nav-cta-button"
             onClick={() => handleNavClick("contact")}
-            className={`flex items-center gap-1 text-[11px] uppercase tracking-widest font-sans font-medium px-5 py-2.5 rounded-none transition-all duration-300 cursor-pointer ${
+            className={`flex items-center gap-1 whitespace-nowrap text-[11px] uppercase tracking-widest font-sans font-medium px-5 py-2.5 rounded-none transition-all duration-300 cursor-pointer ${
               showWhiteText
                 ? 'border border-white/30 hover:border-white text-white bg-transparent hover:bg-white hover:text-stone-900'
                 : 'border border-stone-900/10 hover:border-stone-900 text-stone-900 bg-transparent hover:bg-stone-900 hover:text-stone-50'
@@ -108,11 +124,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile / Tablet Menu Button (now covers landscape too, up to lg) */}
         <button
           id="mobile-menu-toggle"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-stone-950 p-1 cursor-pointer focus:outline-none"
+          className={`lg:hidden shrink-0 h-full flex items-center p-1 cursor-pointer focus:outline-none ${showWhiteText ? "text-white" : "text-stone-950"}`}
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -122,7 +138,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       {/* Mobile Drawer */}
       <div
         id="mobile-drawer"
-        className={`fixed inset-x-0 top-[80px] bottom-0 bg-stone-50 shadow-2xl border-t border-stone-200 z-40 transform transition-transform duration-500 md:hidden overflow-y-auto ${
+        className={`fixed inset-x-0 top-[70px] md:top-[80px] bottom-0 bg-stone-50 shadow-2xl border-t border-stone-200 z-40 transform transition-transform duration-500 lg:hidden overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -167,6 +183,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           </div>
         </div>
       </div>
-    </header>
+    </header>,
+    document.body
   );
 }
