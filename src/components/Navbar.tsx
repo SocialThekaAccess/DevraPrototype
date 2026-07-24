@@ -78,7 +78,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           <img 
             src="/assets/DEVRAlogo.png"
             alt="DEVRA Architects" 
-            className={`w-[150px] h-auto object-contain transition-opacity ${
+            className={`w-[180px] h-auto object-contain transition-opacity ${
               shouldShowWhiteLogo ? 'opacity-0 absolute inset-0' : 'opacity-100'
             } group-hover:opacity-80`}
           />

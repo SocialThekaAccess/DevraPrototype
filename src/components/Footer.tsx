@@ -24,13 +24,16 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Column 1: Studio Identity (Span 4) */}
           <div className="md:col-span-4">
             <div className="space-y-4">
-              <div className="flex flex-col items-start -ml-4">
+              <button 
+                onClick={() => handleNavClick("home")}
+                className="flex flex-col items-start -ml-4 -mt-9 cursor-pointer group transition-opacity hover:opacity-80"
+              >
                 <img 
                   src="/assets/DevraFavicon.svg" 
                   alt="DEVRA Architects" 
-                  className="w-[280px] h-[100px] object-contain"
+                  className="w-[180px] h-auto object-contain"
                 />
-              </div>
+              </button>
               <p className="text-stone-400 text-xs leading-relaxed max-w-sm">
                 DEVRA Architects is a New Chandigarh-based architecture and interior design studio creating luxury homes, interiors, housing, and design-to-build projects. We balance artistic modern expression with extreme practical execution.
               </p>
