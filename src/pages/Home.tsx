@@ -4,10 +4,9 @@ import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as Hom
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/slider1.jpeg";
-import slider2 from "../../assets/slider2.jpeg";
+import slider2 from "../../assets/projects/Villa58heroimg.png";
 import slider3 from "../../assets/slider3.jpeg";
-import slider4 from "../../assets/projects/hou-unwalled-1.png";
-import slider5 from "../../assets/housing.avif";
+import slider4 from "../../assets/projects/UnwalledImage.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -42,12 +41,6 @@ const HERO_SLIDES = [
     subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
     title: "UNWALLED",
     text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
-  },
-  {
-    image: slider5,
-    subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
-    title: "UNWALLED",
-    text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
   }
 ];
 
@@ -57,7 +50,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % 5; // 5 slides now
+        const nextSlide = (prev + 1) % 4; // 4 slides
         return nextSlide;
       });
     }, 6000);
