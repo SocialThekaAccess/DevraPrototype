@@ -4,9 +4,10 @@ import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as Hom
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/slider1.jpeg";
-import slider2 from "../../assets/projects/Villa58heroimg.png";
+import slider2 from "../../assets/projects/Villaa58.png";
 import slider3 from "../../assets/slider3.jpeg";
-import slider4 from "../../assets/projects/UnwalledImage.png";
+import slider4 from "../../assets/projects/Villa303HeroSlider.png";
+import slider5 from "../../assets/projects/UnwalledImage.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -38,6 +39,12 @@ const HERO_SLIDES = [
   },
   {
     image: slider4,
+    subtitle: "CONTEMPORARY RESIDENCE // NEW CHANDIGARH",
+    title: "Villa 303",
+    text: "A striking façade with sculpted terrace and floating living spaces above the pool."
+  },
+  {
+    image: slider5,
     subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
     title: "UNWALLED",
     text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
@@ -50,7 +57,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % 4; // 4 slides
+        const nextSlide = (prev + 1) % 5; // 5 slides
         return nextSlide;
       });
     }, 6000);
@@ -101,7 +108,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               referrerPolicy="no-referrer"
               className={`w-full h-full object-cover ${
                 currentSlide === 1 ? 'object-[center_40%]' :
-                currentSlide === 3 ? 'object-center brightness-110' : 
+                currentSlide === 3 ? 'object-[center_45%]' :
+                currentSlide === 4 ? 'object-center brightness-110' : 
                 'object-center'
               }`}
             />
