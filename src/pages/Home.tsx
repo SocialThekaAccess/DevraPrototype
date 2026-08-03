@@ -6,7 +6,7 @@ import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/slider1.jpeg";
 import slider2 from "../../assets/projects/Villaa58.png";
 import slider3 from "../../assets/slider3.jpeg";
-import slider4 from "../../assets/projects/Villa303HeroSlider.png";
+import slider4 from "../../assets/projects/Villaa303.png";
 import slider5 from "../../assets/projects/UnwalledImage.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
@@ -106,11 +106,11 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               src={HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
-              className={`w-full h-full object-cover ${
-                currentSlide === 1 ? 'object-[center_40%]' :
-                currentSlide === 3 ? 'object-[center_45%]' :
-                currentSlide === 4 ? 'object-center brightness-110' : 
-                'object-center'
+              className={`w-full h-full ${
+                currentSlide === 1 ? 'object-cover object-[center_40%]' :
+                currentSlide === 3 ? 'object-contain' :
+                currentSlide === 4 ? 'object-cover object-center brightness-110' : 
+                'object-cover object-center'
               }`}
             />
           </motion.div>
