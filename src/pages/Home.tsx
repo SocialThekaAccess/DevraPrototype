@@ -99,8 +99,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               src={HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
-              className={`w-full h-full object-cover object-center ${
-                currentSlide === 3 ? 'brightness-110' : ''
+              className={`w-full h-full object-cover ${
+                currentSlide === 1 ? 'object-[center_40%]' :
+                currentSlide === 3 ? 'object-center brightness-110' : 
+                'object-center'
               }`}
             />
           </motion.div>
