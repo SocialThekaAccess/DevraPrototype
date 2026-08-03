@@ -6,7 +6,8 @@ import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/slider1.jpeg";
 import slider2 from "../../assets/slider2.jpeg";
 import slider3 from "../../assets/slider3.jpeg";
-import slider4 from "../../assets/projects/NewChandigarh.png";
+import slider4 from "../../assets/projects/hou-unwalled-1.png";
+import slider5 from "../../assets/housing.avif";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -38,9 +39,15 @@ const HERO_SLIDES = [
   },
   {
     image: slider4,
-    subtitle: "PREMIUM HOUSING // NEW CHANDIGARH",
-    title: "New Chandigarh",
-    text: "Contemporary residential blocks designed for modern living with seamless connectivity."
+    subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
+    title: "UNWALLED",
+    text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
+  },
+  {
+    image: slider5,
+    subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
+    title: "UNWALLED",
+    text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
   }
 ];
 
@@ -50,7 +57,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % 4; // Explicitly use 4 slides
+        const nextSlide = (prev + 1) % 5; // 5 slides now
         return nextSlide;
       });
     }, 6000);

@@ -55,6 +55,14 @@ import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
 import hou3PMDCPanchkula from "../assets/projects/3PMDCPanchkula.png";
+import houUnwalled1 from "../assets/projects/hou-unwalled-1.png";
+import houUnwalled2 from "../assets/projects/hou-unwalled-2.png";
+import houUnwalled3 from "../assets/projects/hou-unwalled-3.png";
+import houUnwalled4 from "../assets/projects/hou-unwalled-4.png";
+import houUnwalled5 from "../assets/projects/hou-unwalled-5.png";
+import houUnwalled6 from "../assets/projects/hou-unwalled-6.png";
+import houUnwalled7 from "../assets/projects/hou-unwalled-7.png";
+import houUnwalledHero from "../assets/projects/UnwalledImage.png";
 
 // New Projects Imports
 import comDevraArch1 from "../assets/projects/com-devra-arch-1.jpg";
@@ -364,6 +372,33 @@ export const PROJECTS: Project[] = [
     },
     images: [
       hou3PMDCPanchkula
+    ]
+  },
+  {
+    id: "unwalled-housing",
+    title: "UNWALLED",
+    category: "Housing",
+    location: "New Chandigarh",
+    year: "2026",
+    size: "3,50,000 sq. ft.",
+    scope: "Architecture, Masterplanning & Luxury Housing Design",
+    heroImage: houUnwalledHero,
+    description: "An extraordinary vision of premium residential living where boundaries dissolve into carefully curated open spaces. UNWALLED redefines luxury housing through seamless integration of private residences with expansive communal landscapes, creating an elevated living experience for discerning homeowners.",
+    narrative: {
+      site: "Strategically positioned in New Chandigarh's most coveted sector, UNWALLED enjoys commanding views of the Shivalik foothills while maintaining exceptional connectivity to urban amenities. The site's natural topography has been thoughtfully preserved and enhanced to create a distinctive sense of place.",
+      planning: "The masterplan orchestrates a sophisticated hierarchy of public, semi-private, and intimate spaces. Premium residences are positioned to maximize privacy while maintaining visual connection to beautifully landscaped courtyards and linear parks. Circulation pathways are designed as experiential journeys, with carefully framed views and unexpected spatial moments creating a resort-like ambiance throughout the development.",
+      materials: "An refined material palette featuring natural stone cladding, large-format architectural glass, warm timber accents, and sophisticated metal detailing. The landscape design incorporates mature specimen trees, reflective water features, and indigenous plantings to create a serene, established character from day one.",
+      lightVentilation: "Each residence benefits from optimal solar orientation, with living spaces positioned to capture natural light throughout the day while minimizing heat gain. Deep balconies and projected louvers provide passive shading, while cross-ventilation strategies ensure fresh air circulation. Common areas feature naturally lit atriums and wind-channeling courtyards that reduce reliance on mechanical systems.",
+      execution: "UNWALLED represents the pinnacle of luxury housing execution, with meticulous attention to every detail from structural engineering to landscape installation. Advanced construction methodologies ensure precision in facade work and interior finishes, while sustainable building practices minimize environmental impact. The phased delivery approach allows for continuous quality control and refinement throughout construction."
+    },
+    images: [
+      houUnwalled1,
+      houUnwalled2,
+      houUnwalled3,
+      houUnwalled4,
+      houUnwalled5,
+      houUnwalled6,
+      houUnwalled7
     ]
   },
   {
