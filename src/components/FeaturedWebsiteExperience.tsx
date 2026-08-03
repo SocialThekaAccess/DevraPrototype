@@ -96,22 +96,10 @@ export default function FeaturedWebsiteExperience({
               {/* Clickable Browser Mockup Container */}
               <div 
                 onClick={handleVisitWebsite}
-                className="relative w-full bg-stone-100 rounded-2xl overflow-hidden shadow-2xl border border-stone-200 cursor-pointer transition-all duration-300 hover:shadow-3xl hover:scale-[1.02]"
+                className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-stone-200 cursor-pointer transition-all duration-300 hover:shadow-3xl hover:scale-[1.02]"
               >
-                {/* Browser Chrome/Header */}
-                <div className="bg-stone-200 border-b border-stone-300 px-4 py-3 flex items-center gap-2">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-400 group-hover:bg-red-500 transition-colors" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400 group-hover:bg-yellow-500 transition-colors" />
-                    <div className="w-3 h-3 rounded-full bg-green-400 group-hover:bg-green-500 transition-colors" />
-                  </div>
-                  <div className="flex-1 ml-4 bg-stone-50 rounded px-3 py-1.5 text-[10px] text-stone-600 font-mono border border-stone-300/50">
-                    <span className="truncate">devrabuildtech.com</span>
-                  </div>
-                </div>
-
                 {/* Website Content Area - Single Iframe (No Blinking) */}
-                <div className="relative w-full aspect-[16/10] bg-white overflow-hidden">
+                <div className="relative w-full aspect-[16/10] bg-white overflow-hidden rounded-2xl">
                   {/* Single iframe that stays loaded */}
                   <iframe
                     src={websiteUrl}
