@@ -9,9 +9,10 @@ export default function ProjectDetailPage({
   year,
   overview,
   overview2,
+  heroImage,
   images = [],
 }) {
-  const heroImg = images[0]
+  const heroImg = heroImage || images[0]
   const galleryImages = images.slice(1)
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
 

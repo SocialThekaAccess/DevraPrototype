@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight, MapPin, Calendar, Ruler } from "lucide-react";
+import { ArrowLeft, ArrowRight, MapPin, Calendar, Ruler, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import SEOMeta from "../components/SEOMeta";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
@@ -43,6 +44,8 @@ function buildRows(images: string[]) {
 
 export default function ProjectDetail({ project, onNavigate, onSelectProject }: ProjectDetailProps) {
   const rows = buildRows(project.images || []);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Find adjacent projects for navigation
   const currentIndex = PROJECTS.findIndex((p) => p.id === project.id);
@@ -53,6 +56,23 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
     onSelectProject(id);
     onNavigate(`project-${id}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
   return (
@@ -77,7 +97,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
           src={project.heroImage}
           alt={project.title}
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         
         {/* Hero Title Overlay */}
@@ -247,20 +267,23 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
                   'grid-cols-1 md:grid-cols-3'
                 }`}
               >
-                {row.items.map((image, imageIndex) => (
-                  <div
-                    key={`img-${rowIndex}-${imageIndex}`}
-                    className="relative overflow-hidden bg-stone-200 aspect-[4/3] group"
-                  >
-                    <img
-                      src={image}
-                      alt={`${project.title} detail ${rowIndex * 3 + imageIndex + 1}`}
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                ))}
+                {row.items.map((image, imageIndex) => {
+                  const globalIndex = project.images.indexOf(image);
+                  return (
+                    <div
+                      key={`img-${rowIndex}-${imageIndex}`}
+                      className="relative overflow-hidden bg-stone-200 aspect-[4/3] group"
+                    >
+                      <img
+                        src={image}
+                        alt={`${project.title} detail ${globalIndex + 1}`}
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  );
+                })}
               </motion.div>
             ))}
           </div>
@@ -333,6 +356,68 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-6 right-6 text-white hover:text-stone-300 transition-colors z-50"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-6 text-white hover:text-stone-300 transition-colors z-50"
+          >
+            <ChevronLeft className="w-12 h-12" />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-6 text-white hover:text-stone-300 transition-colors z-50"
+          >
+            <ChevronRight className="w-12 h-12" />
+          </button>
+
+          {/* Image Container */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-7xl max-h-[90vh] w-full mx-6"
+          >
+            <motion.img
+              key={currentImageIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              src={project.images[currentImageIndex]}
+              alt={`${project.title} ${currentImageIndex + 1}`}
+              className="w-full h-full object-contain"
+            />
+            
+            {/* Image Counter */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-mono">
+              {currentImageIndex + 1} / {project.images.length}
+            </div>
+          </div>
+        </motion.div>
+      )}
 
     </div>
   );

@@ -19,17 +19,20 @@
   position: relative;
   width: 100%;
   display: block;
-  overflow: visible;
+  overflow: hidden;
   background: #0a0a0a;
   padding: 0;
+  height: 60vh;
+  min-height: 500px;
+  max-height: 650px;
 }
 
 .proj-hero__img {
   width: 100%;
-  height: auto;
+  height: 100%;
   max-height: none;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center 35%;
   display: block;
 }
 

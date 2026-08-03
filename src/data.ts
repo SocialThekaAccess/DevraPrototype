@@ -9,14 +9,16 @@ import houSansarg6 from "../assets/projects/hou-sansarg-6.avif";
 import houSansarg7 from "../assets/projects/hou-sansarg-7.avif";
 import houSansarg8 from "../assets/projects/hou-sansarg-8.avif";
 import houSansarg9 from "../assets/projects/hou-sansarg-9.avif";
-import resVilla58 from "../assets/projects/res-villa-58.jpg";
-import resVilla582 from "../assets/projects/res-villa-58-2.avif";
-import resVilla583 from "../assets/projects/res-villa-58-3.avif";
-import resVilla584 from "../assets/projects/res-villa-58-4.jpg";
-import resVilla585 from "../assets/projects/res-villa-58-5.jpg";
-import resVilla586 from "../assets/projects/res-villa-58-6.jpg";
-import resVilla587 from "../assets/projects/res-villa-58-7.jpg";
-import resVilla588 from "../assets/projects/res-villa-58-8.avif";
+import resVilla58Hero from "../assets/projects/Villa58heroimg.png";
+import resVilla581 from "../assets/projects/res-villa-58-1.png";
+import resVilla582 from "../assets/projects/res-villa-58-2.png";
+import resVilla583 from "../assets/projects/res-villa-58-3.png";
+import resVilla584 from "../assets/projects/res-villa-58-4.png";
+import resVilla586 from "../assets/projects/res-villa-58-6.png";
+import resVilla587 from "../assets/projects/res-villa-58-7.png";
+import resVilla588 from "../assets/projects/res-villa-58-8.png";
+import resVilla589 from "../assets/projects/res-villa-58-9.png";
+import resVilla5810 from "../assets/projects/res-villa-58-10.png";
 import resVilla201d from "../assets/projects/res-villa-201d.jpg";
 import resVilla201d2 from "../assets/projects/res-villa-201d-2.jpg";
 import resVilla201d3 from "../assets/projects/res-villa-201d-3.jpg";
@@ -52,6 +54,7 @@ import houPanchkula5 from "../assets/projects/hou-panchkula-5.avif";
 import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
+import hou3PMDCPanchkula from "../assets/projects/3PMDCPanchkula.png";
 
 // New Projects Imports
 import comDevraArch1 from "../assets/projects/com-devra-arch-1.jpg";
@@ -114,15 +117,18 @@ import resMinzs7 from "../assets/projects/res-minzs-7.jpg";
 import resMinzs8 from "../assets/projects/res-minzs-8.jpg";
 import resMinzs9 from "../assets/projects/res-minzs-9.jpg";
 
-import resVilla303 from "../assets/projects/res-villa-303.jpg";
-import resVilla3032 from "../assets/projects/res-villa-303-2.jpg";
-import resVilla3033 from "../assets/projects/res-villa-303-3.jpg";
-import resVilla3034 from "../assets/projects/res-villa-303-4.jpg";
-import resVilla3035 from "../assets/projects/res-villa-303-5.avif";
-import resVilla3036 from "../assets/projects/res-villa-303-6.avif";
-import resVilla3037 from "../assets/projects/res-villa-303-7.avif";
-import resVilla3038 from "../assets/projects/res-villa-303-8.avif";
-import resVilla3039 from "../assets/projects/res-villa-303-9.avif";
+import resVilla303Hero from "../assets/projects/Villa303HeroSlider.png";
+import resVilla3031 from "../assets/projects/res-villa-303-1.jpg";
+import resVilla3032 from "../assets/projects/res-villa-303-2.png";
+import resVilla3033 from "../assets/projects/res-villa-303-3.png";
+import resVilla3034 from "../assets/projects/res-villa-303-4.png";
+import resVilla3035 from "../assets/projects/res-villa-303-5.png";
+import resVilla3036 from "../assets/projects/res-villa-303-6.png";
+import resVilla3037 from "../assets/projects/res-villa-303-7.png";
+import resVilla3038 from "../assets/projects/res-villa-303-8.png";
+import resVilla3039 from "../assets/projects/res-villa-303-9.png";
+import resVilla30310 from "../assets/projects/res-villa-303-10.png";
+import resVilla30311 from "../assets/projects/res-villa-303-11.png";
 
 import fhNagra1 from "../assets/projects/fh-nagra-1.avif";
 import fhNagra2 from "../assets/projects/fh-nagra-2.avif";
@@ -169,7 +175,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     size: "5,200 sq. ft.",
     scope: "Architecture & Interior Design",
-    heroImage: resVilla58,
+    heroImage: resVilla58Hero,
     description: "A contemporary urban home defined by clean linear lines, dramatic concrete cantilevers, and a design that prioritizes cross-ventilation and spatial fluidity.",
     narrative: {
       site: "Situated on a standard urban plot in Mohali, the layout maximizes the available footprint while respecting strict local building bylaws and maintaining green margins.",
@@ -179,13 +185,15 @@ export const PROJECTS: Project[] = [
       execution: "Every junction between the glass frames and concrete slabs was detailed to be entirely flush. Recessed profile lighting and integrated storage solutions were designed in-house to maintain a clean, uncluttered architectural horizon."
     },
     images: [
+      resVilla581,
       resVilla582,
       resVilla583,
       resVilla584,
-      resVilla585,
       resVilla586,
       resVilla587,
-      resVilla588
+      resVilla588,
+      resVilla589,
+      resVilla5810
     ]
   },
   {
@@ -335,6 +343,27 @@ export const PROJECTS: Project[] = [
       houPanchkula6,
       houPanchkula7,
       houPanchkula8
+    ]
+  },
+  {
+    id: "3p-mdc-panchkula",
+    title: "3P MDC Panchkula",
+    category: "Housing",
+    location: "3P MDC Panchkula",
+    year: "2026",
+    size: "2,50,000 sq. ft.",
+    scope: "Architecture, Masterplanning & Urban Design",
+    heroImage: hou3PMDCPanchkula,
+    description: "A visionary mixed-density housing development blending contemporary architectural language with sustainable urban planning principles. Designed to create a vibrant, pedestrian-friendly community with integrated green spaces and modern amenities.",
+    narrative: {
+      site: "Located in the rapidly developing MDC sector of Panchkula, this site offers excellent connectivity and panoramic views of the Shivalik foothills. The masterplan strategically responds to the natural topography and prevailing wind patterns.",
+      planning: "The project features a carefully orchestrated mix of residential towers, mid-rise blocks, and low-rise courtyard housing. Central landscaped spines connect all zones, creating a continuous green network. Vehicle circulation is carefully segregated from pedestrian pathways, prioritizing safety and walkability.",
+      materials: "Contemporary material palette featuring textured stone cladding, large-format glazing systems, and durable composite panels. Landscape elements incorporate native species and permeable paving to enhance sustainability.",
+      lightVentilation: "Building orientation optimizes natural light penetration while minimizing direct solar heat gain. Apartment layouts ensure cross-ventilation, with strategically placed openings capturing cool breezes from the north. Common areas feature naturally ventilated corridors reducing mechanical cooling loads.",
+      execution: "Phased development strategy allows for flexible market response while maintaining architectural coherence. Advanced BIM coordination ensures precise execution of complex facade systems and structural elements."
+    },
+    images: [
+      hou3PMDCPanchkula
     ]
   },
   {
@@ -497,7 +526,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     size: "500 SQYD",
     scope: "Architecture & Interior Design",
-    heroImage: resVilla303,
+    heroImage: resVilla303Hero,
     description: "A striking contemporary façade anchored by a bold sculpted terrace and a floating living room cantilevered elegantly above the pool.",
     narrative: {
       site: "A 500 sq yd premium plot in New Chandigarh's exclusive Cassia sector.",
@@ -506,7 +535,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "Double-height volumes and strategic openings create naturally ventilated, light-filled spaces.",
       execution: "The interiors blend soft luxury with expressive details—calm colours, warm materials, and purposeful layouts create curated, comfortable, unmistakably elegant spaces."
     },
-    images: [resVilla3032, resVilla3033, resVilla3034, resVilla3035, resVilla3036, resVilla3037, resVilla3038, resVilla3039]
+    images: [resVilla3031, resVilla3032, resVilla3033, resVilla3034, resVilla3035, resVilla3036, resVilla3037, resVilla3038, resVilla3039, resVilla30310, resVilla30311]
   },
   {
     id: "nagra-farmhouse",

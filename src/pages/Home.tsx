@@ -6,6 +6,7 @@ import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/slider1.jpeg";
 import slider2 from "../../assets/slider2.jpeg";
 import slider3 from "../../assets/slider3.jpeg";
+import slider4 from "../../assets/projects/NewChandigarh.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -34,6 +35,12 @@ const HERO_SLIDES = [
     subtitle: "ESTATE LIVING // PUNJAB BORDER",
     title: "The Kangs Farmhouse",
     text: "A sprawling brick and stone pavilion connecting family with native nature."
+  },
+  {
+    image: slider4,
+    subtitle: "PREMIUM HOUSING // NEW CHANDIGARH",
+    title: "New Chandigarh",
+    text: "Contemporary residential blocks designed for modern living with seamless connectivity."
   }
 ];
 
@@ -42,7 +49,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+      setCurrentSlide((prev) => {
+        const nextSlide = (prev + 1) % 4; // Explicitly use 4 slides
+        return nextSlide;
+      });
     }, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -78,16 +88,20 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
           >
-            {/* Dark overlay for readability */}
-            <div className="absolute inset-0 bg-black/40 z-10" />
+            {/* Dark overlay for readability - lighter for slide 4 */}
+            <div className={`absolute inset-0 z-10 ${
+              currentSlide === 3 ? 'bg-black/20' : 'bg-black/40'
+            }`} />
             <img
               src={HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover object-center"
+              className={`w-full h-full object-cover object-center ${
+                currentSlide === 3 ? 'brightness-110' : ''
+              }`}
             />
           </motion.div>
         </AnimatePresence>
