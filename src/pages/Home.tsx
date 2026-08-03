@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
+import FeaturedWebsiteExperience from "../components/FeaturedWebsiteExperience";
 import slider1 from "../../assets/slider1.jpeg";
 import slider2 from "../../assets/projects/Villaa58.png";
 import slider3 from "../../assets/slider3.jpeg";
@@ -187,6 +188,9 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         </div>
       </section>
 
+      {/* Featured Website Experience */}
+      <FeaturedWebsiteExperience websiteUrl="https://www.devrabuildtech.com/" />
+
       {/* 2. Brand Statement & Studio Intro (The Philosophy of Voids) */}
       <section id="home-intro" className="py-24 md:py-32 bg-stone-100 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -235,7 +239,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         </div>
       </section>
 
-      {/* 3. Selected Projects (6 featured projects) */}
+      {/* 4. Selected Projects (6 featured projects) */}
       <section id="home-selected-projects" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
@@ -302,7 +306,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         </div>
       </section>
 
-      {/* 4. What We Do Capabilities Grid */}
+      {/* 5. What We Do Capabilities Grid */}
       <section id="home-capabilities" className="py-24 md:py-32 bg-stone-900 text-stone-50">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
@@ -420,7 +424,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         </div>
       </section>
 
-      {/* 5. Why DEVRA / Regional Strength */}
+      {/* 6. Why DEVRA / Regional Strength */}
       <section id="home-why-devra" className="py-24 md:py-32 bg-stone-100 border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -481,7 +485,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         </div>
       </section>
 
-      {/* 6. Final CTA */}
+      {/* 7. Final CTA */}
       <section id="home-cta" className="py-24 md:py-32 bg-stone-50 text-stone-900 text-center">
         <div className="max-w-4xl mx-auto px-6 md:px-12 space-y-8">
           <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-semibold">
