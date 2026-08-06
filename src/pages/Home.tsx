@@ -54,6 +54,24 @@ const HERO_SLIDES = [
 
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all hero images
+  useEffect(() => {
+    const imageUrls = HERO_SLIDES.map(slide => slide.image);
+    let loadedCount = 0;
+    
+    imageUrls.forEach(url => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === imageUrls.length) {
+          setImagesLoaded(true);
+        }
+      };
+    });
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -90,11 +108,17 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       
       {/* 1. Full-screen Hero Slider */}
       <section id="home-hero" className="relative h-screen w-full overflow-hidden bg-stone-900">
+        {!imagesLoaded && (
+          <div className="absolute inset-0 z-30 flex items-center justify-center bg-stone-900">
+            <div className="w-8 h-8 border-2 border-stone-500 border-t-stone-200 rounded-full animate-spin" />
+          </div>
+        )}
+        
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: imagesLoaded ? 1 : 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full"
@@ -109,7 +133,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               referrerPolicy="no-referrer"
               className={`w-full h-full ${
                 currentSlide === 1 ? 'object-cover object-[center_40%]' :
-                currentSlide === 3 ? 'object-contain' :
+                currentSlide === 3 ? 'object-cover object-center' :
                 currentSlide === 4 ? 'object-cover object-center brightness-110' : 
                 'object-cover object-center'
               }`}
@@ -117,75 +141,68 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           </motion.div>
         </AnimatePresence>
 
-        {/* Hero Slider Content */}
-        <div className="absolute inset-0 z-20 flex items-center justify-start max-w-7xl mx-auto px-6 md:px-12">
-          <div className="max-w-2xl text-stone-50 space-y-6 pt-20">
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono"
-            >
-              {HERO_SLIDES[currentSlide].subtitle}
-            </motion.p>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] font-medium"
-            >
-              {HERO_SLIDES[currentSlide].title}
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-stone-200 text-sm md:text-base font-light leading-relaxed tracking-wide"
-            >
-              {HERO_SLIDES[currentSlide].text}
-            </motion.p>
-
+        {/* Hero Slider Content - only show when images are loaded */}
+        {imagesLoaded && (
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex items-center gap-4 pt-4"
+              key={`content-${currentSlide}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0 z-20 flex items-center justify-start max-w-7xl mx-auto px-6 md:px-12"
             >
-              <button
-                id="hero-view-projects"
-                onClick={() => onNavigate("projects")}
-                className="group flex items-center gap-2 bg-stone-50 hover:bg-stone-900 text-stone-900 hover:text-stone-50 px-6 py-3.5 text-xs font-sans uppercase tracking-widest font-semibold rounded-none transition-all duration-300 cursor-pointer"
-              >
-                View Projects
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button
-                id="hero-start-project"
-                onClick={() => onNavigate("contact")}
-                className="text-xs uppercase tracking-widest font-semibold border-b border-stone-50 text-stone-50 hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer transition-colors"
-              >
-                Start a Project
-              </button>
-            </motion.div>
-          </div>
-        </div>
+              <div className="max-w-2xl text-stone-50 space-y-6 pt-20">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono">
+                  {HERO_SLIDES[currentSlide].subtitle}
+                </p>
+                
+                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] font-medium">
+                  {HERO_SLIDES[currentSlide].title}
+                </h1>
 
-        {/* Floating Slide Indicators */}
-        <div className="absolute bottom-10 right-6 md:right-12 z-20 flex items-center space-x-3">
-          {HERO_SLIDES.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-1.5 transition-all duration-500 cursor-pointer ${
-                currentSlide === index ? "w-8 bg-stone-50" : "w-2 bg-stone-50/40 hover:bg-stone-50/60"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+                <p className="text-stone-200 text-sm md:text-base font-light leading-relaxed tracking-wide">
+                  {HERO_SLIDES[currentSlide].text}
+                </p>
+
+                <div className="flex items-center gap-4 pt-4">
+                  <button
+                    id="hero-view-projects"
+                    onClick={() => onNavigate("projects")}
+                    className="group flex items-center gap-2 bg-stone-50 hover:bg-stone-900 text-stone-900 hover:text-stone-50 px-6 py-3.5 text-xs font-sans uppercase tracking-widest font-semibold rounded-none transition-all duration-300 cursor-pointer"
+                  >
+                    View Projects
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  
+                  <button
+                    id="hero-start-project"
+                    onClick={() => onNavigate("contact")}
+                    className="text-xs uppercase tracking-widest font-semibold border-b border-stone-50 text-stone-50 hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer transition-colors"
+                  >
+                    Start a Project
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        )}
+
+        {/* Floating Slide Indicators - only show when images are loaded */}
+        {imagesLoaded && (
+          <div className="absolute bottom-10 right-6 md:right-12 z-20 flex items-center space-x-3">
+            {HERO_SLIDES.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-1.5 transition-all duration-500 cursor-pointer ${
+                  currentSlide === index ? "w-8 bg-stone-50" : "w-2 bg-stone-50/40 hover:bg-stone-50/60"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Featured Website Experience */}
