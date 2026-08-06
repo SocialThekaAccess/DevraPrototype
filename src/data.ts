@@ -19,6 +19,15 @@ import resVilla587 from "../assets/projects/res-villa-58-7.png";
 import resVilla588 from "../assets/projects/res-villa-58-8.png";
 import resVilla589 from "../assets/projects/res-villa-58-9.png";
 import resVilla5810 from "../assets/projects/res-villa-58-10.png";
+// Villa 58 Mobile Responsive Images (AVIF/JPG)
+import resVilla582Mobile from "../assets/projects/res-villa-58-2.avif";
+import resVilla583Mobile from "../assets/projects/res-villa-58-3.avif";
+import resVilla584Mobile from "../assets/projects/res-villa-58-4.jpg";
+import resVilla585Mobile from "../assets/projects/res-villa-58-5.jpg";
+import resVilla586Mobile from "../assets/projects/res-villa-58-6.jpg";
+import resVilla587Mobile from "../assets/projects/res-villa-58-7.jpg";
+import resVilla588Mobile from "../assets/projects/res-villa-58-8.avif";
+import resVilla58Mobile from "../assets/projects/res-villa-58.jpg";
 import resVilla201d from "../assets/projects/res-villa-201d.jpg";
 import resVilla201d2 from "../assets/projects/res-villa-201d-2.jpg";
 import resVilla201d3 from "../assets/projects/res-villa-201d-3.jpg";
@@ -184,6 +193,7 @@ export const PROJECTS: Project[] = [
     size: "5,200 sq. ft.",
     scope: "Architecture & Interior Design",
     heroImage: resVilla58Hero,
+    mobileHeroImage: resVilla58Mobile,
     description: "A contemporary urban home defined by clean linear lines, dramatic concrete cantilevers, and a design that prioritizes cross-ventilation and spatial fluidity.",
     narrative: {
       site: "Situated on a standard urban plot in Mohali, the layout maximizes the available footprint while respecting strict local building bylaws and maintaining green margins.",
@@ -200,6 +210,18 @@ export const PROJECTS: Project[] = [
       resVilla586,
       resVilla587,
       resVilla588,
+      resVilla589,
+      resVilla5810
+    ],
+    mobileImages: [
+      resVilla581,
+      resVilla582Mobile,
+      resVilla583Mobile,
+      resVilla584Mobile,
+      resVilla585Mobile,
+      resVilla586Mobile,
+      resVilla587Mobile,
+      resVilla588Mobile,
       resVilla589,
       resVilla5810
     ]

@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, MapPin, Calendar, Ruler, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SEOMeta from "../components/SEOMeta";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
@@ -43,9 +43,25 @@ function buildRows(images: string[]) {
 }
 
 export default function ProjectDetail({ project, onNavigate, onSelectProject }: ProjectDetailProps) {
-  const rows = buildRows(project.images || []);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Update isMobile on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  // Use mobile images if available, otherwise fallback to regular images
+  const displayImages = isMobile && project.mobileImages ? project.mobileImages : project.images;
+  const heroImage = isMobile && project.mobileHeroImage ? project.mobileHeroImage : project.heroImage;
+  
+  const rows = buildRows(displayImages || []);
   
   // Find adjacent projects for navigation
   const currentIndex = PROJECTS.findIndex((p) => p.id === project.id);
@@ -68,11 +84,11 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    setCurrentImageIndex((prev) => (prev + 1) % displayImages.length);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+    setCurrentImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length);
   };
 
   return (
@@ -94,7 +110,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       <section className="relative w-full h-[75vh] md:h-[85vh] overflow-hidden bg-stone-900">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <img
-          src={project.heroImage}
+          src={heroImage}
           alt={project.title}
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center"
@@ -268,7 +284,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
                 }`}
               >
                 {row.items.map((image, imageIndex) => {
-                  const globalIndex = project.images.indexOf(image);
+                  const globalIndex = displayImages.indexOf(image);
                   return (
                     <div
                       key={`img-${rowIndex}-${imageIndex}`}
@@ -406,14 +422,14 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              src={project.images[currentImageIndex]}
+              src={displayImages[currentImageIndex]}
               alt={`${project.title} ${currentImageIndex + 1}`}
               className="w-full h-full object-contain"
             />
             
             {/* Image Counter */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-mono">
-              {currentImageIndex + 1} / {project.images.length}
+              {currentImageIndex + 1} / {displayImages.length}
             </div>
           </div>
         </motion.div>

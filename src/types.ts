@@ -15,9 +15,11 @@ export interface Project {
   size: string;
   scope: string;
   heroImage: string;
+  mobileHeroImage?: string;
   description: string;
   narrative: ProjectNarrative;
   images: string[];
+  mobileImages?: string[];
 }
 
 export interface Service {

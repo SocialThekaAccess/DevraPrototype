@@ -125,14 +125,16 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           >
             {/* Dark overlay for readability - lighter for slide 4 */}
             <div className={`absolute inset-0 z-10 ${
-              currentSlide === 3 ? 'bg-black/20' : 'bg-black/40'
+              currentSlide === 1 ? 'bg-black/50 md:bg-black/40' :
+              currentSlide === 3 ? 'bg-black/20' : 
+              'bg-black/40'
             }`} />
             <img
               src={HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
               className={`w-full h-full ${
-                currentSlide === 1 ? 'object-cover object-[center_40%]' :
+                currentSlide === 1 ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100' :
                 currentSlide === 3 ? 'object-cover object-center' :
                 currentSlide === 4 ? 'object-cover object-center brightness-110' : 
                 'object-cover object-center'
@@ -150,35 +152,37 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0 z-20 flex items-center justify-start max-w-7xl mx-auto px-6 md:px-12"
+              className={`absolute inset-0 z-20 flex items-center justify-start max-w-7xl mx-auto px-6 md:px-12 ${
+                currentSlide === 1 ? 'items-end pb-32 md:items-center md:pb-0' : ''
+              }`}
             >
-              <div className="max-w-2xl text-stone-50 space-y-6 pt-20">
-                <p className="text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono">
+              <div className="max-w-2xl text-stone-50 space-y-4 md:space-y-6 pt-20">
+                <p className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono font-bold">
                   {HERO_SLIDES[currentSlide].subtitle}
                 </p>
                 
-                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.1] font-medium">
+                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] font-medium">
                   {HERO_SLIDES[currentSlide].title}
                 </h1>
 
-                <p className="text-stone-200 text-sm md:text-base font-light leading-relaxed tracking-wide">
+                <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed tracking-wide">
                   {HERO_SLIDES[currentSlide].text}
                 </p>
 
-                <div className="flex items-center gap-4 pt-4">
+                <div className="flex items-center gap-3 md:gap-4 pt-2 md:pt-4">
                   <button
                     id="hero-view-projects"
                     onClick={() => onNavigate("projects")}
-                    className="group flex items-center gap-2 bg-stone-50 hover:bg-stone-900 text-stone-900 hover:text-stone-50 px-6 py-3.5 text-xs font-sans uppercase tracking-widest font-semibold rounded-none transition-all duration-300 cursor-pointer"
+                    className="group flex items-center gap-2 bg-stone-50 hover:bg-stone-900 text-stone-900 hover:text-stone-50 px-5 md:px-6 py-3 md:py-3.5 text-[10px] md:text-xs font-sans uppercase tracking-widest font-semibold rounded-none transition-all duration-300 cursor-pointer"
                   >
                     View Projects
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3 md:w-3.5 h-3 md:h-3.5 group-hover:translate-x-1 transition-transform" />
                   </button>
                   
                   <button
                     id="hero-start-project"
                     onClick={() => onNavigate("contact")}
-                    className="text-xs uppercase tracking-widest font-semibold border-b border-stone-50 text-stone-50 hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer transition-colors"
+                    className="text-[10px] md:text-xs uppercase tracking-widest font-semibold border-b border-stone-50 text-stone-50 hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer transition-colors"
                   >
                     Start a Project
                   </button>
