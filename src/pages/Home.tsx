@@ -212,54 +212,6 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       {/* Featured Website Experience */}
       <FeaturedWebsiteExperience websiteUrl="https://www.devrabuildtech.com/" />
 
-      {/* 2. Brand Statement & Studio Intro (The Philosophy of Voids) */}
-      <section id="home-intro" className="py-24 md:py-32 bg-stone-100 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            
-            <div className="lg:col-span-6 space-y-8">
-              <span className="text-[10px] tracking-[0.35em] uppercase text-stone-500 font-mono font-bold block">
-                PHILOSOPHY // THE CHARGED VOID
-              </span>
-              
-              <h2 className="font-serif text-3.5xl sm:text-4xl md:text-5xl text-stone-950 font-light leading-[1.15] tracking-tight">
-                "The architectural void is not empty space; it is a vital vessel charged with natural light, flowing wind, and the quiet rhythm of human interaction."
-              </h2>
-              
-              <div className="h-[1px] w-24 bg-stone-900/40" />
-              
-              <p className="text-stone-700 text-sm leading-relaxed tracking-wide font-light font-sans">
-                Drawing inspiration from Le Corbusier's monumental Chandigarh legacy, DEVRA Architects approaches residential design as a dialogue between heavy mass and soaring void. We believe true luxury lies not in applied ornamentation, but in the transcendental quality of light playing against raw, honest materials.
-              </p>
-            </div>
-
-            <div className="lg:col-span-6 space-y-8">
-              <div className="aspect-[16/11] bg-stone-200 overflow-hidden border border-stone-200 relative group shadow-sm">
-                <img
-                  src={residentialImg}
-                  alt="Interplay of concrete mass and overhead sky void"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-102"
-                />
-                <div className="absolute bottom-4 left-4 bg-stone-900/90 text-stone-300 font-mono text-[9px] uppercase tracking-widest py-1 px-2.5">
-                  THE COURTYARD SCOOP // EXPERIMENTAL STUDY
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs text-stone-600 font-sans font-light leading-relaxed">
-                <p>
-                  By cutting deep vertical lightwells into heavy monolithic plans, we pull cool air through subterranean wind-scoops, achieving organic cross-ventilation. This natural stack-effect completely bypasses the need for intensive mechanical cooling during peak Punjab summers.
-                </p>
-                <p>
-                  Our work celebrates raw regional materials: wire-cut exposed clay bricks, hand-chiselled local stone, and board-marked cast concrete. These tactile surfaces age gracefully, retaining the story of the artisans who crafted them.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
       {/* 4. Selected Projects (6 featured projects) */}
       <section id="home-selected-projects" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -267,7 +219,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-stone-200 pb-6">
             <div className="space-y-2">
               <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-semibold">
-                ARCHIVE // PORTFOLIO
+                ARCHIV // PORTFOLIO
               </span>
               <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
                 Selected Works

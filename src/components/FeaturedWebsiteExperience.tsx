@@ -42,9 +42,6 @@ export default function FeaturedWebsiteExperience({
           
           {/* LEFT SIDE - Content */}
           <div className="lg:col-span-5 space-y-8">
-            <span className="text-[10px] tracking-[0.35em] uppercase text-stone-500 font-mono font-bold block">
-              DIGITAL PRESENCE // LIVE WEBSITE
-            </span>
             
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-stone-950 font-light leading-[1.15] tracking-tight">
               Experience DEVRA BuildTech
