@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
-import FeaturedWebsiteExperience from "../components/FeaturedWebsiteExperience";
 import slider1 from "../../assets/slider1.jpeg";
 import slider2 from "../../assets/projects/Villaa58.png";
 import slider3 from "../../assets/slider3.jpeg";
@@ -208,9 +207,6 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           </div>
         )}
       </section>
-
-      {/* Featured Website Experience */}
-      <FeaturedWebsiteExperience websiteUrl="https://www.devrabuildtech.com/" />
 
       {/* 4. Selected Projects (6 featured projects) */}
       <section id="home-selected-projects" className="py-12 md:py-16">
