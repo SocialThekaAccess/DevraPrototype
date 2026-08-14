@@ -152,40 +152,40 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className={`absolute inset-0 z-20 flex items-center justify-start max-w-7xl mx-auto px-6 md:px-12 ${
-                currentSlide === 1 ? 'items-end pb-32 md:items-center md:pb-0' : ''
-              }`}
+              className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/60 via-black/30 to-transparent py-6 md:py-10"
             >
-              <div className="max-w-2xl text-stone-50 space-y-4 md:space-y-6 pt-20">
-                <p className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono font-bold">
-                  {HERO_SLIDES[currentSlide].subtitle}
-                </p>
-                
-                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] font-medium">
-                  {HERO_SLIDES[currentSlide].title}
-                </h1>
-
-                <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed tracking-wide">
-                  {HERO_SLIDES[currentSlide].text}
-                </p>
-
-                <div className="flex items-center gap-3 md:gap-4 pt-2 md:pt-4">
-                  <button
-                    id="hero-view-projects"
-                    onClick={() => onNavigate("projects")}
-                    className="group flex items-center gap-2 bg-stone-50 hover:bg-stone-900 text-stone-900 hover:text-stone-50 px-5 md:px-6 py-3 md:py-3.5 text-[10px] md:text-xs font-sans uppercase tracking-widest font-semibold rounded-none transition-all duration-300 cursor-pointer"
-                  >
-                    View Projects
-                    <ArrowRight className="w-3 md:w-3.5 h-3 md:h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
+              <div className="max-w-7xl mx-auto px-6 md:px-12">
+                <div className="max-w-2xl text-stone-50 space-y-3 md:space-y-4">
+                  <p className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono font-bold">
+                    {HERO_SLIDES[currentSlide].subtitle}
+                  </p>
                   
-                  <button
-                    id="hero-start-project"
-                    onClick={() => onNavigate("contact")}
-                    className="text-[10px] md:text-xs uppercase tracking-widest font-semibold border-b border-stone-50 text-stone-50 hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer transition-colors"
-                  >
-                    Start a Project
-                  </button>
+                  <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] font-medium">
+                    {HERO_SLIDES[currentSlide].title}
+                  </h1>
+
+                  <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed tracking-wide">
+                    {HERO_SLIDES[currentSlide].text}
+                  </p>
+
+                  <div className="flex items-center gap-3 md:gap-4 pt-2 md:pt-4">
+                    <button
+                      id="hero-view-projects"
+                      onClick={() => onNavigate("projects")}
+                      className="group flex items-center gap-2 bg-stone-50 hover:bg-stone-900 text-stone-900 hover:text-stone-50 px-5 md:px-6 py-3 md:py-3.5 text-[10px] md:text-xs font-sans uppercase tracking-widest font-semibold rounded-none transition-all duration-300 cursor-pointer"
+                    >
+                      View Projects
+                      <ArrowRight className="w-3 md:w-3.5 h-3 md:h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                    
+                    <button
+                      id="hero-start-project"
+                      onClick={() => onNavigate("contact")}
+                      className="text-[10px] md:text-xs uppercase tracking-widest font-semibold border-b border-stone-50 text-stone-50 hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer transition-colors"
+                    >
+                      Start a Project
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -213,13 +213,13 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       <FeaturedWebsiteExperience websiteUrl="https://www.devrabuildtech.com/" />
 
       {/* 4. Selected Projects (6 featured projects) */}
-      <section id="home-selected-projects" className="py-24 md:py-32">
+      <section id="home-selected-projects" className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-stone-200 pb-6">
             <div className="space-y-2">
               <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-semibold">
-                ARCHIV // PORTFOLIO
+                PORTFOLIO
               </span>
               <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
                 Selected Works
@@ -280,7 +280,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       </section>
 
       {/* 5. What We Do Capabilities Grid */}
-      <section id="home-capabilities" className="py-24 md:py-32 bg-stone-900 text-stone-50">
+      <section id="home-capabilities" className="py-12 md:py-16 bg-stone-900 text-stone-50">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="max-w-3xl mb-20 space-y-4">

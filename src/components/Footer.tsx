@@ -149,6 +149,15 @@ export default function Footer({ onNavigate }: FooterProps) {
               Start a Project
               <ArrowUpRight className="w-3 h-3" />
             </button>
+            <a
+              href="https://share.google/844vXYmqGLxJvQxE3yeh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-sans font-semibold border-b border-stone-400 text-stone-400 hover:text-stone-100 hover:border-stone-100 pb-1 mt-2 cursor-pointer transition-colors"
+            >
+              Google Reviews
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
           </div>
 
         </div>

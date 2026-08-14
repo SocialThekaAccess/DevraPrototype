@@ -502,7 +502,7 @@ export const PROJECTS: Project[] = [
   {
     id: "castle-grey",
     title: "Castle Grey",
-    category: "Hospitality",
+    category: "Commercial",
     location: "Rohtak, Haryana",
     year: "2019",
     size: "135 GAJ",

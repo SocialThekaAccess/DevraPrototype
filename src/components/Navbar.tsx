@@ -37,7 +37,6 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const navItems = [
     { label: "Projects", path: "projects" },
     { label: "Services", path: "services" },
-    { label: "Vision", path: "vision" },
     { label: "Process", path: "process" },
     { label: "Journal", path: "journal" },
     { label: "Contact", path: "contact" },
