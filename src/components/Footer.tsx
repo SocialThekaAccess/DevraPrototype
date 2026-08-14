@@ -150,7 +150,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <ArrowUpRight className="w-3 h-3" />
             </button>
             <a
-              href="https://share.google/OEjCqPI0C6LqRedLUyeh"
+              href="https://www.google.com/search?sca_esv=0162f82a22f8dff0&hl=en-IN&sxsrf=APpeQntVKoNNVHgkE6rKQJ6keb5_d_uaeA:1786709086622&kgmid=/g/11ghnpqdp3&q=Devra+Architects&shem=dlvs1,epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/uni/m1/1&kgs=170734991b09d72b&utm_source=dlvs1,epsd1,ltae,rimspwouoe,sh/x/loc/uni/m1/1#lrd=0x390ff1b06d26b333:0x79be65d9c31403b2,1,,,,"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-sans font-semibold border-b border-stone-400 text-stone-400 hover:text-stone-100 hover:border-stone-100 pb-1 mt-2 cursor-pointer transition-colors"
