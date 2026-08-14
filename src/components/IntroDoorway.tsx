@@ -88,18 +88,8 @@ export default function IntroDoorway({ onComplete }: IntroDoorwayProps) {
               <div className="absolute w-full h-[1px] bg-stone-500/20" />
             </div>
 
-            {/* Studio Code Name Prefix */}
-            <motion.p
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-[9px] tracking-[0.4em] uppercase text-stone-400 font-mono font-medium mb-4"
-            >
-              EST. 2016 // REGIONAL ARCHITECTURE
-            </motion.p>
-
-            {/* Staggered Main Title Letters grouped into words */}
-            <div className="flex flex-row flex-wrap justify-center items-center gap-x-6 md:gap-x-8 gap-y-3 mb-4">
+            {/* Staggered Main Title Letters grouped into words - ONLY "LIVE THE DREAM" */}
+            <div className="flex flex-row flex-wrap justify-center items-center gap-x-6 md:gap-x-8 gap-y-3">
               {words.map((word, wordIdx) => {
                 const previousLettersCount = words
                   .slice(0, wordIdx)
@@ -129,34 +119,6 @@ export default function IntroDoorway({ onComplete }: IntroDoorwayProps) {
                 );
               })}
             </div>
-
-            {/* Sub-Tagline */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.8 }}
-              transition={{ delay: 1.4, duration: 0.8 }}
-              className="text-[10px] tracking-[0.35em] uppercase text-stone-300 font-mono font-light max-w-[280px]"
-            >
-              Architects & Designers
-            </motion.p>
-
-            {/* Centered Expanding Horizon Divider Line */}
-            <motion.div
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ delay: 1.6, duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-              className="h-[1px] bg-stone-700 w-48 my-8"
-            />
-
-            {/* Subtitle location indicator instead of manual button */}
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 0.5, y: 0 }}
-              transition={{ delay: 2.0, duration: 0.8 }}
-              className="text-[9px] tracking-[0.25em] uppercase text-stone-400 font-mono font-light"
-            >
-              NEW CHANDIGARH STUDIO
-            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>
