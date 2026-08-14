@@ -37,12 +37,18 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const navItems = [
     { label: "Projects", path: "projects" },
     { label: "Services", path: "services" },
+    { label: "Construction", path: "construction", external: true },
     { label: "Process", path: "process" },
     { label: "Journal", path: "journal" },
     { label: "Contact", path: "contact" },
   ];
 
-  const handleNavClick = (path: string) => {
+  const handleNavClick = (path: string, external?: boolean) => {
+    if (external) {
+      window.open("https://www.devrabuildtech.com/", "_blank");
+      setIsOpen(false);
+      return;
+    }
     onNavigate(path);
     setIsOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -86,12 +92,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
         {/* Desktop Navigation */}
         <nav id="desktop-nav" className="hidden lg:flex items-center h-full flex-nowrap space-x-5 xl:space-x-8 shrink-0">
           {navItems.map((item) => {
-            const isActive = currentPath === item.path;
+            const isActive = currentPath === item.path && !item.external;
             return (
               <button
                 key={item.path}
                 id={`nav-link-${item.path}`}
-                onClick={() => handleNavClick(item.path)}
+                onClick={() => handleNavClick(item.path, item.external)}
                 className={`whitespace-nowrap text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer ${
                   isActive
                     ? showWhiteText ? "text-white" : "text-stone-900"
@@ -145,12 +151,12 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           <div className="space-y-8 pt-2">
             <nav className="flex flex-col divide-y divide-stone-200">
               {navItems.map((item) => {
-                const isActive = currentPath === item.path;
+                const isActive = currentPath === item.path && !item.external;
                 return (
                   <button
                     key={item.path}
                     id={`mobile-nav-link-${item.path}`}
-                    onClick={() => handleNavClick(item.path)}
+                    onClick={() => handleNavClick(item.path, item.external)}
                     className={`text-base uppercase tracking-widest text-left font-sans font-medium transition-all py-5 ${
                       isActive ? "text-stone-900 pl-2 border-l-2 border-stone-900" : "text-stone-500"
                     }`}
