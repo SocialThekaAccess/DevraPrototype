@@ -87,7 +87,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   onClick={() => handleNavClick("vision")} 
                   className="text-stone-400 hover:text-stone-100 transition-colors cursor-pointer"
                 >
-                  Our Philosophy
+                  Vision
                 </button>
               </li>
               <li>
