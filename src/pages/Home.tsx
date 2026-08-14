@@ -394,7 +394,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       </section>
 
       {/* 6. Why DEVRA / Regional Strength */}
-      <section id="home-why-devra" className="py-24 md:py-32 bg-stone-100 border-y border-stone-200">
+      <section id="home-why-devra" className="py-12 md:py-16 bg-stone-100 border-y border-stone-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-5 space-y-6">
@@ -455,7 +455,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       </section>
 
       {/* 7. Final CTA */}
-      <section id="home-cta" className="py-24 md:py-32 bg-stone-50 text-stone-900 text-center">
+      <section id="home-cta" className="py-12 md:py-16 bg-stone-50 text-stone-900 text-center">
         <div className="max-w-4xl mx-auto px-6 md:px-12 space-y-8">
           <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-semibold">
             START A CONVERSATION
