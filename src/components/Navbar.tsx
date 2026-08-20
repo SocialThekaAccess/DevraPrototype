@@ -64,29 +64,22 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
-        {/* Brand Logo - Two separate logos for different states */}
+        {/* Brand Logo - Text-based with stacked layout */}
         <button
           id="nav-logo"
           onClick={() => handleNavClick("home")}
-          className="flex items-center cursor-pointer group shrink-0 -ml-2 md:-ml-4 overflow-visible relative"
+          className="flex flex-col items-start cursor-pointer group shrink-0 leading-none"
         >
-          {/* White Logo - for transparent navbar */}
-          <img 
-            src="/assets/DevraWhiteLogo.png"
-            alt="DEVRA Architects" 
-            className={`w-[180px] h-auto object-contain transition-opacity ${
-              shouldShowWhiteLogo ? 'opacity-100' : 'opacity-0 absolute inset-0'
-            } group-hover:opacity-80`}
-          />
-          
-          {/* Black Logo - for scrolled navbar */}
-          <img 
-            src="/assets/DEVRAlogo.png"
-            alt="DEVRA Architects" 
-            className={`w-[140px] h-auto object-contain transition-opacity ${
-              shouldShowWhiteLogo ? 'opacity-0 absolute inset-0' : 'opacity-100'
-            } group-hover:opacity-80`}
-          />
+          <span className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors ${
+            showWhiteText ? 'text-white' : 'text-stone-900'
+          } group-hover:opacity-80`}>
+            DEVRA
+          </span>
+          <span className={`font-sans text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-semibold transition-colors ${
+            showWhiteText ? 'text-white/80' : 'text-stone-600'
+          } group-hover:opacity-80 -mt-0.5`}>
+            Architects
+          </span>
         </button>
 
         {/* Desktop Navigation */}

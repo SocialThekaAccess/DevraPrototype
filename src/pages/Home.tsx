@@ -5,7 +5,7 @@ import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/slider1.jpeg";
 import slider2 from "../../assets/projects/Villaa58.png";
-import slider3 from "../../assets/slider3.jpeg";
+import slider3 from "../../assets/projects/res-villa-361.avif";
 import slider4 from "../../assets/projects/Villaa303.png";
 import slider5 from "../../assets/projects/UnwalledImage.png";
 import residentialImg from "../../assets/residential.avif";
@@ -33,9 +33,9 @@ const HERO_SLIDES = [
   },
   {
     image: slider3,
-    subtitle: "ESTATE LIVING // PUNJAB BORDER",
-    title: "The Kangs Farmhouse",
-    text: "A sprawling brick and stone pavilion connecting family with native nature."
+    subtitle: "LUXURY RESIDENCE // NEW CHANDIGARH",
+    title: "Villa 361",
+    text: "A dramatic floating cantilever stair, double-height glazing, and integrated high-end home automation."
   },
   {
     image: slider4,
