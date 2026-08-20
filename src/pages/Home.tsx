@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
-import slider1 from "../../assets/slider1.jpeg";
-import slider2 from "../../assets/projects/Villaa58.png";
-import slider3 from "../../assets/projects/res-villa-361.avif";
-import slider4 from "../../assets/projects/Villaa303.png";
-import slider5 from "../../assets/projects/UnwalledImage.png";
+import slider1 from "../../assets/projects/Villaa303.png";
+import slider2 from "../../assets/projects/res-villa-361.avif";
+import slider3 from "../../assets/projects/UnwalledImage.png";
+import slider4 from "../../assets/projects/Villaa58.png";
+import slider5 from "../../assets/PanchkulaHousing.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -21,33 +21,33 @@ interface HomeProps {
 const HERO_SLIDES = [
   {
     image: slider1,
-    subtitle: "FEATURED ARCHITECTURE // PATIALA",
-    title: "Sansarg Residence",
-    text: "Shaped around courtyards, light, and honest tactile materials."
-  },
-  {
-    image: slider2,
-    subtitle: "MODERN RESIDENCE // MOHALI",
-    title: "Villa 58",
-    text: "Linear forms, structural cantilevers, and flowing cross-ventilation."
-  },
-  {
-    image: slider3,
-    subtitle: "LUXURY RESIDENCE // NEW CHANDIGARH",
-    title: "Villa 361",
-    text: "A dramatic floating cantilever stair, double-height glazing, and integrated high-end home automation."
-  },
-  {
-    image: slider4,
     subtitle: "CONTEMPORARY RESIDENCE // NEW CHANDIGARH",
     title: "Villa 303",
     text: "A striking façade with sculpted terrace and floating living spaces above the pool."
   },
   {
-    image: slider5,
+    image: slider2,
+    subtitle: "LUXURY RESIDENCE // NEW CHANDIGARH",
+    title: "Villa 361",
+    text: "A dramatic floating cantilever stair, double-height glazing, and integrated high-end home automation."
+  },
+  {
+    image: slider3,
     subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
     title: "UNWALLED",
     text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
+  },
+  {
+    image: slider4,
+    subtitle: "MODERN RESIDENCE // MOHALI",
+    title: "Villa 58",
+    text: "Linear forms, structural cantilevers, and flowing cross-ventilation."
+  },
+  {
+    image: slider5,
+    subtitle: "PREMIUM HOUSING // NEW CHANDIGARH",
+    title: "Panchkula Housing",
+    text: "Elegant multi-family units offering high visual privacy and shared central greens."
   }
 ];
 
@@ -231,7 +231,13 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROJECTS.slice(0, 6).map((project) => (
+            {/* Featured Projects: Villa 303, Villa 361, Unwalled, Villa 58, Panchkula Housing */}
+            {PROJECTS.filter(p => 
+              ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'pine-view-housing'].includes(p.id)
+            ).sort((a, b) => {
+              const order = ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'pine-view-housing'];
+              return order.indexOf(a.id) - order.indexOf(b.id);
+            }).map((project) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
