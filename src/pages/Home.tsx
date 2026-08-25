@@ -295,7 +295,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="space-y-3"
                 >
-                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-stone-400 font-normal tracking-tight leading-tight">
+                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-stone-900 font-normal tracking-tight leading-tight">
                     The Art of Thoughtful Architecture
                   </h3>
                   <motion.div
