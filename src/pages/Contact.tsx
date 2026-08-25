@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact-page" className="bg-black text-white min-h-screen pt-28 pb-20">
+    <div id="contact-page" className="bg-stone-50 text-stone-900 min-h-screen pt-28 pb-20">
       <SEOMeta
         title="Contact Us & Book a Consultation | DEVRA Architects"
         description="Book an on-site consultation or studio meeting with Ar. Rajkumar Devra. Tell us about your plot location, budget range, and project type in Chandigarh, Mohali, or Punjab."
@@ -74,23 +74,23 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header section */}
-        <div className="border-b border-stone-700 pb-10 mb-16">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold mb-3">
+        <div className="border-b border-stone-200 pb-10 mb-16">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold mb-3">
             DEVRA ARCHITECTS // INQUIRIES
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-white font-medium tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-medium tracking-tight">
             Start Your Project
           </h1>
-          <p className="text-stone-300 text-xs md:text-sm mt-3 max-w-2xl font-light leading-relaxed">
+          <p className="text-stone-600 text-xs md:text-sm mt-3 max-w-2xl font-light leading-relaxed">
             Tell us about your site, your lifestyle requirements, and the kind of space you want to build. Our team will review your message and reply within 24 hours.
           </p>
         </div>
 
-        {/* Single Combined Section with Black Background */}
-        <div className="bg-black p-8 md:p-12 border border-stone-700">
+        {/* Single Combined Section with White Background */}
+        <div className="bg-white p-8 md:p-12 border border-stone-200 shadow-sm">
           
           {/* Interactive Form Section */}
-          <div className="bg-black">
+          <div className="bg-white">
             {isSubmitted ? (
               /* Submission success block */
               <div id="contact-success-block" className="space-y-6 py-8 text-center max-w-xl mx-auto">
@@ -98,21 +98,21 @@ export default function Contact() {
                   <Check className="w-6 h-6" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-serif text-3xl text-white font-medium">Inquiry Received</h3>
-                  <p className="text-stone-300 text-xs leading-relaxed font-light">
+                  <h3 className="font-serif text-3xl text-stone-900 font-medium">Inquiry Received</h3>
+                  <p className="text-stone-600 text-xs leading-relaxed font-light">
                     Thank you, <strong>{formData.name}</strong>. Your architectural proposal has been successfully registered on our principal desk. Our coordination team is preparing initial site details and will reach out to you within 24 hours.
                   </p>
                 </div>
 
                 {/* Submitted summary info box */}
-                <div className="bg-stone-900 p-6 border border-stone-700 text-left text-xs space-y-3 font-mono">
-                  <h4 className="text-[10px] uppercase tracking-widest text-stone-500 font-bold border-b border-stone-700 pb-1">
+                <div className="bg-stone-50 p-6 border border-stone-200 text-left text-xs space-y-3 font-mono">
+                  <h4 className="text-[10px] uppercase tracking-widest text-stone-500 font-bold border-b border-stone-200 pb-1">
                     Submission Summary
                   </h4>
-                  <div className="flex justify-between"><span className="text-stone-500">Project Type:</span> <span className="text-white font-semibold">{formData.projectType}</span></div>
-                  <div className="flex justify-between"><span className="text-stone-500">Site Location:</span> <span className="text-white font-semibold">{formData.location}</span></div>
-                  <div className="flex justify-between"><span className="text-stone-500">Budget Bracket:</span> <span className="text-white font-semibold">{formData.budgetRange}</span></div>
-                  <div className="flex justify-between"><span className="text-stone-500">Direct Contact:</span> <span className="text-white font-semibold">{formData.phone}</span></div>
+                  <div className="flex justify-between"><span className="text-stone-500">Project Type:</span> <span className="text-stone-900 font-semibold">{formData.projectType}</span></div>
+                  <div className="flex justify-between"><span className="text-stone-500">Site Location:</span> <span className="text-stone-900 font-semibold">{formData.location}</span></div>
+                  <div className="flex justify-between"><span className="text-stone-500">Budget Bracket:</span> <span className="text-stone-900 font-semibold">{formData.budgetRange}</span></div>
+                  <div className="flex justify-between"><span className="text-stone-500">Direct Contact:</span> <span className="text-stone-900 font-semibold">{formData.phone}</span></div>
                 </div>
 
                 <div className="pt-4">
@@ -129,7 +129,7 @@ export default function Contact() {
                         message: ""
                       });
                     }}
-                    className="text-xs uppercase tracking-widest font-semibold border-b border-white text-white hover:text-stone-300 hover:border-stone-300 pb-1 cursor-pointer"
+                    className="text-xs uppercase tracking-widest font-semibold border-b border-stone-900 text-stone-900 hover:text-stone-600 hover:border-stone-600 pb-1 cursor-pointer"
                   >
                     Submit Another Inquiry
                   </button>
@@ -139,7 +139,7 @@ export default function Contact() {
               /* Active Contact Form */
               <form id="devra-contact-form" onSubmit={handleSubmit} className="space-y-6">
                 
-                <h3 className="text-xs uppercase tracking-widest text-white font-semibold font-mono pb-2 border-b border-stone-700">
+                <h3 className="text-xs uppercase tracking-widest text-stone-900 font-semibold font-mono pb-2 border-b border-stone-200">
                   Project Brief Inquiry Form
                 </h3>
 
@@ -154,7 +154,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors"
+                    className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors"
                     placeholder="Enter your full name"
                   />
                   {errors.name && <p className="text-red-400 text-[10px] font-mono mt-0.5">{errors.name}</p>}
@@ -173,7 +173,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors"
+                      className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors"
                       placeholder="Enter phone number"
                     />
                     {errors.phone && <p className="text-red-400 text-[10px] font-mono mt-0.5">{errors.phone}</p>}
@@ -190,7 +190,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors"
+                      className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors"
                       placeholder="Enter email address"
                     />
                     {errors.email && <p className="text-red-400 text-[10px] font-mono mt-0.5">{errors.email}</p>}
@@ -209,7 +209,7 @@ export default function Contact() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-3 rounded-none focus:outline-none focus:border-stone-500 transition-colors cursor-pointer"
+                      className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-3 rounded-none focus:outline-none focus:border-stone-500 transition-colors cursor-pointer"
                     >
                       <option value="Residential">Residential Architecture</option>
                       <option value="Interior Design">Luxury Interior Design</option>
@@ -229,7 +229,7 @@ export default function Contact() {
                       name="location"
                       value={formData.location}
                       onChange={handleInputChange}
-                      className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-3 rounded-none focus:outline-none focus:border-stone-500 transition-colors cursor-pointer"
+                      className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-3 rounded-none focus:outline-none focus:border-stone-500 transition-colors cursor-pointer"
                     >
                       <option value="Chandigarh">Chandigarh</option>
                       <option value="New Chandigarh">New Chandigarh</option>
@@ -252,7 +252,7 @@ export default function Contact() {
                       name="budgetRange"
                       value={formData.budgetRange}
                       onChange={handleInputChange}
-                      className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-3 rounded-none focus:outline-none focus:border-stone-500 transition-colors cursor-pointer"
+                      className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-3 rounded-none focus:outline-none focus:border-stone-500 transition-colors cursor-pointer"
                     >
                       <option value="Under 50 Lakhs">Under 50 Lakhs</option>
                       <option value="50L - 1 Crore">50L - 1 Crore</option>
@@ -274,7 +274,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full bg-stone-900 border border-stone-700 text-white text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors resize-none"
+                    className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs py-3 px-4 rounded-none focus:outline-none focus:border-stone-500 transition-colors resize-none"
                     placeholder="Provide details such as plot size, desired number of bedrooms, family configuration, or style preferences (e.g., Sansarg courtyard style)."
                   />
                   {errors.message && <p className="text-red-400 text-[10px] font-mono mt-0.5">{errors.message}</p>}

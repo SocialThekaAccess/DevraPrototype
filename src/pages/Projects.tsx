@@ -117,7 +117,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                     <h3 className="font-serif text-lg text-stone-900 font-medium group-hover:text-stone-600 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-[10px] text-stone-500 font-mono uppercase tracking-widest mt-1">
+                    <p className="text-[9px] md:text-[10px] tracking-wide uppercase text-stone-900 font-light mt-1">
                       {project.category} // {project.location}
                     </p>
                   </div>

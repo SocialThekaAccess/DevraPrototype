@@ -193,7 +193,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
 
         {/* Floating Slide Indicators - only show when images are loaded */}
         {imagesLoaded && (
-          <div className="absolute bottom-10 right-6 md:right-12 z-20 flex items-center space-x-3">
+          <div className="absolute bottom-32 sm:bottom-24 md:bottom-10 right-6 md:right-12 z-20 flex items-center space-x-3">
             {HERO_SLIDES.map((_, index) => (
               <button
                 key={index}
@@ -237,7 +237,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             ).sort((a, b) => {
               const order = ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'pine-view-housing'];
               return order.indexOf(a.id) - order.indexOf(b.id);
-            }).map((project) => (
+            }).map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -245,7 +245,9 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8 }}
                 onClick={() => handleProjectClick(project.id)}
-                className="group cursor-pointer space-y-4"
+                className={`group cursor-pointer space-y-4 ${
+                  index === 4 ? 'lg:col-start-3 lg:row-start-2' : ''
+                }`}
               >
                 <div className="relative overflow-hidden bg-stone-200 aspect-[4/3] w-full">
                   <img
@@ -266,7 +268,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                     <h4 className="font-serif text-lg text-stone-900 font-medium group-hover:text-stone-600 transition-colors">
                       {project.title}
                     </h4>
-                    <p className="text-[10px] text-stone-500 font-mono uppercase tracking-widest mt-1">
+                    <p className="text-[9px] md:text-[10px] tracking-wide uppercase text-stone-500 font-light mt-1">
                       {project.category} — {project.location}
                     </p>
                   </div>
@@ -276,6 +278,36 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 </div>
               </motion.div>
             ))}
+
+            {/* Empty placeholder for future content */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="lg:col-start-2 lg:row-start-2 flex items-center justify-center"
+            >
+              <div className="text-center space-y-4 py-12">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="space-y-3"
+                >
+                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-stone-400 font-normal tracking-tight leading-tight">
+                    The Art of Thoughtful Architecture
+                  </h3>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "80px" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="h-[1px] bg-stone-300 mx-auto"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
 
         </div>
@@ -408,28 +440,28 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               TRUSTED REGIONAL LEADER
             </span>
             <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
-              Why Discerning Clients Choose DEVRA
+              Why DEVRA Is the Preferred Choice
             </h3>
             <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">
               We understand the lifestyle requirements of Indian families. We have spent years executing high-profile residential and commercial architectures in Chandigarh, Mohali, Panchkula, and Punjab.
             </p>
             <div className="h-[1px] w-20 bg-stone-300" />
-            <ul className="space-y-4 text-xs font-mono text-stone-700">
+            <ul className="space-y-4 text-stone-600">
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span>Architecture + Interiors under a unified vision</span>
+                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Architecture + Interiors under a unified vision</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span>Meticulous material curation & Climate-sensitive planning</span>
+                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Meticulous material curation & Climate-sensitive planning</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span>Extreme oversight over structural execution & supervision</span>
+                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Extreme oversight over structural execution & supervision</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span>Durable luxury that is usable, not just visual</span>
+                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Durable luxury that is usable, not just visual</span>
               </li>
             </ul>
           </div>
@@ -451,8 +483,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">Custom Detailing Focus</p>
               </div>
               <div className="bg-stone-50 p-8 border border-stone-200 shadow-sm">
-                <h4 className="font-serif text-4xl text-stone-900 font-medium">Chandigarh</h4>
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">New Chandigarh Core</p>
+                <h4 className="font-serif text-4xl text-stone-900 font-medium">Trusted</h4>
+                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">Architect</p>
               </div>
             </div>
           </div>
