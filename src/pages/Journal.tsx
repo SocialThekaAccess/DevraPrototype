@@ -111,12 +111,8 @@ export default function Journal() {
                 </p>
               </div>
 
-              <div className="flex items-center justify-between pt-6 mt-6 border-t border-stone-200 text-[10px] font-mono text-stone-500">
-                <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1"><User className="w-3 h-3" /> {post.author}</span>
-                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
-                </div>
-                <span className="flex items-center gap-1 uppercase tracking-widest text-stone-900 font-semibold border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors">
+              <div className="flex items-center justify-end pt-6 mt-6 border-t border-stone-200">
+                <span className="flex items-center gap-1 uppercase tracking-widest text-stone-900 font-semibold border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors text-[10px] font-mono">
                   Read Essay <ArrowUpRight className="w-3 h-3" />
                 </span>
               </div>
@@ -182,22 +178,6 @@ export default function Journal() {
                   }
                   return <p key={idx}>{para}</p>;
                 })}
-              </div>
-
-              {/* Author footer */}
-              <div className="pt-8 border-t border-stone-200 mt-12 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-stone-300 overflow-hidden">
-                  <img
-                    src={residentialImg}
-                    alt="Ar. Rajkumar Devra"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale"
-                  />
-                </div>
-                <div>
-                  <p className="text-xs font-serif text-stone-900 font-medium">Ar. Rajkumar Devra</p>
-                  <p className="text-[9px] text-stone-400 uppercase tracking-widest font-mono">Principal Architect, DEVRA</p>
-                </div>
               </div>
 
             </div>

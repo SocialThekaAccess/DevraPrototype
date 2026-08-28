@@ -49,3 +49,13 @@ export interface BlogPost {
   author: string;
   readTime: string;
 }
+
+export interface Review {
+  id: string;
+  name: string;
+  project: string;
+  rating: number;
+  text: string;
+  date: string;
+}
+}

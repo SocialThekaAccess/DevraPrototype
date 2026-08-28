@@ -64,6 +64,7 @@ import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
 import hou3PMDCPanchkula from "../assets/projects/3PMDCPanchkula.png";
+import panchkulaHousingHero from "../assets/PanchkulaHousing.png";
 import houUnwalled1 from "../assets/projects/hou-unwalled-1.png";
 import houUnwalled2 from "../assets/projects/hou-unwalled-2.png";
 import houUnwalled3 from "../assets/projects/hou-unwalled-3.png";
@@ -349,14 +350,14 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: "pine-view-housing",
-    title: "Pine View Housing",
+    id: "panchkula-housing",
+    title: "Panchkula Housing",
     category: "Housing",
-    location: "New Chandigarh",
+    location: "Panchkula",
     year: "2021",
     size: "1,20,000 sq. ft.",
     scope: "Architecture, Facade Design & Masterplanning",
-    heroImage: houPanchkula1,
+    heroImage: panchkulaHousingHero,
     description: "A premium group housing project composed of elegant multi-family units designed to offer high visual privacy, individual terrace decks, and active shared central greens.",
     narrative: {
       site: "A linear site with two open boundaries, allowing us to align the blocks along a north-south axis for optimum thermal performance.",
@@ -697,7 +698,7 @@ export const SERVICES: Service[] = [
       "Clubhouse and community garden planning"
     ],
     clientType: "Real estate developers, corporate trusts, and private landowners seeking highly salable, premium, and durable developments.",
-    projects: ["Pine View Housing"]
+    projects: ["Panchkula Housing"]
   },
   {
     id: "commercial-hospitality",
