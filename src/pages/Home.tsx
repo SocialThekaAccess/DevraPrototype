@@ -6,6 +6,7 @@ import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/projects/Villaa303.png";
 import slider2 from "../../assets/projects/res-villa-361.avif";
 import slider3 from "../../assets/projects/UnwalledImage.png";
+import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
 import slider4 from "../../assets/projects/Villaa58.png";
 import slider5 from "../../assets/PanchkulaHousing.png";
 import residentialImg from "../../assets/residential.avif";
@@ -21,30 +22,35 @@ interface HomeProps {
 const HERO_SLIDES = [
   {
     image: slider1,
+    mobileImage: slider1,
     subtitle: "CONTEMPORARY RESIDENCE // NEW CHANDIGARH",
     title: "Villa 303",
     text: "A striking façade with sculpted terrace and floating living spaces above the pool."
   },
   {
     image: slider2,
+    mobileImage: slider2,
     subtitle: "LUXURY RESIDENCE // NEW CHANDIGARH",
     title: "Villa 361",
     text: "A dramatic floating cantilever stair, double-height glazing, and integrated high-end home automation."
   },
   {
     image: slider3,
+    mobileImage: slider3Mobile,
     subtitle: "LUXURY HOUSING // NEW CHANDIGARH",
     title: "UNWALLED",
     text: "Where boundaries dissolve into curated landscapes. Premium living redefined for the discerning."
   },
   {
     image: slider4,
+    mobileImage: slider4,
     subtitle: "MODERN RESIDENCE // MOHALI",
     title: "Villa 58",
     text: "Linear forms, structural cantilevers, and flowing cross-ventilation."
   },
   {
     image: slider5,
+    mobileImage: slider5,
     subtitle: "PREMIUM HOUSING // NEW CHANDIGARH",
     title: "Panchkula Housing",
     text: "Elegant multi-family units offering high visual privacy and shared central greens."
@@ -54,18 +60,28 @@ const HERO_SLIDES = [
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Preload all hero images
+  // Handle window resize for responsive images
   useEffect(() => {
-    const imageUrls = HERO_SLIDES.map(slide => slide.image);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Preload all hero images (both desktop and mobile)
+  useEffect(() => {
+    const allImages = HERO_SLIDES.flatMap(slide => [slide.image, slide.mobileImage]);
     let loadedCount = 0;
     
-    imageUrls.forEach(url => {
+    allImages.forEach(url => {
       const img = new Image();
       img.src = url;
       img.onload = () => {
         loadedCount++;
-        if (loadedCount === imageUrls.length) {
+        if (loadedCount === allImages.length) {
           setImagesLoaded(true);
         }
       };
@@ -129,7 +145,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               'bg-black/40'
             }`} />
             <img
-              src={HERO_SLIDES[currentSlide].image}
+              src={isMobile ? HERO_SLIDES[currentSlide].mobileImage : HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
               className={`w-full h-full ${
