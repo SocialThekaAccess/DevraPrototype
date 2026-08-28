@@ -450,6 +450,19 @@
 @media (max-width: 640px) {
   .proj-hero__img-wrapper {
     padding: 0;
+    height: auto;
+    min-height: 400px;
+    overflow: visible;
+  }
+
+  .proj-hero__img-wrapper--unwalled {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .proj-hero__img {
+    object-fit: contain;
+    object-position: center center;
   }
 
   .proj-overview {
