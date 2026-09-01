@@ -51,7 +51,7 @@ const HERO_SLIDES = [
   {
     image: slider5,
     mobileImage: slider5,
-    subtitle: "PREMIUM HOUSING // NEW CHANDIGARH",
+    subtitle: "PREMIUM HOUSING // PANCHKULA",
     title: "Panchkula Housing",
     text: "Elegant multi-family units offering high visual privacy and shared central greens."
   }
