@@ -249,9 +249,9 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Featured Projects: Villa 303, Villa 361, Unwalled, Villa 58, Panchkula Housing */}
             {PROJECTS.filter(p => 
-              ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'pine-view-housing'].includes(p.id)
+              ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'].includes(p.id)
             ).sort((a, b) => {
-              const order = ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'pine-view-housing'];
+              const order = ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'];
               return order.indexOf(a.id) - order.indexOf(b.id);
             }).map((project, index) => (
               <motion.div
