@@ -12,6 +12,7 @@ import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
 import slider4 from "../../assets/projects/Villaa58.png";
 import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.png";
 import slider5 from "../../assets/PanchkulaHousing.png";
+import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -53,7 +54,7 @@ const HERO_SLIDES = [
   },
   {
     image: slider5,
-    mobileImage: slider5,
+    mobileImage: slider5Mobile,
     subtitle: "PREMIUM HOUSING // PANCHKULA",
     title: "Panchkula Housing",
     text: "Elegant multi-family units offering high visual privacy and shared central greens."
