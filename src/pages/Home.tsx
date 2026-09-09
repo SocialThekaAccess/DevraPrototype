@@ -153,10 +153,15 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               alt={HERO_SLIDES[currentSlide].title}
               referrerPolicy="no-referrer"
               className={`w-full h-full ${
-                currentSlide === 1 && !isMobile ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100' :
-                currentSlide === 3 ? 'object-cover object-center' :
-                currentSlide === 4 ? 'object-cover object-center brightness-110' : 
-                'object-cover object-center'
+                isMobile 
+                  ? 'object-contain object-center' 
+                  : currentSlide === 1 
+                    ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100' 
+                    : currentSlide === 3 
+                      ? 'object-cover object-center' 
+                      : currentSlide === 4 
+                        ? 'object-cover object-center brightness-110' 
+                        : 'object-cover object-center'
               }`}
             />
           </motion.div>
