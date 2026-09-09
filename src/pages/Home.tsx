@@ -6,6 +6,7 @@ import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/projects/Villaa303.png";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.png";
 import slider2 from "../../assets/projects/res-villa-361.avif";
+import slider2Mobile from "../../assets/projects/Villa361Mobileview.png";
 import slider3 from "../../assets/projects/UnwalledImage.png";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
 import slider4 from "../../assets/projects/Villaa58.png";
@@ -30,7 +31,7 @@ const HERO_SLIDES = [
   },
   {
     image: slider2,
-    mobileImage: slider2,
+    mobileImage: slider2Mobile,
     subtitle: "LUXURY RESIDENCE // NEW CHANDIGARH",
     title: "Villa 361",
     text: "A dramatic floating cantilever stair, double-height glazing, and integrated high-end home automation."
