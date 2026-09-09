@@ -10,6 +10,7 @@ import slider2Mobile from "../../assets/projects/Villa361Mobileview.png";
 import slider3 from "../../assets/projects/UnwalledImage.png";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
 import slider4 from "../../assets/projects/Villaa58.png";
+import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.png";
 import slider5 from "../../assets/PanchkulaHousing.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
@@ -45,7 +46,7 @@ const HERO_SLIDES = [
   },
   {
     image: slider4,
-    mobileImage: slider4,
+    mobileImage: slider4Mobile,
     subtitle: "MODERN RESIDENCE // MOHALI",
     title: "Villa 58",
     text: "Linear forms, structural cantilevers, and flowing cross-ventilation."
