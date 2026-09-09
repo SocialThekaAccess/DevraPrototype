@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as Hom
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/projects/Villaa303.png";
+import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.png";
 import slider2 from "../../assets/projects/res-villa-361.avif";
 import slider3 from "../../assets/projects/UnwalledImage.png";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
@@ -22,7 +23,7 @@ interface HomeProps {
 const HERO_SLIDES = [
   {
     image: slider1,
-    mobileImage: slider1,
+    mobileImage: slider1Mobile,
     subtitle: "CONTEMPORARY RESIDENCE // NEW CHANDIGARH",
     title: "Villa 303",
     text: "A striking façade with sculpted terrace and floating living spaces above the pool."
@@ -442,67 +443,6 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             >
               Explore Services in Detail
             </button>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 6. Why DEVRA / Regional Strength */}
-      <section id="home-why-devra" className="py-12 md:py-16 bg-stone-100 border-y border-stone-200">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          <div className="lg:col-span-5 space-y-6">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-semibold">
-              TRUSTED REGIONAL LEADER
-            </span>
-            <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
-              Why DEVRA Is the Preferred Choice
-            </h3>
-            <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">
-              We understand the lifestyle requirements of Indian families. We have spent years executing high-profile residential and commercial architectures in Chandigarh, Mohali, Panchkula, and Punjab.
-            </p>
-            <div className="h-[1px] w-20 bg-stone-300" />
-            <ul className="space-y-4 text-stone-600">
-              <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Architecture + Interiors under a unified vision</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Meticulous material curation & Climate-sensitive planning</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Extreme oversight over structural execution & supervision</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-stone-900" />
-                <span className="text-xs md:text-sm font-light leading-relaxed tracking-wide">Durable luxury that is usable, not just visual</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <div className="bg-stone-50 p-8 border border-stone-200 shadow-sm">
-                <h4 className="font-serif text-4xl text-stone-900 font-medium">10+</h4>
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">Years experience in region</p>
-              </div>
-              <div className="bg-stone-50 p-8 border border-stone-200 shadow-sm">
-                <h4 className="font-serif text-4xl text-stone-900 font-medium">50+</h4>
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">Luxury Homes Designed</p>
-              </div>
-            </div>
-            <div className="space-y-4 pt-8">
-              <div className="bg-stone-50 p-8 border border-stone-200 shadow-sm">
-                <h4 className="font-serif text-4xl text-stone-900 font-medium">100%</h4>
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">Custom Detailing Focus</p>
-              </div>
-              <div className="bg-stone-50 p-8 border border-stone-200 shadow-sm">
-                <h4 className="font-serif text-4xl text-stone-900 font-medium">Trusted</h4>
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-1">Architect</p>
-              </div>
-            </div>
           </div>
 
         </div>
