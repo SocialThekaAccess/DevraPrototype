@@ -483,8 +483,12 @@
   }
 
   .proj-overview {
-    padding-top: 8px;
+    padding-top: 0;
     padding-bottom: 32px;
+  }
+
+  .proj-overview__inner {
+    padding-top: 0;
   }
 
   .proj-gallery {
