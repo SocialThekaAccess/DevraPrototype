@@ -101,8 +101,8 @@
 }
 
 .proj-meta-strip__inner {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -115,8 +115,7 @@
   padding: 16px 20px;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  flex: 1 1 auto;
-  min-width: max-content;
+  min-width: 0;
 }
 
 .proj-meta-strip__item:last-child {
@@ -463,11 +462,10 @@
   }
 
   .proj-meta-strip__inner {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .proj-meta-strip__item {
-    flex: 1 1 50%;
     min-width: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.08);
   }
