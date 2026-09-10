@@ -102,7 +102,7 @@
 
 .proj-meta-strip__inner {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 0;
   max-width: var(--content-wide);
   margin: 0 auto;
@@ -112,8 +112,8 @@
 .proj-meta-strip__item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 18px 16px;
+  gap: 3px;
+  padding: 14px 12px;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -123,7 +123,7 @@
 
 .proj-meta-strip__label,
 .proj-overview__label {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
 
 .proj-meta-strip__value {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: #1a1a1a;
 }
 
@@ -148,8 +148,8 @@
    so the section never visually touches its neighbors.
    ============================================ */
 .proj-overview {
-  padding-top: clamp(32px, 5vw, 48px);
-  padding-bottom: clamp(32px, 5vw, 48px);
+  padding-top: clamp(28px, 4vw, 40px);
+  padding-bottom: clamp(28px, 4vw, 40px);
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
   margin: 0;
@@ -160,28 +160,28 @@
 
 .proj-overview__inner {
   display: flex;
-  gap: clamp(20px, 4vw, 48px);
+  gap: clamp(16px, 3vw, 36px);
   align-items: center;
   max-width: var(--content-wide);
   margin: 0 auto;
 }
 
 .proj-overview__label-col {
-  flex: 0 0 140px;
-  padding-left: 16px;
+  flex: 0 0 120px;
+  padding-left: 12px;
 }
 
 .proj-overview__text-col {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .proj-overview__text {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 1.9;
+  line-height: 1.75;
   color: #4a4a4a;
 }
 
