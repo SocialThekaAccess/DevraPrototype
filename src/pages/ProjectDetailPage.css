@@ -112,8 +112,8 @@
 .proj-meta-strip__item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 26px 20px;
+  gap: 4px;
+  padding: 18px 16px;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -123,7 +123,7 @@
 
 .proj-meta-strip__label,
 .proj-overview__label {
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -131,7 +131,7 @@
 }
 
 .proj-meta-strip__value {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #1a1a1a;
 }
