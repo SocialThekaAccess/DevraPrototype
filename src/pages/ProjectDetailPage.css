@@ -101,10 +101,8 @@
 }
 
 .proj-meta-strip__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 0;
+  display: flex;
+  flex-wrap: wrap;
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -114,19 +112,15 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 16px 14px;
+  padding: 16px 20px;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  flex: 1 1 auto;
+  min-width: max-content;
 }
 
-.proj-meta-strip__item:nth-child(2),
-.proj-meta-strip__item:nth-child(4) {
+.proj-meta-strip__item:last-child {
   border-right: none;
-}
-
-.proj-meta-strip__item:nth-child(3),
-.proj-meta-strip__item:nth-child(4) {
-  border-bottom: none;
 }
 
 .proj-meta-strip__label,
@@ -147,14 +141,6 @@
 
 /* ============================================
    OVERVIEW SECTION — FIXED SPACING
-   Previously used a single `clamp(60px, 10vw, 100px)`
-   top+bottom padding shorthand, which on many real
-   viewport widths resolved close to its minimum,
-   making the block look glued to the meta-strip
-   above and the gallery below.
-   Now using explicit top/bottom padding + a solid
-   min value, plus small margins as an extra buffer
-   so the section never visually touches its neighbors.
    ============================================ */
 .proj-overview {
   padding-top: 0;
@@ -173,7 +159,7 @@
   align-items: flex-start;
   max-width: var(--content-wide);
   margin: 0 auto;
-  padding-top: clamp(12px, 2vw, 20px);
+  padding-top: 4px;
 }
 
 .proj-overview__label-col {
@@ -476,9 +462,27 @@
     object-position: center center;
   }
 
+  .proj-meta-strip__inner {
+    flex-wrap: wrap;
+  }
+
+  .proj-meta-strip__item {
+    flex: 1 1 50%;
+    min-width: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .proj-meta-strip__item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .proj-meta-strip__item:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
   .proj-overview {
-    padding-top: 44px;
-    padding-bottom: 44px;
+    padding-top: 8px;
+    padding-bottom: 32px;
   }
 
   .proj-gallery {
