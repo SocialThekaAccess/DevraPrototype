@@ -482,17 +482,4 @@
     padding-top: 8px;
     grid-template-columns: 1fr;
   }
-
-  .proj-meta-strip__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .proj-meta-strip__item {
-    border-right: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
-
-  .proj-meta-strip__item:last-child {
-    border-bottom: none;
-  }
 }
