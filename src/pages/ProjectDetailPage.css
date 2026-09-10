@@ -102,11 +102,11 @@
 
 .proj-meta-strip__inner {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 0;
   max-width: var(--content-wide);
   margin: 0 auto;
-  padding: 0 var(--page-gutter);
+  padding: 0;
 }
 
 .proj-meta-strip__item {
@@ -475,8 +475,16 @@
     grid-template-columns: 1fr;
   }
 
+  .proj-meta-strip__inner {
+    grid-template-columns: 1fr;
+  }
+
   .proj-meta-strip__item {
     border-right: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .proj-meta-strip__item:last-child {
+    border-bottom: none;
   }
 }
