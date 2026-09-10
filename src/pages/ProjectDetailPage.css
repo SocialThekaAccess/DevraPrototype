@@ -173,7 +173,7 @@
   align-items: flex-start;
   max-width: var(--content-wide);
   margin: 0 auto;
-  padding-top: clamp(20px, 3vw, 32px);
+  padding-top: clamp(12px, 2vw, 20px);
 }
 
 .proj-overview__label-col {
