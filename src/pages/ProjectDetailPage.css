@@ -113,8 +113,8 @@
 .proj-meta-strip__item {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 14px 12px;
+  gap: 4px;
+  padding: 16px 14px;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -131,7 +131,7 @@
 
 .proj-meta-strip__label,
 .proj-overview__label {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -139,9 +139,10 @@
 }
 
 .proj-meta-strip__value {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: #1a1a1a;
+  line-height: 1.4;
 }
 
 /* ============================================
