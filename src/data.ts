@@ -73,6 +73,7 @@ import houUnwalled5 from "../assets/projects/hou-unwalled-5.png";
 import houUnwalled6 from "../assets/projects/hou-unwalled-6.png";
 import houUnwalled7 from "../assets/projects/hou-unwalled-7.png";
 import houUnwalledHero from "../assets/projects/UnwalledImage.png";
+import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.png";
 
 // New Projects Imports
 import comDevraArch1 from "../assets/projects/com-devra-arch-1.jpg";
@@ -406,7 +407,8 @@ export const PROJECTS: Project[] = [
     size: "3,50,000 sq. ft.",
     scope: "Architecture, Masterplanning & Luxury Housing Design",
     heroImage: houUnwalledHero,
-    description: "An extraordinary vision of premium residential living where boundaries dissolve into carefully curated open spaces. UNWALLED redefines luxury housing through seamless integration of private residences with expansive communal landscapes, creating an elevated living experience for discerning homeowners.",
+    mobileHeroImage: houUnwalledHeroMobile,
+    description: "An extraordinary vision of premium residential living where boundaries dissolve...",
     narrative: {
       site: "Strategically positioned in New Chandigarh's most coveted sector, UNWALLED enjoys commanding views of the Shivalik foothills while maintaining exceptional connectivity to urban amenities. The site's natural topography has been thoughtfully preserved and enhanced to create a distinctive sense of place.",
       planning: "The masterplan orchestrates a sophisticated hierarchy of public, semi-private, and intimate spaces. Premium residences are positioned to maximize privacy while maintaining visual connection to beautifully landscaped courtyards and linear parks. Circulation pathways are designed as experiential journeys, with carefully framed views and unexpected spatial moments creating a resort-like ambiance throughout the development.",

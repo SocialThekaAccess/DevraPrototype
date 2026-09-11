@@ -12,14 +12,17 @@ export default function ProjectDetailPage({
   overview,
   overview2,
   heroImage,
+  heroImageMobile,
   images = [],
 }) {
   const heroImg = heroImage || images[0]
+  const heroImgMobile = heroImageMobile || heroImg
   const galleryImages = images.slice(1)
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
   
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
 
   const openLightbox = (index) => {
     setCurrentImageIndex(index)

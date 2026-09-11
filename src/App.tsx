@@ -30,6 +30,7 @@ import ResSupreetPage from "./Project/ResSupreetPage";
 import ResVilla201DPage from "./Project/ResVilla201DPage";
 import ResVilla303Page from "./Project/ResVilla303Page";
 import ResVilla361Page from "./Project/ResVilla361Page";
+import ResVilla58Page from "./Project/ResVilla58Page";
 import SchMsSchoolPage from "./Project/SchMsSchoolPage";
 
 export default function App() {
@@ -73,6 +74,7 @@ export default function App() {
     if (currentPath === "project-villa-201d") return <ResVilla201DPage />;
     if (currentPath === "project-villa-303") return <ResVilla303Page />;
     if (currentPath === "project-villa-361") return <ResVilla361Page />;
+    if (currentPath === "project-villa-58") return <ResVilla58Page />;
     if (currentPath === "project-ms-school") return <SchMsSchoolPage />;
     
     // Existing project detail pages from data.ts
