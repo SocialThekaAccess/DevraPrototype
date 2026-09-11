@@ -135,23 +135,25 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Project Metadata Strip */}
       <section className="proj-meta-strip">
-        <div className="proj-meta-strip__inner">
-          <div className="proj-meta-strip__item">
+        <div className="proj-meta-strip__inner" style={{ display: 'flex', flexWrap: 'wrap' }}>
+          {/* First Row - 3 items */}
+          <div className="proj-meta-strip__item" style={{ flex: '1 1 33.33%' }}>
             <span className="proj-meta-strip__label">Location</span>
             <span className="proj-meta-strip__value">{project.location}</span>
           </div>
           
-          <div className="proj-meta-strip__item">
+          <div className="proj-meta-strip__item" style={{ flex: '1 1 33.33%' }}>
             <span className="proj-meta-strip__label">Project Size</span>
             <span className="proj-meta-strip__value">{project.size}</span>
           </div>
           
-          <div className="proj-meta-strip__item">
+          <div className="proj-meta-strip__item" style={{ flex: '1 1 33.33%' }}>
             <span className="proj-meta-strip__label">Year</span>
             <span className="proj-meta-strip__value">{project.year}</span>
           </div>
           
-          <div className="proj-meta-strip__item">
+          {/* Second Row - Scope full width */}
+          <div className="proj-meta-strip__item" style={{ flex: '1 1 100%', width: '100%' }}>
             <span className="proj-meta-strip__label">Scope</span>
             <span className="proj-meta-strip__value">{project.scope}</span>
           </div>

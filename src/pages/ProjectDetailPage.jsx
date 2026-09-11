@@ -79,7 +79,7 @@ export default function ProjectDetailPage({
         </div>
       </section>
 
-      <section className="proj-meta-strip">
+      <section className={`proj-meta-strip ${title === 'UNWALLED' ? 'proj-meta-strip--wrap' : ''}`}>
         <div className="proj-meta-strip__inner">
           {location && (
             <div className="proj-meta-strip__item">
