@@ -135,19 +135,19 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Project Metadata Strip */}
       <section className="proj-meta-strip">
-        <div className="proj-meta-strip__inner" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div className="proj-meta-strip__inner" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
           {/* First Row - 3 items */}
-          <div className="proj-meta-strip__item" style={{ flex: '1 1 33.33%' }}>
+          <div className="proj-meta-strip__item" style={{ flex: '0 1 auto', textAlign: 'left' }}>
             <span className="proj-meta-strip__label">Location</span>
             <span className="proj-meta-strip__value">{project.location}</span>
           </div>
           
-          <div className="proj-meta-strip__item" style={{ flex: '1 1 33.33%' }}>
+          <div className="proj-meta-strip__item" style={{ flex: '0 1 auto', textAlign: 'center', alignItems: 'center' }}>
             <span className="proj-meta-strip__label">Project Size</span>
             <span className="proj-meta-strip__value">{project.size}</span>
           </div>
           
-          <div className="proj-meta-strip__item" style={{ flex: '1 1 33.33%' }}>
+          <div className="proj-meta-strip__item" style={{ flex: '0 1 auto', textAlign: 'right', alignItems: 'flex-end', paddingRight: '16px' }}>
             <span className="proj-meta-strip__label">Year</span>
             <span className="proj-meta-strip__value">{project.year}</span>
           </div>
