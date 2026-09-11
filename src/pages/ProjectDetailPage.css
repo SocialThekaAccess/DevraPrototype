@@ -524,20 +524,20 @@
 
 
   .proj-meta-strip__item:first-child .proj-meta-strip__value {
-    font-size: 21px;
+    font-size: 16px;
     line-height: 1.4;
   }
 
   .proj-meta-strip__item:nth-child(2) .proj-meta-strip__value {
-    font-size: 21px;
+    font-size: 16px;
   }
 
   .proj-meta-strip__item:nth-child(3) .proj-meta-strip__value {
-    font-size: 21px;
+    font-size: 16px;
   }
 
   .proj-meta-strip__item:nth-child(4) .proj-meta-strip__value {
-    font-size: 21px;
+    font-size: 16px;
   }
 
   .proj-overview {
