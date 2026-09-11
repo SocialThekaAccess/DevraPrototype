@@ -1,5 +1,6 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/projects/Villa303HeroSlider.png'
+import heroImgMobile from '../../assets/projects/Villa303Risponsiveimg.png'
 import img1 from '../../assets/projects/res-villa-303-1.jpg'
 import img2 from '../../assets/projects/res-villa-303-2.png'
 import img3 from '../../assets/projects/res-villa-303-3.png'
@@ -25,6 +26,7 @@ export default function ResVilla303Page() {
       overview="A striking contemporary façade anchored by a bold sculpted terrace and a floating living room cantilevered elegantly above the pool. Clean lines, warm soffit textures, and deep overhangs shape a resort-like character — balancing openness, privacy, and architectural drama in a serene residential setting."
       overview2="The interiors blend soft luxury with expressive details — double-height volumes, refined lighting, and signature feature walls that enrich every space. Calm colours, warm materials, and purposeful layouts create an inviting flow, making each room feel curated, comfortable, and unmistakably elegant."
       heroImage={heroImg}
+      heroImageMobile={heroImgMobile}
       images={[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11]}
     />
   )

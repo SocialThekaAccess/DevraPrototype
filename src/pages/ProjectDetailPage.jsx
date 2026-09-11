@@ -1,5 +1,5 @@
 import SEOMeta from '../components/SEOMeta'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import './ProjectDetailPage.css'
 
@@ -23,6 +23,19 @@ export default function ProjectDetailPage({
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  // Update isMobile on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Use mobile image if available and on mobile device
+  const displayHeroImg = isMobile ? heroImgMobile : heroImg
 
   const openLightbox = (index) => {
     setCurrentImageIndex(index)
@@ -53,14 +66,13 @@ export default function ProjectDetailPage({
       <section className="proj-hero">
         <div className={`proj-hero__img-wrapper ${title === 'UNWALLED' ? 'proj-hero__img-wrapper--unwalled' : ''}`}>
           <img
-            src={heroImg}
+            src={displayHeroImg}
             alt={title}
             className={`proj-hero__img ${title === 'UNWALLED' ? 'proj-hero__img--contain' : ''}`}
             referrerPolicy="no-referrer"
             loading="eager"
           />
         </div>
-        <div className="proj-hero__overlay" />
         <div className="proj-hero__title-wrap">
           <h1 className="proj-hero__title">{title}</h1>
           <span className="proj-hero__category">{category}</span>
