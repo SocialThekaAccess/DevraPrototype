@@ -160,7 +160,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Project Narrative Section */}
       {project.narrative && (
-        <section className="py-20 md:py-28 border-b border-stone-200">
+        <section className="pt-8 pb-20 md:pt-12 md:pb-28 border-b border-stone-200">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               
