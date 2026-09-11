@@ -41,6 +41,7 @@ import resKangs from "../assets/projects/res-kangs.avif";
 import resKangs2 from "../assets/projects/res-kangs-2.avif";
 import resKangs3 from "../assets/projects/res-kangs-3.avif";
 import resVilla361 from "../assets/projects/res-villa-361.avif";
+import resVilla361Mobile from "../assets/projects/Villa361Mobileview.png";
 import resVilla3612 from "../assets/projects/res-villa-361-2.avif";
 import resVilla3613 from "../assets/projects/res-villa-361-3.avif";
 import resVilla3614 from "../assets/projects/res-villa-361-4.avif";
@@ -287,6 +288,7 @@ export const PROJECTS: Project[] = [
     size: "7,200 sq. ft.",
     scope: "Architecture, Interiors & Site Supervision",
     heroImage: resVilla361,
+    mobileHeroImage: resVilla361Mobile,
     description: "A luxury multi-level villa featuring a dramatic floating cantilever stair, double-height glazing, and integrated high-end home automation designed for modern comfort.",
     narrative: {
       site: "Located in a newly developed premium sector of New Chandigarh, the site commands distant views of the Shivalik hills on clear days.",
