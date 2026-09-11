@@ -459,7 +459,7 @@
 
   .proj-meta-strip__item {
     padding: 14px 12px;
-    flex: 1 1 50%;
+    flex: 1 1 33.33%;
     text-align: center;
     align-items: center;
     min-width: 0;
@@ -471,15 +471,21 @@
     align-items: flex-start;
   }
 
+  .proj-meta-strip__item:nth-child(4) {
+    flex: 1 1 100%;
+    text-align: center;
+    border-right: none;
+  }
+
   .proj-meta-strip__value {
-    font-size: 11px;
+    font-size: 13px;
     white-space: nowrap;
     overflow: visible;
     letter-spacing: -0.02em;
   }
 
   .proj-meta-strip__label {
-    font-size: 9px;
+    font-size: 10px;
     white-space: nowrap;
   }
 
@@ -520,26 +526,7 @@
   }
 
   .proj-meta-strip__inner {
-    flex-wrap: nowrap;
     align-items: flex-start;
-  }
-
-  .proj-meta-strip__item {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 12px 5px;
-    border-right: none;
-    border-bottom: none;
-    gap: 3px;
-  }
-
-  .proj-meta-strip__item:first-child {
-    flex: 1.7 1 0;
-    padding: 12px 5px 12px 16px;
-  }
-
-  .proj-meta-strip__item:nth-child(4) {
-    flex: 1.1 1 0;
   }
 
   .proj-meta-strip__item:last-child {
@@ -547,17 +534,17 @@
   }
 
   .proj-meta-strip__label {
-    font-size: 7px;
+    font-size: 9px;
     white-space: nowrap;
     overflow: hidden;
   }
 
   .proj-meta-strip__item:first-child .proj-meta-strip__label {
-    font-size: 7px;
+    font-size: 10px;
   }
 
   .proj-meta-strip__value {
-    font-size: 12px;
+    font-size: 13px;
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
@@ -572,7 +559,7 @@
   }
 
   .proj-meta-strip__item:nth-child(2) .proj-meta-strip__value {
-    font-size: 12px;
+    font-size: 13px;
     white-space: nowrap;
   }
 

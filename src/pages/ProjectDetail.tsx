@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
-import { ArrowLeft, ArrowRight, MapPin, Calendar, Ruler, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import SEOMeta from "../components/SEOMeta";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
+import "./ProjectDetailPage.css";
 
 interface ProjectDetailProps {
   project: Project;
@@ -133,58 +134,26 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       </section>
 
       {/* Project Metadata Strip */}
-      <section className="border-b border-stone-200 bg-stone-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            <div className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
-              <div>
-                <p className="text-[9px] uppercase tracking-widest text-stone-500 font-mono font-bold mb-1">
-                  Location
-                </p>
-                <p className="text-stone-900 text-sm font-medium">
-                  {project.location}
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <Ruler className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
-              <div>
-                <p className="text-[9px] uppercase tracking-widest text-stone-500 font-mono font-bold mb-1">
-                  Project Size
-                </p>
-                <p className="text-stone-900 text-sm font-medium">
-                  {project.size}
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <Calendar className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
-              <div>
-                <p className="text-[9px] uppercase tracking-widest text-stone-500 font-mono font-bold mb-1">
-                  Year
-                </p>
-                <p className="text-stone-900 text-sm font-medium">
-                  {project.year}
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <div className="w-4 h-4 shrink-0 mt-0.5 flex items-center justify-center">
-                <span className="w-2 h-2 bg-stone-500 rounded-full" />
-              </div>
-              <div>
-                <p className="text-[9px] uppercase tracking-widest text-stone-500 font-mono font-bold mb-1">
-                  Scope
-                </p>
-                <p className="text-stone-900 text-sm font-medium">
-                  {project.scope}
-                </p>
-              </div>
-            </div>
+      <section className="proj-meta-strip">
+        <div className="proj-meta-strip__inner">
+          <div className="proj-meta-strip__item">
+            <span className="proj-meta-strip__label">Location</span>
+            <span className="proj-meta-strip__value">{project.location}</span>
+          </div>
+          
+          <div className="proj-meta-strip__item">
+            <span className="proj-meta-strip__label">Project Size</span>
+            <span className="proj-meta-strip__value">{project.size}</span>
+          </div>
+          
+          <div className="proj-meta-strip__item">
+            <span className="proj-meta-strip__label">Year</span>
+            <span className="proj-meta-strip__value">{project.year}</span>
+          </div>
+          
+          <div className="proj-meta-strip__item">
+            <span className="proj-meta-strip__label">Scope</span>
+            <span className="proj-meta-strip__value">{project.scope}</span>
           </div>
         </div>
       </section>
