@@ -118,7 +118,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
         />
         
         {/* Hero Title Overlay */}
-        <div className="absolute inset-0 z-20 flex items-end max-w-7xl mx-auto px-6 md:px-12 pb-16">
+        <div className="absolute bottom-0 left-0 right-0 z-20 max-w-7xl mx-auto px-6 md:px-12 pb-2">
           <div className="text-stone-50 space-y-4 max-w-3xl">
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono font-bold">
               {project.category} // {project.location}
