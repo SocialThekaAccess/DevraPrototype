@@ -351,10 +351,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               What Our Clients Say
             </h3>
           </div>
-          <div className="relative overflow-hidden">
+          <div className="relative">
             <div className="elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9" data-elfsight-app-lazy></div>
             {/* Cover the "Free Google Reviews Widget" watermark */}
-            <div className="absolute bottom-0 left-0 right-0 z-[999] pointer-events-none" style={{height: '36px', background: '#fafaf9'}} />
+            <div className="absolute bottom-0 left-0 right-0 z-[999] pointer-events-none" style={{height: '50px', backgroundColor: '#fafaf9'}} />
           </div>
         </div>
       </section>
