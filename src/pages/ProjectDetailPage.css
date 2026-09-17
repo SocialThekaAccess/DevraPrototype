@@ -134,9 +134,10 @@
 .proj-overview__label {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #999;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .proj-meta-strip__value {
@@ -144,16 +145,21 @@
   font-weight: 600;
   color: #1a1a1a;
   line-height: 1.4;
+  font-family: 'Inter', sans-serif;
 }
 
 /* ============================================
    OVERVIEW SECTION — FIXED SPACING
+   Label now sits ABOVE the text (stacked), so the
+   text column shares the exact same left edge as
+   the image gallery below (both driven by
+   var(--page-gutter) with no extra offset).
    ============================================ */
 .proj-overview {
   padding-top: 0;
-  padding-bottom: clamp(28px, 4vw, 40px);
-  padding-left: var(--page-gutter);
-  padding-right: var(--page-gutter);
+  padding-bottom: clamp(12px, 1.5vw, 18px);
+  padding-left: 0;
+  padding-right: 0;
   margin: 0;
   max-width: 100%;
   width: 100%;
@@ -162,16 +168,19 @@
 
 .proj-overview__inner {
   display: flex;
-  gap: clamp(16px, 3vw, 36px);
-  align-items: flex-start;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 16px);
+  align-items: stretch;
   max-width: var(--content-wide);
   margin: 0 auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
   padding-top: 4px;
 }
 
 .proj-overview__label-col {
-  flex: 0 0 120px;
-  padding-left: 12px;
+  flex: none;
+  padding-left: 0;
   padding-top: 0;
 }
 
@@ -190,7 +199,7 @@
 }
 
 .proj-gallery {
-  padding-top: clamp(8px, 1.5vw, 16px);
+  padding-top: 0;
   padding-bottom: var(--section-space-sm);
   padding-left: var(--page-gutter);
   padding-right: var(--page-gutter);
@@ -434,14 +443,6 @@
 }
 
 @media (max-width: 900px) {
-  .proj-overview__inner {
-    flex-direction: column;
-  }
-
-  .proj-overview__label-col {
-    flex: none;
-  }
-
   .proj-gallery {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
@@ -492,7 +493,7 @@
   }
 
   .proj-overview__label {
-    text-align: center;
+    text-align: left;
   }
 
   .proj-overview__text {
@@ -594,7 +595,7 @@
 
   .proj-overview {
     padding-top: 24px;
-    padding-bottom: 32px;
+    padding-bottom: 16px;
   }
 
   .proj-overview__inner {
@@ -605,11 +606,11 @@
     flex: none;
     width: 100%;
     padding-left: 0;
-    text-align: center;
+    text-align: left;
   }
 
   .proj-gallery {
-    padding-top: 8px;
+    padding-top: 0;
     grid-template-columns: 1fr;
   }
 

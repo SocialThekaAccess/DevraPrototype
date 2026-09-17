@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECTS } from "../data";
+import type { Project } from "../types";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/projects/Villaa303.png";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.png";
 import slider2 from "../../assets/projects/res-villa-361.avif";
 import slider2Mobile from "../../assets/projects/Villa361Mobileview.png";
-import slider3 from "../../assets/projects/UnwalledImage.png";
+import slider3 from "../../assets/projects/Unwalledimageproject.png";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
 import slider4 from "../../assets/projects/Villaa58.png";
 import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.png";
@@ -65,6 +66,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
   // Handle window resize for responsive images
   useEffect(() => {
@@ -255,7 +257,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Featured Projects: Villa 303, Villa 361, Unwalled, Villa 58, Panchkula Housing */}
             {PROJECTS.filter(p => 
               ['villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'].includes(p.id)
@@ -270,11 +272,11 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8 }}
                 onClick={() => handleProjectClick(project.id)}
-                className={`group cursor-pointer space-y-4 ${
-                  index === 4 ? 'lg:col-start-3 lg:row-start-2' : ''
-                }`}
+                onMouseEnter={() => setHoveredProject(project)}
+                onMouseLeave={() => setHoveredProject(null)}
+                className="group cursor-pointer space-y-4"
               >
-                <div className="relative overflow-hidden bg-stone-200 aspect-[4/3] w-full">
+                <div className="relative overflow-hidden bg-stone-200 aspect-[3/2] w-full">
                   <img
                     src={project.heroImage}
                     alt={project.title}
@@ -310,7 +312,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="lg:col-start-2 lg:row-start-2 flex items-center justify-center"
+              className="flex items-center justify-center"
             >
               <div className="text-center space-y-4 py-12">
                 <motion.div
@@ -337,6 +339,73 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
 
         </div>
       </section>
+
+      {/* Google Reviews — below Selected Works */}
+      <section className="py-14 md:py-20 bg-stone-50 border-t border-stone-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="mb-10">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold block mb-3">
+              CLIENT TESTIMONIALS
+            </span>
+            <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
+              What Our Clients Say
+            </h3>
+          </div>
+          <div className="elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9" data-elfsight-app-lazy></div>
+        </div>
+      </section>
+
+      {/* Project Hover Popup Overlay */}
+      <AnimatePresence>
+        {hoveredProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center"
+          >
+            {/* Blurred dark backdrop */}
+            <div className="absolute inset-0 bg-stone-950/60 backdrop-blur-sm" />
+
+            {/* Popup card */}
+            <motion.div
+              initial={{ scale: 0.88, opacity: 0, y: 30 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 20 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-10 w-[90vw] max-w-2xl shadow-2xl overflow-hidden"
+            >
+              {/* Image */}
+              <div className="aspect-[16/9] w-full overflow-hidden">
+                <img
+                  src={hoveredProject.heroImage}
+                  alt={hoveredProject.title}
+                  className="w-full h-full object-cover scale-105"
+                />
+              </div>
+
+              {/* Info bar */}
+              <div className="bg-stone-950 text-stone-50 px-6 py-4 flex items-center justify-between">
+                <div>
+                  <h4 className="font-serif text-xl font-medium tracking-tight">
+                    {hoveredProject.title}
+                  </h4>
+                  <p className="text-[10px] uppercase tracking-widest text-stone-400 font-light mt-0.5">
+                    {hoveredProject.category} — {hoveredProject.location}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-sm text-stone-400">{hoveredProject.year}</span>
+                  <span className="text-[9px] uppercase tracking-widest border border-stone-600 text-stone-300 px-3 py-1.5">
+                    View Project →
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* 5. What We Do Capabilities Grid */}
       <section id="home-capabilities" className="py-12 md:py-16 bg-stone-900 text-stone-50">

@@ -55,7 +55,14 @@ export default function Footer({ onNavigate }: FooterProps) {
               </a>
               <div className="flex items-center gap-2 text-stone-400">
                 <MapPin className="w-3.5 h-3.5 text-stone-500 shrink-0" />
-                <span>New Chandigarh / Chandigarh, India</span>
+                <a
+                  href="https://maps.app.goo.gl/6eYkw6T7eMjL7pk7A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-stone-200 transition-colors duration-200"
+                >
+                  New Chandigarh / Chandigarh, India
+                </a>
               </div>
             </div>
           </div>

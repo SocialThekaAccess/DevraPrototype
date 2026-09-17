@@ -61,7 +61,7 @@ export default function Process() {
                       <span className={`font-mono text-xs ${isActive ? "text-stone-300" : "text-stone-400"}`}>
                         0{step.step}
                       </span>
-                      <span className="font-serif text-sm font-medium">
+                      <span className="font-sans text-sm font-medium">
                         {step.title}
                       </span>
                     </div>
@@ -75,16 +75,21 @@ export default function Process() {
           {/* Right panel: Active step details display (Span 7) */}
           <div className="lg:col-span-7 bg-stone-100 p-8 md:p-12 border border-stone-200 space-y-6">
             <div className="flex items-center justify-between border-b border-stone-300 pb-4">
-              <span className="text-stone-400 font-mono text-xs uppercase tracking-widest font-semibold">
+              <span className="text-stone-400 font-mono text-xs uppercase tracking-[0.3em] font-bold">
                 PHASE 0{activeStep} OF 08
               </span>
               <Milestone className="w-5 h-5 text-stone-500" />
             </div>
 
             <div className="space-y-4">
-              <h2 className="font-serif text-3xl text-stone-900 font-medium">
-                {PROCESS_STEPS[activeStep - 1].title}
-              </h2>
+              <h2 className="font-serif text-3xl text-stone-900 font-medium tracking-tight"
+                dangerouslySetInnerHTML={{
+                  __html: PROCESS_STEPS[activeStep - 1].title.replace(
+                    /&/g,
+                    '<span style="font-family:Inter,sans-serif;font-style:normal">&</span>'
+                  )
+                }}
+              />
               <p className="text-stone-700 text-xs md:text-sm leading-relaxed font-light">
                 {PROCESS_STEPS[activeStep - 1].description}
               </p>
@@ -92,7 +97,7 @@ export default function Process() {
 
             {/* Structured checklist/outcome block for this step */}
             <div className="pt-6 border-t border-stone-300/60 space-y-3">
-              <h4 className="text-[11px] uppercase tracking-widest text-stone-900 font-semibold font-mono">
+              <h4 className="text-[10px] uppercase tracking-[0.3em] text-stone-900 font-bold font-mono">
                 Key Deliverables & Outcomes
               </h4>
               <ul className="space-y-2 text-xs text-stone-600 font-light">

@@ -17,11 +17,11 @@ export default function About({ onNavigate }: AboutProps) {
   return (
     <div id="about-page" className="bg-stone-50 text-stone-900 min-h-screen pt-28 pb-20">
       <SEOMeta
-        title="About Ar. Rajkumar Devra & Studio Profile | DEVRA Architects"
-        description="Learn about DEVRA Architects, founded by Ar. Rajkumar Devra. Discover our design-to-build approach and our architectural philosophy of 'charged voids' inspired by Le Corbusier's modern Chandigarh legacy."
+        title="About Ar. Varun Devra & Studio Profile | DEVRA Architects"
+        description="Learn about DEVRA Architects, led by Ar. Varun Devra. Discover our design approach focused on context, natural light, functionality, and refined architecture built to remain relevant over time."
         keywords={[
-          "Ar. Rajkumar Devra architect",
-          "founder of Devra Architects",
+          "Ar. Varun Devra architect",
+          "principal architect DEVRA",
           "New Chandigarh architecture firm",
           "sustainable luxury architects punjab",
           "corbusier style modernism india",
@@ -32,7 +32,7 @@ export default function About({ onNavigate }: AboutProps) {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header section */}
-        <div className="border-b border-stone-200 pb-10 mb-16">
+        <div className="border-b border-stone-200 pb-8 mb-10">
           <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold mb-3">
             DEVRA ARCHITECTS // STUDIO PROFILE
           </p>
@@ -79,52 +79,65 @@ export default function About({ onNavigate }: AboutProps) {
         </div>
 
         {/* Founder & Leadership Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 border-b border-stone-200 pb-20">
-          <div className="lg:col-span-4 space-y-4">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold">
-              FOUNDERSHIP // DIRECTION
-            </span>
-            <h3 className="font-serif text-3xl text-stone-900 font-medium tracking-tight">
-              Our Leadership
-            </h3>
-            <p className="text-stone-500 text-xs leading-relaxed font-light">
-              Under the direct vision of our Principal Architect, DEVRA maintains a strict non-compromise standard over visual proportion and on-site build quality.
-            </p>
-          </div>
+        <div className="mb-24 border-b border-stone-200 pb-20">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold block mb-12">
+            LEADERSHIP // PRINCIPAL ARCHITECT
+          </span>
 
-          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            {/* Ar. Rajkumar Devra bio */}
-            <div className="md:col-span-5 bg-stone-200 aspect-[3/4] overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-stone-200">
+            {/* Left — Image */}
+            <div className="bg-stone-200 aspect-[4/5] overflow-hidden">
               <img
                 src={residentialImg}
-                alt="Ar. Rajkumar Devra Principal"
+                alt="Ar. Varun Devra — Principal Architect"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover grayscale contrast-110"
+                className="w-full h-full object-cover grayscale"
               />
             </div>
-            <div className="md:col-span-7 space-y-6">
-              <div className="space-y-1">
-                <h4 className="font-serif text-2xl text-stone-900 font-medium">
-                  Ar. Rajkumar Devra
-                </h4>
-                <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono font-semibold">
-                  Founder & Principal Architect
-                </p>
-              </div>
-              <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light font-sans">
-                Ar. Rajkumar Devra founded the studio with a commitment to create residences that act as spiritual sanctuaries of light, volume, and breeze. Heavily influenced by Le Corbusier's regional modernism in Chandigarh, he rejects standard superficial ornamentation, choosing instead to design with "charged voids"—strategic structural punctures and triple-height courtyards that transform heavy monolithic structures into dynamic, breathing living canvases.
-              </p>
-              <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light font-sans">
-                By taking a hands-on, direct design-to-build approach, he ensures that every cast concrete line, exposed clay brick bond, and shadow-gap detail is carved on-site with flawless craft, preserving the purity of the initial spatial vision.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-stone-200 text-xs">
-                <div>
-                  <span className="text-stone-400 font-mono text-[9px] uppercase tracking-widest block">Core Focus</span>
-                  <span className="text-stone-800 font-medium mt-1 block">Spatial Planning & Cavity Masonry</span>
+
+            {/* Right — Bio */}
+            <div className="flex flex-col justify-between p-10 md:p-14 bg-stone-50 border-l border-stone-200">
+              <div className="space-y-8">
+                {/* Name & Title */}
+                <div className="space-y-2 pb-8 border-b border-stone-200">
+                  <h3 className="font-serif text-4xl md:text-5xl text-stone-900 font-medium tracking-tight">
+                    Ar. Varun Devra
+                  </h3>
+                  <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
+                    Principal Architect | DEVRA Architects
+                  </p>
                 </div>
-                <div>
-                  <span className="text-stone-400 font-mono text-[9px] uppercase tracking-widest block">Education</span>
-                  <span className="text-stone-800 font-medium mt-1 block">B. Arch, COA Registered Architect</span>
+
+                {/* Bio paragraphs */}
+                <div className="space-y-5">
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                    Ar. Varun Devra is the Principal Architect and creative lead at DEVRA Architects, with over 13 years of professional experience in architecture and design.
+                  </p>
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                    An alumnus of the School of Planning and Architecture, New Delhi, his work is defined by thoughtful planning, contemporary expression, and a strong understanding of how people experience space.
+                  </p>
+                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                    His approach goes beyond aesthetics — focusing on context, natural light, functionality, proportion, and the aspirations of the people who inhabit each project. Under his leadership, DEVRA Architects creates architecture that is purposeful, refined, and built to remain relevant over time.
+                  </p>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-stone-200">
+                <div className="space-y-1">
+                  <span className="text-[9px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold block">Experience</span>
+                  <span className="font-serif text-2xl text-stone-900 font-medium">13+</span>
+                  <span className="text-[10px] text-stone-500 font-light block">Years</span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[9px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold block">Education</span>
+                  <span className="text-xs text-stone-800 font-medium leading-snug block mt-1">School of Planning & Architecture</span>
+                  <span className="text-[10px] text-stone-500 font-light block">New Delhi</span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[9px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold block">Firm</span>
+                  <span className="text-xs text-stone-800 font-medium leading-snug block mt-1">DEVRA Architects</span>
+                  <span className="text-[10px] text-stone-500 font-light block">New Chandigarh</span>
                 </div>
               </div>
             </div>
@@ -175,9 +188,11 @@ export default function About({ onNavigate }: AboutProps) {
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
               MATERIAL ARCHIVE // STUDIO DETAILS
             </span>
-            <h3 className="font-serif text-3xl text-stone-900 font-medium tracking-tight mt-1">
-              Craft & Materiality Gallery
-            </h3>
+            <h3 className="font-serif text-3xl text-stone-900 font-medium tracking-tight mt-1"
+              dangerouslySetInnerHTML={{
+                __html: 'Craft <span style="font-family:Inter,sans-serif;font-style:normal">&</span> Materiality Gallery'
+              }}
+            />
             <p className="text-stone-500 text-xs font-light mt-2 max-w-xl">
               We focus heavily on regional material sourcing, textures that age gracefully, and custom timber/concrete joinery executed directly on-site.
             </p>

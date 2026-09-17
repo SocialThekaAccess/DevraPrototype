@@ -14,7 +14,7 @@ interface ProjectDetailProps {
 
 function buildRows(images: string[]) {
   const rows: { type: string; items: string[] }[] = [];
-  const patterns = ['two', 'full', 'three', 'full', 'two', 'full', 'three'];
+  const patterns = ['two', 'three', 'full', 'two', 'three', 'full', 'two'];
   let imageIndex = 0;
   let patternIndex = 0;
 
@@ -126,7 +126,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight font-medium">
               {project.title}
             </h1>
-            <p className="text-stone-200 text-sm md:text-base font-light leading-relaxed max-w-2xl">
+            <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed max-w-2xl">
               {project.description}
             </p>
           </div>
@@ -135,111 +135,68 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Project Metadata Strip */}
       <section className="proj-meta-strip">
-        <div className="proj-meta-strip__inner" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-          {/* First Row - 3 items */}
-          <div className="proj-meta-strip__item" style={{ flex: '0 1 auto', textAlign: 'left' }}>
+        <div className="proj-meta-strip__inner">
+          <div className="proj-meta-strip__item">
             <span className="proj-meta-strip__label">Location</span>
             <span className="proj-meta-strip__value">{project.location}</span>
           </div>
-          
-          <div className="proj-meta-strip__item" style={{ flex: '0 1 auto', textAlign: 'center', alignItems: 'center' }}>
+          <div className="proj-meta-strip__item">
             <span className="proj-meta-strip__label">Project Size</span>
             <span className="proj-meta-strip__value">{project.size}</span>
           </div>
-          
-          <div className="proj-meta-strip__item" style={{ flex: '0 1 auto', textAlign: 'right', alignItems: 'flex-end', paddingRight: '16px' }}>
+          <div className="proj-meta-strip__item">
             <span className="proj-meta-strip__label">Year</span>
             <span className="proj-meta-strip__value">{project.year}</span>
           </div>
-          
-          {/* Second Row - Scope full width */}
-          <div className="proj-meta-strip__item" style={{ flex: '1 1 100%', width: '100%' }}>
-            <span className="proj-meta-strip__label">Scope</span>
-            <span className="proj-meta-strip__value">{project.scope}</span>
+          <div className="proj-meta-strip__item proj-meta-strip__item--last">
+            <span className="proj-meta-strip__label">Category</span>
+            <span className="proj-meta-strip__value">{project.category}</span>
           </div>
         </div>
       </section>
 
       {/* Project Narrative Section */}
       {project.narrative && (
-        <section className="pt-8 pb-20 md:pt-12 md:pb-28 border-b border-stone-200">
+        <section className="pt-8 pb-6 md:pt-10 md:pb-8">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-              
-              {/* Label Column */}
-              <div className="lg:col-span-3">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
-                  Project Narrative
-                </span>
-              </div>
 
-              {/* Content Column */}
-              <div className="lg:col-span-9 space-y-10">
-                
-                {project.narrative.site && (
-                  <div className="space-y-3">
-                    <h3 className="text-xs uppercase tracking-widest text-stone-900 font-semibold font-mono pb-2 border-b border-stone-300">
-                      Site & Context
-                    </h3>
-                    <p className="text-stone-700 text-sm leading-relaxed font-light">
-                      {project.narrative.site}
-                    </p>
-                  </div>
-                )}
-
-                {project.narrative.planning && (
-                  <div className="space-y-3">
-                    <h3 className="text-xs uppercase tracking-widest text-stone-900 font-semibold font-mono pb-2 border-b border-stone-300">
-                      Planning & Spatial Organization
-                    </h3>
-                    <p className="text-stone-700 text-sm leading-relaxed font-light">
-                      {project.narrative.planning}
-                    </p>
-                  </div>
-                )}
-
-                {project.narrative.materials && (
-                  <div className="space-y-3">
-                    <h3 className="text-xs uppercase tracking-widest text-stone-900 font-semibold font-mono pb-2 border-b border-stone-300">
-                      Material Palette
-                    </h3>
-                    <p className="text-stone-700 text-sm leading-relaxed font-light">
-                      {project.narrative.materials}
-                    </p>
-                  </div>
-                )}
-
-                {project.narrative.lightVentilation && (
-                  <div className="space-y-3">
-                    <h3 className="text-xs uppercase tracking-widest text-stone-900 font-semibold font-mono pb-2 border-b border-stone-300">
-                      Light & Ventilation Strategy
-                    </h3>
-                    <p className="text-stone-700 text-sm leading-relaxed font-light">
-                      {project.narrative.lightVentilation}
-                    </p>
-                  </div>
-                )}
-
-                {project.narrative.execution && (
-                  <div className="space-y-3">
-                    <h3 className="text-xs uppercase tracking-widest text-stone-900 font-semibold font-mono pb-2 border-b border-stone-300">
-                      Execution Details
-                    </h3>
-                    <p className="text-stone-700 text-sm leading-relaxed font-light">
-                      {project.narrative.execution}
-                    </p>
-                  </div>
-                )}
-
-              </div>
+            {/* OVERVIEW label — above paragraph */}
+            <div className="mb-4">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
+                Overview
+              </span>
             </div>
+
+            {/* Paragraph — full width, aligned with images */}
+            <div className="space-y-4">
+              <p className="text-stone-700 text-sm leading-relaxed font-light">
+                {[
+                  project.narrative.site,
+                  project.narrative.planning,
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              </p>
+              {(project.narrative.materials || project.narrative.lightVentilation || project.narrative.execution) && (
+                <p className="text-stone-700 text-sm leading-relaxed font-light">
+                  {[
+                    project.narrative.materials,
+                    project.narrative.lightVentilation,
+                    project.narrative.execution,
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                </p>
+              )}
+            </div>
+
           </div>
         </section>
       )}
 
       {/* Image Gallery with Dynamic Rows */}
       {rows.length > 0 && (
-        <section className="py-20 md:py-28">
+        <section className="pt-4 pb-10 md:pt-6 md:pb-14">
           <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-8">
             {rows.map((row, rowIndex) => (
               <motion.div

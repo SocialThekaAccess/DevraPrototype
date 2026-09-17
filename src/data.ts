@@ -73,8 +73,9 @@ import houUnwalled4 from "../assets/projects/hou-unwalled-4.png";
 import houUnwalled5 from "../assets/projects/hou-unwalled-5.png";
 import houUnwalled6 from "../assets/projects/hou-unwalled-6.png";
 import houUnwalled7 from "../assets/projects/hou-unwalled-7.png";
-import houUnwalledHero from "../assets/projects/UnwalledImage.png";
+import houUnwalledHero from "../assets/projects/Unwalledimageproject.png";
 import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.png";
+import houUnwalledExtra from "../assets/projects/Unwalledimageproject.png";
 
 // New Projects Imports
 import comDevraArch1 from "../assets/projects/com-devra-arch-1.jpg";
@@ -406,7 +407,7 @@ export const PROJECTS: Project[] = [
     category: "Housing",
     location: "New Chandigarh",
     year: "2026",
-    size: "3,50,000 sq. ft.",
+    size: "3,500 sq. ft.",
     scope: "Architecture, Masterplanning & Luxury Housing Design",
     heroImage: houUnwalledHero,
     mobileHeroImage: houUnwalledHeroMobile,
@@ -419,12 +420,13 @@ export const PROJECTS: Project[] = [
       execution: "UNWALLED represents the pinnacle of luxury housing execution, with meticulous attention to every detail from structural engineering to landscape installation. Advanced construction methodologies ensure precision in facade work and interior finishes, while sustainable building practices minimize environmental impact. The phased delivery approach allows for continuous quality control and refinement throughout construction."
     },
     images: [
+      houUnwalledExtra,
       houUnwalled1,
       houUnwalled2,
       houUnwalled3,
       houUnwalled4,
-      houUnwalled5,
       houUnwalled6,
+      houUnwalled5,
       houUnwalled7
     ]
   },
@@ -465,25 +467,6 @@ export const PROJECTS: Project[] = [
       execution: "From intimate display zones to lounge-like seating, each corner reflects sophistication and comfort, shaping a boutique that feels both premium and inviting."
     },
     images: [comFortofino2, comFortofino3, comFortofino4, comFortofino5, comFortofino6, comFortofino7, comFortofino8, comFortofino9]
-  },
-  {
-    id: "milk-point",
-    title: "Milk Point",
-    category: "Commercial",
-    location: "Chandigarh",
-    year: "2020",
-    size: "",
-    scope: "Retail Interior Design",
-    heroImage: comMilkPoint1,
-    description: "A refined retail interior blending warm materials, clean geometry, and controlled lighting.",
-    narrative: {
-      site: "A commercial retail location in Chandigarh focused on premium product display.",
-      planning: "The space balances display clarity with experiential movement, using layered shelving, soft illumination, and subtle human activity.",
-      materials: "Warm materials with clean geometry and neutral tones establish high-end retail identity.",
-      lightVentilation: "Controlled, integrated lighting enhances product visibility and customer engagement.",
-      execution: "A contemporary commercial setup focused on realism, material richness, and spatial flow, making the space feel active, functional, and naturally immersive."
-    },
-    images: [comMilkPoint2]
   },
   {
     id: "gills-farmhouse",

@@ -49,9 +49,11 @@ export default function Journal() {
           <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold mb-3">
             DEVRA ARCHITECTS // JOURNAL
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-medium tracking-tight">
-            Architectural Insights & Guides
-          </h1>
+          <h1 className="font-serif text-4xl md:text-5xl text-stone-900 font-medium tracking-tight"
+            dangerouslySetInnerHTML={{
+              __html: "Architectural Insights <span style=\"font-family:Inter,sans-serif;font-style:normal\">&</span> Guides"
+            }}
+          />
           <p className="text-stone-600 text-xs md:text-sm mt-3 max-w-2xl font-light leading-relaxed">
             A serious collection of educational essays, planning frameworks, and material curation advice designed to assist premium homeowners on their construction journeys.
           </p>
@@ -99,13 +101,18 @@ export default function Journal() {
               className="group cursor-pointer bg-stone-100 border border-stone-200 p-6 md:p-8 flex flex-col justify-between hover:border-stone-400 transition-all duration-300"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between text-[10px] font-mono text-stone-500 uppercase tracking-widest">
-                  <span className="text-stone-700 font-semibold">{post.category}</span>
-                  <span>{post.date}</span>
+                <div className="flex items-center justify-between text-[10px] font-mono text-stone-500 uppercase tracking-[0.3em]">
+                  <span className="text-stone-700 font-bold">{post.category}</span>
+                  <span className="font-bold">{post.date}</span>
                 </div>
-                <h3 className="font-serif text-xl md:text-2xl text-stone-900 font-medium group-hover:text-stone-600 transition-colors leading-tight">
-                  {post.title}
-                </h3>
+                <h3 className="font-serif text-xl md:text-2xl text-stone-900 font-medium group-hover:text-stone-600 transition-colors leading-tight"
+                  dangerouslySetInnerHTML={{
+                    __html: post.title.replace(
+                      /&/g,
+                      '<span style="font-family:Inter,sans-serif;font-style:normal">&</span>'
+                    )
+                  }}
+                />
                 <p className="text-stone-600 text-xs font-light leading-relaxed">
                   {post.summary}
                 </p>
@@ -161,9 +168,14 @@ export default function Journal() {
                   <span className="flex items-center gap-1"><User className="w-3.5 h-3.5" /> {activeArticle.author}</span>
                   <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {activeArticle.readTime}</span>
                 </div>
-                <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight leading-tight">
-                  {activeArticle.title}
-                </h2>
+                <h2 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight leading-tight"
+                  dangerouslySetInnerHTML={{
+                    __html: activeArticle.title.replace(
+                      /&/g,
+                      '<span style="font-family:Inter,sans-serif;font-style:normal">&</span>'
+                    )
+                  }}
+                />
               </div>
 
               {/* Styled text block */}

@@ -22,9 +22,18 @@
   --fs-p: clamp(0.875rem, 1.5vw, 1.125rem);
 }
 
-/* Base style refinements */
-html {
-  scroll-behavior: smooth;
+/* Ampersand override — use Inter for & in all serif headings */
+@font-face {
+  font-family: "Playfair Display";
+  src: local("Inter"), local("Inter-Regular");
+  font-weight: 100 900;
+  font-style: normal italic;
+  unicode-range: U+0026;
+}
+
+/* Force & ampersand in serif headings to use sans-serif font */
+.font-serif {
+  font-variant-numeric: normal;
 }
 
 body {
@@ -45,4 +54,33 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #a3a19b;
+}
+
+/* Hide Elfsight free branding */
+.elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9 .eapps-link,
+.eapps-google-reviews-footer,
+[class*="eapps-link"],
+[class*="eapps-google-reviews-footer"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Hide Elfsight widget's own title "What Our Customers Say" */
+.eapps-google-reviews-title,
+[class*="eapps-google-reviews-title"],
+.eapps-google-reviews-header-title,
+[class*="eapps-google-reviews-header-title"] {
+  display: none !important;
+}
+
+/* Hide Elfsight watermark footer more aggressively */
+.elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9 + *,
+.eapps-widget-toolbar,
+[data-eapps-widget-toolbar],
+iframe[src*="elfsight"] + div,
+.elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9 ~ div {
+  display: none !important;
 }
