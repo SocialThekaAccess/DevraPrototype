@@ -351,10 +351,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               What Our Clients Say
             </h3>
           </div>
-          <div className="relative">
+          <div className="relative overflow-hidden">
             <div className="elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9" data-elfsight-app-lazy></div>
             {/* Cover the "Free Google Reviews Widget" watermark */}
-            <div className="absolute bottom-0 left-0 right-0 h-10 bg-stone-50 z-50 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 z-[999] pointer-events-none" style={{height: '36px', background: '#fafaf9'}} />
           </div>
         </div>
       </section>
@@ -536,7 +536,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             START A CONVERSATION
           </span>
           <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl text-stone-900 font-medium tracking-tight leading-tight">
-            “Your ideas matter — together, we’ll turn them into timeless spaces.”
+            "Your ideas matter — together, we'll turn them into timeless spaces."
           </h3>
           <p className="text-stone-600 text-xs md:text-sm max-w-xl mx-auto font-light leading-relaxed">
             Tell us about your residential plot, your lifestyle requirements, or your next interior workspace. Let's build something exceptional.
