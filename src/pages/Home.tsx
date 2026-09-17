@@ -351,7 +351,11 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               What Our Clients Say
             </h3>
           </div>
-          <div className="elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9" data-elfsight-app-lazy></div>
+          <div className="relative">
+            <div className="elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9" data-elfsight-app-lazy></div>
+            {/* Cover the "Free Google Reviews Widget" watermark */}
+            <div className="absolute bottom-0 left-0 right-0 h-10 bg-stone-50 z-50 pointer-events-none" />
+          </div>
         </div>
       </section>
 
