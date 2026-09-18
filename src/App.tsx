@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy as rLazy, Suspense as rSuspense, useState, useEffect } from "react";
+import { lazy as rLazy, Suspense, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -104,7 +104,7 @@ function AppInner() {
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <rSuspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<LoadingSpinner />}>
               <Routes location={location}>
                 <Route path="/" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects" element={<Projects onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
@@ -132,7 +132,7 @@ function AppInner() {
                 <Route path="/services" element={<Services onNavigate={onNavigate} />} />
                 <Route path="*" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
               </Routes>
-            </rSuspense>
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>
