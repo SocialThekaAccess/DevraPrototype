@@ -84,3 +84,18 @@ iframe[src*="elfsight"] + div,
 .elfsight-app-01a913d3-aea8-41ae-821d-a185a52cb1e9 ~ div {
   display: none !important;
 }
+
+/* Reviews infinite marquee */
+@keyframes reviews-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.reviews-marquee {
+  animation: reviews-scroll 35s linear infinite;
+  width: max-content;
+}
+
+.reviews-marquee:hover {
+  animation-play-state: paused;
+}
