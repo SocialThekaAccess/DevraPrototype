@@ -65,6 +65,29 @@ function AppInner() {
   // Scroll to top on route change
   useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
 
+  // Mobile back button guard — push a dummy entry so first back press
+  // stays within the app instead of closing the browser tab
+  useEffect(() => {
+    // Only push the guard entry once per session on the root path
+    if (location.pathname === "/" && window.history.state?.__guardPushed !== true) {
+      window.history.replaceState({ __guardPushed: true }, "");
+      window.history.pushState({ __guardPushed: true }, "", "/");
+    }
+  }, []);
+
+  // Handle the popstate so that if we're at the root and there's nothing
+  // left in the stack, we push the guard entry back instead of letting
+  // the browser exit
+  useEffect(() => {
+    const handlePopState = () => {
+      if (location.pathname === "/") {
+        window.history.pushState({ __guardPushed: true }, "", "/");
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [location.pathname]);
+
   // onNavigate maps old path keys to real URLs
   const onNavigate = (path: string) => {
     const map: Record<string, string> = {
