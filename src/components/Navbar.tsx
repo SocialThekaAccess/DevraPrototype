@@ -7,32 +7,41 @@ interface NavbarProps {
   onNavigate: (path: string) => void;
 }
 
+// Map path key → real URL href
+const pathToHref: Record<string, string> = {
+  home: "/",
+  projects: "/projects",
+  process: "/process",
+  journal: "/journal",
+  about: "/about",
+  contact: "/contact",
+  services: "/services",
+  vision: "/vision",
+};
+
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const isHomePage = currentPath === 'home';
+  const isHomePage = currentPath === "home";
   const shouldShowWhiteLogo = isHomePage && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-
     return () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
 
-  const isHome = currentPath === "home";
-  const showWhiteText = isHome && !isScrolled;
+  const showWhiteText = isHomePage && !isScrolled;
 
   const navItems = [
     { label: "Projects", path: "projects" },
@@ -42,12 +51,28 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     { label: "Contact", path: "contact" },
   ];
 
-  const handleNavClick = (path: string, external?: boolean) => {
+  /**
+   * handleNavClick — called on left-click only (not Ctrl/Meta/middle).
+   * We call e.preventDefault() to stop the browser from doing a full
+   * page reload, then use SPA navigation instead.
+   * Ctrl+Click / middle-click are NOT intercepted → browser opens new tab.
+   */
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+    external?: boolean
+  ) => {
+    // Let browser handle Ctrl / Cmd / middle-click natively (new tab)
+    if (e.ctrlKey || e.metaKey || e.button === 1) return;
+
+    e.preventDefault();
+
     if (external) {
       window.open("https://www.devrabuildtech.com/", "_blank");
       setIsOpen(false);
       return;
     }
+
     onNavigate(path);
     setIsOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,75 +82,95 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     <header
       id="devra-header"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-stone-50 border-b border-stone-200 shadow-sm' 
-          : 'bg-transparent border-b border-transparent'
+        isScrolled
+          ? "bg-stone-50 border-b border-stone-200 shadow-sm"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
-        {/* Brand Logo - Text-based with stacked layout */}
-        <button
+        {/* Brand Logo */}
+        <a
           id="nav-logo"
-          onClick={() => handleNavClick("home")}
-          className="flex flex-col items-start cursor-pointer group shrink-0 leading-none"
+          href="/"
+          onClick={(e) => handleNavClick(e, "home")}
+          className="flex flex-col items-start cursor-pointer group shrink-0 leading-none no-underline"
         >
-          <span className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors ${
-            showWhiteText ? 'text-white' : 'text-stone-900'
-          } group-hover:opacity-80`}>
+          <span
+            className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors ${
+              showWhiteText ? "text-white" : "text-stone-900"
+            } group-hover:opacity-80`}
+          >
             DEVRA
           </span>
-          <span className={`font-sans text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-semibold transition-colors ${
-            showWhiteText ? 'text-white/80' : 'text-stone-600'
-          } group-hover:opacity-80 -mt-0.5`}>
+          <span
+            className={`font-sans text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-semibold transition-colors ${
+              showWhiteText ? "text-white/80" : "text-stone-600"
+            } group-hover:opacity-80 -mt-0.5`}
+          >
             Architects
           </span>
-        </button>
+        </a>
 
         {/* Desktop Navigation */}
-        <nav id="desktop-nav" className="hidden lg:flex items-center h-full flex-nowrap space-x-5 xl:space-x-8 shrink-0">
+        <nav
+          id="desktop-nav"
+          className="hidden lg:flex items-center h-full flex-nowrap space-x-5 xl:space-x-8 shrink-0"
+        >
           {navItems.map((item) => {
-            const isActive = currentPath === item.path && !item.external;
+            const isActive = currentPath === item.path;
             return (
-              <button
+              <a
                 key={item.path}
                 id={`nav-link-${item.path}`}
-                onClick={() => handleNavClick(item.path, item.external)}
-                className={`whitespace-nowrap text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer ${
+                href={pathToHref[item.path] ?? `/${item.path}`}
+                onClick={(e) => handleNavClick(e, item.path)}
+                className={`whitespace-nowrap text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer no-underline ${
                   isActive
-                    ? showWhiteText ? "text-white" : "text-stone-900"
-                    : showWhiteText ? "text-white/90 hover:text-white" : "text-stone-700 hover:text-stone-900"
+                    ? showWhiteText
+                      ? "text-white"
+                      : "text-stone-900"
+                    : showWhiteText
+                    ? "text-white/90 hover:text-white"
+                    : "text-stone-700 hover:text-stone-900"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className={`absolute bottom-0 left-0 w-full h-[1px] transition-all ${showWhiteText ? "bg-white" : "bg-stone-900"}`} />
+                  <span
+                    className={`absolute bottom-0 left-0 w-full h-[1px] transition-all ${
+                      showWhiteText ? "bg-white" : "bg-stone-900"
+                    }`}
+                  />
                 )}
-              </button>
+              </a>
             );
           })}
         </nav>
 
         {/* CTA Button */}
         <div className="hidden lg:flex items-center h-full shrink-0">
-          <button
+          <a
             id="nav-cta-button"
-            onClick={() => handleNavClick("contact")}
-            className={`flex items-center gap-1 whitespace-nowrap text-[11px] uppercase tracking-widest font-sans font-medium px-5 py-2.5 rounded-none transition-all duration-300 cursor-pointer ${
+            href="/contact"
+            onClick={(e) => handleNavClick(e, "contact")}
+            className={`flex items-center gap-1 whitespace-nowrap text-[11px] uppercase tracking-widest font-sans font-medium px-5 py-2.5 rounded-none transition-all duration-300 cursor-pointer no-underline ${
               showWhiteText
-                ? 'border border-white/30 hover:border-white text-white bg-transparent hover:bg-white hover:text-stone-900'
-                : 'border border-stone-900/10 hover:border-stone-900 text-stone-900 bg-transparent hover:bg-stone-900 hover:text-stone-50'
+                ? "border border-white/30 hover:border-white text-white bg-transparent hover:bg-white hover:text-stone-900"
+                : "border border-stone-900/10 hover:border-stone-900 text-stone-900 bg-transparent hover:bg-stone-900 hover:text-stone-50"
             }`}
           >
             Start a Project
             <ArrowUpRight className="w-3.5 h-3.5" />
-          </button>
+          </a>
         </div>
 
-        {/* Mobile / Tablet Menu Button (now covers landscape too, up to lg) */}
+        {/* Mobile Menu Toggle */}
         <button
           id="mobile-menu-toggle"
           onClick={() => setIsOpen(!isOpen)}
-          className={`lg:hidden shrink-0 h-full flex items-center p-1 cursor-pointer focus:outline-none ${showWhiteText ? "text-white" : "text-stone-950"}`}
+          className={`lg:hidden shrink-0 h-full flex items-center p-1 cursor-pointer focus:outline-none ${
+            showWhiteText ? "text-white" : "text-stone-950"
+          }`}
           aria-label="Toggle menu"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -143,32 +188,36 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           <div className="space-y-8 pt-2">
             <nav className="flex flex-col divide-y divide-stone-200">
               {navItems.map((item) => {
-                const isActive = currentPath === item.path && !item.external;
+                const isActive = currentPath === item.path;
                 return (
-                  <button
+                  <a
                     key={item.path}
                     id={`mobile-nav-link-${item.path}`}
-                    onClick={() => handleNavClick(item.path, item.external)}
-                    className={`text-base uppercase tracking-widest text-left font-sans font-medium transition-all py-5 ${
-                      isActive ? "text-stone-900 pl-2 border-l-2 border-stone-900" : "text-stone-500"
+                    href={pathToHref[item.path] ?? `/${item.path}`}
+                    onClick={(e) => handleNavClick(e, item.path)}
+                    className={`text-base uppercase tracking-widest text-left font-sans font-medium transition-all py-5 no-underline block ${
+                      isActive
+                        ? "text-stone-900 pl-2 border-l-2 border-stone-900"
+                        : "text-stone-500"
                     }`}
                   >
                     {item.label}
-                  </button>
+                  </a>
                 );
               })}
             </nav>
           </div>
 
           <div className="space-y-6 pb-[max(1rem,env(safe-area-inset-bottom))]">
-            <button
+            <a
               id="mobile-cta-button"
-              onClick={() => handleNavClick("contact")}
-              className="w-full flex items-center justify-center gap-1 text-[11px] uppercase tracking-widest font-sans font-medium bg-stone-900 text-stone-50 py-4 transition-all duration-300"
+              href="/contact"
+              onClick={(e) => handleNavClick(e, "contact")}
+              className="w-full flex items-center justify-center gap-1 text-[11px] uppercase tracking-widest font-sans font-medium bg-stone-900 text-stone-50 py-4 transition-all duration-300 no-underline"
             >
               Start a Project
               <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
             <div className="text-center">
               <p className="text-[10px] text-stone-400 uppercase tracking-widest">
                 New Chandigarh / Chandigarh / Mohali
