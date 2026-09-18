@@ -47,7 +47,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Update isMobile on window resize
   useEffect(() => {
     const handleResize = () => {
@@ -57,13 +57,13 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   // Use mobile images if available, otherwise fallback to regular images
   const displayImages = isMobile && project.mobileImages ? project.mobileImages : project.images;
   const heroImage = isMobile && project.mobileHeroImage ? project.mobileHeroImage : project.heroImage;
-  
+
   const rows = buildRows(displayImages || []);
-  
+
   // Find adjacent projects for navigation
   const currentIndex = PROJECTS.findIndex((p) => p.id === project.id);
   const prevProject = currentIndex > 0 ? PROJECTS[currentIndex - 1] : PROJECTS[PROJECTS.length - 1];
@@ -123,7 +123,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
             className="w-full h-full object-cover object-center"
           />
         </picture>
-        
+
         {/* Hero Title Overlay */}
         <div className="absolute bottom-0 left-0 right-0 z-20 max-w-7xl mx-auto px-6 md:px-12 pb-2">
           <div className="text-stone-50 space-y-4 max-w-3xl">
@@ -164,18 +164,18 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Project Narrative Section */}
       {project.narrative && (
-        <section className="pt-8 pb-6 md:pt-10 md:pb-8">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <section className="pt-3 pb-2 md:pt-4 md:pb-2">
+          <div className="proj-meta-strip__inner">
 
             {/* OVERVIEW label — above paragraph */}
-            <div className="mb-4">
+            <div className="mb-3">
               <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
                 Overview
               </span>
             </div>
 
-            {/* Paragraph — full width, aligned with images */}
-            <div className="space-y-4">
+            {/* Paragraph */}
+            <div className="space-y-3">
               <p className="text-stone-700 text-sm leading-relaxed font-light">
                 {[
                   project.narrative.site,
@@ -203,8 +203,9 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Image Gallery with Dynamic Rows */}
       {rows.length > 0 && (
-        <section className="pt-4 pb-10 md:pt-6 md:pb-14">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-8">
+        <section className="pt-4 pb-10 md:pt-5 md:pb-14">
+          <div className="proj-meta-strip__inner">
+            <div className="space-y-8 w-full">
             {rows.map((row, rowIndex) => (
               <motion.div
                 key={`row-${rowIndex}`}
@@ -239,6 +240,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
               </motion.div>
             ))}
           </div>
+          </div>
         </section>
       )}
 
@@ -246,7 +248,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       <section className="py-16 border-t border-stone-200 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
+
             {/* Previous Project */}
             <button
               onClick={() => handleNavigateToProject(prevProject.id)}
@@ -362,7 +364,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
               alt={`${project.title} ${currentImageIndex + 1}`}
               className="w-full h-full object-contain"
             />
-            
+
             {/* Image Counter */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-mono">
               {currentImageIndex + 1} / {displayImages.length}

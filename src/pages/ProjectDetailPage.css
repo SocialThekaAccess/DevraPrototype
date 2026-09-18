@@ -105,29 +105,34 @@
 .proj-meta-strip__inner {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
+@media (min-width: 768px) {
+  .proj-meta-strip__inner {
+    padding-left: 48px;
+    padding-right: 48px;
+  }}
+  
 .proj-meta-strip__item {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 16px 20px;
+  padding: 16px 24px 16px 0;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   flex: 0 1 auto;
   min-width: 0;
 }
 
-.proj-meta-strip__item:nth-child(3) {
-  padding-left: 28px;
-}
-
 .proj-meta-strip__item:last-child {
   border-right: none;
   border-bottom: none;
+  padding-right: 0;
 }
 
 .proj-meta-strip__label,
@@ -150,10 +155,6 @@
 
 /* ============================================
    OVERVIEW SECTION — FIXED SPACING
-   Label now sits ABOVE the text (stacked), so the
-   text column shares the exact same left edge as
-   the image gallery below (both driven by
-   var(--page-gutter) with no extra offset).
    ============================================ */
 .proj-overview {
   padding-top: 0;
@@ -344,11 +345,11 @@
 }
 
 @keyframes zoomIn {
-  from { 
+  from {
     opacity: 0;
     transform: scale(0.95);
   }
-  to { 
+  to {
     opacity: 1;
     transform: scale(1);
   }
@@ -453,9 +454,9 @@
 }
 
 @media (max-width: 640px) {
-  /* Mobile layout: 3 boxes top row, Scope full width bottom - Updated */
   .proj-meta-strip__inner {
     width: 100%;
+    max-width: 100%;
     padding: 0;
   }
 
@@ -614,7 +615,6 @@
     grid-template-columns: 1fr;
   }
 
-  /* UNWALLED-only meta strip layout: 3 items per row, 4th (Scope) full width */
   .proj-meta-strip--wrap .proj-meta-strip__inner {
     flex-wrap: wrap;
   }

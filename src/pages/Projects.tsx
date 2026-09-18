@@ -123,9 +123,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                       {project.category} // {project.location}
                     </p>
                   </div>
-                  <span className="text-xs text-stone-400 font-mono">
-                    {project.year}
-                  </span>
+
                 </div>
               </motion.div>
             ))}

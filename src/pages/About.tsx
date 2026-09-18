@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Award, Compass, Heart, Users, MapPin, Sparkles } from "lucide-react";
 import SEOMeta from "../components/SEOMeta";
 import residentialImg from "../../assets/residential.avif";
+import varunDevraImg from "../../assets/VarunDevra.png";
 import resVilla361 from "../../assets/projects/res-villa-361.avif";
 import fhGills from "../../assets/projects/fh-gills-1.avif";
 import resVilla201d from "../../assets/projects/res-villa-201d.jpg";
@@ -30,7 +31,7 @@ export default function About({ onNavigate }: AboutProps) {
         path="about"
       />
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Header section */}
         <div className="border-b border-stone-200 pb-8 mb-10">
           <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold mb-3">
@@ -41,46 +42,7 @@ export default function About({ onNavigate }: AboutProps) {
           </h1>
         </div>
 
-        {/* Studio Profile & Introduction */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 items-start">
-          <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-serif text-2xl md:text-3xl text-stone-900 font-medium tracking-tight leading-snug">
-              Unifying beauty, comfort, and precise site execution.
-            </h2>
-            <div className="h-[1px] w-20 bg-stone-300" />
-            <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">
-              We operate at the intersection of craftsmanship and architectural logic. Based out of New Chandigarh, our team is equipped to handle complex private residential plots, modern estate farmhouses, complete interior designs, and corporate hospitality spaces from the very first soil test down to final handover audits.
-            </p>
-          </div>
-
-          <div className="lg:col-span-7 bg-stone-100 p-8 md:p-12 border border-stone-200">
-            <p className="font-serif text-lg text-stone-850 leading-relaxed italic text-stone-800">
-              “DEVRA Architects is a New Chandigarh-based architecture and interior design studio focused on creating homes and spaces that balance beauty, comfort, function, and execution. Our work brings together architecture, interiors, materials, site detailing, and design-to-build coordination so that every project is not only designed well, but built with clarity.”
-            </p>
-          </div>
-        </div>
-
-        {/* Full width design inspiration banner */}
-        <div className="relative h-[50vh] w-full bg-stone-200 overflow-hidden mb-24">
-          <img
-            src={residentialImg}
-            alt="Devra workshop detailing"
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-stone-950/25 flex items-center justify-center p-6 text-center">
-            <div className="max-w-xl text-stone-50 space-y-3">
-              <Sparkles className="w-6 h-6 text-stone-300 mx-auto" />
-              <p className="font-serif text-xl md:text-2xl font-light italic">
-                “Every junction, every shadow-gap, and every material seam is planned before a single brick is laid on-site.”
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Founder & Leadership Section */}
+        {/* Founder & Leadership Section — shown first */}
         <div className="mb-24 border-b border-stone-200 pb-20">
           <span className="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold block mb-12">
             LEADERSHIP // PRINCIPAL ARCHITECT
@@ -90,12 +52,12 @@ export default function About({ onNavigate }: AboutProps) {
             {/* Left — Image */}
             <div className="bg-stone-200 aspect-[4/5] overflow-hidden">
               <img
-                src={residentialImg}
+                src={varunDevraImg}
                 alt="Ar. Varun Devra — Principal Architect"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover grayscale"
+                className="w-full h-full object-cover"
               />
             </div>
 
@@ -144,6 +106,45 @@ export default function About({ onNavigate }: AboutProps) {
                   <span className="text-[10px] text-stone-500 font-light block">New Chandigarh</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Studio Profile & Introduction */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 items-start">
+          <div className="lg:col-span-5 space-y-6">
+            <h2 className="font-serif text-2xl md:text-3xl text-stone-900 font-medium tracking-tight leading-snug">
+              Unifying beauty, comfort, and precise site execution.
+            </h2>
+            <div className="h-[1px] w-20 bg-stone-300" />
+            <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">
+              We operate at the intersection of craftsmanship and architectural logic. Based out of New Chandigarh, our team is equipped to handle complex private residential plots, modern estate farmhouses, complete interior designs, and corporate hospitality spaces from the very first soil test down to final handover audits.
+            </p>
+          </div>
+
+          <div className="lg:col-span-7 bg-stone-100 p-8 md:p-12 border border-stone-200">
+            <p className="font-serif text-lg text-stone-850 leading-relaxed italic text-stone-800">
+              "DEVRA Architects is a New Chandigarh-based architecture and interior design studio focused on creating homes and spaces that balance beauty, comfort, function, and execution. Our work brings together architecture, interiors, materials, site detailing, and design-to-build coordination so that every project is not only designed well, but built with clarity."
+            </p>
+          </div>
+        </div>
+
+        {/* Full width design inspiration banner */}
+        <div className="relative h-[50vh] w-full bg-stone-200 overflow-hidden mb-24">
+          <img
+            src={residentialImg}
+            alt="Devra workshop detailing"
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-stone-950/25 flex items-center justify-center p-6 text-center">
+            <div className="max-w-xl text-stone-50 space-y-3">
+              <Sparkles className="w-6 h-6 text-stone-300 mx-auto" />
+              <p className="font-serif text-xl md:text-2xl font-light italic">
+                "Every junction, every shadow-gap, and every material seam is planned before a single brick is laid on-site."
+              </p>
             </div>
           </div>
         </div>

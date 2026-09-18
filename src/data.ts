@@ -261,7 +261,7 @@ export const PROJECTS: Project[] = [
   {
     id: "the-kangs",
     title: "The Kangs",
-    category: "Farm Houses",
+    category: "Residential",
     location: "Punjab Border",
     year: "2023",
     size: "8,000 sq. ft.",
@@ -383,7 +383,7 @@ export const PROJECTS: Project[] = [
   {
     id: "3p-mdc-panchkula",
     title: "3P MDC Panchkula",
-    category: "Housing",
+    category: "Farm Houses",
     location: "3P MDC Panchkula",
     year: "2026",
     size: "2,50,000 sq. ft.",
@@ -404,7 +404,7 @@ export const PROJECTS: Project[] = [
   {
     id: "unwalled-housing",
     title: "UNWALLED",
-    category: "Housing",
+    category: "Residential",
     location: "New Chandigarh",
     year: "2026",
     size: "3,500 sq. ft.",
@@ -505,6 +505,25 @@ export const PROJECTS: Project[] = [
       execution: "A modern interior defined by clean lines, exposed systems, and warm furnishings, creating an intimate yet open, sophisticated environment."
     },
     images: [hosCg2, hosCg3, hosCg4, hosCg5, hosCg6, hosCg7, hosCg8, hosCg9]
+  },
+  {
+    id: "hlp-project",
+    title: "HLP Project",
+    category: "Commercial",
+    location: "Punjab",
+    year: "2024",
+    size: "TBD",
+    scope: "Architecture & Design",
+    heroImage: hosCg1,
+    description: "A contemporary commercial project blending functional efficiency with refined architectural expression.",
+    narrative: {
+      site: "A prominent commercial site in Punjab, designed to serve modern business needs.",
+      planning: "The design prioritises spatial efficiency and visual identity, creating a strong commercial presence.",
+      materials: "A refined palette of contemporary materials tailored to the commercial brief.",
+      lightVentilation: "Strategic orientation and fenestration ensure well-lit, ventilated work environments.",
+      execution: "Close coordination between design and site teams to deliver a seamless build."
+    },
+    images: []
   },
   {
     id: "121-122",
