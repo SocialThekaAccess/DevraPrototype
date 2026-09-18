@@ -44,7 +44,7 @@ function buildRows(images: string[]) {
 }
 
 export default function ProjectDetail({ project, onNavigate, onSelectProject }: ProjectDetailProps) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -53,7 +53,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+    handleResize(); // run immediately on mount
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);

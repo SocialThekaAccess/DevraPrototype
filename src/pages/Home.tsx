@@ -65,7 +65,7 @@ const HERO_SLIDES = [
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
   // Handle window resize for responsive images
@@ -73,6 +73,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
