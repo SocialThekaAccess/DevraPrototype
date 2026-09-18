@@ -65,6 +65,8 @@ export default function Vision() {
                   alt="Real life luxury home courtyard"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -102,6 +104,8 @@ export default function Vision() {
                   alt="Therapeutic winter sun and stack ventilation courtyard"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -138,6 +142,8 @@ export default function Vision() {
                   alt="Aesthetic regional masonry and board-marked concrete"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -174,6 +180,8 @@ export default function Vision() {
                   alt="On-site detailing and structural coordination"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -210,6 +218,8 @@ export default function Vision() {
                   alt="Quiet luxury interiors and cozy human scale spaces"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

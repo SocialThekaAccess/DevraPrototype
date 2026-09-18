@@ -89,6 +89,8 @@ export default function Services({ onNavigate }: ServicesProps) {
                     <img
                       src={serviceImg}
                       alt={service.title}
+                      loading="lazy"
+                      decoding="async"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
                     />

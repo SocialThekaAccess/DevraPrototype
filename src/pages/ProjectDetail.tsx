@@ -114,6 +114,8 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
           src={heroImage}
           alt={project.title}
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover object-center"
         />
         
@@ -223,6 +225,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
                         alt={`${project.title} detail ${globalIndex + 1}`}
                         referrerPolicy="no-referrer"
                         loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                       />
                     </div>

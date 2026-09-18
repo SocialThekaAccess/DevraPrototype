@@ -65,6 +65,8 @@ export default function About({ onNavigate }: AboutProps) {
           <img
             src={residentialImg}
             alt="Devra workshop detailing"
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
           />
@@ -91,6 +93,8 @@ export default function About({ onNavigate }: AboutProps) {
                 src={residentialImg}
                 alt="Ar. Varun Devra — Principal Architect"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale"
               />
             </div>
@@ -206,6 +210,8 @@ export default function About({ onNavigate }: AboutProps) {
                   alt="Raw Board-marked Concrete"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Cast Concrete</p>
@@ -218,6 +224,8 @@ export default function About({ onNavigate }: AboutProps) {
                   alt="Wire-cut Exposed Brickwork"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Exposed Brickwork</p>
@@ -230,6 +238,8 @@ export default function About({ onNavigate }: AboutProps) {
                   alt="Sandalwood & Kota Stone"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Kota Stone Flooring</p>
@@ -242,6 +252,8 @@ export default function About({ onNavigate }: AboutProps) {
                   alt="Bespoke Teak Millwork"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Seasoned Teak</p>
@@ -254,6 +266,8 @@ export default function About({ onNavigate }: AboutProps) {
                   alt="Drafting & Site Layouts"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Drafting & Detail</p>
@@ -266,6 +280,8 @@ export default function About({ onNavigate }: AboutProps) {
                   alt="Circulating Courtyard Sunlight"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Courtyard Shadows</p>

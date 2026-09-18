@@ -101,6 +101,8 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                     src={project.heroImage}
                     alt={project.title}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-103"
                   />
                   {/* Subtle hover overlay and zoom */}

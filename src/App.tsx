@@ -1,37 +1,40 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { HelmetProvider } from "react-helmet-async";
+import { lazy as rLazy, Suspense as rSuspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import About from "./pages/About";
-import Vision from "./pages/Vision";
-import Services from "./pages/Services";
-import Process from "./pages/Process";
-import Journal from "./pages/Journal";
-import Contact from "./pages/Contact";
 import IntroDoorway from "./components/IntroDoorway";
+import Home from "./pages/Home";
 import { PROJECTS } from "./data";
 import { MessageSquare, PhoneCall } from "lucide-react";
 
-// Import new project pages
-import ComDevraArchPage from "./Project/ComDevraArchPage";
-import ComFortofinoPage from "./Project/ComFortofinoPage";
-import ComMilkPointPage from "./Project/ComMilkPointPage";
-import FhGillsFarmhousePage from "./Project/FhGillsFarmhousePage";
-import HosCastleGreyPage from "./Project/HosCastleGreyPage";
-import HouPanchkulaPage from "./Project/HouPanchkulaPage";
-import Res121122Page from "./Project/Res121122Page";
-import ResMidhasPage from "./Project/ResMidhasPage";
-import ResMinzsPage from "./Project/ResMinzsPage";
-import ResSupreetPage from "./Project/ResSupreetPage";
-import ResVilla201DPage from "./Project/ResVilla201DPage";
-import ResVilla303Page from "./Project/ResVilla303Page";
-import ResVilla361Page from "./Project/ResVilla361Page";
-import ResVilla58Page from "./Project/ResVilla58Page";
-import SchMsSchoolPage from "./Project/SchMsSchoolPage";
+// Lazy load all heavy pages
+const Projects = rLazy(() => import("./pages/Projects"));
+const ProjectDetail = rLazy(() => import("./pages/ProjectDetail"));
+const About = rLazy(() => import("./pages/About"));
+const Vision = rLazy(() => import("./pages/Vision"));
+const Services = rLazy(() => import("./pages/Services"));
+const Process = rLazy(() => import("./pages/Process"));
+const Journal = rLazy(() => import("./pages/Journal"));
+const Contact = rLazy(() => import("./pages/Contact"));
+
+// Lazy load project pages
+const ComDevraArchPage = rLazy(() => import("./Project/ComDevraArchPage"));
+const ComFortofinoPage = rLazy(() => import("./Project/ComFortofinoPage"));
+const ComMilkPointPage = rLazy(() => import("./Project/ComMilkPointPage"));
+const FhGillsFarmhousePage = rLazy(() => import("./Project/FhGillsFarmhousePage"));
+const HosCastleGreyPage = rLazy(() => import("./Project/HosCastleGreyPage"));
+const HouPanchkulaPage = rLazy(() => import("./Project/HouPanchkulaPage"));
+const Res121122Page = rLazy(() => import("./Project/Res121122Page"));
+const ResMidhasPage = rLazy(() => import("./Project/ResMidhasPage"));
+const ResMinzsPage = rLazy(() => import("./Project/ResMinzsPage"));
+const ResSupreetPage = rLazy(() => import("./Project/ResSupreetPage"));
+const ResVilla201DPage = rLazy(() => import("./Project/ResVilla201DPage"));
+const ResVilla303Page = rLazy(() => import("./Project/ResVilla303Page"));
+const ResVilla361Page = rLazy(() => import("./Project/ResVilla361Page"));
+const ResVilla58Page = rLazy(() => import("./Project/ResVilla58Page"));
+const SchMsSchoolPage = rLazy(() => import("./Project/SchMsSchoolPage"));
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState("home");
@@ -150,7 +153,13 @@ export default function App() {
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              {renderPage()}
+              <rSuspense fallback={
+                <div className="min-h-screen bg-stone-50 flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-stone-300 border-t-stone-900 rounded-full animate-spin" />
+                </div>
+              }>
+                {renderPage()}
+              </rSuspense>
             </motion.div>
           </AnimatePresence>
         </main>

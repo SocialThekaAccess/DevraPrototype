@@ -153,6 +153,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             <img
               src={isMobile ? HERO_SLIDES[currentSlide].mobileImage : HERO_SLIDES[currentSlide].image}
               alt={HERO_SLIDES[currentSlide].title}
+              fetchPriority="high"
+              decoding="async"
               referrerPolicy="no-referrer"
               className={`w-full h-full ${
                 isMobile 
@@ -281,6 +283,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                     src={project.heroImage}
                     alt={project.title}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-stone-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
@@ -434,6 +438,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   src={residentialImg}
                   alt="Residential Architecture"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -456,6 +462,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   src={hospitalityImg}
                   alt="Luxury Interiors"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -478,6 +486,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   src={commercialImg}
                   alt="Design to Build"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -500,6 +510,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   src={housingImg}
                   alt="Masterplanning & Housing"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
