@@ -110,14 +110,19 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       {/* Hero Section with Project Image */}
       <section className="relative w-full h-[75vh] md:h-[85vh] overflow-hidden bg-stone-900">
         <div className="absolute inset-0 bg-black/30 z-10" />
-        <img
-          src={heroImage}
-          alt={project.title}
-          referrerPolicy="no-referrer"
-          fetchPriority="high"
-          decoding="async"
-          className="w-full h-full object-cover object-center"
-        />
+        <picture>
+          {project.mobileHeroImage && (
+            <source media="(max-width: 767px)" srcSet={project.mobileHeroImage} />
+          )}
+          <img
+            src={project.heroImage}
+            alt={project.title}
+            referrerPolicy="no-referrer"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
         
         {/* Hero Title Overlay */}
         <div className="absolute bottom-0 left-0 right-0 z-20 max-w-7xl mx-auto px-6 md:px-12 pb-2">
