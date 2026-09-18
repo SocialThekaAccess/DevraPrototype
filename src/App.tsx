@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy as rLazy, Suspense as rSuspense } from "react";
+import { lazy as rLazy, Suspense as rSuspense, useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import IntroDoorway from "./components/IntroDoorway";
@@ -36,160 +36,131 @@ const ResVilla361Page = rLazy(() => import("./Project/ResVilla361Page"));
 const ResVilla58Page = rLazy(() => import("./Project/ResVilla58Page"));
 const SchMsSchoolPage = rLazy(() => import("./Project/SchMsSchoolPage"));
 
-export default function App() {
-  const [currentPath, setCurrentPath] = useState("home");
+// Project detail wrapper using URL param
+function ProjectDetailWrapper({ onNavigate, onSelectProject }: { onNavigate: (p: string) => void; onSelectProject: (id: string) => void }) {
+  const { id } = useParams<{ id: string }>();
+  const project = PROJECTS.find((p) => p.id === id) || PROJECTS[0];
+  return <ProjectDetail project={project} onNavigate={onNavigate} onSelectProject={onSelectProject} />;
+}
+
+const LoadingSpinner = () => (
+  <div className="min-h-screen bg-stone-50 flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-stone-300 border-t-stone-900 rounded-full animate-spin" />
+  </div>
+);
+
+function AppInner() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [, setSelectedProjectId] = useState("sansarg");
   const [showIntro, setShowIntro] = useState(() => {
-    try {
-      return !sessionStorage.getItem("devra_intro_seen");
-    } catch (e) {
-      return true;
-    }
+    try { return !sessionStorage.getItem("devra_intro_seen"); } catch { return true; }
   });
 
   const handleIntroComplete = () => {
-    try {
-      sessionStorage.setItem("devra_intro_seen", "true");
-    } catch (e) {
-      // fallback if session storage is disabled
-    }
+    try { sessionStorage.setItem("devra_intro_seen", "true"); } catch {}
     setShowIntro(false);
   };
 
-  useEffect(() => {
-    // Smooth scroll to top on path changes
-    window.scrollTo(0, 0);
-  }, [currentPath]);
+  // Scroll to top on route change
+  useEffect(() => { window.scrollTo(0, 0); }, [location.pathname]);
 
-  // Routing Handler
-  const renderPage = () => {
-    // New project pages
-    if (currentPath === "project-devra-architects") return <ComDevraArchPage />;
-    if (currentPath === "project-fortofino") return <ComFortofinoPage />;
-    if (currentPath === "project-milk-point") return <ComMilkPointPage />;
-    if (currentPath === "project-gills-farmhouse") return <FhGillsFarmhousePage />;
-    if (currentPath === "project-castle-grey") return <HosCastleGreyPage />;
-    if (currentPath === "project-panchkula-housing") return <HouPanchkulaPage />;
-    if (currentPath === "project-121-122") return <Res121122Page />;
-    if (currentPath === "project-midhas") return <ResMidhasPage />;
-    if (currentPath === "project-minzs") return <ResMinzsPage />;
-    if (currentPath === "project-col-supreet") return <ResSupreetPage />;
-    if (currentPath === "project-villa-201d") return <ResVilla201DPage />;
-    if (currentPath === "project-villa-303") return <ResVilla303Page />;
-    if (currentPath === "project-villa-361") return <ResVilla361Page />;
-    if (currentPath === "project-villa-58") return <ResVilla58Page />;
-    if (currentPath === "project-ms-school") return <SchMsSchoolPage />;
-    
-    // Existing project detail pages from data.ts
-    if (currentPath.startsWith("project-")) {
-      const id = currentPath.replace("project-", "");
-      const project = PROJECTS.find((p) => p.id === id) || PROJECTS[0];
-      return (
-        <ProjectDetail
-          project={project}
-          onNavigate={setCurrentPath}
-          onSelectProject={setSelectedProjectId}
-        />
-      );
-    }
-
-    switch (currentPath) {
-      case "home":
-        return (
-          <Home
-            onNavigate={setCurrentPath}
-            onSelectProject={setSelectedProjectId}
-          />
-        );
-      case "projects":
-        return (
-          <Projects
-            onNavigate={setCurrentPath}
-            onSelectProject={setSelectedProjectId}
-          />
-        );
-      case "about":
-        return <About onNavigate={setCurrentPath} />;
-      case "vision":
-        return <Vision />;
-      case "process":
-        return <Process />;
-      case "journal":
-        return <Journal />;
-      case "contact":
-        return <Contact />;
-      case "services":
-        return <Services onNavigate={setCurrentPath} />;
-      default:
-        return (
-          <Home
-            onNavigate={setCurrentPath}
-            onSelectProject={setSelectedProjectId}
-          />
-        );
-    }
+  // onNavigate maps old path keys to real URLs
+  const onNavigate = (path: string) => {
+    const map: Record<string, string> = {
+      home: "/", projects: "/projects", about: "/about",
+      vision: "/vision", process: "/process", journal: "/journal",
+      contact: "/contact", services: "/services",
+    };
+    if (map[path]) { navigate(map[path]); return; }
+    if (path.startsWith("project-")) { navigate(`/projects/${path.replace("project-", "")}`); return; }
+    navigate("/");
   };
 
+  const onSelectProject = (id: string) => {
+    setSelectedProjectId(id);
+    navigate(`/projects/${id}`);
+  };
+
+  // current path string for Navbar active state
+  const currentPath = location.pathname === "/" ? "home"
+    : location.pathname.startsWith("/projects/") ? `project-${location.pathname.split("/projects/")[1]}`
+    : location.pathname.replace("/", "");
+
+  return (
+    <div className="bg-stone-50 min-h-screen text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50 overflow-x-hidden">
+      <AnimatePresence>
+        {showIntro && <IntroDoorway onComplete={handleIntroComplete} />}
+      </AnimatePresence>
+
+      <Navbar currentPath={currentPath} onNavigate={onNavigate} />
+
+      <main className="min-h-[80vh]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <rSuspense fallback={<LoadingSpinner />}>
+              <Routes location={location}>
+                <Route path="/" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects" element={<Projects onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/devra-architects" element={<ComDevraArchPage />} />
+                <Route path="/projects/fortofino" element={<ComFortofinoPage />} />
+                <Route path="/projects/milk-point" element={<ComMilkPointPage />} />
+                <Route path="/projects/gills-farmhouse" element={<FhGillsFarmhousePage />} />
+                <Route path="/projects/castle-grey" element={<HosCastleGreyPage />} />
+                <Route path="/projects/panchkula-housing" element={<HouPanchkulaPage />} />
+                <Route path="/projects/121-122" element={<Res121122Page />} />
+                <Route path="/projects/midhas" element={<ResMidhasPage />} />
+                <Route path="/projects/minzs" element={<ResMinzsPage />} />
+                <Route path="/projects/col-supreet" element={<ResSupreetPage />} />
+                <Route path="/projects/villa-201d" element={<ResVilla201DPage />} />
+                <Route path="/projects/villa-303" element={<ResVilla303Page />} />
+                <Route path="/projects/villa-361" element={<ResVilla361Page />} />
+                <Route path="/projects/villa-58" element={<ResVilla58Page />} />
+                <Route path="/projects/ms-school" element={<SchMsSchoolPage />} />
+                <Route path="/projects/:id" element={<ProjectDetailWrapper onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/about" element={<About onNavigate={onNavigate} />} />
+                <Route path="/vision" element={<Vision />} />
+                <Route path="/process" element={<Process />} />
+                <Route path="/journal" element={<Journal />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/services" element={<Services onNavigate={onNavigate} />} />
+                <Route path="*" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+              </Routes>
+            </rSuspense>
+          </motion.div>
+        </AnimatePresence>
+      </main>
+
+      <Footer onNavigate={onNavigate} />
+
+      {/* Sticky WhatsApp + Phone */}
+      <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 md:bottom-6 md:right-6 z-40 flex flex-col space-y-2.5 md:space-y-3">
+        <a href="https://wa.me/919779662286?text=Hello%20DEVRA%20Architects,%20I%20am%20interested%20in%20discussing%20a%20project%20with%20you."
+          target="_blank" rel="noopener noreferrer" id="sticky-whatsapp-shortcut" title="Chat on WhatsApp"
+          className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-green-600 hover:bg-green-700 text-stone-50 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+          <MessageSquare className="w-5 h-5 fill-current" />
+        </a>
+        <a href="tel:+919779662286" id="sticky-phone-shortcut" title="Call DEVRA Desk"
+          className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-stone-900 hover:bg-stone-800 text-stone-50 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-stone-800">
+          <PhoneCall className="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
   return (
     <HelmetProvider>
-      <div className="bg-stone-50 min-h-screen text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50 overflow-x-hidden">
-        {/* 0. Immersive Entrance Doorway Loader */}
-        <AnimatePresence>
-          {showIntro && (
-            <IntroDoorway onComplete={handleIntroComplete} />
-          )}
-        </AnimatePresence>
-
-        {/* 1. Global Navigation Header */}
-        <Navbar currentPath={currentPath} onNavigate={setCurrentPath} />
-
-        {/* 2. Main Page Render with Animated Route Transition */}
-        <main className="min-h-[80vh]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentPath}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <rSuspense fallback={
-                <div className="min-h-screen bg-stone-50 flex items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-stone-300 border-t-stone-900 rounded-full animate-spin" />
-                </div>
-              }>
-                {renderPage()}
-              </rSuspense>
-            </motion.div>
-          </AnimatePresence>
-        </main>
-
-        {/* 3. Global Footer */}
-        <Footer onNavigate={setCurrentPath} />
-
-        {/* 4. Global Sticky WhatsApp Quick-Action (Only displayed once scrolled down) */}
-        <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 md:bottom-6 md:right-6 z-40 flex flex-col space-y-2.5 md:space-y-3">
-          <a
-            href="https://wa.me/919779662286?text=Hello%20DEVRA%20Architects,%20I%20am%20interested%20in%20discussing%20a%20project%20with%20you."
-            target="_blank"
-            rel="noopener noreferrer"
-            id="sticky-whatsapp-shortcut"
-            title="Chat on WhatsApp"
-            className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-green-600 hover:bg-green-700 text-stone-50 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
-          >
-            <MessageSquare className="w-5 h-5 fill-current" />
-          </a>
-
-          <a
-            href="tel:+919779662286"
-            id="sticky-phone-shortcut"
-            title="Call DEVRA Desk"
-            className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-stone-900 hover:bg-stone-800 text-stone-50 shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 border border-stone-800"
-          >
-            <PhoneCall className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
+      <BrowserRouter>
+        <AppInner />
+      </BrowserRouter>
     </HelmetProvider>
   );
 }
