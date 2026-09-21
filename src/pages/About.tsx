@@ -211,7 +211,7 @@ export default function About({ onNavigate }: AboutProps) {
                   src={resVilla361}
                   alt="Contemporary Architecture"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
@@ -226,7 +226,7 @@ export default function About({ onNavigate }: AboutProps) {
                   src={fhGills}
                   alt="Wire-cut Exposed Brickwork"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
@@ -241,7 +241,7 @@ export default function About({ onNavigate }: AboutProps) {
                   src={resVilla201d}
                   alt="Vernacular Architecture"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
@@ -256,7 +256,7 @@ export default function About({ onNavigate }: AboutProps) {
                   src={resVilla58}
                   alt="Facade Geometry & Elevation"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
@@ -271,7 +271,7 @@ export default function About({ onNavigate }: AboutProps) {
                   src={comDevra}
                   alt="Drafting & Site Layouts"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
@@ -286,7 +286,7 @@ export default function About({ onNavigate }: AboutProps) {
                   src={houSansarg}
                   alt="Housing Project"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
