@@ -17,7 +17,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
 
   const handleMouseEnter = (id: string) => {
     if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
-    hoverTimerRef.current = setTimeout(() => setActiveHover(id), 220);
+    hoverTimerRef.current = setTimeout(() => setActiveHover(id), 500);
   };
 
   const handleMouseLeave = () => {

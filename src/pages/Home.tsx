@@ -75,7 +75,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
     if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
     hoverTimerRef.current = setTimeout(() => {
       setActiveHover(project.id);
-    }, 220);
+    }, 500);
   };
 
   const handleProjectMouseLeave = () => {
@@ -429,12 +429,12 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
 
       {/* Project Hover Popup Overlay */}
       <AnimatePresence>
-        {hoveredProject && (
+        {activeHover && hoveredProject && activeHover === hoveredProject.id && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.3 }}
             className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center"
           >
             {/* Blurred dark backdrop */}
@@ -445,7 +445,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               initial={{ scale: 0.88, opacity: 0, y: 30 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.92, opacity: 0, y: 20 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-10 w-[90vw] max-w-2xl shadow-2xl overflow-hidden"
             >
               {/* Image */}
