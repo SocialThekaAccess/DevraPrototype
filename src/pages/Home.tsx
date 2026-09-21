@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECTS } from "../data";
 import type { Project } from "../types";
