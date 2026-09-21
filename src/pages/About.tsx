@@ -291,7 +291,7 @@ export default function About({ onNavigate }: AboutProps) {
                   decoding="async"
                 />
               </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Courtyard Shadows</p>
+              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Housing</p>
             </div>
           </div>
         </div>
