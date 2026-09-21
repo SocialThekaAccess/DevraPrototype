@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/res-villa-201d.jpg'
-import img2 from '../../assets/projects/res-villa-201d-2.jpg'
-import img3 from '../../assets/projects/res-villa-201d-3.jpg'
-import img4 from '../../assets/projects/res-villa-201d-4.avif'
-import img5 from '../../assets/projects/res-villa-201d-5.avif'
-import img6 from '../../assets/projects/res-villa-201d-6.avif'
-import img7 from '../../assets/projects/res-villa-201d-7.avif'
-import img8 from '../../assets/projects/res-villa-201d-8.jpg'
-import img9 from '../../assets/projects/res-villa-201d-9.jpg'
+import img1 from '../../assets/projects/res-villa-201d-hd1.png'
+import img2 from '../../assets/projects/res-villa-201d-hd2.png'
+import img3 from '../../assets/projects/res-villa-201d-hd3.png'
+import img4 from '../../assets/projects/res-villa-201d.jpg'
+import img5 from '../../assets/projects/res-villa-201d-2.jpg'
+import img6 from '../../assets/projects/res-villa-201d-3.jpg'
+import img7 from '../../assets/projects/res-villa-201d-4.avif'
+import img8 from '../../assets/projects/res-villa-201d-5.avif'
+import img9 from '../../assets/projects/res-villa-201d-6.avif'
 
 export default function ResVilla201DPage() {
   return (

@@ -78,22 +78,23 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Preload all hero images (both desktop and mobile)
+  // Preload hero images — show first slide as soon as it's ready
   useEffect(() => {
-    const allImages = HERO_SLIDES.flatMap(slide => [slide.image, slide.mobileImage]);
-    let loadedCount = 0;
-    
-    allImages.forEach(url => {
-      const img = new Image();
-      img.src = url;
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === allImages.length) {
-          setImagesLoaded(true);
-        }
-      };
+    const firstSlide = HERO_SLIDES[0];
+    const firstUrl = isMobile ? firstSlide.mobileImage : firstSlide.image;
+    const firstImg = new Image();
+    firstImg.src = firstUrl;
+    firstImg.onload = () => setImagesLoaded(true);
+    firstImg.onerror = () => setImagesLoaded(true); // show anyway on error
+
+    // Preload rest in background
+    HERO_SLIDES.slice(1).forEach(slide => {
+      [slide.image, slide.mobileImage].forEach(url => {
+        const img = new Image();
+        img.src = url;
+      });
     });
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     const timer = setInterval(() => {
