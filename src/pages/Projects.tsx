@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { PROJECTS } from "../data";
 import SEOMeta from "../components/SEOMeta";
@@ -12,6 +12,18 @@ const CATEGORIES = ["All", "Residential", "Housing", "Commercial", "Schools", "F
 
 export default function Projects({ onNavigate, onSelectProject }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [activeHover, setActiveHover] = useState<string | null>(null);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = (id: string) => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    hoverTimerRef.current = setTimeout(() => setActiveHover(id), 220);
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    setActiveHover(null);
+  };
 
   const filteredProjects = selectedCategory === "All"
     ? PROJECTS
@@ -94,6 +106,8 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                 key={project.id}
                 onClick={() => handleProjectClick(project.id)}
                 className="group cursor-pointer space-y-4"
+                onMouseEnter={() => handleMouseEnter(project.id)}
+                onMouseLeave={handleMouseLeave}
               >
                 {/* Image Card Container */}
                 <div className="relative overflow-hidden bg-stone-200 aspect-[4/3] w-full">
@@ -103,11 +117,11 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out delay-100 group-hover:scale-[1.03] group-hover:delay-150"
+                    className={`w-full h-full object-cover transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
                   />
                   {/* Subtle hover overlay and zoom */}
-                  <div className="absolute inset-0 bg-stone-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <span className="bg-stone-50 text-stone-950 text-[10px] uppercase tracking-widest font-semibold py-2.5 px-5 shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>
+                    <span className={`bg-stone-50 text-stone-950 text-[10px] uppercase tracking-widest font-semibold py-2.5 px-5 shadow-lg transition-all duration-500 ${activeHover === project.id ? 'translate-y-0' : 'translate-y-2'}`}>
                       Explore Case Study
                     </span>
                   </div>
@@ -116,7 +130,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                 {/* Info block */}
                 <div className="flex justify-between items-start pt-1 border-t border-stone-200/50">
                   <div>
-                    <h3 className="font-serif text-lg text-stone-900 font-medium group-hover:text-stone-600 transition-colors">
+                    <h3 className={`font-serif text-lg font-medium transition-colors ${activeHover === project.id ? 'text-stone-600' : 'text-stone-900'}`}>
                       {project.title}
                     </h3>
                     <p className="text-[9px] md:text-[10px] tracking-wide uppercase text-stone-900 font-light mt-1">

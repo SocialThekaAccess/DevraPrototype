@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECTS } from "../data";
 import type { Project } from "../types";
@@ -67,6 +68,22 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
   const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
+  const [activeHover, setActiveHover] = useState<string | null>(null);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleProjectMouseEnter = (project: Project) => {
+    setHoveredProject(project);
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    hoverTimerRef.current = setTimeout(() => {
+      setActiveHover(project.id);
+    }, 220);
+  };
+
+  const handleProjectMouseLeave = () => {
+    setHoveredProject(null);
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    setActiveHover(null);
+  };
 
   // Handle window resize for responsive images
   useEffect(() => {
@@ -276,8 +293,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8 }}
                 onClick={() => handleProjectClick(project.id)}
-                onMouseEnter={() => setHoveredProject(project)}
-                onMouseLeave={() => setHoveredProject(null)}
+                onMouseEnter={() => handleProjectMouseEnter(project)}
+                onMouseLeave={handleProjectMouseLeave}
                 className="group cursor-pointer space-y-4"
               >
                 <div className="relative overflow-hidden bg-stone-200 aspect-[3/2] w-full">
@@ -287,10 +304,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:delay-150"
+                    className={`w-full h-full object-cover transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-105' : 'scale-100'}`}
                   />
-                  <div className="absolute inset-0 bg-stone-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <span className="bg-stone-50 text-stone-950 text-[10px] uppercase tracking-widest font-sans font-semibold py-2.5 px-5 shadow-lg border-none rounded-none transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>
+                    <span className={`bg-stone-50 text-stone-950 text-[10px] uppercase tracking-widest font-sans font-semibold py-2.5 px-5 shadow-lg border-none rounded-none transition-all duration-500 ${activeHover === project.id ? 'translate-y-0' : 'translate-y-2'}`}>
                       View Case Study
                     </span>
                   </div>
@@ -298,7 +315,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
 
                 <div className="flex justify-between items-start pt-1 border-t border-stone-200/50">
                   <div>
-                    <h4 className="font-serif text-lg text-stone-900 font-medium group-hover:text-stone-600 transition-colors">
+                    <h4 className={`font-serif text-lg font-medium transition-colors ${activeHover === project.id ? 'text-stone-600' : 'text-stone-900'}`}>
                       {project.title}
                     </h4>
                     <p className="text-[9px] md:text-[10px] tracking-wide uppercase text-stone-500 font-light mt-1">
