@@ -103,7 +103,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-103"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out delay-100 group-hover:scale-[1.03] group-hover:delay-150"
                   />
                   {/* Subtle hover overlay and zoom */}
                   <div className="absolute inset-0 bg-stone-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
