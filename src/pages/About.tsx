@@ -65,8 +65,8 @@ export default function About({ onNavigate }: AboutProps) {
             <div className="flex flex-col justify-between p-10 md:p-14 bg-stone-50 border-l border-stone-200">
               <div className="space-y-8">
                 {/* Name & Title */}
-                <div className="space-y-2 pb-8 border-b border-stone-200">
-                  <h3 className="font-serif text-4xl md:text-5xl text-stone-900 font-medium tracking-tight">
+                <div className="space-y-1 pb-8 border-b border-stone-200">
+                  <h3 className="font-serif text-2xl text-stone-900 font-medium tracking-tight">
                     Ar. Varun Devra
                   </h3>
                   <p className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
@@ -75,14 +75,14 @@ export default function About({ onNavigate }: AboutProps) {
                 </div>
 
                 {/* Bio paragraphs */}
-                <div className="space-y-5">
-                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                <div className="space-y-4">
+                  <p className="text-stone-600 text-sm leading-loose font-light text-justify hyphens-auto">
                     Ar. Varun Devra is the Principal Architect and creative lead at DEVRA Architects, with over 13 years of professional experience in architecture and design.
                   </p>
-                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                  <p className="text-stone-600 text-sm leading-loose font-light text-justify hyphens-auto">
                     An alumnus of the School of Planning and Architecture, New Delhi, his work is defined by thoughtful planning, contemporary expression, and a strong understanding of how people experience space.
                   </p>
-                  <p className="text-stone-600 text-sm leading-relaxed font-light">
+                  <p className="text-stone-600 text-sm leading-loose font-light text-justify hyphens-auto">
                     His approach goes beyond aesthetics — focusing on context, natural light, functionality, proportion, and the aspirations of the people who inhabit each project. Under his leadership, DEVRA Architects creates architecture that is purposeful, refined, and built to remain relevant over time.
                   </p>
                 </div>
@@ -204,20 +204,22 @@ export default function About({ onNavigate }: AboutProps) {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* Pic 1: res-villa-361 → Contemporary Architecture */}
             <div className="space-y-2">
               <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
                 <img
                   src={resVilla361}
-                  alt="Raw Board-marked Concrete"
+                  alt="Contemporary Architecture"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Cast Concrete</p>
+              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Contemporary Architecture</p>
             </div>
 
+            {/* Pic 2: fh-gills → Exposed Brickwork ✅ */}
             <div className="space-y-2">
               <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
                 <img
@@ -232,34 +234,37 @@ export default function About({ onNavigate }: AboutProps) {
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Exposed Brickwork</p>
             </div>
 
+            {/* Pic 3: res-villa-201d → Vernacular Architecture */}
             <div className="space-y-2">
               <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
                 <img
                   src={resVilla201d}
-                  alt="Sandalwood & Kota Stone"
+                  alt="Vernacular Architecture"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Kota Stone Flooring</p>
+              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Vernacular Architecture</p>
             </div>
 
+            {/* Pic 4: res-villa-58 → Facade Geometry */}
             <div className="space-y-2">
               <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
                 <img
                   src={resVilla58}
-                  alt="Bespoke Teak Millwork"
+                  alt="Facade Geometry & Elevation"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Seasoned Teak</p>
+              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Facade Geometry</p>
             </div>
 
+            {/* Pic 5: com-devra-arch → Drafting & Detail ✅ */}
             <div className="space-y-2">
               <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
                 <img
@@ -274,11 +279,12 @@ export default function About({ onNavigate }: AboutProps) {
               <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Drafting & Detail</p>
             </div>
 
+            {/* Pic 6: hou-sansarg → Housing ✅ */}
             <div className="space-y-2">
               <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
                 <img
                   src={houSansarg}
-                  alt="Circulating Courtyard Sunlight"
+                  alt="Housing Project"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   loading="lazy"
