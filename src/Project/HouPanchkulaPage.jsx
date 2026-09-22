@@ -24,6 +24,8 @@ export default function HouPanchkulaPage() {
       overview2="The interiors bring a quiet harmony—warm light, natural textures, and thoughtful details shaping spaces that feel alive, lived in, and beautifully at ease."
       heroImage={heroDesktop}
       heroImageMobile={heroMobile}
+      heroAspectRatio="1672 / 941"
+      heroObjectPosition="center center"
       images={[img1, img2, img3, img4, img5, img6, img7, img8]}
     />
   )

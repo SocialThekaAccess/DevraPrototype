@@ -37,9 +37,7 @@ import resVilla201d6 from "../assets/projects/res-villa-201d-6.avif";
 import resVilla201d7 from "../assets/projects/res-villa-201d-7.avif";
 import resVilla201d8 from "../assets/projects/res-villa-201d-8.jpg";
 import resVilla201d9 from "../assets/projects/res-villa-201d-9.jpg";
-import resKangs from "../assets/projects/res-kangs.avif";
-import resKangs2 from "../assets/projects/res-kangs-2.avif";
-import resKangs3 from "../assets/projects/res-kangs-3.avif";
+import resKangsNew from "../assets/projects/TheKangs.png";
 import resVilla361 from "../assets/projects/res-villa-361.avif";
 import resVilla361Mobile from "../assets/projects/Villa361Mobileview.png";
 import resVilla3612 from "../assets/projects/res-villa-361-2.avif";
@@ -124,9 +122,10 @@ import res121122 from "../assets/projects/res-121-122.avif";
 import res1211222 from "../assets/projects/res-121-122-2.avif";
 import res1211223 from "../assets/projects/res-121-122-3.avif";
 
-import resMidhas from "../assets/projects/res-midhas.avif";
-import resMidhas2 from "../assets/projects/res-midhas-2.avif";
-import resMidhas3 from "../assets/projects/res-midhas-3.avif";
+import resMidhas from "../assets/projects/MIDHAJiHome.png";
+import resMidhas2 from "../assets/projects/MIDHAJI1.png";
+import resMidhas3 from "../assets/projects/MIDHAJI2.png";
+import resMidhas4 from "../assets/projects/MIDHAJI3.png";
 
 import resMinzs from "../assets/projects/res-minzs.jpg";
 import resMinzs2 from "../assets/projects/res-minzs-2.jpg";
@@ -266,7 +265,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     size: "8,000 sq. ft.",
     scope: "Architecture, Interiors & Landscape Design",
-    heroImage: resKangs,
+    heroImage: resKangsNew,
     description: "A sprawling luxury farmhouse designed as a series of connected low-slung pavilions that frame views of the surrounding organic farms and lush landscapes.",
     narrative: {
       site: "The site is a multi-acre organic agricultural estate near the Punjab-Haryana border, offering endless panoramic views and absolute quietude.",
@@ -276,8 +275,7 @@ export const PROJECTS: Project[] = [
       execution: "We worked closely with local kiln operators to procure brick batches with specific organic color variations. The landscape planning uses native, low-water plants to blend the estate seamlessly into the wider agricultural canvas."
     },
     images: [
-      resKangs2,
-      resKangs3
+      resKangsNew
     ]
   },
   {
@@ -561,7 +559,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "Strategic lighting creates dramatic nighttime character and welcoming atmosphere.",
       execution: "Deep frames and sculpted elements add character and a distinctly modern edge."
     },
-    images: [resMidhas2, resMidhas3]
+    images: [resMidhas, resMidhas2, resMidhas3, resMidhas4]
   },
   {
     id: "the-minzs",

@@ -27,6 +27,8 @@ export default function ResVilla303Page() {
       overview2="The interiors blend soft luxury with expressive details — double-height volumes, refined lighting, and signature feature walls that enrich every space. Calm colours, warm materials, and purposeful layouts create an inviting flow, making each room feel curated, comfortable, and unmistakably elegant."
       heroImage={heroImg}
       heroImageMobile={heroImgMobile}
+      heroAspectRatio="1672 / 941"
+      heroObjectPosition="center center"
       images={[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11]}
     />
   )

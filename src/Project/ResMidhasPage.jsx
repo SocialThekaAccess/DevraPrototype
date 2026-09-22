@@ -1,7 +1,8 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/res-midhas.avif'
-import img2 from '../../assets/projects/res-midhas-2.avif'
-import img3 from '../../assets/projects/res-midhas-3.avif'
+import heroImg from '../../assets/projects/MIDHAJiHome.png'
+import img1 from '../../assets/projects/MIDHAJI1.png'
+import img2 from '../../assets/projects/MIDHAJI2.png'
+import img3 from '../../assets/projects/MIDHAJI3.png'
 
 export default function ResMidhasPage() {
   return (
@@ -14,6 +15,9 @@ export default function ResMidhasPage() {
       size="300 SQYD"
       year="2025"
       overview="A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge."
+      heroImage={heroImg}
+      heroAspectRatio="1548 / 1016"
+      heroObjectPosition="center center"
       images={[img1, img2, img3]}
     />
   )

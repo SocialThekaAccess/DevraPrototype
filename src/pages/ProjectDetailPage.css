@@ -25,7 +25,6 @@
   height: auto;
   min-height: 600px;
 }
-
 .proj-hero__img-wrapper--unwalled {
   height: auto;
   min-height: 700px;
@@ -36,14 +35,9 @@
   height: 100%;
   max-height: none;
   object-fit: cover;
-  object-position: center center;
+  object-position: center top;
   display: block;
   background: #000;
-}
-
-.proj-hero__img--contain {
-  object-fit: cover;
-  object-position: center center;
 }
 
 .proj-hero__overlay {

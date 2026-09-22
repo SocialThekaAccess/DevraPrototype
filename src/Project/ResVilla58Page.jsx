@@ -25,6 +25,8 @@ export default function ResVilla58Page() {
       overview2="Modern finishes, warm wood accents, and thoughtful spatial planning create a home that balances bold architecture with everyday comfort and practicality."
       heroImage={heroImg}
       heroImageMobile={heroImgMobile}
+      heroAspectRatio="1086 / 1448"
+      heroObjectPosition="center center"
       images={[img1, img2, img3, img4, img6, img7, img8, img9, img10]}
     />
   )

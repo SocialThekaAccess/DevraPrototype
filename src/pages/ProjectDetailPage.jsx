@@ -14,45 +14,37 @@ export default function ProjectDetailPage({
   heroImage,
   heroImageMobile,
   images = [],
+  // NEW: per-project control, no more title === "..." hacks
+  heroObjectPosition = 'center top',   // e.g. 'center center', '50% 30%'
+  heroAspectRatio,                     // e.g. '1548 / 1016', '16 / 9' — optional
+  heroFit = 'cover',                   // 'cover' | 'contain'
 }) {
   const heroImg = heroImage || images[0]
   const heroImgMobile = heroImageMobile || heroImg
-  const galleryImages = images.slice(1)
+  const galleryImages = images
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
-  
+
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
 
-  // Update isMobile on window resize
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-    
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Use mobile image if available and on mobile device
   const displayHeroImg = isMobile ? heroImgMobile : heroImg
 
   const openLightbox = (index) => {
     setCurrentImageIndex(index)
     setLightboxOpen(true)
   }
-
-  const closeLightbox = () => {
-    setLightboxOpen(false)
-  }
-
-  const nextImage = () => {
+  const closeLightbox = () => setLightboxOpen(false)
+  const nextImage = () =>
     setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)
-  }
-
-  const prevImage = () => {
+  const prevImage = () =>
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
-  }
 
   return (
     <div className="proj-page">
@@ -64,11 +56,15 @@ export default function ProjectDetailPage({
       />
 
       <section className="proj-hero">
-        <div className={`proj-hero__img-wrapper ${title === 'UNWALLED' ? 'proj-hero__img-wrapper--unwalled' : ''}`}>
+        <div
+          className="proj-hero__img-wrapper"
+          style={heroAspectRatio ? { aspectRatio: heroAspectRatio, minHeight: 'unset' } : undefined}
+        >
           <img
             src={displayHeroImg}
             alt={title}
-            className={`proj-hero__img ${title === 'UNWALLED' ? 'proj-hero__img--contain' : ''}`}
+            className="proj-hero__img"
+            style={{ objectFit: heroFit, objectPosition: heroObjectPosition }}
             referrerPolicy="no-referrer"
             loading="eager"
           />
@@ -79,7 +75,7 @@ export default function ProjectDetailPage({
         </div>
       </section>
 
-      <section className={`proj-meta-strip ${title === 'UNWALLED' ? 'proj-meta-strip--wrap' : ''}`}>
+      <section className="proj-meta-strip">
         <div className="proj-meta-strip__inner">
           {location && (
             <div className="proj-meta-strip__item">
@@ -123,11 +119,7 @@ export default function ProjectDetailPage({
       {galleryImages.length > 0 && (
         <section className="proj-gallery">
           {galleryImages.map((image, index) => (
-            <div 
-              key={index} 
-              className="proj-gallery__cell"
-              onClick={() => openLightbox(index)}
-            >
+            <div key={index} className="proj-gallery__cell" onClick={() => openLightbox(index)}>
               <img
                 src={image}
                 alt={`${title} image ${index + 2}`}
@@ -143,33 +135,23 @@ export default function ProjectDetailPage({
         </section>
       )}
 
-      {/* Lightbox Modal */}
       {lightboxOpen && (
         <div className="proj-lightbox" onClick={closeLightbox}>
           <button className="proj-lightbox__close" onClick={closeLightbox}>
             <X size={32} />
           </button>
-          
-          <button 
-            className="proj-lightbox__prev" 
-            onClick={(e) => {
-              e.stopPropagation()
-              prevImage()
-            }}
+          <button
+            className="proj-lightbox__prev"
+            onClick={(e) => { e.stopPropagation(); prevImage() }}
           >
             <ChevronLeft size={40} />
           </button>
-          
-          <button 
-            className="proj-lightbox__next" 
-            onClick={(e) => {
-              e.stopPropagation()
-              nextImage()
-            }}
+          <button
+            className="proj-lightbox__next"
+            onClick={(e) => { e.stopPropagation(); nextImage() }}
           >
             <ChevronRight size={40} />
           </button>
-          
           <div className="proj-lightbox__content" onClick={(e) => e.stopPropagation()}>
             <img
               src={galleryImages[currentImageIndex]}
