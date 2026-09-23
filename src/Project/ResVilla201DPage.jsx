@@ -2,12 +2,12 @@ import ProjectDetailPage from '../pages/ProjectDetailPage'
 import img1 from '../../assets/projects/res-villa-201d-hd1.png'
 import img2 from '../../assets/projects/res-villa-201d-hd2.png'
 import img3 from '../../assets/projects/res-villa-201d-hd3.png'
-import img4 from '../../assets/projects/res-villa-201d-4.avif'
-import img5 from '../../assets/projects/res-villa-201d-5.avif'
-import img6 from '../../assets/projects/res-villa-201d-6.avif'
-import img7 from '../../assets/projects/res-villa-201d-7.avif'
-import img8 from '../../assets/projects/res-villa-201d-8.jpg'
-import img9 from '../../assets/projects/res-villa-201d-9.jpg'
+import ff1 from '../../assets/projects/201DFIRSTFLOOR1.png'
+import ff2 from '../../assets/projects/201DFIRSTFLOOR2.png'
+import ff3 from '../../assets/projects/201DFIRSTFLOOR3.png'
+import ff4 from '../../assets/projects/201DFIRSTFLOOR4.png'
+import ff5 from '../../assets/projects/201DFIRSTFLOOR5.png'
+import ff6 from '../../assets/projects/201DFIRSTFLOOR6.png'
 
 export default function ResVilla201DPage() {
   return (
@@ -21,7 +21,7 @@ export default function ResVilla201DPage() {
       year="2025"
       overview="A tropical-rustic villa defined by deep clay-tile roofs, carved brick surfaces, and layered balconies that open to lush green views. The façade blends vernacular warmth with modern proportion, creating a home that feels rooted, timeless, and naturally welcoming."
       overview2="Inside, the home unfolds through light-filled rooms, textured brick accents, handcrafted details, and soft pastel palettes. Playful wall art, artisanal finishes, and warm earthy tones create a refreshing atmosphere that feels personal, lively, and effortlessly comfortable."
-      images={[img1, img2, img3, img4, img5, img6, img7, img8, img9]}
+      images={[img3, img1, img2, ff1, ff2, ff3, ff4, ff5, ff6]}
     />
   )
 }
