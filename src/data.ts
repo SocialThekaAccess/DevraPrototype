@@ -111,6 +111,7 @@ import fhGills7 from "../assets/projects/fh-gills-7.avif";
 import fhGills8 from "../assets/projects/fh-gills-8.avif";
 
 import hosCg1 from "../assets/projects/hos-cg-1.avif";
+import hplImg from "../assets/projects/HPL.png";
 import hosCg2 from "../assets/projects/hos-cg-2.avif";
 import hosCg3 from "../assets/projects/hos-cg-3.avif";
 import hosCg4 from "../assets/projects/hos-cg-4.avif";
@@ -515,7 +516,7 @@ export const PROJECTS: Project[] = [
     year: "2024",
     size: "TBD",
     scope: "Architecture & Design",
-    heroImage: hosCg1,
+    heroImage: hplImg,
     description: "A contemporary commercial project blending functional efficiency with refined architectural expression.",
     narrative: {
       site: "A prominent commercial site in Punjab, designed to serve modern business needs.",
@@ -524,7 +525,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "Strategic orientation and fenestration ensure well-lit, ventilated work environments.",
       execution: "Close coordination between design and site teams to deliver a seamless build."
     },
-    images: []
+    images: [hplImg]
   },
   {
     id: "121-122",
