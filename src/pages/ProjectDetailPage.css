@@ -209,6 +209,12 @@
   background: #fff;
 }
 
+/* When gallery has only 2 images — keep them contained, not full-width stretched */
+.proj-gallery--small {
+  grid-template-columns: repeat(2, minmax(0, 480px));
+  justify-content: center;
+}
+
 .proj-gallery__row {
   display: contents;
 }

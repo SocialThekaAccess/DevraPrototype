@@ -117,7 +117,7 @@ export default function ProjectDetailPage({
       </section>
 
       {galleryImages.length > 1 && (
-        <section className="proj-gallery">
+        <section className={`proj-gallery${galleryImages.length <= 2 ? ' proj-gallery--small' : ''}`}>
           {galleryImages.map((image, index) => (
             <div key={index} className="proj-gallery__cell" onClick={() => openLightbox(index)}>
               <img
