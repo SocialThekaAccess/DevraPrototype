@@ -17,6 +17,7 @@ export interface Project {
   heroImage: string;
   mobileHeroImage?: string;
   cardPosition?: string;
+  cardAspectRatio?: string;
   description: string;
   narrative: ProjectNarrative;
   images: string[];

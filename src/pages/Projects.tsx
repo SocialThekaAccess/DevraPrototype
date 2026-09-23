@@ -110,7 +110,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                 onMouseLeave={handleMouseLeave}
               >
                 {/* Image Card Container */}
-                <div className="relative overflow-hidden bg-stone-200 aspect-[4/3] w-full">
+                <div className="relative overflow-hidden bg-stone-200 w-full" style={{ aspectRatio: project.cardAspectRatio || '4/3' }}>
                   <img
                     src={project.heroImage}
                     alt={project.title}
