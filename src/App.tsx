@@ -38,6 +38,7 @@ const SchMsSchoolPage = rLazy(() => import("./Project/SchMsSchoolPage"));
 const ResKangsPage = rLazy(() => import("./Project/ResKangsPage"));
 const SchOakwoodPage = rLazy(() => import("./Project/SchOakwoodPage"));
 const ComHlpPage = rLazy(() => import("./Project/ComHlpPage"));
+const ResMaisonElanPage = rLazy(() => import("./Project/ResMaisonElanPage"));
 
 // Project detail wrapper using URL param
 function ProjectDetailWrapper({ onNavigate, onSelectProject }: { onNavigate: (p: string) => void; onSelectProject: (id: string) => void }) {
@@ -142,6 +143,7 @@ function AppInner() {
                 <Route path="/projects/panchkula-housing" element={<HouPanchkulaPage />} />
                 <Route path="/projects/121-122" element={<Res121122Page />} />
                 <Route path="/projects/midhas" element={<ResMidhasPage />} />
+                <Route path="/projects/maison-elan" element={<ResMaisonElanPage />} />
                 <Route path="/projects/minzs" element={<ResMinzsPage />} />
                 <Route path="/projects/col-supreet" element={<ResSupreetPage />} />
                 <Route path="/projects/villa-201d" element={<ResVilla201DPage />} />

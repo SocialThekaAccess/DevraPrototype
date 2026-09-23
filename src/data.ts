@@ -162,7 +162,29 @@ import schJp2 from "../assets/projects/sch-jp-2.avif";
 import schJp3 from "../assets/projects/sch-jp-3.avif";
 import schOakwood from "../assets/projects/TheOakwoodSchool.png";
 
+import maisonElan1 from "../assets/projects/MaisonElan1.png";
+import maisonElan2 from "../assets/projects/MaisonElan2.png";
+
 export const PROJECTS: Project[] = [
+  {
+    id: "maison-elan",
+    title: "Maison Élan",
+    category: "Residential",
+    location: "Chandigarh",
+    year: "2025",
+    size: "",
+    scope: "Architecture & Interiors",
+    heroImage: maisonElan1,
+    description: "A classical residential masterpiece where timeless European elegance meets refined contemporary living. Maison Élan is defined by ornate detailing, grand proportions, and a warm, gracious character that feels both stately and deeply personal.",
+    narrative: {
+      site: "",
+      planning: "",
+      materials: "",
+      lightVentilation: "",
+      execution: ""
+    },
+    images: [maisonElan1, maisonElan2]
+  },
   {
     id: "sansarg",
     title: "Sansarg",
