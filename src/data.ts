@@ -555,13 +555,13 @@ export const PROJECTS: Project[] = [
     size: "300 SQYD",
     scope: "Architecture & Design",
     heroImage: resMidhas,
-    description: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes.",
+    description: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
     narrative: {
-      site: "A premium plot in New Chandigarh's Cassia sector.",
-      planning: "The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony.",
-      materials: "Dark material palette with warm illuminated volumes adds depth and modern edge.",
-      lightVentilation: "Strategic lighting creates dramatic nighttime character and welcoming atmosphere.",
-      execution: "Deep frames and sculpted elements add character and a distinctly modern edge."
+      site: "",
+      planning: "",
+      materials: "",
+      lightVentilation: "",
+      execution: ""
     },
     images: [resMidhas, resMidhas2, resMidhas3, resMidhas4]
   },
