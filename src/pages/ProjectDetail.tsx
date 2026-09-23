@@ -133,9 +133,6 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight font-medium">
               {project.title}
             </h1>
-            <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed max-w-2xl">
-              {project.description}
-            </p>
           </div>
         </div>
       </section>
