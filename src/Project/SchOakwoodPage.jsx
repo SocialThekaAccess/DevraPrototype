@@ -1,6 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/projects/TheOakwoodSchool.png'
-import galleryImg from '../../assets/projects/oakwoodimage.avif'
 
 export default function SchOakwoodPage() {
   return (
@@ -16,7 +15,7 @@ export default function SchOakwoodPage() {
       heroImage={heroImg}
       heroAspectRatio="16 / 9"
       heroObjectPosition="center center"
-      images={[heroImg, galleryImg]}
+      images={[heroImg]}
     />
   )
 }
