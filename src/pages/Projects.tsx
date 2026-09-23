@@ -117,7 +117,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
-                    className={`w-full h-full object-cover transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
+                    className={`w-full h-full object-cover object-center transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
                   />
                   {/* Subtle hover overlay and zoom */}
                   <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>
