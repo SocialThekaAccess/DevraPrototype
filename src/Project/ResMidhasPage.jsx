@@ -14,8 +14,7 @@ export default function ResMidhasPage() {
       category="Residential"
       size="300 SQYD"
       year="2025"
-      overview="A warm contemporary home defined by its pitched roofline, clean geometry, and tropical landscape setting. Natural materials, deep overhangs, and generous glazing create a balanced façade — modern in expression yet grounded in earthy simplicity."
-      overview2="Inside, the home blends artistry and comfort — textured walls, crafted partitions, and soft lighting shaping calm, expressive spaces. Every room reflects a warm, personal character, bringing together elegance, detail, and an inviting lived-in charm."
+      overview="A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge."
       heroImage={heroImg}
       heroAspectRatio="1548 / 1016"
       heroObjectPosition="center center"
