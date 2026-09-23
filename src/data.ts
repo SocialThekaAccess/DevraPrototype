@@ -266,6 +266,7 @@ export const PROJECTS: Project[] = [
     size: "8,000 sq. ft.",
     scope: "Architecture, Interiors & Landscape Design",
     heroImage: resKangsNew,
+    cardPosition: "center top",
     description: "A sprawling luxury farmhouse designed as a series of connected low-slung pavilions that frame views of the surrounding organic farms and lush landscapes.",
     narrative: {
       site: "The site is a multi-acre organic agricultural estate near the Punjab-Haryana border, offering endless panoramic views and absolute quietude.",

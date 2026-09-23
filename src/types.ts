@@ -16,6 +16,7 @@ export interface Project {
   scope: string;
   heroImage: string;
   mobileHeroImage?: string;
+  cardPosition?: string;
   description: string;
   narrative: ProjectNarrative;
   images: string[];
