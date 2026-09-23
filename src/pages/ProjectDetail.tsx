@@ -201,7 +201,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       {/* Image Gallery with Dynamic Rows */}
       {rows.length > 0 && (
         <section className="pt-4 pb-10 md:pt-5 md:pb-14">
-          <div className="proj-meta-strip__inner">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="space-y-8 w-full">
             {rows.map((row, rowIndex) => (
               <motion.div
