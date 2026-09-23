@@ -8,7 +8,7 @@ export default function ResMaisonElanPage() {
       backTo="/services/residential"
       backLabel="Residential"
       title="Maison Élan"
-      location="Chandigarh"
+      location="Omaxe, New Chandigarh"
       category="Residential"
       size=""
       year="2025"

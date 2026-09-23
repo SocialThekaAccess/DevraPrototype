@@ -170,7 +170,7 @@ export const PROJECTS: Project[] = [
     id: "maison-elan",
     title: "Maison Élan",
     category: "Residential",
-    location: "Chandigarh",
+    location: "Omaxe, New Chandigarh",
     year: "2025",
     size: "",
     scope: "Architecture & Interiors",
