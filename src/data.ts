@@ -579,7 +579,7 @@ export const PROJECTS: Project[] = [
     heroImage: resMidhas,
     description: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
     narrative: {
-      site: "",
+      site: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
       planning: "",
       materials: "",
       lightVentilation: "",
