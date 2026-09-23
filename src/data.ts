@@ -157,6 +157,7 @@ import fhNagra3 from "../assets/projects/fh-nagra-3.avif";
 import schJp1 from "../assets/projects/sch-jp-1.avif";
 import schJp2 from "../assets/projects/sch-jp-2.avif";
 import schJp3 from "../assets/projects/sch-jp-3.avif";
+import schOakwood from "../assets/projects/TheOakwoodSchool.png";
 
 export const PROJECTS: Project[] = [
   {
@@ -337,7 +338,7 @@ export const PROJECTS: Project[] = [
     year: "2020",
     size: "24,000 sq. ft.",
     scope: "Architecture & Campus Masterplanning",
-    heroImage: schMsSchool,
+    heroImage: schOakwood,
     description: "An institutional environment that redefines classroom layouts by surrounding them with interactive courtyard corridors, passive light scoops, and robust, maintenance-free finishes.",
     narrative: {
       site: "A flat 2-acre campus in rural Punjab. The masterplan was oriented to shield the main playing grounds from strong dust-carrying winds.",
