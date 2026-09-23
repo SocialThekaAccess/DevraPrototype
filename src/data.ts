@@ -30,6 +30,7 @@ import resVilla588Mobile from "../assets/projects/res-villa-58-8.avif";
 import resVilla58Mobile from "../assets/projects/res-villa-58.jpg";
 import resVilla201d from "../assets/projects/res-villa-201d.jpg";
 import resVilla201dHD1 from "../assets/projects/res-villa-201d-hd1.png";
+import resVilla201dHD3 from "../assets/projects/res-villa-201d-hd3.png";
 import resVilla201d2 from "../assets/projects/res-villa-201d-2.jpg";
 import resVilla201d3 from "../assets/projects/res-villa-201d-3.jpg";
 import resVilla201d4 from "../assets/projects/res-villa-201d-4.avif";
@@ -239,7 +240,7 @@ export const PROJECTS: Project[] = [
     year: "2022",
     size: "4,800 sq. ft.",
     scope: "Luxury Interior Styling & Spatial Planning",
-    heroImage: resVilla201dHD1,
+    heroImage: resVilla201dHD3,
     description: "A warm minimalist interior styling project that brings together rich Italian marble, custom bespoke brass detailing, and custom furniture tailored to the family's daily routines.",
     narrative: {
       site: "An existing premium residence in Chandigarh required a complete internal transformation to reflect the occupant’s minimalist lifestyle and hosting habits.",
