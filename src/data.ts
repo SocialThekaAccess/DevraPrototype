@@ -37,7 +37,7 @@ import resVilla201d6 from "../assets/projects/res-villa-201d-6.avif";
 import resVilla201d7 from "../assets/projects/res-villa-201d-7.avif";
 import resVilla201d8 from "../assets/projects/res-villa-201d-8.jpg";
 import resVilla201d9 from "../assets/projects/res-villa-201d-9.jpg";
-import resKangsNew from "../assets/projects/TheKangs.png";
+import resKangsNew from "../assets/projects/TheKangs2.png";
 import resVilla361 from "../assets/projects/res-villa-361.avif";
 import resVilla361Mobile from "../assets/projects/Villa361Mobileview.png";
 import resVilla3612 from "../assets/projects/res-villa-361-2.avif";
@@ -266,8 +266,6 @@ export const PROJECTS: Project[] = [
     size: "8,000 sq. ft.",
     scope: "Architecture, Interiors & Landscape Design",
     heroImage: resKangsNew,
-    cardPosition: "top",
-    cardAspectRatio: "16/16",
     description: "A sprawling luxury farmhouse designed as a series of connected low-slung pavilions that frame views of the surrounding organic farms and lush landscapes.",
     narrative: {
       site: "The site is a multi-acre organic agricultural estate near the Punjab-Haryana border, offering endless panoramic views and absolute quietude.",
