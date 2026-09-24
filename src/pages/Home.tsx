@@ -193,7 +193,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       : currentSlide === 4 
                         ? 'object-cover object-center brightness-110' 
                         : currentSlide === 5
-                          ? 'object-cover object-[center_30%]'
+                          ? 'object-contain object-center bg-stone-900'
                           : 'object-cover object-center'
               }`}
             />
