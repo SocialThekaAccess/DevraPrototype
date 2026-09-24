@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/TheKangs2.png'
+import heroImg from '../../assets/projects/TheKangs2.webp'
 
 export default function ResKangsPage() {
   return (

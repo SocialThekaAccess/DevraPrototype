@@ -1,8 +1,8 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/THEMidhasHero.png'
-import img1 from '../../assets/projects/MIDHAJI1.png'
-import img2 from '../../assets/projects/MIDHAJI2.png'
-import img3 from '../../assets/projects/MIDHAJI3.png'
+import heroImg from '../../assets/projects/THEMidhasHero.webp'
+import img1 from '../../assets/projects/MIDHAJI1.webp'
+import img2 from '../../assets/projects/MIDHAJI2.webp'
+import img3 from '../../assets/projects/MIDHAJI3.webp'
 
 export default function ResMidhasPage() {
   return (

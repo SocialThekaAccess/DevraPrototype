@@ -119,7 +119,7 @@ export default function ProjectDetailPage({
                 src={image}
                 alt={`${title} image ${index + 2}`}
                 className="proj-gallery__img"
-                loading="lazy"
+                loading="lazy" 
                 referrerPolicy="no-referrer"
               />
               <div className="proj-gallery__overlay">

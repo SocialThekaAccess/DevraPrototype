@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/res-minzs.jpg'
-import img2 from '../../assets/projects/res-minzs-2.jpg'
-import img3 from '../../assets/projects/res-minzs-3.jpg'
-import img4 from '../../assets/projects/res-minzs-4.jpg'
-import img5 from '../../assets/projects/res-minzs-5.jpg'
-import img6 from '../../assets/projects/res-minzs-6.jpg'
-import img7 from '../../assets/projects/res-minzs-7.jpg'
-import img8 from '../../assets/projects/res-minzs-8.jpg'
-import img9 from '../../assets/projects/res-minzs-9.jpg'
+import img1 from '../../assets/projects/res-minzs.webp'
+import img2 from '../../assets/projects/res-minzs-2.webp'
+import img3 from '../../assets/projects/res-minzs-3.webp'
+import img4 from '../../assets/projects/res-minzs-4.webp'
+import img5 from '../../assets/projects/res-minzs-5.webp'
+import img6 from '../../assets/projects/res-minzs-6.webp'
+import img7 from '../../assets/projects/res-minzs-7.webp'
+import img8 from '../../assets/projects/res-minzs-8.webp'
+import img9 from '../../assets/projects/res-minzs-9.webp'
 
 export default function ResMinzsPage() {
   return (

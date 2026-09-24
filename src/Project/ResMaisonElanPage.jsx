@@ -1,6 +1,6 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/MaisonElan1.png'
-import img2 from '../../assets/projects/MaisonElan2.png'
+import heroImg from '../../assets/projects/MaisonElan1.webp'
+import img2 from '../../assets/projects/MaisonElan2.webp'
 
 export default function ResMaisonElanPage() {
   return (

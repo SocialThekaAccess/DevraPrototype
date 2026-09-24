@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/HPL.png'
+import heroImg from '../../assets/projects/HPL.webp'
 
 export default function ComHlpPage() {
   return (

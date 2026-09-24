@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/FORTOFINO1.png'
-import img2 from '../../assets/projects/FORTOFINO2.png'
-import img3 from '../../assets/projects/FORTOFINO3.png'
-import img4 from '../../assets/projects/FORTOFINO4.png'
-import img5 from '../../assets/projects/FORTOFINO5.png'
-import img6 from '../../assets/projects/FORTOFINO6.png'
-import img7 from '../../assets/projects/FORTOFINO7.png'
-import img8 from '../../assets/projects/FORTOFINO8.png'
-import img9 from '../../assets/projects/FORTOFINO9.png'
+import img1 from '../../assets/projects/FORTOFINO1.webp'
+import img2 from '../../assets/projects/FORTOFINO2.webp'
+import img3 from '../../assets/projects/FORTOFINO3.webp'
+import img4 from '../../assets/projects/FORTOFINO4.webp'
+import img5 from '../../assets/projects/FORTOFINO5.webp'
+import img6 from '../../assets/projects/FORTOFINO6.webp'
+import img7 from '../../assets/projects/FORTOFINO7.webp'
+import img8 from '../../assets/projects/FORTOFINO8.webp'
+import img9 from '../../assets/projects/FORTOFINO9.webp'
 
 export default function ComFortofinoPage() {
   return (

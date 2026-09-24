@@ -1,30 +1,30 @@
-// Lightweight project list — only heroImages loaded here.
+﻿// Lightweight project list — only heroImages loaded here.
 // Used by Projects page and Home "Selected Works" section.
 // Full gallery images stay in data.ts (loaded only when a project detail page opens).
 
-import maisonElanHero from "../assets/projects/MaisonElanSliderimage.png";
+import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
 import houSansargHero from "../assets/projects/hou-sansarg-1.avif";
-import resVilla58Hero from "../assets/projects/Villa58heroimg.png";
-import resVilla58HeroMobile from "../assets/projects/res-villa-58.jpg";
-import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.png";
-import resKangsHero from "../assets/projects/TheKangs2.png";
-import resVilla361Hero from "../assets/projects/villa361PDHero20.png";
-import resVilla361HeroMobile from "../assets/projects/Villa361Mobileview.png";
-import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.png";
-import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.png";
-import panchkulaHero from "../assets/PanchkulaHousing.png";
-import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.png";
-import houUnwalledHero from "../assets/projects/Unwalledimageproject.png";
-import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.png";
-import comDevraArchHero from "../assets/projects/com-devra-arch-1.jpg";
+import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
+import resVilla58HeroMobile from "../assets/projects/res-villa-58.webp";
+import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
+import resKangsHero from "../assets/projects/TheKangs2.webp";
+import resVilla361Hero from "../assets/projects/villa361PDHero20.webp";
+import resVilla361HeroMobile from "../assets/projects/Villa361Mobileview.webp";
+import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.webp";
+import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.webp";
+import panchkulaHero from "../assets/PanchkulaHousing.webp";
+import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
+import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
+import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.webp";
+import comDevraArchHero from "../assets/projects/com-devra-arch-1.webp";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
-import hplHero from "../assets/projects/HPL.png";
+import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/res-121-122.avif";
-import resMidhasHero from "../assets/projects/THEMidhasHero.png";
-import resMinzsHero from "../assets/projects/res-minzs.jpg";
-import resVilla303Hero from "../assets/projects/Villa303HeroSlider.png";
+import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
+import resMinzsHero from "../assets/projects/res-minzs.webp";
+import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
 import fhNagraHero from "../assets/projects/fh-nagra-1.avif";
 import schJpHero from "../assets/projects/sch-jp-3.avif";
 

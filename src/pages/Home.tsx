@@ -1,24 +1,24 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
 import { PROJECT_CARDS } from "../projectsData";
 import type { ProjectCard } from "../projectsData";
 import SEOMeta from "../components/SEOMeta";
-import slider1 from "../../assets/projects/Villaa303.png";
-import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.png";
-import slider2 from "../../assets/projects/villa361PDHero20.png";
-import slider2Mobile from "../../assets/projects/Villa361Mobileview.png";
-import slider3 from "../../assets/projects/Unwalledimageproject.png";
-import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";
-import slider4 from "../../assets/projects/Villaa58.png";
-import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.png";
-import slider5 from "../../assets/PanchkulaHousing.png";
-import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.png";
-import slider6 from "../../assets/projects/MaisonElanSliderimage.png";
-import slider6Mobile from "../../assets/projects/MaisonElanSliderimage.png";
+import slider1 from "../../assets/projects/Villaa303.webp";
+import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.webp";
+import slider2 from "../../assets/projects/villa361PDHero20.webp";
+import slider2Mobile from "../../assets/projects/Villa361Mobileview.webp";
+import slider3 from "../../assets/projects/Unwalledimageproject.webp";
+import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.webp";
+import slider4 from "../../assets/projects/Villaa58.webp";
+import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.webp";
+import slider5 from "../../assets/PanchkulaHousing.webp";
+import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.webp";
+import slider6 from "../../assets/projects/MaisonElanSliderimage.webp";
+import slider6Mobile from "../../assets/projects/MaisonElanSliderimage.webp";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
-import commercialImg from "../../assets/commercial.jpg";
+import commercialImg from "../../assets/commercial.webp";
 import housingImg from "../../assets/housing.avif";
 
 interface HomeProps {

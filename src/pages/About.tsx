@@ -1,13 +1,13 @@
-import { motion } from "motion/react";
+﻿import { motion } from "motion/react";
 import { Award, Compass, Heart, Users, MapPin, Sparkles } from "lucide-react";
 import SEOMeta from "../components/SEOMeta";
 import residentialImg from "../../assets/residential.avif";
-import varunDevraImg from "../../assets/VarunDevra.png";
+import varunDevraImg from "../../assets/VarunDevra.webp";
 import resVilla361 from "../../assets/projects/res-villa-361.avif";
 import fhGills from "../../assets/projects/fh-gills-1.avif";
-import resVilla201d from "../../assets/projects/res-villa-201d.jpg";
-import resVilla58 from "../../assets/projects/res-villa-58.jpg";
-import comDevra from "../../assets/projects/com-devra-arch-1.jpg";
+import resVilla201d from "../../assets/projects/res-villa-201d.webp";
+import resVilla58 from "../../assets/projects/res-villa-58.webp";
+import comDevra from "../../assets/projects/com-devra-arch-1.webp";
 import houSansarg from "../../assets/projects/hou-sansarg-1.avif";
 
 interface AboutProps {

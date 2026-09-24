@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/OAKWODDSCHOOL1.png'
-import img2 from '../../assets/projects/OAKWODDSCHOOL2.png'
-import img3 from '../../assets/projects/OAKWODDSCHOOL3.png'
+import heroImg from '../../assets/projects/OAKWODDSCHOOL1.webp'
+import img2 from '../../assets/projects/OAKWODDSCHOOL2.webp'
+import img3 from '../../assets/projects/OAKWODDSCHOOL3.webp'
 
 export default function SchOakwoodPage() {
   return (

@@ -1,9 +1,9 @@
-import { SERVICES } from "../data";
+﻿import { SERVICES } from "../data";
 import { CornerDownRight, Check, ArrowUpRight } from "lucide-react";
 import SEOMeta from "../components/SEOMeta";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
-import commercialImg from "../../assets/commercial.jpg";
+import commercialImg from "../../assets/commercial.webp";
 import housingImg from "../../assets/housing.avif";
 import schoolsImg from "../../assets/schools.avif";
 

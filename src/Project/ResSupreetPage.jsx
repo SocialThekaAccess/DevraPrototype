@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/Lt.ColSupreetSinghHome.png'
-import img1 from '../../assets/projects/Lt.ColSupreetSingh.png'
-import img2 from '../../assets/projects/Lt.ColSupreetSingh1.png'
+import heroImg from '../../assets/projects/Lt.ColSupreetSinghHome.webp'
+import img1 from '../../assets/projects/Lt.ColSupreetSingh.webp'
+import img2 from '../../assets/projects/Lt.ColSupreetSingh1.webp'
 
 export default function ResSupreetPage() {
   return (

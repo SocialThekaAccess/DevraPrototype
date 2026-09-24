@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/CASTLEGREY1.png'
-import img2 from '../../assets/projects/CASTLEGREY2.png'
-import img3 from '../../assets/projects/CASTLEGREY3.png'
-import img4 from '../../assets/projects/CASTLEGREY4.png'
-import img5 from '../../assets/projects/CASTLEGREY5.png'
-import img6 from '../../assets/projects/CASTLEGREY6.png'
-import img7 from '../../assets/projects/CASTLEGREY7.png'
-import img8 from '../../assets/projects/CASTLEGREY8.png'
-import img9 from '../../assets/projects/CASTLEGREY9.png'
+import img1 from '../../assets/projects/CASTLEGREY1.webp'
+import img2 from '../../assets/projects/CASTLEGREY2.webp'
+import img3 from '../../assets/projects/CASTLEGREY3.webp'
+import img4 from '../../assets/projects/CASTLEGREY4.webp'
+import img5 from '../../assets/projects/CASTLEGREY5.webp'
+import img6 from '../../assets/projects/CASTLEGREY6.webp'
+import img7 from '../../assets/projects/CASTLEGREY7.webp'
+import img8 from '../../assets/projects/CASTLEGREY8.webp'
+import img9 from '../../assets/projects/CASTLEGREY9.webp'
 
 export default function HosCastleGreyPage() {
   return (

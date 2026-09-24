@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/com-devra-arch-1.jpg'
-import img2 from '../../assets/projects/com-devra-arch-2.jpg'
-import img3 from '../../assets/projects/com-devra-arch-3.jpg'
-import img4 from '../../assets/projects/com-devra-arch-4.jpg'
-import img5 from '../../assets/projects/com-devra-arch-5.jpg'
-import img6 from '../../assets/projects/com-devra-arch-6.jpg'
+import img1 from '../../assets/projects/com-devra-arch-1.webp'
+import img2 from '../../assets/projects/com-devra-arch-2.webp'
+import img3 from '../../assets/projects/com-devra-arch-3.webp'
+import img4 from '../../assets/projects/com-devra-arch-4.webp'
+import img5 from '../../assets/projects/com-devra-arch-5.webp'
+import img6 from '../../assets/projects/com-devra-arch-6.webp'
 import img7 from '../../assets/projects/com-devra-arch-7.avif'
-import img8 from '../../assets/projects/com-devra-arch-8.jpg'
-import img9 from '../../assets/projects/com-devra-arch-9.jpg'
+import img8 from '../../assets/projects/com-devra-arch-8.webp'
+import img9 from '../../assets/projects/com-devra-arch-9.webp'
 
 export default function ComDevraArchPage() {
   return (
