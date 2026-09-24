@@ -14,8 +14,8 @@ import slider4 from "../../assets/projects/Villaa58.png";
 import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.png";
 import slider5 from "../../assets/PanchkulaHousing.png";
 import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.png";
-import slider6 from "../../assets/projects/MaisonElan1.png";
-import slider6Mobile from "../../assets/projects/MaisonElan1.png";
+import slider6 from "../../assets/projects/MaisonElanSliderimage.png";
+import slider6Mobile from "../../assets/projects/MaisonElanSliderimage.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -70,6 +70,11 @@ const HERO_SLIDES = [
     text: "Timeless European elegance meets refined contemporary living — ornate detailing, grand proportions, and a gracious character that feels both stately and deeply personal."
   }
 ];
+
+// Slides jinme image crop nahi honi chahiye (0 = first, 5 = last).
+// In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
+// Agar kisi aur slide mein bhi cut ho raha ho to uska index yahan add kar do, jaise [0, 3, 5]
+const CONTAIN_SLIDES = [0, 5];
 
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -177,26 +182,54 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               currentSlide === 3 ? 'bg-black/20' : 
               'bg-black/40'
             }`} />
-            <img
-              src={isMobile ? HERO_SLIDES[currentSlide].mobileImage : HERO_SLIDES[currentSlide].image}
-              alt={HERO_SLIDES[currentSlide].title}
-              fetchPriority="high"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              className={`w-full h-full ${
-                isMobile 
-                  ? 'object-contain object-center' 
-                  : currentSlide === 1 
-                    ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100' 
-                    : currentSlide === 3 
-                      ? 'object-cover object-center' 
-                      : currentSlide === 4 
-                        ? 'object-cover object-center brightness-110' 
-                        : currentSlide === 5
-                          ? 'object-contain object-center bg-stone-900'
-                          : 'object-cover object-center'
-              }`}
-            />
+
+            {(() => {
+              const slide = HERO_SLIDES[currentSlide];
+              const src = isMobile ? slide.mobileImage : slide.image;
+              const useContain = isMobile || CONTAIN_SLIDES.includes(currentSlide);
+
+              // First & last slide (aur mobile): blurred background + poori uncropped image
+              if (useContain) {
+                return (
+                  <>
+                    {/* Blurred background - poori screen bharta hai, kaali patti nahi dikhti */}
+                    <img
+                      src={src}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-cover object-center blur-2xl scale-110 brightness-75"
+                    />
+                    {/* Asli image - poori dikhti hai, upar-neeche se cut nahi hoti */}
+                    <img
+                      src={src}
+                      alt={slide.title}
+                      fetchPriority="high"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                      className="relative w-full h-full object-contain object-center"
+                    />
+                  </>
+                );
+              }
+
+              // Baaki slides: pehle jaisa cover
+              return (
+                <img
+                  src={src}
+                  alt={slide.title}
+                  fetchPriority="high"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className={`w-full h-full ${
+                    currentSlide === 1
+                      ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100'
+                      : currentSlide === 4
+                        ? 'object-cover object-center brightness-110'
+                        : 'object-cover object-center'
+                  }`}
+                />
+              );
+            })()}
           </motion.div>
         </AnimatePresence>
 
