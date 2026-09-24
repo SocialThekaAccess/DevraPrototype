@@ -1,5 +1,6 @@
 import SEOMeta from '../components/SEOMeta'
 import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import './ProjectDetailPage.css'
 
@@ -47,6 +48,9 @@ export default function ProjectDetailPage({
 
   return (
     <div className="proj-page">
+      <Helmet>
+        <link rel="preload" as="image" href={displayHeroImg} fetchpriority="high" />
+      </Helmet>
       <SEOMeta
         title={pageTitle}
         description={overview}
@@ -62,6 +66,8 @@ export default function ProjectDetailPage({
             className="proj-hero__img"
             referrerPolicy="no-referrer"
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
         <div className="proj-hero__title-wrap">
