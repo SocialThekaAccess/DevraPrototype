@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/Villa58heroimg.png'
+import heroImg from '../../assets/projects/Villaa58.png'
 import heroImgMobile from '../../assets/Villa58MobileVersion.png'
 import img1 from '../../assets/projects/res-villa-58-1.png'
 import img2 from '../../assets/projects/res-villa-58-2.png'
@@ -25,7 +25,7 @@ export default function ResVilla58Page() {
       overview2="Modern finishes, warm wood accents, and thoughtful spatial planning create a home that balances bold architecture with everyday comfort and practicality."
       heroImage={heroImg}
       heroImageMobile={heroImgMobile}
-      heroObjectPosition="center 70%"
+      heroObjectPosition="center center"
       images={[img1, img2, img3, img4, img6, img7, img8, img9, img10]}
     />
   )
