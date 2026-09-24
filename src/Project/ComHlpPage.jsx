@@ -1,5 +1,8 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/projects/HPL.webp'
+import img1 from '../../assets/projects/HCL1.webp'
+import img2 from '../../assets/projects/HCL2.webp'
+import img3 from '../../assets/projects/HCL3.webp'
 
 export default function ComHlpPage() {
   return (
@@ -13,9 +16,8 @@ export default function ComHlpPage() {
       year="2024"
       overview="A contemporary commercial project blending functional efficiency with refined architectural expression."
       heroImage={heroImg}
-      heroAspectRatio="1540 / 1021"
       heroObjectPosition="center center"
-      images={[heroImg]}
+      images={[img1, img2, img3]}
     />
   )
 }
