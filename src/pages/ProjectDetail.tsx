@@ -161,7 +161,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Project Narrative Section */}
       {project.narrative && (
-        <section className="pt-3 pb-2 md:pt-4 md:pb-2">
+        <section className="pt-3 pb-8 md:pt-4 md:pb-12">
           <div className="proj-meta-strip__inner">
 
             {/* OVERVIEW label — above paragraph */}
