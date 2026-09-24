@@ -108,7 +108,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       />
 
       {/* Hero Section with Project Image */}
-      <section className="relative w-full h-[75vh] md:h-[85vh] overflow-hidden bg-stone-900">
+      <section className="relative w-full h-screen overflow-hidden bg-stone-900">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <picture>
           {project.mobileHeroImage && (
