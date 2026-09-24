@@ -197,7 +197,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       src={src}
                       alt=""
                       aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover object-center blur-2xl scale-110 brightness-75"
+                      className="absolute inset-0 w-full h-full object-cover object-center blur-3xl scale-125 brightness-50"
                     />
                     {/* Asli image - poori dikhti hai, upar-neeche se cut nahi hoti */}
                     <img
