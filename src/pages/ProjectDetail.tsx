@@ -221,7 +221,8 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
                   return (
                     <div
                       key={`img-${rowIndex}-${imageIndex}`}
-                      className="relative overflow-hidden bg-stone-200 aspect-[4/3] group"
+                      className="relative overflow-hidden bg-stone-200 aspect-[4/3] group cursor-pointer"
+                      onClick={() => openLightbox(globalIndex >= 0 ? globalIndex : imageIndex)}
                     >
                       <img
                         src={image}
@@ -231,6 +232,11 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
                         decoding="async"
                         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="bg-white/90 text-stone-900 text-[10px] uppercase tracking-widest font-semibold px-4 py-2">
+                          View Full
+                        </span>
+                      </div>
                     </div>
                   );
                 })}
