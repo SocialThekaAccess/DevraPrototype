@@ -14,6 +14,8 @@ import slider4 from "../../assets/projects/Villaa58.png";
 import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.png";
 import slider5 from "../../assets/PanchkulaHousing.png";
 import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.png";
+import slider6 from "../../assets/projects/MaisonElan1.png";
+import slider6Mobile from "../../assets/projects/MaisonElan1.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.jpg";
@@ -59,6 +61,13 @@ const HERO_SLIDES = [
     subtitle: "PREMIUM HOUSING // PANCHKULA",
     title: "Panchkula Housing",
     text: "Elegant multi-family units offering high visual privacy and shared central greens."
+  },
+  {
+    image: slider6,
+    mobileImage: slider6Mobile,
+    subtitle: "CLASSICAL RESIDENCE // NEW CHANDIGARH",
+    title: "Maison Élan",
+    text: "Timeless European elegance meets refined contemporary living — ornate detailing, grand proportions, and a gracious character that feels both stately and deeply personal."
   }
 ];
 
@@ -115,7 +124,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % 5; // 5 slides
+        const nextSlide = (prev + 1) % HERO_SLIDES.length;
         return nextSlide;
       });
     }, 6000);
