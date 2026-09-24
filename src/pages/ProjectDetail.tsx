@@ -93,7 +93,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   };
 
   return (
-    <div id="project-detail-page" className="bg-stone-50 text-stone-900 min-h-screen pt-20">
+    <div id="project-detail-page" className="bg-stone-50 text-stone-900 min-h-screen">
       <SEOMeta
         title={`${project.title} | ${project.category} | DEVRA Architects`}
         description={project.description}
