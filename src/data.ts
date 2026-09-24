@@ -40,7 +40,7 @@ import resVilla201d7 from "../assets/projects/res-villa-201d-7.avif";
 import resVilla201d8 from "../assets/projects/res-villa-201d-8.jpg";
 import resVilla201d9 from "../assets/projects/res-villa-201d-9.jpg";
 import resKangsNew from "../assets/projects/TheKangs2.png";
-import resVilla361 from "../assets/projects/res-villa-361.avif";
+import resVilla361 from "../assets/projects/villa361PDHero20.png";
 import resVilla361Mobile from "../assets/projects/Villa361Mobileview.png";
 import resVilla3612 from "../assets/projects/res-villa-361-2.avif";
 import resVilla3613 from "../assets/projects/res-villa-361-3.avif";

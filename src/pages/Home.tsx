@@ -6,7 +6,7 @@ import type { ProjectCard } from "../projectsData";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/projects/Villaa303.png";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.png";
-import slider2 from "../../assets/projects/res-villa-361.avif";
+import slider2 from "../../assets/projects/villa361PDHero20.png";
 import slider2Mobile from "../../assets/projects/Villa361Mobileview.png";
 import slider3 from "../../assets/projects/Unwalledimageproject.png";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.png";

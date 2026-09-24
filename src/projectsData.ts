@@ -8,7 +8,7 @@ import resVilla58Hero from "../assets/projects/Villa58heroimg.png";
 import resVilla58HeroMobile from "../assets/projects/res-villa-58.jpg";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.png";
 import resKangsHero from "../assets/projects/TheKangs2.png";
-import resVilla361Hero from "../assets/projects/res-villa-361.avif";
+import resVilla361Hero from "../assets/projects/villa361PDHero20.png";
 import resVilla361HeroMobile from "../assets/projects/Villa361Mobileview.png";
 import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.png";
 import schOakwoodHero from "../assets/projects/TheOakwoodSchool.png";
