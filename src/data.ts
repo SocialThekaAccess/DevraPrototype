@@ -125,7 +125,7 @@ import res121122 from "../assets/projects/res-121-122.avif";
 import res1211222 from "../assets/projects/res-121-122-2.avif";
 import res1211223 from "../assets/projects/res-121-122-3.avif";
 
-import resMidhas from "../assets/projects/MIDHAJiHome.png";
+import resMidhas from "../assets/projects/THEMidhasHero.png";
 import resMidhas2 from "../assets/projects/MIDHAJI1.png";
 import resMidhas3 from "../assets/projects/MIDHAJI2.png";
 import resMidhas4 from "../assets/projects/MIDHAJI3.png";
