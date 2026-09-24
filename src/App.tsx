@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy as rLazy, Suspense, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation, useParams } from "react-router-dom";
@@ -40,7 +40,46 @@ const SchOakwoodPage = rLazy(() => import("./Project/SchOakwoodPage"));
 const ComHlpPage = rLazy(() => import("./Project/ComHlpPage"));
 const ResMaisonElanPage = rLazy(() => import("./Project/ResMaisonElanPage"));
 
-// Project detail wrapper using URL param
+// Prefetch all lazy page chunks in background after app loads
+function PrefetchAll() {
+  useEffect(() => {
+    const prefetch = () => {
+      import("./pages/Projects");
+      import("./pages/ProjectDetail");
+      import("./pages/About");
+      import("./pages/Vision");
+      import("./pages/Services");
+      import("./pages/Process");
+      import("./pages/Journal");
+      import("./pages/Contact");
+      import("./Project/ComDevraArchPage");
+      import("./Project/ComFortofinoPage");
+      import("./Project/ComMilkPointPage");
+      import("./Project/FhGillsFarmhousePage");
+      import("./Project/HosCastleGreyPage");
+      import("./Project/HouPanchkulaPage");
+      import("./Project/Res121122Page");
+      import("./Project/ResMidhasPage");
+      import("./Project/ResMinzsPage");
+      import("./Project/ResSupreetPage");
+      import("./Project/ResVilla201DPage");
+      import("./Project/ResVilla303Page");
+      import("./Project/ResVilla361Page");
+      import("./Project/ResVilla58Page");
+      import("./Project/SchMsSchoolPage");
+      import("./Project/ResKangsPage");
+      import("./Project/SchOakwoodPage");
+      import("./Project/ComHlpPage");
+      import("./Project/ResMaisonElanPage");
+    };
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(prefetch);
+    } else {
+      setTimeout(prefetch, 1000);
+    }
+  }, []);
+  return null;
+}
 function ProjectDetailWrapper({ onNavigate, onSelectProject }: { onNavigate: (p: string) => void; onSelectProject: (id: string) => void }) {
   const { id } = useParams<{ id: string }>();
   const project = PROJECTS.find((p) => p.id === id) || PROJECTS[0];
@@ -121,18 +160,11 @@ function AppInner() {
       </AnimatePresence>
 
       <Navbar currentPath={currentPath} onNavigate={onNavigate} />
+      <PrefetchAll />
 
       <main className="min-h-[80vh]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Suspense fallback={<LoadingSpinner />}>
-              <Routes location={location}>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Routes location={location}>
                 <Route path="/" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects" element={<Projects onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/devra-architects" element={<ComDevraArchPage />} />
@@ -162,10 +194,8 @@ function AppInner() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/services" element={<Services onNavigate={onNavigate} />} />
                 <Route path="*" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
-              </Routes>
-            </Suspense>
-          </motion.div>
-        </AnimatePresence>
+            </Routes>
+          </Suspense>
       </main>
 
       <Footer onNavigate={onNavigate} />
