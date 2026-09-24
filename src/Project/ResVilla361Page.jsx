@@ -1,4 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
+import heroImg from '../../assets/projects/villa361PDHero20.png'
 import img1 from '../../assets/projects/villa361PD1.png'
 import img2 from '../../assets/projects/villa361PD2.png'
 import img3 from '../../assets/projects/villa361PD3.png'
@@ -37,6 +38,7 @@ export default function ResVilla361Page() {
       year="2021"
       overview="This home blends warm stone, clean modern lines, and generous glazing to create a calm, contemporary atmosphere. Inside, earthy materials and soft lighting shape inviting spaces that feel both refined and effortlessly livable."
       overview2="Defined by crisp architectural geometry and natural textures, the residence offers a seamless transition from sunlit exteriors to warm, understated interiors — balancing modern sophistication with a quiet sense of comfort."
+      heroImage={heroImg}
       images={[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25]}
     />
   )
