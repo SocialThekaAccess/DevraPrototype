@@ -14,10 +14,9 @@ export default function ProjectDetailPage({
   heroImage,
   heroImageMobile,
   images = [],
-  // NEW: per-project control, no more title === "..." hacks
-  heroObjectPosition = 'center top',   // e.g. 'center center', '50% 30%'
-  heroAspectRatio,                     // e.g. '1548 / 1016', '16 / 9' — optional
-  heroFit = 'cover',                   // 'cover' | 'contain'
+  // Purane props (heroObjectPosition / heroAspectRatio / heroFit) ab zaroorat nahi:
+  // hero image ab hamesha poori, natural aspect ratio mein dikhti hai.
+  // Agar kisi page se yeh props pass ho rahe hain to koi problem nahi, bas ignore honge.
 }) {
   const heroImg = heroImage || images[0]
   const heroImgMobile = heroImageMobile || heroImg
@@ -56,15 +55,11 @@ export default function ProjectDetailPage({
       />
 
       <section className="proj-hero">
-        <div
-          className="proj-hero__img-wrapper"
-          style={heroAspectRatio ? { aspectRatio: heroAspectRatio, minHeight: 'unset' } : undefined}
-        >
+        <div className="proj-hero__img-wrapper">
           <img
             src={displayHeroImg}
             alt={title}
             className="proj-hero__img"
-            style={{ objectFit: heroFit, objectPosition: heroObjectPosition }}
             referrerPolicy="no-referrer"
             loading="eager"
           />
