@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as HomeIcon } from "lucide-react";
-import { PROJECTS } from "../data";
-import type { Project } from "../types";
+import { PROJECT_CARDS } from "../projectsData";
+import type { ProjectCard } from "../projectsData";
 import SEOMeta from "../components/SEOMeta";
 import slider1 from "../../assets/projects/Villaa303.png";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.png";
@@ -80,11 +80,11 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
-  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
+  const [hoveredProject, setHoveredProject] = useState<ProjectCard | null>(null);
   const [activeHover, setActiveHover] = useState<string | null>(null);
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const handleProjectMouseEnter = (project: Project) => {
+  const handleProjectMouseEnter = (project: ProjectCard) => {
     setHoveredProject(project);
     if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
     hoverTimerRef.current = setTimeout(() => {
@@ -323,7 +323,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Featured Projects: Villa 303, Villa 361, Unwalled, Villa 58, Panchkula Housing */}
-            {PROJECTS.filter(p => 
+            {PROJECT_CARDS.filter(p => 
               ['maison-elan', 'villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'].includes(p.id)
             ).sort((a, b) => {
               const order = ['maison-elan', 'villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'];

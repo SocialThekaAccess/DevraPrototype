@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { PROJECTS } from "../data";
+import { PROJECT_CARDS } from "../projectsData";
 import SEOMeta from "../components/SEOMeta";
 
 interface ProjectsProps {
@@ -26,8 +26,8 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
   };
 
   const filteredProjects = selectedCategory === "All"
-    ? PROJECTS
-    : PROJECTS.filter((p) => p.category === selectedCategory);
+    ? PROJECT_CARDS
+    : PROJECT_CARDS.filter((p) => p.category === selectedCategory);
 
   const handleProjectClick = (id: string) => {
     onSelectProject(id);

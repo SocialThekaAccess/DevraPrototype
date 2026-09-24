@@ -14,10 +14,11 @@ export default defineConfig(() => {
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            'react-vendor': ['react', 'react-dom'],
-            'motion': ['motion'],
-            'lucide': ['lucide-react'],
+          manualChunks(id) {
+            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) return 'react-vendor';
+            if (id.includes('node_modules/motion')) return 'motion';
+            if (id.includes('node_modules/lucide-react')) return 'lucide';
+            if (id.includes('src/data.ts')) return 'project-data';
           },
         },
       },
