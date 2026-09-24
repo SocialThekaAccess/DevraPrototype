@@ -11,7 +11,7 @@ import resKangsHero from "../assets/projects/TheKangs2.png";
 import resVilla361Hero from "../assets/projects/villa361PDHero20.png";
 import resVilla361HeroMobile from "../assets/projects/Villa361Mobileview.png";
 import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.png";
-import schOakwoodHero from "../assets/projects/TheOakwoodSchool.png";
+import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.png";
 import panchkulaHero from "../assets/PanchkulaHousing.png";
 import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.png";
 import houUnwalledHero from "../assets/projects/Unwalledimageproject.png";

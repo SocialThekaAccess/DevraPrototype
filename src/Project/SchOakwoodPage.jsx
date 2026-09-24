@@ -1,5 +1,7 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../assets/projects/TheOakwoodSchool.png'
+import heroImg from '../../assets/projects/OAKWODDSCHOOL1.png'
+import img2 from '../../assets/projects/OAKWODDSCHOOL2.png'
+import img3 from '../../assets/projects/OAKWODDSCHOOL3.png'
 
 export default function SchOakwoodPage() {
   return (
@@ -15,7 +17,7 @@ export default function SchOakwoodPage() {
       heroImage={heroImg}
       heroAspectRatio="16 / 9"
       heroObjectPosition="center center"
-      images={[heroImg]}
+      images={[heroImg, img2, img3]}
     />
   )
 }

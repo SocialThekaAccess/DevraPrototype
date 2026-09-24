@@ -160,7 +160,7 @@ import fhNagra3 from "../assets/projects/fh-nagra-3.avif";
 import schJp1 from "../assets/projects/sch-jp-1.avif";
 import schJp2 from "../assets/projects/sch-jp-2.avif";
 import schJp3 from "../assets/projects/sch-jp-3.avif";
-import schOakwood from "../assets/projects/TheOakwoodSchool.png";
+import schOakwood from "../assets/projects/OAKWODDSCHOOL1.png";
 
 import maisonElan1 from "../assets/projects/MaisonElan1.png";
 import maisonElan2 from "../assets/projects/MaisonElan2.png";
