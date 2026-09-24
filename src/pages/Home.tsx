@@ -74,7 +74,7 @@ const HERO_SLIDES = [
 // Slides jinme image crop nahi honi chahiye (0 = first, 5 = last).
 // In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
 // Agar kisi aur slide mein bhi cut ho raha ho to uska index yahan add kar do, jaise [0, 3, 5]
-const CONTAIN_SLIDES = [0, 5];
+const CONTAIN_SLIDES = [5];
 
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
