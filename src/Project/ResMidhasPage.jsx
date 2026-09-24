@@ -16,8 +16,8 @@ export default function ResMidhasPage() {
       year="2025"
       overview="A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge."
       heroImage={heroImg}
-      heroAspectRatio="1548 / 1016"
-      heroObjectPosition="center top"
+      heroFit="contain"
+      heroObjectPosition="center center"
       images={[img1, img2, img3]}
     />
   )
