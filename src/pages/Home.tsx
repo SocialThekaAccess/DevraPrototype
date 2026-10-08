@@ -378,7 +378,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center md:col-span-2"
             >
               <div className="text-center space-y-4 py-12">
                 <motion.div
@@ -388,8 +388,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="space-y-3"
                 >
-                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-stone-900 font-normal tracking-tight leading-tight text-center">
-                    The Art of Thoughtful Architecture
+                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-stone-900 font-normal tracking-tight leading-tight text-center max-w-2xl mx-auto">
+                    The Art of Thoughtful<br />Architecture
                   </h3>
                   <motion.div
                     initial={{ width: 0 }}

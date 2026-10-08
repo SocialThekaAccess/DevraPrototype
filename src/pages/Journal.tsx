@@ -140,8 +140,15 @@ export default function Journal() {
 
       {/* IMMERSIVE MODAL OVERLAY FOR READING FULL ESSAYS */}
       {activeArticle && (
-        <div id="journal-modal" className="fixed inset-0 bg-stone-950/60 z-50 flex items-center justify-center p-4 md:p-6 backdrop-blur-sm overflow-y-auto">
-          <div className="bg-stone-50 text-stone-900 w-full max-w-3xl my-8 border border-stone-200 shadow-2xl relative max-h-[90vh] overflow-y-auto rounded-none">
+        <div 
+          id="journal-modal" 
+          className="fixed inset-0 bg-stone-950/60 z-[100] flex items-center justify-center p-4 md:p-6 backdrop-blur-sm overflow-y-auto"
+          onClick={() => setActiveArticle(null)}
+        >
+          <div 
+            className="bg-stone-50 text-stone-900 w-full max-w-3xl my-8 border border-stone-200 shadow-2xl relative max-h-[90vh] overflow-y-auto rounded-none"
+            onClick={(e) => e.stopPropagation()}
+          >
             
             {/* Header / close bar */}
             <div className="sticky top-0 bg-stone-50 border-b border-stone-200 py-4 px-6 md:px-8 flex items-center justify-between z-10">
@@ -151,7 +158,7 @@ export default function Journal() {
               <button
                 id="close-journal-modal"
                 onClick={() => setActiveArticle(null)}
-                className="text-stone-500 hover:text-stone-900 p-1 cursor-pointer"
+                className="text-stone-700 hover:text-stone-900 hover:bg-stone-200 p-2 cursor-pointer transition-all rounded-sm flex-shrink-0"
                 aria-label="Close article"
               >
                 <X className="w-5 h-5" />
