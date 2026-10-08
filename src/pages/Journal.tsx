@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { BLOG_POSTS } from "../data";
 import { BlogPost } from "../types";
 import { Search, Calendar, User, Clock, X, ArrowUpRight } from "lucide-react";
 import SEOMeta from "../components/SEOMeta";
+import { Helmet } from "react-helmet-async";
 import residentialImg from "../../assets/residential.avif";
 
 export default function Journal() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeArticle, setActiveArticle] = useState<BlogPost | null>(null);
+
+  // Read article ID from URL on mount
+  useEffect(() => {
+    const articleId = searchParams.get("article");
+    if (articleId) {
+      const article = BLOG_POSTS.find(post => post.id === articleId);
+      if (article) {
+        setActiveArticle(article);
+      }
+    }
+  }, [searchParams]);
 
   const categories = ["All", "Home Planning", "Materials", "Lighting"];
 
@@ -20,26 +35,79 @@ export default function Journal() {
   });
 
   const seoTitle = activeArticle 
-    ? `${activeArticle.title}`
+    ? `${activeArticle.title} | DEVRA Architects Journal`
     : "Architecture & Interior Design Journal | DEVRA Architects";
   
   const seoDescription = activeArticle
-    ? `${activeArticle.summary} Read the full educational guide on DEVRA Architects Journal.`
+    ? activeArticle.summary
     : "Read expert educational essays and design frameworks by Ar. Rajkumar Devra on planning luxury residences, passive solar cooling, local materials, and circadian lighting in India.";
+
+  const seoKeywords = activeArticle
+    ? [
+        activeArticle.category.toLowerCase(),
+        activeArticle.title.toLowerCase(),
+        "devra architects blog",
+        "architecture tips india",
+        "chandigarh architects",
+      ]
+    : [
+        "architectural journal",
+        "indian house planning tips",
+        "passive cooling architecture",
+        "local stones chandigarh",
+        "teak wood door design punjab",
+        "circadian home lighting guidelines",
+      ];
+
+  // Handle opening article - update URL
+  const handleOpenArticle = (post: BlogPost) => {
+    setActiveArticle(post);
+    setSearchParams({ article: post.id });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Handle closing article - clear URL
+  const handleCloseArticle = () => {
+    setActiveArticle(null);
+    setSearchParams({});
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div id="journal-page" className="bg-stone-50 text-stone-900 min-h-screen pt-28 pb-20">
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <meta name="keywords" content={seoKeywords.join(", ")} />
+        <link rel="canonical" href={activeArticle ? `https://devra.in/journal?article=${activeArticle.id}` : "https://devra.in/journal"} />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:type" content={activeArticle ? "article" : "website"} />
+        <meta property="og:url" content={activeArticle ? `https://devra.in/journal?article=${activeArticle.id}` : "https://devra.in/journal"} />
+        {activeArticle?.image && <meta property="og:image" content={`https://devra.in${activeArticle.image}`} />}
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDescription} />
+        {activeArticle?.image && <meta name="twitter:image" content={`https://devra.in${activeArticle.image}`} />}
+        
+        {/* Article specific meta tags */}
+        {activeArticle && (
+          <>
+            <meta property="article:published_time" content={activeArticle.date} />
+            <meta property="article:author" content={activeArticle.author} />
+            <meta property="article:section" content={activeArticle.category} />
+          </>
+        )}
+      </Helmet>
+      
       <SEOMeta
         title={seoTitle}
         description={seoDescription}
-        keywords={[
-          activeArticle ? activeArticle.category.toLowerCase() : "architectural journal",
-          "indian house planning tips",
-          "passive cooling architecture",
-          "local stones chandigarh",
-          "teak wood door design punjab",
-          "circadian home lighting guidelines",
-        ]}
+        keywords={seoKeywords}
         path={activeArticle ? `journal?article=${activeArticle.id}` : "journal"}
       />
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -97,7 +165,7 @@ export default function Journal() {
           {filteredPosts.map((post) => (
             <article
               key={post.id}
-              onClick={() => setActiveArticle(post)}
+              onClick={() => handleOpenArticle(post)}
               className="group cursor-pointer bg-stone-100 border border-stone-200 overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300"
             >
               {/* Featured Image */}
@@ -157,7 +225,7 @@ export default function Journal() {
         <div 
           id="journal-modal" 
           className="fixed inset-0 bg-stone-950/60 z-[100] flex items-center justify-center p-4 md:p-6 backdrop-blur-sm overflow-y-auto"
-          onClick={() => setActiveArticle(null)}
+          onClick={handleCloseArticle}
         >
           <div 
             className="bg-stone-50 text-stone-900 w-full max-w-3xl my-8 border border-stone-200 shadow-2xl relative max-h-[90vh] overflow-y-auto rounded-none"
@@ -171,7 +239,7 @@ export default function Journal() {
               </span>
               <button
                 id="close-journal-modal"
-                onClick={() => setActiveArticle(null)}
+                onClick={handleCloseArticle}
                 className="text-stone-700 hover:text-stone-900 hover:bg-stone-200 p-2 cursor-pointer transition-all rounded-sm flex-shrink-0"
                 aria-label="Close article"
               >
@@ -200,7 +268,21 @@ export default function Journal() {
               </div>
 
               {/* Styled text block */}
-              <div className="prose prose-stone max-w-none text-stone-800 text-xs md:text-sm leading-relaxed space-y-6 font-light">
+              <div 
+                className="prose prose-stone max-w-none text-stone-800 text-xs md:text-sm leading-relaxed space-y-6 font-light"
+                onClick={(e) => {
+                  // Handle internal blog links
+                  const target = e.target as HTMLElement;
+                  if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('/blog/')) {
+                    e.preventDefault();
+                    const blogId = target.getAttribute('href')?.replace('/blog/', '');
+                    const linkedPost = BLOG_POSTS.find(p => p.id === blogId);
+                    if (linkedPost) {
+                      handleOpenArticle(linkedPost);
+                    }
+                  }
+                }}
+              >
                 {activeArticle.content.split("\n\n").map((para, idx) => {
                   if (para.startsWith("###")) {
                     return (
