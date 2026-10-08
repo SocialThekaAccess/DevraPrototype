@@ -191,6 +191,7 @@ function AppInner() {
                 <Route path="/vision" element={<Vision />} />
                 <Route path="/process" element={<Process />} />
                 <Route path="/journal" element={<Journal />} />
+                <Route path="/journal/:articleId" element={<Journal />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/services" element={<Services onNavigate={onNavigate} />} />
                 <Route path="*" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />

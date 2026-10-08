@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { BLOG_POSTS } from "../data";
 import { BlogPost } from "../types";
 import { Search, Calendar, User, Clock, X, ArrowUpRight } from "lucide-react";
@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import residentialImg from "../../assets/residential.avif";
 
 export default function Journal() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { articleId } = useParams<{ articleId?: string }>();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -16,14 +16,15 @@ export default function Journal() {
 
   // Read article ID from URL on mount
   useEffect(() => {
-    const articleId = searchParams.get("article");
     if (articleId) {
       const article = BLOG_POSTS.find(post => post.id === articleId);
       if (article) {
         setActiveArticle(article);
       }
+    } else {
+      setActiveArticle(null);
     }
-  }, [searchParams]);
+  }, [articleId]);
 
   const categories = ["All", "Home Planning", "Materials", "Lighting"];
 
@@ -62,14 +63,14 @@ export default function Journal() {
   // Handle opening article - update URL
   const handleOpenArticle = (post: BlogPost) => {
     setActiveArticle(post);
-    setSearchParams({ article: post.id });
+    navigate(`/journal/${post.id}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Handle closing article - clear URL
   const handleCloseArticle = () => {
     setActiveArticle(null);
-    setSearchParams({});
+    navigate('/journal');
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -79,13 +80,13 @@ export default function Journal() {
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
         <meta name="keywords" content={seoKeywords.join(", ")} />
-        <link rel="canonical" href={activeArticle ? `https://devra.in/journal?article=${activeArticle.id}` : "https://devra.in/journal"} />
+        <link rel="canonical" href={activeArticle ? `https://devra.in/journal/${activeArticle.id}` : "https://devra.in/journal"} />
         
         {/* Open Graph tags */}
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:type" content={activeArticle ? "article" : "website"} />
-        <meta property="og:url" content={activeArticle ? `https://devra.in/journal?article=${activeArticle.id}` : "https://devra.in/journal"} />
+        <meta property="og:url" content={activeArticle ? `https://devra.in/journal/${activeArticle.id}` : "https://devra.in/journal"} />
         {activeArticle?.image && <meta property="og:image" content={`https://devra.in${activeArticle.image}`} />}
         
         {/* Twitter Card tags */}
@@ -108,7 +109,7 @@ export default function Journal() {
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
-        path={activeArticle ? `journal?article=${activeArticle.id}` : "journal"}
+        path={activeArticle ? `journal/${activeArticle.id}` : "journal"}
       />
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
