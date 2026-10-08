@@ -793,6 +793,397 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "luxury-interior-designer-chandigarh",
+    title: "Luxury Interior Designer Chandigarh: Build a Home That Lasts",
+    category: "Materials",
+    date: "October 08, 2026",
+    summary: "Hiring a luxury interior designer Chandigarh families trust? Learn how to brief, budget and choose materials, lighting and furniture for a home that feels timeless.",
+    author: "Ar. Rajkumar Devra",
+    readTime: "14 min read",
+    content: `Luxury is often mistaken for expense. A home full of imported marble and designer labels can still feel cold, cluttered or impractical. True luxury is quieter: rooms that work for the people who live in them, materials that age well and details that feel considered rather than loud.
+
+This guide looks at luxury interior design from the perspective of lasting value. If you are working with a luxury interior designer Chandigarh has to offer, or planning to hire one, it covers how to brief them, where to spend, where to save and how to avoid regret.
+
+### Start with How You Live, Not How It Looks
+
+The best interiors begin with behaviour, not mood boards. Before collecting images, answer questions such as:
+
+•	Who lives in the house, and how will that change in five to ten years?
+•	How often do you entertain, and how many people at a time?
+•	Do you cook elaborate meals or prefer a simple kitchen?
+•	Where do you work, read, relax and store things?
+•	What annoys you in your current home?
+
+A designer who asks these questions is thinking about daily life. One who jumps straight to finishes may be selling a look.
+
+### Write a Brief That Gets Results
+
+A good brief prevents misunderstandings and wasted revisions. Include:
+
+•	Budget range, including a contingency
+•	Priority rooms, since not every space needs the same investment
+•	Style references, including things you dislike
+•	Functional needs, such as storage, accessibility or pet-friendly surfaces
+•	Timeline and move-in date
+•	Existing furniture or art you want to keep
+
+Share it in writing and ask the designer to respond with how they would approach it. Their response tells you whether they listened.
+
+### Materials: Where Luxury Is Won or Lost
+
+Material choices shape both the look and the lifespan of an interior. Think in terms of durability, maintenance and how each material ages.
+
+Stone and marble. Beautiful, but porous varieties stain and scratch. Ask about finishes, sealing and maintenance. In heavy-use areas such as kitchens, harder-wearing alternatives may serve better.
+
+Wood and veneers. Solid wood can be warm and long-lasting but may move with seasonal humidity. Quality veneer and well-engineered panels often perform more consistently. Ask about the core material and edge finishing.
+
+Metals. Brass, steel and bronze accents add richness but need maintenance plans. Some finishes tarnish deliberately, which you may like or not.
+
+Textiles. Natural fabrics feel wonderful but need care. In rooms with sun exposure or children, choose performance fabrics or washable covers.
+
+Paints and plasters. Textured finishes add depth but can be hard to repair. Ask how touch-ups will work later.
+
+A confident designer shows you real samples, explains trade-offs and does not dismiss practical concerns as unglamorous.
+
+### Lighting: The Most Underrated Luxury
+
+Lighting can make a modest room feel refined and a costly room feel flat. Look for a layered plan:
+
+•	Ambient light for general illumination
+•	Task light for reading, cooking and working
+•	Accent light to highlight art, textures and architecture
+•	Natural light controlled with curtains, blinds or sheer layers
+
+Ask for a lighting plan early, ideally when electrical points are being planned. Adding fixtures after walls are finished is expensive and rarely looks neat. Also consider dimming and warm colour temperatures in living and sleeping spaces.
+
+### Joinery and Craftsmanship
+
+Custom joinery, such as wardrobes, kitchens, vanities and wall panelling, is where luxury interiors gain their character. It is also where quality problems appear. Check:
+
+•	Hardware brands and warranties for hinges, channels and handles
+•	Edge sealing and moisture protection, especially in kitchens and bathrooms
+•	Alignment of doors, drawers and panels
+•	Mock-ups or samples before bulk production
+
+A designer with an established workshop or trusted fabricators can usually show examples of past work. Visit a completed project if you can and open the drawers yourself.
+
+### Furniture, Art and Layering
+
+An interior feels finished when it has layers: furniture, rugs, curtains, art, objects and greenery. Resist the urge to buy everything at once. A staged approach often gives better results.
+
+Start with essential pieces such as sofas, beds and dining tables. Live in the space for a few weeks, then add accessories as you notice what is missing. Sourcing art and objects that mean something to you adds personality that no showroom can supply.
+
+### Budgeting for Luxury Without Waste
+
+Luxury interiors can cost a great deal, but spending wisely matters more than spending more. A useful principle is to invest where it is hard to change later, and economise where it is easy to upgrade.
+
+Invest in: layout, lighting design, waterproofing, electrical and plumbing quality, flooring, joinery carcasses and anything built into the structure.
+
+Economise on: items that can be swapped, such as décor accessories, some furniture and soft furnishings.
+
+Ask for an itemised estimate with allowances clearly defined. If a quote lists "premium finishes" without brands or specifications, ask for details.
+
+### Working with Architects and Contractors
+
+Interiors work best when planned alongside the building. If you are building a new home, involve your designer early. Many owners start with architects in Mohali or Chandigarh to design the shell, and bring the interior team in only after construction begins, which limits options. Planning ceiling heights, window positions, niches and service routes together avoids compromise.
+
+Some owners prefer an integrated team under turnkey architecture services Chandigarh firms provide, so that architecture and interiors follow one design language and one schedule. If you choose this route, ask how responsibilities are divided and who signs off on finishes.
+
+The same thinking applies to the exterior. A home with a refined interior deserves an elevation that matches, so consider speaking to modern elevation design architects Chandigarh has to offer about aligning facade materials and lighting with interior themes. And for business owners, a well-designed workspace can express brand and culture just as a home expresses character. Office architects Chandigarh companies work with often bring a similar attention to detail.
+
+### Avoiding Common Regrets
+
+•	Following trends too closely. Fashionable finishes date quickly. Choose a timeless base and add trends through easily changed elements.
+•	Ignoring storage. Beautiful rooms become frustrating when nothing has a home.
+•	Choosing delicate surfaces for heavy-use areas. Match materials to real life.
+•	Skipping mock-ups. Seeing a sample in your own light prevents surprises.
+•	Rushing decisions. Take time to compare, especially for large-ticket items.
+•	Underestimating timelines. Custom work takes time, and delays in one trade ripple through others.
+
+### How to Compare Designers
+
+When evaluating designers, look beyond photographs. Ask:
+
+1.	Can I speak with past clients about their experience?
+2.	Who will manage my project day to day?
+3.	How do you handle budget changes?
+4.	What is included in your fee, and what is not?
+5.	How do you ensure quality on site?
+
+Pay attention to how they respond. Clear, patient answers are a better sign than polished presentations.
+
+### Final Thoughts
+
+A luxurious home is not defined by price tags. It comes from clarity of purpose, careful material choices, thoughtful lighting and craftsmanship that holds up over years. Hire people who listen, document decisions and invite your questions.
+
+If you would like to discuss an interior project, the Devra team can help you shape a brief and plan your next steps. Visit devra.in to start the conversation.`
+  },
+  {
+    id: "architects-in-mohali",
+    title: "Architects in Mohali: Designing the Right Home for Your Plot",
+    category: "Home Planning",
+    date: "October 08, 2026",
+    summary: "Choosing architects in Mohali for your plot? Understand site orientation, approvals, setbacks and climate-smart design before you finalise your home plan and budget.",
+    author: "Ar. Rajkumar Devra",
+    readTime: "13 min read",
+    content: `Every plot has a personality. A corner plot behaves differently from a mid-block one. A north-facing frontage changes how you plan living areas. A narrow depth demands creative use of courtyards and light. Good design starts by reading these clues, not by copying a plan that worked for someone else.
+
+This guide is for anyone planning a home on a plot in Mohali or nearby. It explains how site conditions, local rules and climate shape design, and what to look for when choosing architects in Mohali for your project.
+
+### Read the Plot Before You Draw Anything
+
+Before any layout is sketched, a thoughtful architect studies the site. You can help by gathering:
+
+•	Plot dimensions, area and ownership documents
+•	Allotment or sale papers, which may include development conditions
+•	Approved sector or layout plans showing road widths and neighbours
+•	Any existing structure, trees or utilities on the plot
+
+Visit the site together at different times of day. Observe where the sun hits, where the wind moves, where noise comes from and how neighbouring buildings affect views and privacy.
+
+### Orientation: The Free Design Tool
+
+Orientation affects comfort and electricity bills. In Mohali's composite climate, with hot summers, a monsoon season and cool winters, a few principles help:
+
+•	Reduce harsh west exposure. Place service areas, storage or stairs on the west, and use shading or fewer openings.
+•	Welcome winter sun. South and south-east exposures can bring pleasant warmth in cooler months when properly shaded in summer.
+•	Use north light for work areas. It is soft and even, suitable for studies and studios.
+•	Plan cross-ventilation. Position openings so breezes can pass through rooms.
+
+Orientation also interacts with Vastu preferences for many families. Share these early so they can be balanced with other design goals.
+
+### Understanding Approvals and Rules
+
+Building plans in Mohali are generally reviewed by the relevant development authority or municipal body for the area. Rules on setbacks, maximum height, ground coverage, floor area ratio and parking depend on the plot category and location. Some authorities also run schemes that allow approved architects to certify certain plans, so ask whether your project can use such a route.
+
+What matters for you:
+
+•	Setbacks and coverage. These define the buildable footprint, which shapes the entire design.
+•	Height and floors. Check the permitted number of storeys and any special rules for basements or terraces.
+•	Parking and access. Rules for driveways, gates and parking may apply.
+•	Completion certificates. Plan for the end of the project, not only the start. A completion or occupancy certificate matters for loans, utility connections and resale.
+
+Ask any architect you meet: who prepares and submits the application, how long approvals typically take and how revisions are handled. Never start construction before approvals are in place.
+
+### Designing for Mohali's Climate
+
+A building that responds to climate can be more comfortable and cheaper to run.
+
+Heat control. Use shading devices, deep sills, roof insulation and light-coloured roofs. Cavity or insulated walls can help on exposed sides.
+
+Monsoon readiness. Plan roof slopes, drainage, damp-proofing and waterproofing carefully. Water problems are among the most common complaints in new homes.
+
+Winter comfort. Allow sun penetration to living areas where possible, and think about insulation for cooler months.
+
+Ventilation and daylight. Skylights, courtyards and stair voids can bring light and air deep into a plan.
+
+Energy. Consider solar readiness for rooftops, efficient lighting and appliances, and rainwater harvesting where permitted.
+
+### Structure and Safety
+
+The region lies in a high seismic zone, so structural design matters. A qualified structural engineer should design the foundation and frame according to current Indian standards, after a soil investigation. Ask your architect how structural and architectural teams coordinate, who reviews drawings and how site checks are done.
+
+Do not treat structure as a cost to trim. Savings here can be dangerous and expensive to correct later.
+
+### Planning the Spaces
+
+With the plot understood and rules clear, the layout becomes a conversation about how you live. Discuss:
+
+•	Zoning. Separate quiet areas from busy ones, and public areas from private ones.
+•	Circulation. Keep corridors efficient and avoid wasted space.
+•	Flexibility. A room that can become a study, guest room or nursery adds long-term value.
+•	Future growth. If you may add a floor, plan the structure and staircase for it now.
+•	Service areas. Laundry, storage and utility spaces often get forgotten until it is too late.
+•	Accessibility. Consider elders and future needs, such as ground-floor bedrooms and step-free entrances.
+
+### Connecting Architecture, Interiors and Elevation
+
+A home feels coherent when the plan, interior and exterior share a language. That is why many owners prefer working with a team that can handle several aspects. If you are exploring turnkey architecture services Chandigarh providers offer, ask how they would carry the project from design through construction in your area.
+
+For interiors, a luxury interior designer Chandigarh clients rely on will do their best work if involved while the plan is still flexible, because wall positions, ceiling heights and service routes are far easier to change on paper. The same goes for the facade: speak with modern elevation design architects Chandigarh has to offer about how proportions, window sizes and materials will express your plan. And if you also need a workplace, office architects Chandigarh firms can apply similar thinking to commercial spaces.
+
+### How to Evaluate an Architect
+
+Choose an architect for their process and fit, not just for striking images.
+
+1.	Review relevant projects. Look for work on plots similar to yours.
+2.	Ask about their process. How do they gather requirements, present options and handle feedback?
+3.	Clarify the scope and fee. What is included at each stage, and what costs extra?
+4.	Check local experience. Familiarity with local authorities and conditions saves time.
+5.	Talk to past clients. Ask about communication, timelines and how problems were solved.
+6.	Test the chemistry. You will work together for months, so you need to feel comfortable.
+
+### Common Mistakes
+
+•	Buying a plan online and forcing it onto the plot. Orientation, setbacks and local conditions may not match.
+•	Designing for resale value before living value. A home that works well for you tends to sell well anyway.
+•	Ignoring the neighbours. Privacy, shared walls and overlooking windows need attention.
+•	Underbudgeting for services. Plumbing, electrical and drainage are significant costs.
+•	Making late changes. Alterations after construction starts are far more expensive.
+
+### A Simple Starting Checklist
+
+Before your first architect meeting, prepare:
+
+1.	Plot documents and any site photos
+2.	A list of must-haves and nice-to-haves
+3.	A realistic budget range, including approvals and contingency
+4.	Your timeline expectations
+5.	A few reference images of homes you like and dislike
+
+### Final Thoughts
+
+The right home grows from the plot it stands on, the climate around it and the family inside it. Take time to understand the site, respect the rules and choose a team that listens. A good architect turns constraints into character.
+
+If you are planning a home on a plot in Mohali, the Devra team can help you explore options and shape a design that fits your site and lifestyle. Visit devra.in to start the conversation.`
+  },
+  {
+    id: "office-architects-chandigarh",
+    title: "Office Architects Chandigarh: Designing Workspaces That Work",
+    category: "Home Planning",
+    date: "October 08, 2026",
+    summary: "Hiring office architects Chandigarh businesses rely on? Learn how space planning, lighting, acoustics and a smart fit-out timeline create a workplace people enjoy.",
+    author: "Ar. Rajkumar Devra",
+    readTime: "13 min read",
+    content: `A good office does something quiet but important: it removes friction. People find the right desk, hold meetings without shouting over each other, focus when they need to and meet when they want to. A poor one does the opposite, adding small irritations every day that add up to lost time and lower morale.
+
+This guide explains how workplace design works, from space planning to lighting to the fit-out timeline. If you are hiring office architects Chandigarh companies trust, or planning a move, it will help you ask better questions.
+
+### Start with How Your Team Actually Works
+
+Before measuring square feet, understand behaviour. Good briefs start with observation:
+
+•	How many people are in the office on a typical day, and how does that vary?
+•	Which teams collaborate closely, and which need quiet?
+•	How many meetings are small, how many are large and how many involve video calls?
+•	What do visitors and clients experience on arrival?
+•	What equipment, storage and technology does each team need?
+
+Many businesses now use hybrid schedules. A design based on assigned desks for everyone may waste space, while a purely open layout may frustrate those who need concentration. A good architect helps you find the right balance for your pattern of work.
+
+### Space Planning: The Foundation
+
+Space planning is the core of office design. It decides how areas are arranged, how people move and how much room each function gets. Typical zones include:
+
+•	Reception and waiting. The first impression of your company, and the place where security and comfort meet.
+•	Workstations. Open desks, benching or clustered teams, sized to the work performed.
+•	Private rooms. Offices for leaders, HR discussions or sensitive calls.
+•	Meeting rooms. A mix of sizes, from two-person huddle rooms to larger boardrooms.
+•	Focus areas. Quiet corners or booths for concentrated work.
+•	Collaboration zones. Informal spaces for brainstorming or casual conversation.
+•	Support spaces. Pantry, printing, storage, server room and washrooms.
+
+Ask your architect to show alternative layouts and explain trade-offs. A layout with more meeting rooms may reduce desk count; an open plan can add flexibility but needs acoustic planning.
+
+### Acoustics: The Silent Productivity Killer
+
+Noise is among the most common complaints in offices. It is also often addressed too late. Consider:
+
+•	Sound-absorbing ceilings and wall panels to reduce echo
+•	Carpet tiles or other soft flooring in busy areas
+•	Partitions with acoustic ratings for meeting rooms
+•	Placement of noisy zones away from quiet ones
+•	Door seals and glazing to prevent sound leakage
+
+Design acoustics early, since adding them after construction is awkward and costly.
+
+### Lighting and Daylight
+
+Good lighting improves comfort and reduces eye strain. A strong plan includes:
+
+•	Daylight access for as many workstations as possible, with glare control
+•	Even, shadow-free ambient light at the desks
+•	Task lighting where needed
+•	Warm accent lighting in reception and informal areas
+•	Controls such as dimmers, sensors and zoning to save energy
+
+Consider screen glare as well. Desk placement relative to windows can make a large difference.
+
+### Comfort: Air, Temperature and Ergonomics
+
+Comfort affects focus and health. Ask your architect and engineers how they will manage:
+
+•	Air conditioning layout, to avoid hot or cold spots
+•	Fresh air supply, especially in dense areas
+•	Humidity and dust control
+•	Ergonomic furniture, including adjustable chairs and correct desk heights
+•	Greenery and views, which many people find calming
+
+These details matter more than decorative features. A beautiful office that is stuffy or uncomfortable will not be loved.
+
+### Compliance and Safety
+
+Commercial interiors must meet safety and regulatory requirements. Your design team should coordinate:
+
+•	Fire safety, including exits, signage, alarms and sprinklers where applicable
+•	Electrical load and safety
+•	Accessibility, such as step-free access and suitable washrooms
+•	Building rules, landlord guidelines and authority approvals
+
+If you are renting space in a commercial building, check the landlord's fit-out rules before committing to a design. They may restrict changes to ceilings, services or facades.
+
+### Branding Without Cliché
+
+An office can express company culture, but the best examples avoid gimmicks. Instead of oversized logos and trend-driven decor, think about:
+
+•	Materials and colours that reflect your identity
+•	Display of products or achievements in tasteful ways
+•	Spaces for team rituals, such as town halls or celebrations
+•	A reception experience that matches how you want clients to feel
+
+A confident, restrained design often communicates more than a loud one.
+
+### Budget and Phasing
+
+Office fit-outs involve many cost lines: partitions, flooring, ceilings, lighting, air conditioning, electrical, IT cabling, furniture and finishing. Ask for an itemised budget, and understand what is included.
+
+If budget is tight, phasing can help. You might complete core work now and add features later, such as extra meeting rooms or breakout areas, as the business grows. Plan infrastructure such as power and data points in advance so future changes do not require major work.
+
+### Timeline: Plan Backwards from Move-In
+
+Fit-out timelines are tight, because rent or lease dates often leave little slack. A typical sequence includes:
+
+1.	Brief and space planning
+2.	Concept design and approval
+3.	Detailed drawings and specifications
+4.	Vendor selection and ordering, including long-lead items
+5.	Site work and installation
+6.	Testing, snagging and handover
+7.	Move-in
+
+Work backwards from your desired move-in date and add a buffer. Ordering custom furniture, glass or specialised lighting can take longer than expected.
+
+### Working with the Wider Design Team
+
+A workplace is rarely designed in isolation. If you are constructing a new building, you may need coordination between structure, services and interiors, which is where turnkey architecture services Chandigarh firms provide can simplify matters by keeping one team responsible. If you are a founder whose home and office both need attention, a luxury interior designer Chandigarh residents recommend might bring a hospitality-level finish to leadership suites or client lounges.
+
+Some businesses also develop their own premises, whether a clinic, showroom or small headquarters. In that case, early talks with architects in Mohali or Chandigarh help establish the building envelope, while modern elevation design architects Chandigarh has to offer can shape a facade that signals your brand to the street.
+
+### Questions to Ask Your Architect
+
+1.	Have you designed offices of a similar size and type?
+2.	How will you study our working patterns before designing?
+3.	How do you handle acoustics, lighting and air conditioning coordination?
+4.	What is included in your fee, and what are the typical additional costs?
+5.	How do you manage schedules and contractor quality?
+6.	Can we visit a recent project and speak with the client?
+
+### Common Mistakes
+
+•	Designing only for headcount. Behaviour and work style matter as much as numbers.
+•	Skipping acoustics. Noise problems are hard to fix later.
+•	Overcrowding. Cramped spaces reduce comfort and increase turnover.
+•	Ignoring growth. Plan for change over the next few years.
+•	Cutting corners on services. Poor air conditioning and electrical work cause daily problems.
+•	Starting without landlord approval. This can create delays and extra costs.
+
+### Final Thoughts
+
+The best offices feel natural. People move easily, hear what they need to hear, see what they need to see and feel looked after. Achieving that takes careful planning, honest conversations about how your team works and a design partner who treats the workplace as a system, not just a decoration exercise.
+
+If you are planning a new office or renovating an existing one, the Devra team can help you shape the brief and plan the process. Visit devra.in to start the conversation.`
+  },
+  {
     id: "modern-elevation-design-architects-chandigarh",
     title: "Modern Elevation Design Architects Chandigarh: A Facade Guide",
     category: "Home Planning",
