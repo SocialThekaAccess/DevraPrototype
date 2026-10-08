@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, ShieldCheck, Paintbrush, Compass, Home as Hom
 import { PROJECT_CARDS } from "../projectsData";
 import type { ProjectCard } from "../projectsData";
 import SEOMeta from "../components/SEOMeta";
+import StructuredData from "../components/StructuredData";
 import slider1 from "../../assets/projects/Villaa303.webp";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.webp";
 import slider2 from "../../assets/projects/villa361PDHero20.webp";
@@ -156,8 +157,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           "courtyard home designers",
           "top architect in chandigarh list",
         ]}
-        path="home"
+        path=""
       />
+      <StructuredData type="organization" />
+      <StructuredData type="localBusiness" />
       
       {/* 1. Full-screen Hero Slider */}
       <section id="home-hero" className="relative h-screen w-full overflow-hidden bg-stone-900">
