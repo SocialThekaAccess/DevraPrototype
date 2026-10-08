@@ -793,6 +793,141 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "modern-elevation-design-architects-chandigarh",
+    title: "Modern Elevation Design Architects Chandigarh: A Facade Guide",
+    category: "Home Planning",
+    date: "October 08, 2026",
+    summary: "Looking for modern elevation design architects Chandigarh homeowners trust? Learn how proportion, materials, lighting and climate shape a facade that ages gracefully.",
+    author: "Ar. Rajkumar Devra",
+    readTime: "12 min read",
+    content: `The elevation is the first thing anyone sees of your building. It sets expectations before the door opens, and it stays in view for decades. Yet many facades are designed late, once the plan is fixed, by copying a picture from the internet. The result can look pasted on rather than integrated.
+
+This guide explains how elevations really work: proportion, materials, light, climate and maintenance. If you are choosing modern elevation design architects Chandigarh homeowners rely on, it will help you ask sharper questions and judge proposals with confidence.
+
+### An Elevation Is More Than Decoration
+
+A facade is a working part of the building. It controls heat, light, privacy, rain protection and ventilation, and it also expresses character. The best elevations grow from the plan and structure, so that windows, balconies, projections and materials all have a reason to be where they are.
+
+A common warning sign is a facade that could belong to any building anywhere. Good design responds to its plot, orientation, neighbours and climate.
+
+### Proportion and Composition
+
+Before materials and colours, the basic geometry matters. Architects think about:
+
+•	Massing. How the building's volumes are arranged and balanced.
+•	Solid and void. The ratio of wall to window, which shapes rhythm and privacy.
+•	Horizontal and vertical lines. Bands, fins and shadow lines that guide the eye.
+•	Hierarchy. What stands out, usually the entrance, and what recedes.
+•	Symmetry or asymmetry. Both can work, but they create very different moods.
+
+A simple, well-proportioned elevation often looks more refined than a busy one. Be wary of adding every popular feature at once.
+
+### Materials: Beauty Versus Maintenance
+
+Materials define the look of a facade and its long-term upkeep. Consider each carefully.
+
+Paint and textured plaster. Economical and flexible, but exposed to weathering. Choose quality exterior-grade systems and plan repainting cycles.
+
+Natural stone and stone cladding. Durable and elegant, but costly and heavy. Fixing methods and weight affect the structure.
+
+Exposed concrete or concrete finishes. Bold and low-maintenance when well executed, but poor workmanship shows.
+
+Brick and brick cladding. Warm and timeless, with good performance in many climates when detailed properly.
+
+Wood and wood-look products. Beautiful but needing protection from sun and rain. Treated or composite alternatives may last longer.
+
+Metal panels and screens. Crisp and modern, but heat and corrosion need consideration.
+
+Glass. Brings light and views, but heat gain, glare and privacy must be controlled.
+
+Ask for physical samples and, where possible, visit buildings where the same materials have aged for a few years. Photos in the first week do not show how a facade ages.
+
+### Climate: Designing for the Region
+
+Chandigarh and the surrounding region have hot summers, a monsoon season and cool winters. A facade that ignores this can look good but perform poorly.
+
+•	Shading. Deep window recesses, louvres, pergolas and overhangs reduce heat gain.
+•	Rain management. Drip details, slopes and sills guide water away from walls.
+•	Glazing choices. Consider the glass type, frame quality and window sizes on sun-exposed sides.
+•	Ventilation. Operable windows and screens allow airflow while maintaining privacy.
+•	Dust and pollution. Smooth, cleanable surfaces and well-detailed joints reduce staining.
+
+A well-shaded facade can also lower air-conditioning use, which turns design into long-term savings.
+
+### Light: The Facade at Night
+
+Many elevations are admired in daylight and ignored after dark. Thoughtful lighting can make a building feel welcoming and safe at night without glare.
+
+•	Wall washing or grazing to highlight texture
+•	Soft entrance lighting to guide visitors
+•	Concealed strips to define edges or niches
+•	Warm colour temperatures for residences
+•	Controls and timers to save energy and reduce light spill into neighbouring homes
+
+Plan conduits and fixtures during construction, not after the paint is dry.
+
+### Fitting the Neighbourhood
+
+A good facade respects its setting. In planned sectors, rules and conventions may influence frontage design, heights, boundary walls and materials. Check what applies to your plot and ask your architect how the design will respond.
+
+Context is also visual. A home need not copy its neighbours, but it should sit comfortably among them. Consider scale, building lines and the general character of the street.
+
+### Functional Elements: Balconies, Parking and Entrances
+
+Elevations carry many practical features. Plan these deliberately:
+
+•	Balconies and terraces. Size them for real use and consider privacy and rain.
+•	Car porch and gate. Integrate them into the design instead of treating them as afterthoughts.
+•	Entrance. Make it clear, sheltered and welcoming, with space for lighting and signage.
+•	Meter boxes, drainpipes and AC units. Hide or integrate these services so they do not spoil the design.
+•	Name plates and numbering. Small details that finish the look.
+
+### Cost: Where the Money Goes
+
+Elevation cost depends on materials, complexity, fixing methods and finish quality. A few principles help:
+
+•	Complex shapes cost more. Projections, curves and varied planes add labour and risk.
+•	Material cost is only part of the story. Fixing, scaffolding, waterproofing and maintenance also matter.
+•	Mock-ups reduce risk. For expensive finishes, approve a sample area on site first.
+•	Maintenance is a cost. A cheaper finish that needs frequent repainting may cost more in the long run.
+
+Ask your architect for an itemised estimate for the facade and a maintenance plan.
+
+### Working with the Rest of the Design
+
+An elevation should be coordinated with the plan, structure and interiors. That is why many owners prefer a team that handles multiple parts of the project. If you are weighing turnkey architecture services Chandigarh teams offer, ask how facade design is integrated with structure, services and site execution.
+
+Interiors matter too. A luxury interior designer Chandigarh clients trust will want window positions, ceiling heights and views settled with the facade, so rooms feel connected to the outside. Plot-specific advice from architects in Mohali can help you adapt a design to local setbacks and orientation. And for commercial buildings, office architects Chandigarh teams often coordinate the facade with floor plates, glazing and signage so the building and workplace match.
+
+### How to Judge a Facade Proposal
+
+When reviewing proposals, look at more than a polished 3D image.
+
+1.	Ask for elevations, sections and details, not just renders.
+2.	Check materials and finishes with samples.
+3.	Ask how the facade handles sun, rain and dust.
+4.	Request a lighting concept.
+5.	Understand the maintenance plan and expected repainting or cleaning cycles.
+6.	See completed work that has aged for a few years.
+
+A trustworthy architect welcomes these questions and answers them with specifics.
+
+### Common Mistakes
+
+•	Copying a picture without adapting it. Context and climate differ.
+•	Using too many materials. Three or four, well combined, are usually enough.
+•	Ignoring services. Visible pipes and AC units can ruin a clean design.
+•	Oversized glazing on hot sides. This increases heat and glare.
+•	Skipping waterproofing details. Leaks often start at junctions and sills.
+•	Leaving lighting to the end. It is difficult to hide wiring later.
+
+### Final Thoughts
+
+A strong elevation is built on proportion, honest materials, climate sense and attention to detail. It should look good on day one and still look good after many monsoons. Choose a team that explains its choices, shows real samples and thinks about the facade as part of the whole building.
+
+If you are planning a new home or a facade upgrade, the Devra team can help you explore options and develop a design that suits your plot and style. Visit devra.in to start the conversation.`
+  },
+  {
     id: "turnkey-architecture-services-chandigarh",
     title: "Turnkey Architecture Services Chandigarh: Design to Handover",
     category: "Home Planning",
