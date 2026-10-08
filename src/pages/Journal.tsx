@@ -98,30 +98,44 @@ export default function Journal() {
             <article
               key={post.id}
               onClick={() => setActiveArticle(post)}
-              className="group cursor-pointer bg-stone-100 border border-stone-200 p-6 md:p-8 flex flex-col justify-between hover:border-stone-400 transition-all duration-300"
+              className="group cursor-pointer bg-stone-100 border border-stone-200 overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300"
             >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between text-[10px] font-mono text-stone-500 uppercase tracking-[0.3em]">
-                  <span className="text-stone-700 font-bold">{post.category}</span>
-                  <span className="font-bold">{post.date}</span>
+              {/* Featured Image */}
+              {post.image && (
+                <div className="relative w-full aspect-[16/9] overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.imageAlt || post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="font-serif text-xl md:text-2xl text-stone-900 font-medium group-hover:text-stone-600 transition-colors leading-tight"
-                  dangerouslySetInnerHTML={{
-                    __html: post.title.replace(
-                      /&/g,
-                      '<span style="font-family:Inter,sans-serif;font-style:normal">&</span>'
-                    )
-                  }}
-                />
-                <p className="text-stone-600 text-xs font-light leading-relaxed">
-                  {post.summary}
-                </p>
-              </div>
+              )}
+              
+              <div className="p-6 md:p-8 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-stone-500 uppercase tracking-[0.3em]">
+                    <span className="text-stone-700 font-bold">{post.category}</span>
+                    <span className="font-bold">{post.date}</span>
+                  </div>
+                  <h3 className="font-serif text-xl md:text-2xl text-stone-900 font-medium group-hover:text-stone-600 transition-colors leading-tight"
+                    dangerouslySetInnerHTML={{
+                      __html: post.title.replace(
+                        /&/g,
+                        '<span style="font-family:Inter,sans-serif;font-style:normal">&</span>'
+                      )
+                    }}
+                  />
+                  <p className="text-stone-600 text-xs font-light leading-relaxed">
+                    {post.summary}
+                  </p>
+                </div>
 
-              <div className="flex items-center justify-end pt-6 mt-6 border-t border-stone-200">
-                <span className="flex items-center gap-1 uppercase tracking-widest text-stone-900 font-semibold border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors text-[10px] font-mono">
-                  Read Essay <ArrowUpRight className="w-3 h-3" />
-                </span>
+                <div className="flex items-center justify-end pt-6 mt-6 border-t border-stone-200">
+                  <span className="flex items-center gap-1 uppercase tracking-widest text-stone-900 font-semibold border-b border-stone-900 pb-0.5 group-hover:text-stone-600 group-hover:border-stone-600 transition-colors text-[10px] font-mono">
+                    Read Essay <ArrowUpRight className="w-3 h-3" />
+                  </span>
+                </div>
               </div>
             </article>
           ))}
@@ -195,7 +209,7 @@ export default function Journal() {
                       </h4>
                     );
                   }
-                  return <p key={idx}>{para}</p>;
+                  return <p key={idx} dangerouslySetInnerHTML={{ __html: para }} />;
                 })}
               </div>
 

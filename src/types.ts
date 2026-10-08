@@ -48,6 +48,7 @@ export interface BlogPost {
   summary: string;
   content: string;
   image?: string;
+  imageAlt?: string;
   author?: string;
   readTime: string;
 }
