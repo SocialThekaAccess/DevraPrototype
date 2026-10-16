@@ -1,4 +1,4 @@
-﻿import { Project, Service, ProcessStep, BlogPost } from "./types";
+import { Project, Service, ProcessStep, BlogPost } from "./types";
 
 import houSansarg1 from "../assets/projects/hou-sansarg-1.avif";
 import houSansarg2 from "../assets/projects/hou-sansarg-2.avif";
@@ -168,14 +168,14 @@ import maisonElan2 from "../assets/projects/MaisonElan2.webp";
 export const PROJECTS: Project[] = [
   {
     id: "maison-elan",
-    title: "Maison Élan",
+    title: "Maison �lan",
     category: "Residential",
     location: "Omaxe, New Chandigarh",
     year: "2025",
     size: "",
     scope: "Architecture & Interiors",
     heroImage: maisonElan1,
-    description: "A classical residential masterpiece where timeless European elegance meets refined contemporary living. Maison Élan is defined by ornate detailing, grand proportions, and a warm, gracious character that feels both stately and deeply personal.",
+    description: "A classical residential masterpiece where timeless European elegance meets refined contemporary living. Maison �lan is defined by ornate detailing, grand proportions, and a warm, gracious character that feels both stately and deeply personal.",
     narrative: {
       site: "",
       planning: "",
@@ -228,7 +228,7 @@ export const PROJECTS: Project[] = [
       site: "Situated on a standard urban plot in Mohali, the layout maximizes the available footprint while respecting strict local building bylaws and maintaining green margins.",
       planning: "The layout breaks away from the conventional closed room-by-room format. Instead, the kitchen, dining, and living rooms form an open visual pavilion on the ground floor, separated only by light wooden louvers. This open-concept design promotes family interaction and visual openness.",
       materials: "Polished Kota stone floors, sand-faced cement plaster, and warm white oak establish a calm, grounding interior palette. Accent walls feature a subtle, textured grey plaster that complements the exterior exposed concrete details.",
-      lightVentilation: "Large sliding glass doors on both northern and southern walls create a direct line for cross-ventilation. This layout takes advantage of Chandigarh’s prevailing wind directions to reduce dependence on mechanical air conditioning during transition seasons.",
+      lightVentilation: "Large sliding glass doors on both northern and southern walls create a direct line for cross-ventilation. This layout takes advantage of Chandigarh�s prevailing wind directions to reduce dependence on mechanical air conditioning during transition seasons.",
       execution: "Every junction between the glass frames and concrete slabs was detailed to be entirely flush. Recessed profile lighting and integrated storage solutions were designed in-house to maintain a clean, uncluttered architectural horizon."
     },
     images: [
@@ -266,7 +266,7 @@ export const PROJECTS: Project[] = [
     heroImage: resVilla201dHD3,
     description: "A warm minimalist interior styling project that brings together rich Italian marble, custom bespoke brass detailing, and custom furniture tailored to the family's daily routines.",
     narrative: {
-      site: "An existing premium residence in Chandigarh required a complete internal transformation to reflect the occupant’s minimalist lifestyle and hosting habits.",
+      site: "An existing premium residence in Chandigarh required a complete internal transformation to reflect the occupant�s minimalist lifestyle and hosting habits.",
       planning: "We reorganized the internal partitions to expand the main living lounge. A custom bar area and a double-height dining room were created as focal social spaces, while bedrooms were treated as intimate, quiet sanctuaries.",
       materials: "Bianco Lasa marble, wire-brushed teak paneling, and brushed brass fixtures form a refined, high-end sensory experience. Handcrafted fabrics in warm beige and charcoal tones add soft layers of comfort.",
       lightVentilation: "Lighting was planned with a circadian-first approach. Diffused warm white light sources are concealed in plaster coves, while highlight spots are reserved for custom art pieces, ensuring a cozy atmosphere in the evening.",
@@ -292,10 +292,10 @@ export const PROJECTS: Project[] = [
     size: "300 SQYD",
     scope: "Architecture, Interiors & Landscape Design",
     heroImage: resKangsNew,
-    description: "A Mediterranean heritage villa distinguished by arched openings, warm stucco textures, hand-carved stone details, and deep wooden balconies. The façade balances classical charm with refined proportion, creating a home that feels elegant, inviting, and timelessly rooted in coastal architecture.",
+    description: "A Mediterranean heritage villa distinguished by arched openings, warm stucco textures, hand-carved stone details, and deep wooden balconies. The fa�ade balances classical charm with refined proportion, creating a home that feels elegant, inviting, and timelessly rooted in coastal architecture.",
     narrative: {
       site: "The site is a multi-acre organic agricultural estate near the Punjab-Haryana border, offering endless panoramic views and absolute quietude.",
-      planning: "Taking inspiration from traditional Punjabi 'havelis' but simplified with modern forms, the rooms are laid out around three distinct green courtyards—one formal, one family-centric, and one service-oriented. This flat, pavilion layout ensures every room has dual-aspect views of nature.",
+      planning: "Taking inspiration from traditional Punjabi 'havelis' but simplified with modern forms, the rooms are laid out around three distinct green courtyards�one formal, one family-centric, and one service-oriented. This flat, pavilion layout ensures every room has dual-aspect views of nature.",
       materials: "Locally baked wire-cut bricks left exposed, local hand-chiselled stone, rustic slate roof shingles, and reclaimed aged timber beams.",
       lightVentilation: "Thick brick cavity walls provide outstanding thermal mass, keeping the interiors cool during scorching Punjab summers. Deep, sweeping verandahs shade the glass walls, creating comfortable outdoor transition spaces.",
       execution: "We worked closely with local kiln operators to procure brick batches with specific organic color variations. The landscape planning uses native, low-water plants to blend the estate seamlessly into the wider agricultural canvas."
@@ -463,7 +463,7 @@ export const PROJECTS: Project[] = [
     size: "",
     scope: "Office Interior Design",
     heroImage: comDevraArch1,
-    description: "A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette—shaping an environment that feels inviting, efficient, and elevated.",
+    description: "A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette�shaping an environment that feels inviting, efficient, and elevated.",
     narrative: {
       site: "Located in New Chandigarh's premium commercial hub, this workspace redesign was focused on creating a contemporary office that balances professionalism with warmth.",
       planning: "From reception to work bays, meeting rooms, and lounges, the interiors express a unified design language of warm textures, seamless lines, and ambient lighting.",
@@ -482,7 +482,7 @@ export const PROJECTS: Project[] = [
     size: "",
     scope: "Boutique Interior Design",
     heroImage: comFortofino1,
-    description: "A refined boutique interior crafted in soft neutrals, sculpted arches, and warm lighting—creating an atmosphere of quiet luxury.",
+    description: "A refined boutique interior crafted in soft neutrals, sculpted arches, and warm lighting�creating an atmosphere of quiet luxury.",
     narrative: {
       site: "A premium jewellery boutique location in Srinagar requiring an elevated shopping experience.",
       planning: "Every display, surface, and detail is designed to elevate the jewellery itself, offering an experience that feels exclusive, graceful, and timeless.",
@@ -563,7 +563,7 @@ export const PROJECTS: Project[] = [
       site: "Twin plots in New Chandigarh's premium residential sector.",
       planning: "The design balances solidity and transparency with a controlled, modern architectural language.",
       materials: "Clean contemporary materials with layered depth create modern residential character.",
-      lightVentilation: "The façade composition is clean yet layered, creating depth without unnecessary complexity.",
+      lightVentilation: "The fa�ade composition is clean yet layered, creating depth without unnecessary complexity.",
       execution: "Strong horizontal planes define the modern architectural expression."
     },
     images: [res1211222, res1211223]
@@ -577,9 +577,9 @@ export const PROJECTS: Project[] = [
     size: "300 SQYD",
     scope: "Architecture & Design",
     heroImage: resMidhas,
-    description: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
+    description: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The fa�ade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
     narrative: {
-      site: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The façade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
+      site: "A bold contemporary residence defined by its dark material palette, clean geometry, and warm illuminated volumes. The fa�ade balances privacy and openness, with deep frames, lush landscaping, and a sculpted balcony that adds depth, character, and a distinctly modern edge.",
       planning: "",
       materials: "",
       lightVentilation: "",
@@ -599,10 +599,10 @@ export const PROJECTS: Project[] = [
     description: "A warm contemporary home defined by its pitched roofline, clean geometry, and tropical landscape setting.",
     narrative: {
       site: "Residential plot in New Chandigarh surrounded by lush greenery.",
-      planning: "Natural materials, deep overhangs, and generous glazing create a balanced façade — modern in expression yet grounded in earthy simplicity.",
+      planning: "Natural materials, deep overhangs, and generous glazing create a balanced fa�ade � modern in expression yet grounded in earthy simplicity.",
       materials: "Textured walls, crafted partitions, and warm natural materials throughout.",
       lightVentilation: "Soft lighting and generous glazing create naturally lit, warm living spaces.",
-      execution: "Inside, the home blends artistry and comfort—every room reflects a warm, personal character with inviting lived-in charm."
+      execution: "Inside, the home blends artistry and comfort�every room reflects a warm, personal character with inviting lived-in charm."
     },
     images: [resMinzs2, resMinzs3, resMinzs4, resMinzs5, resMinzs6, resMinzs7, resMinzs8, resMinzs9]
   },
@@ -615,13 +615,13 @@ export const PROJECTS: Project[] = [
     size: "500 SQYD",
     scope: "Architecture & Interior Design",
     heroImage: resVilla303Hero,
-    description: "A striking contemporary façade anchored by a bold sculpted terrace and a floating living room cantilevered elegantly above the pool.",
+    description: "A striking contemporary fa�ade anchored by a bold sculpted terrace and a floating living room cantilevered elegantly above the pool.",
     narrative: {
       site: "A 500 sq yd premium plot in New Chandigarh's exclusive Cassia sector.",
-      planning: "Clean lines, warm soffit textures, and deep overhangs shape a resort-like character — balancing openness, privacy, and architectural drama.",
+      planning: "Clean lines, warm soffit textures, and deep overhangs shape a resort-like character � balancing openness, privacy, and architectural drama.",
       materials: "Soft luxury materials with expressive details, refined lighting, and signature feature walls.",
       lightVentilation: "Double-height volumes and strategic openings create naturally ventilated, light-filled spaces.",
-      execution: "The interiors blend soft luxury with expressive details—calm colours, warm materials, and purposeful layouts create curated, comfortable, unmistakably elegant spaces."
+      execution: "The interiors blend soft luxury with expressive details�calm colours, warm materials, and purposeful layouts create curated, comfortable, unmistakably elegant spaces."
     },
     images: [resVilla3031, resVilla3032, resVilla3033, resVilla3034, resVilla3035, resVilla3036, resVilla3037, resVilla3038, resVilla3039, resVilla30310, resVilla30311]
   },
@@ -724,7 +724,7 @@ export const SERVICES: Service[] = [
       "Multi-family block architecture & structural grid layout",
       "Diagonal block orientation for high visual privacy",
       "Underground parking and service corridor design",
-      "Façade modernization for large-scale properties",
+      "Fa�ade modernization for large-scale properties",
       "Clubhouse and community garden planning"
     ],
     clientType: "Real estate developers, corporate trusts, and private landowners seeking highly salable, premium, and durable developments.",
@@ -793,6 +793,368 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "luxury-interior-designer-chandigarh-dream-home",
+    title: "Luxury interior designer Chandigarh: How to Plan a Dream Home from Concept to Keys",
+    category: "Home Planning",
+    date: "October 16, 2026",
+    summary: "Explore luxury interior designer Chandigarh services from DEVRA Architects: turnkey architecture, interiors and farmhouse design for homes. Book a consultation today.",
+    readTime: "18 min read",
+    author: "Ar. Rajkumar Devra",
+    metaTitle: "Luxury Interior Designer Chandigarh for Homes | DEVRA Architects",
+    metaDescription: "Explore luxury interior designer Chandigarh services from DEVRA Architects: turnkey architecture, interiors and farmhouse design for homes. Book a consultation today.",
+    content: `A luxury home is not defined by expensive materials alone. It is defined by how well the space works for the people who live in it: the way morning light enters the living room, the flow between kitchen and dining area, the feeling of privacy in a bedroom, and the quiet confidence of details that have been thought through down to the last handle and switch. Achieving that level of finish takes more than a decorator and a contractor. It takes a design team that understands architecture, interiors and execution as one connected process.
+
+If you are planning a new home, a renovation or a weekend retreat in the Tricity region, this guide will help you understand what to expect from a luxury interior designer Chandigarh homeowners can rely on, how architects and interior designers work together, and why many clients now prefer a single team for the entire journey.
+
+### What Does a Luxury Interior Designer Actually Do?
+
+Luxury interior design is often misunderstood as simply choosing premium furniture and fabrics. In reality, a skilled designer works on several layers at once:
+
+�	Space planning: Arranging rooms, circulation and furniture so that the home feels spacious, practical and comfortable
+
+�	Concept and theme: Developing a cohesive design language that reflects your taste, lifestyle and family needs
+
+�	Material selection: Choosing stone, wood, metals, glass, textiles and finishes that look beautiful and perform well over time
+
+�	Lighting design: Layering ambient, task and accent lighting to create mood and functionality
+
+�	Custom furniture and joinery: Designing pieces that fit your space and storage needs precisely
+
+�	Detailing and drawings: Producing technical drawings that guide the execution team accurately
+
+�	Styling and finishing: Adding art, accessories and soft furnishings that complete the look
+
+What separates luxury from ordinary is attention to detail and consistency. Every choice, from ceiling profiles to skirting, should support the overall concept rather than compete with it.
+
+### Why Architecture and Interiors Should Work Together
+
+Many homeowners hire an architect first and an interior designer much later, sometimes after the structure is already complete. This can lead to costly changes: a wall that blocks the ideal furniture layout, window positions that limit lighting options, or electrical points that do not match the final design.
+
+When architects and interior designers collaborate from the start, decisions about structure, services and finishes are made together. Ceiling heights, window sizes, plumbing lines, air-conditioning routes and lighting layouts can all be planned in harmony with the interior concept. The result is a home that feels seamless, both inside and out.
+
+This integrated approach is one of the main reasons clients look for firms that combine architecture, interior design and project coordination under one roof.
+
+### The Value of Turnkey Architecture Services in Chandigarh
+
+Building a home involves dozens of professionals and hundreds of decisions: architects, structural engineers, contractors, electricians, plumbers, carpenters, suppliers and more. Coordinating all of them can become a full-time job for the owner, particularly if you live elsewhere or have a busy career.
+
+That is where turnkey architecture services in Chandigarh offer a major advantage. In a turnkey model, a single firm takes responsibility for the project from concept to completion. Typically, this includes:
+
+1.	Briefing and site study: Understanding your needs, budget, plot and local regulations
+
+2.	Concept design: Presenting layouts, elevations and 3D visuals for review
+
+3.	Detailed drawings: Preparing architectural, structural coordination, interior and services drawings
+
+4.	Approvals support: Assisting with municipal or authority submissions where required
+
+5.	Budgeting and tendering: Preparing cost estimates and selecting contractors and vendors
+
+6.	Execution and supervision: Monitoring construction quality, timelines and finishes on site
+
+7.	Handover: Completing snag lists, final finishing and delivering a move-in-ready space
+
+The benefits are clear: a single point of accountability, better coordination, fewer delays and a more consistent final result. Turnkey does not mean you lose control. A good firm keeps you informed and involved at every key decision.
+
+### Finding Farmhouse Architects Near Chandigarh
+
+For many families in the Tricity, a farmhouse is the ultimate weekend dream: open space, greenery, family gatherings and a break from city life. Searching for farmhouse architects near Chandigarh is often the first step, but a farmhouse project comes with its own considerations.
+
+#### Design That Respects the Landscape
+
+A farmhouse is not just a big house on a large plot. It should connect with its surroundings, using orientation, courtyards, verandas, large openings and landscaping to bring nature into daily life. Existing trees, slopes and views should guide the layout rather than being cleared for convenience.
+
+#### Climate-Responsive Planning
+
+North India experiences hot summers, cold winters and a monsoon season. Good farmhouse design considers shading, cross-ventilation, insulation, rainwater management and thermal comfort so that the home stays pleasant year-round with lower energy use.
+
+#### Rules and Permissions
+
+Regulations for farmhouses and rural or peri-urban plots vary by location and change over time. Land use, permitted built-up area, setbacks and utility provisions differ between areas around Chandigarh, Mohali, Panchkula and nearby towns. Always verify land status and local bylaws with your architect and the relevant authorities before finalising plans.
+
+#### Lifestyle Features
+
+Common farmhouse wishes include outdoor dining areas, pools, home theatres, guest wings, staff quarters, gardens and parking for multiple vehicles. An experienced architect helps prioritise these features within your budget and plot.
+
+#### Long-Term Maintenance
+
+Since farmhouses are often used part-time, durable materials, simple maintenance and secure systems matter. Smart design decisions now can save considerable effort later.
+
+### Why Local Knowledge Matters: Architects in Mohali and the Tricity
+
+The Tricity region of Chandigarh, Mohali and Panchkula has its own planning rules, climate conditions, material availability and building culture. When you hire architects in Mohali or nearby areas, local knowledge can streamline the entire process:
+
+�	Familiarity with authority procedures and typical documentation requirements
+
+�	Understanding of plot sizes, setbacks and zoning common in the region
+
+�	Access to trusted contractors, craftsmen and suppliers
+
+�	Awareness of climate and site conditions
+
+�	Easier site visits and supervision during construction
+
+Whether your plot is in a sector of Mohali, an upcoming township or a farmland area outside the city, a team that regularly works in the region will anticipate challenges before they become problems.
+
+### How to Choose the Right Design Partner
+
+Use this checklist when comparing architects and interior designers.
+
+#### Review Their Portfolio
+
+Look for projects similar to yours in size, style and budget. Pay attention to detailing, material quality and how spaces feel, not just the photographs.
+
+#### Ask About Their Process
+
+A professional firm should explain how it moves from briefing to concept, drawings, approvals, execution and handover, including who your point of contact will be.
+
+#### Understand the Fee Structure
+
+Ask how fees are calculated, what is included and when payments are due. For turnkey projects, request clarity on how costs, contractor rates and variations will be handled.
+
+#### Check Communication Style
+
+You should receive regular updates, clear drawings and prompt responses. Transparent communication reduces misunderstandings.
+
+#### Visit Completed Projects
+
+If possible, visit finished homes or speak with past clients. Seeing real spaces and hearing honest feedback is more valuable than any brochure.
+
+#### Confirm Execution Capability
+
+Beautiful drawings mean little without good site execution. Ask how the firm supervises quality and manages timelines on site.
+
+### Budgeting for a Luxury Project
+
+A clear budget prevents stress later. Keep these points in mind:
+
+�	Define priorities: Decide which areas deserve the highest investment, such as the kitchen, master suite or living spaces.
+
+�	Include contingencies: Set aside a reserve of around ten percent or more for unexpected changes.
+
+�	Avoid constant redesigns: Changes after construction begins are expensive, so finalise decisions early.
+
+�	Balance cost and longevity: Quality materials in high-use areas often prove more economical over time.
+
+�	Plan in phases if needed: Some elements, such as landscaping or select furniture, can be added later.
+
+### Design Trends Shaping Luxury Homes
+
+While personal taste always comes first, several trends are influencing premium homes in the region:
+
+�	Natural materials: Stone, timber, brass and textured finishes for warmth and depth
+
+�	Layered lighting: Concealed lighting, statement fixtures and smart controls
+
+�	Indoor-outdoor living: Large sliding doors, courtyards and terraces that extend living areas
+
+�	Custom storage: Seamless wardrobes, bar units and pantry designs
+
+�	Wellness spaces: Home gyms, yoga corners, spa-style bathrooms and quiet reading nooks
+
+�	Sustainable choices: Energy-efficient systems, rainwater harvesting and responsible material sourcing
+
+A good designer interprets trends through your lifestyle instead of copying a catalogue.
+
+### DEVRA Architects: Architecture and Interiors Under One Roof
+
+DEVRA Architects is a Chandigarh-based practice offering premium architecture and interior design, with project coordination that supports clients from the first sketch to the final finish. By keeping design, detailing and execution connected, the team aims to deliver homes and spaces that are functional, elegant and built to last. To explore the practice and discuss your project, visit devra.in.
+
+### Final Thoughts
+
+Building or transforming a home is one of life's most meaningful investments. The right luxury interior designer Chandigarh families choose will think beyond decoration, aligning structure, services, materials and lifestyle into a single, thoughtful vision. With turnkey architecture services in Chandigarh, you gain coordination and accountability. With experienced farmhouse architects near Chandigarh, your retreat can feel rooted in its landscape. And with local architects in Mohali who understand regional conditions, your project moves more smoothly from idea to reality.
+
+If you are ready to discuss your plans, get in touch with the DEVRA Architects team through devra.in and book a consultation.`
+  },
+  {
+    id: "modern-elevation-design-architects-chandigarh-facades",
+    title: "Modern elevation design architects Chandigarh: Facades That Define Homes and Workspaces",
+    category: "Home Planning",
+    date: "October 16, 2026",
+    summary: "Discover modern elevation design architects Chandigarh services from DEVRA: striking facades, luxury interiors, office and home designs. Book your consultation today.",
+    readTime: "16 min read",
+    author: "Ar. Rajkumar Devra",
+    metaTitle: "Modern Elevation Design Architects Chandigarh | DEVRA Architects",
+    metaDescription: "Discover modern elevation design architects Chandigarh services from DEVRA: striking facades, luxury interiors, office and home designs. Book your consultation today.",
+    content: `The first thing anyone notices about a building is its face. Before they step inside, before they see the layout or the interiors, they read the elevation: its proportions, textures, colours, openings and the way it catches light at different times of day. A well-designed elevation tells a story about the people who live or work inside. A poorly planned one, no matter how expensive the materials, can make even a large building feel flat and forgettable.
+
+For homeowners, business owners and developers in the Tricity, finding the right modern elevation design architects Chandigarh has to offer is therefore one of the most important early decisions in a project. In this guide, we explain what elevation design involves, the principles behind a great facade, how elevation connects with interiors and workspaces, and what to ask before you hire a design team.
+
+### What Is Elevation Design?
+
+An elevation is the exterior face of a building, drawn as a flat view from the front, side or rear. Elevation design is the process of shaping that face so that it looks attractive, performs well in the local climate and fits the surrounding context. It covers:
+
+�	Massing and proportions: The overall shape, height and balance of the building
+
+�	Openings: The size, position and rhythm of windows, doors, balconies and terraces
+
+�	Materials and textures: Stone, brick, glass, metal, concrete, wood-look finishes, paint and cladding
+
+�	Colour palette: The tones that define character and help the building age gracefully
+
+�	Shading and projections: Fins, louvres, canopies and chajjas that cut glare and heat
+
+�	Lighting: Exterior lighting that highlights features and enhances safety at night
+
+�	Landscape integration: Planters, gates, boundary walls and greenery that frame the facade
+
+Good elevation design is not decoration applied at the end. It grows from the plan, the structure and the way people will use the building.
+
+### Principles of a Great Modern Elevation
+
+The word modern can mean many things, but the best contemporary facades share a few timeless principles.
+
+#### Clean Lines and Balance
+
+Modern design favours simplicity. Strong horizontal and vertical lines, balanced proportions and restrained detailing create a calm, confident look. Instead of crowding the facade with decorative elements, designers use a few well-chosen features that carry visual weight.
+
+#### Honest Use of Materials
+
+Stone, glass, metal and concrete each have their own character. Combining two or three materials in a deliberate way, rather than mixing many, produces depth without clutter. Textured surfaces, such as stone cladding or fluted panels, add richness while remaining elegant.
+
+#### Play of Light and Shadow
+
+Projections, recessed balconies and screens create changing shadows throughout the day, giving a facade life. Used well, they also reduce direct sun on windows, which keeps interiors cooler.
+
+#### Climate Awareness
+
+North India has hot summers, cold winters and monsoon rains. Thoughtful elevations address this through shading, sensible window placement, weather-resistant materials and drainage details that prevent staining and damage. A facade that looks great on opening day but deteriorates in two monsoons is not good design.
+
+#### Context and Rules
+
+Some areas in the region have architectural controls, bylaws or neighbourhood character that influence height, setbacks, projections and sometimes facade treatment. A local architect will know how to design within these frameworks and still produce something distinctive. Always verify current rules with your architect and the relevant authority before finalising designs.
+
+### Materials Commonly Used in Contemporary Facades
+
+Choosing materials involves balancing appearance, cost, durability and maintenance. Popular options include:
+
+�	Natural stone cladding: Timeless, textured and long-lasting, suited to entrances and feature walls
+
+�	Glass and glazing: Bringing light, views and a sleek look, ideally with performance glass for heat control
+
+�	Metal and composite panels: Lightweight, versatile and available in many finishes
+
+�	Concrete and textured plaster: Offering a contemporary, sculptural character
+
+�	Timber and wood-look finishes: Adding warmth, though they need suitable treatment and maintenance
+
+�	Louvres and screens: Providing privacy, shade and visual interest
+
+A good architect explains the trade-offs of each choice, such as upfront cost against long-term maintenance, so that you can make an informed decision.
+
+### Why the Facade and the Interior Must Speak the Same Language
+
+Have you ever walked into a beautifully designed home only to find that the interiors feel unrelated to the exterior? That disconnect usually happens when different teams work separately. When elevation and interiors are planned together, the transition from outside to inside feels natural, and the entire property reads as one idea.
+
+This is where a luxury interior designer Chandigarh homeowners can collaborate with from the start becomes valuable. Material choices, colour palettes, window positions, ceiling heights and lighting layouts can all be coordinated. For example, a stone feature on the facade can continue into the entrance lobby, or a warm timber accent can reappear in the living room joinery. Such continuity gives a home a refined, intentional character that is hard to achieve when interiors are added as an afterthought.
+
+It also avoids practical problems. Large windows planned for the elevation should also suit furniture layouts, privacy needs and lighting plans inside. A designer who sees both sides can balance beauty with comfort.
+
+### Planning Offices: Why Commercial Facades and Interiors Matter
+
+A business premises is often the first impression clients, partners and employees receive. Whether you run a clinic, a consultancy, a showroom or a corporate office, the building communicates your brand before anyone says a word. Choosing experienced office architects Chandigarh businesses can depend on involves more than finding someone to draw a floor plan.
+
+Strong commercial design typically considers:
+
+1.	Brand identity: Facade, signage and entrance design that reflect your values
+
+2.	Functional layout: Efficient workflow, meeting areas, reception, storage and future expansion
+
+3.	Employee wellbeing: Natural light, ventilation, acoustics and comfortable workstations
+
+4.	Client experience: Welcoming reception areas, clear circulation and well-planned waiting spaces
+
+5.	Services integration: Air-conditioning, lighting, networking, power backup and fire safety
+
+6.	Parking and access: Practical vehicle and pedestrian movement
+
+7.	Compliance and approvals: Meeting relevant building and safety requirements
+
+When architecture and interiors are handled together, offices tend to be completed faster and with fewer coordination issues. They also feel more cohesive, which helps staff morale and impresses visitors.
+
+### A Growing Region: Architects in New Chandigarh
+
+The Tricity has been expanding beyond its original boundaries, and the area often referred to as New Chandigarh has become a focus for new residential, institutional and commercial development. Buyers and investors increasingly want homes and offices in planned, modern surroundings with wider roads and open spaces.
+
+If you are planning a project there, working with architects in New Chandigarh who understand the regional context can be a real advantage. A suitable team will:
+
+�	Study your plot, orientation and surroundings carefully
+
+�	Check applicable regulations, setbacks and permitted uses
+
+�	Design elevations that stand out while respecting the developing neighbourhood
+
+�	Coordinate with local contractors, suppliers and consultants
+
+�	Provide site supervision that is practical because the team knows the area
+
+As new neighbourhoods mature, facade quality will matter even more. Thoughtful design today can protect the long-term appeal and value of your property.
+
+### How the Design Process Usually Works
+
+While every firm has its own method, a professional process generally looks like this:
+
+1.	Consultation and brief: Discussing your needs, style preferences, budget and timeline
+
+2.	Site analysis: Reviewing plot size, orientation, surroundings and local rules
+
+3.	Concept design: Presenting plans, massing ideas and mood references
+
+4.	Elevation development: Creating 3D views and material options so that you can visualise the result
+
+5.	Detailed drawings: Preparing technical drawings for construction and finishes
+
+6.	Execution support: Helping select contractors, checking samples and reviewing work on site
+
+7.	Handover: Final inspection, snagging and completion
+
+3D visuals and material samples are especially helpful at the elevation stage, since they let you see how light, colour and texture will work together before anything is built.
+
+### Questions to Ask Before Hiring Architects
+
+Bring the following questions to your first meeting:
+
+�	Can I see completed projects similar to mine, including photographs and, if possible, site visits?
+
+�	How do you approach facade design, and how do you account for climate and maintenance?
+
+�	Will the same team handle architecture, elevation and interiors?
+
+�	How are fees structured, and what is included in each stage?
+
+�	What is the typical timeline from concept to completion?
+
+�	How do you manage approvals, contractors and quality on site?
+
+�	How will you keep me updated during the project?
+
+Clear, specific answers are a good sign. Vague replies or heavy pressure to sign quickly are warning signs.
+
+### Common Elevation Mistakes to Avoid
+
+�	Following trends blindly: A look that is fashionable today may feel dated in a few years. Aim for timeless proportions with selective contemporary touches.
+
+�	Overusing materials: Too many finishes make a facade busy and harder to maintain.
+
+�	Ignoring orientation: Large glass on a west-facing wall without shading can make interiors uncomfortably hot.
+
+�	Neglecting maintenance: Choose materials and details that suit local weather and your willingness to maintain them.
+
+�	Treating lighting as an afterthought: Exterior lighting should be planned with the facade, not added later.
+
+�	Designing without the interior in mind: The outside should support the way you live inside.
+
+### DEVRA Architects: Architecture and Interiors With a Single Vision
+
+DEVRA Architects is a Chandigarh-based practice offering architecture and interior design for homes and commercial spaces. By bringing elevation design, planning and interiors together, the team aims to create buildings that look striking, function well and age gracefully. To learn more or discuss your project, visit devra.in.
+
+### Final Thoughts
+
+An elevation is more than a pretty picture. It is the public face of your investment, shaped by proportion, material, climate and context. Working with experienced modern elevation design architects Chandigarh clients can rely on, together with a thoughtful luxury interior designer Chandigarh homeowners can coordinate with, ensures that your property looks impressive from the street and feels exceptional inside. Whether you need office architects Chandigarh businesses can rely on or architects in New Chandigarh for a growing neighbourhood, the same rule applies: start early, ask good questions and choose a team that treats design as a complete, connected process.
+
+Ready to talk about your project? Reach out to the DEVRA Architects team through devra.in and book a consultation.`
+  },
+  {
     id: "luxury-interior-designer-chandigarh",
     title: "Luxury Interior Designer Chandigarh: Build a Home That Lasts",
     category: "Materials",
@@ -808,11 +1170,11 @@ This guide looks at luxury interior design from the perspective of lasting value
 
 The best interiors begin with behaviour, not mood boards. Before collecting images, answer questions such as:
 
-•	Who lives in the house, and how will that change in five to ten years?
-•	How often do you entertain, and how many people at a time?
-•	Do you cook elaborate meals or prefer a simple kitchen?
-•	Where do you work, read, relax and store things?
-•	What annoys you in your current home?
+�	Who lives in the house, and how will that change in five to ten years?
+�	How often do you entertain, and how many people at a time?
+�	Do you cook elaborate meals or prefer a simple kitchen?
+�	Where do you work, read, relax and store things?
+�	What annoys you in your current home?
 
 A designer who asks these questions is thinking about daily life. One who jumps straight to finishes may be selling a look.
 
@@ -820,12 +1182,12 @@ A designer who asks these questions is thinking about daily life. One who jumps 
 
 A good brief prevents misunderstandings and wasted revisions. Include:
 
-•	Budget range, including a contingency
-•	Priority rooms, since not every space needs the same investment
-•	Style references, including things you dislike
-•	Functional needs, such as storage, accessibility or pet-friendly surfaces
-•	Timeline and move-in date
-•	Existing furniture or art you want to keep
+�	Budget range, including a contingency
+�	Priority rooms, since not every space needs the same investment
+�	Style references, including things you dislike
+�	Functional needs, such as storage, accessibility or pet-friendly surfaces
+�	Timeline and move-in date
+�	Existing furniture or art you want to keep
 
 Share it in writing and ask the designer to respond with how they would approach it. Their response tells you whether they listened.
 
@@ -849,10 +1211,10 @@ A confident designer shows you real samples, explains trade-offs and does not di
 
 Lighting can make a modest room feel refined and a costly room feel flat. Look for a layered plan:
 
-•	Ambient light for general illumination
-•	Task light for reading, cooking and working
-•	Accent light to highlight art, textures and architecture
-•	Natural light controlled with curtains, blinds or sheer layers
+�	Ambient light for general illumination
+�	Task light for reading, cooking and working
+�	Accent light to highlight art, textures and architecture
+�	Natural light controlled with curtains, blinds or sheer layers
 
 Ask for a lighting plan early, ideally when electrical points are being planned. Adding fixtures after walls are finished is expensive and rarely looks neat. Also consider dimming and warm colour temperatures in living and sleeping spaces.
 
@@ -860,10 +1222,10 @@ Ask for a lighting plan early, ideally when electrical points are being planned.
 
 Custom joinery, such as wardrobes, kitchens, vanities and wall panelling, is where luxury interiors gain their character. It is also where quality problems appear. Check:
 
-•	Hardware brands and warranties for hinges, channels and handles
-•	Edge sealing and moisture protection, especially in kitchens and bathrooms
-•	Alignment of doors, drawers and panels
-•	Mock-ups or samples before bulk production
+�	Hardware brands and warranties for hinges, channels and handles
+�	Edge sealing and moisture protection, especially in kitchens and bathrooms
+�	Alignment of doors, drawers and panels
+�	Mock-ups or samples before bulk production
 
 A designer with an established workshop or trusted fabricators can usually show examples of past work. Visit a completed project if you can and open the drawers yourself.
 
@@ -879,7 +1241,7 @@ Luxury interiors can cost a great deal, but spending wisely matters more than sp
 
 Invest in: layout, lighting design, waterproofing, electrical and plumbing quality, flooring, joinery carcasses and anything built into the structure.
 
-Economise on: items that can be swapped, such as décor accessories, some furniture and soft furnishings.
+Economise on: items that can be swapped, such as d�cor accessories, some furniture and soft furnishings.
 
 Ask for an itemised estimate with allowances clearly defined. If a quote lists "premium finishes" without brands or specifications, ask for details.
 
@@ -893,12 +1255,12 @@ The same thinking applies to the exterior. A home with a refined interior deserv
 
 ### Avoiding Common Regrets
 
-•	Following trends too closely. Fashionable finishes date quickly. Choose a timeless base and add trends through easily changed elements.
-•	Ignoring storage. Beautiful rooms become frustrating when nothing has a home.
-•	Choosing delicate surfaces for heavy-use areas. Match materials to real life.
-•	Skipping mock-ups. Seeing a sample in your own light prevents surprises.
-•	Rushing decisions. Take time to compare, especially for large-ticket items.
-•	Underestimating timelines. Custom work takes time, and delays in one trade ripple through others.
+�	Following trends too closely. Fashionable finishes date quickly. Choose a timeless base and add trends through easily changed elements.
+�	Ignoring storage. Beautiful rooms become frustrating when nothing has a home.
+�	Choosing delicate surfaces for heavy-use areas. Match materials to real life.
+�	Skipping mock-ups. Seeing a sample in your own light prevents surprises.
+�	Rushing decisions. Take time to compare, especially for large-ticket items.
+�	Underestimating timelines. Custom work takes time, and delays in one trade ripple through others.
 
 ### How to Compare Designers
 
@@ -934,10 +1296,10 @@ This guide is for anyone planning a home on a plot in Mohali or nearby. It expla
 
 Before any layout is sketched, a thoughtful architect studies the site. You can help by gathering:
 
-•	Plot dimensions, area and ownership documents
-•	Allotment or sale papers, which may include development conditions
-•	Approved sector or layout plans showing road widths and neighbours
-•	Any existing structure, trees or utilities on the plot
+�	Plot dimensions, area and ownership documents
+�	Allotment or sale papers, which may include development conditions
+�	Approved sector or layout plans showing road widths and neighbours
+�	Any existing structure, trees or utilities on the plot
 
 Visit the site together at different times of day. Observe where the sun hits, where the wind moves, where noise comes from and how neighbouring buildings affect views and privacy.
 
@@ -945,10 +1307,10 @@ Visit the site together at different times of day. Observe where the sun hits, w
 
 Orientation affects comfort and electricity bills. In Mohali's composite climate, with hot summers, a monsoon season and cool winters, a few principles help:
 
-•	Reduce harsh west exposure. Place service areas, storage or stairs on the west, and use shading or fewer openings.
-•	Welcome winter sun. South and south-east exposures can bring pleasant warmth in cooler months when properly shaded in summer.
-•	Use north light for work areas. It is soft and even, suitable for studies and studios.
-•	Plan cross-ventilation. Position openings so breezes can pass through rooms.
+�	Reduce harsh west exposure. Place service areas, storage or stairs on the west, and use shading or fewer openings.
+�	Welcome winter sun. South and south-east exposures can bring pleasant warmth in cooler months when properly shaded in summer.
+�	Use north light for work areas. It is soft and even, suitable for studies and studios.
+�	Plan cross-ventilation. Position openings so breezes can pass through rooms.
 
 Orientation also interacts with Vastu preferences for many families. Share these early so they can be balanced with other design goals.
 
@@ -958,10 +1320,10 @@ Building plans in Mohali are generally reviewed by the relevant development auth
 
 What matters for you:
 
-•	Setbacks and coverage. These define the buildable footprint, which shapes the entire design.
-•	Height and floors. Check the permitted number of storeys and any special rules for basements or terraces.
-•	Parking and access. Rules for driveways, gates and parking may apply.
-•	Completion certificates. Plan for the end of the project, not only the start. A completion or occupancy certificate matters for loans, utility connections and resale.
+�	Setbacks and coverage. These define the buildable footprint, which shapes the entire design.
+�	Height and floors. Check the permitted number of storeys and any special rules for basements or terraces.
+�	Parking and access. Rules for driveways, gates and parking may apply.
+�	Completion certificates. Plan for the end of the project, not only the start. A completion or occupancy certificate matters for loans, utility connections and resale.
 
 Ask any architect you meet: who prepares and submits the application, how long approvals typically take and how revisions are handled. Never start construction before approvals are in place.
 
@@ -989,12 +1351,12 @@ Do not treat structure as a cost to trim. Savings here can be dangerous and expe
 
 With the plot understood and rules clear, the layout becomes a conversation about how you live. Discuss:
 
-•	Zoning. Separate quiet areas from busy ones, and public areas from private ones.
-•	Circulation. Keep corridors efficient and avoid wasted space.
-•	Flexibility. A room that can become a study, guest room or nursery adds long-term value.
-•	Future growth. If you may add a floor, plan the structure and staircase for it now.
-•	Service areas. Laundry, storage and utility spaces often get forgotten until it is too late.
-•	Accessibility. Consider elders and future needs, such as ground-floor bedrooms and step-free entrances.
+�	Zoning. Separate quiet areas from busy ones, and public areas from private ones.
+�	Circulation. Keep corridors efficient and avoid wasted space.
+�	Flexibility. A room that can become a study, guest room or nursery adds long-term value.
+�	Future growth. If you may add a floor, plan the structure and staircase for it now.
+�	Service areas. Laundry, storage and utility spaces often get forgotten until it is too late.
+�	Accessibility. Consider elders and future needs, such as ground-floor bedrooms and step-free entrances.
 
 ### Connecting Architecture, Interiors and Elevation
 
@@ -1015,11 +1377,11 @@ Choose an architect for their process and fit, not just for striking images.
 
 ### Common Mistakes
 
-•	Buying a plan online and forcing it onto the plot. Orientation, setbacks and local conditions may not match.
-•	Designing for resale value before living value. A home that works well for you tends to sell well anyway.
-•	Ignoring the neighbours. Privacy, shared walls and overlooking windows need attention.
-•	Underbudgeting for services. Plumbing, electrical and drainage are significant costs.
-•	Making late changes. Alterations after construction starts are far more expensive.
+�	Buying a plan online and forcing it onto the plot. Orientation, setbacks and local conditions may not match.
+�	Designing for resale value before living value. A home that works well for you tends to sell well anyway.
+�	Ignoring the neighbours. Privacy, shared walls and overlooking windows need attention.
+�	Underbudgeting for services. Plumbing, electrical and drainage are significant costs.
+�	Making late changes. Alterations after construction starts are far more expensive.
 
 ### A Simple Starting Checklist
 
@@ -1053,11 +1415,11 @@ This guide explains how workplace design works, from space planning to lighting 
 
 Before measuring square feet, understand behaviour. Good briefs start with observation:
 
-•	How many people are in the office on a typical day, and how does that vary?
-•	Which teams collaborate closely, and which need quiet?
-•	How many meetings are small, how many are large and how many involve video calls?
-•	What do visitors and clients experience on arrival?
-•	What equipment, storage and technology does each team need?
+�	How many people are in the office on a typical day, and how does that vary?
+�	Which teams collaborate closely, and which need quiet?
+�	How many meetings are small, how many are large and how many involve video calls?
+�	What do visitors and clients experience on arrival?
+�	What equipment, storage and technology does each team need?
 
 Many businesses now use hybrid schedules. A design based on assigned desks for everyone may waste space, while a purely open layout may frustrate those who need concentration. A good architect helps you find the right balance for your pattern of work.
 
@@ -1065,13 +1427,13 @@ Many businesses now use hybrid schedules. A design based on assigned desks for e
 
 Space planning is the core of office design. It decides how areas are arranged, how people move and how much room each function gets. Typical zones include:
 
-•	Reception and waiting. The first impression of your company, and the place where security and comfort meet.
-•	Workstations. Open desks, benching or clustered teams, sized to the work performed.
-•	Private rooms. Offices for leaders, HR discussions or sensitive calls.
-•	Meeting rooms. A mix of sizes, from two-person huddle rooms to larger boardrooms.
-•	Focus areas. Quiet corners or booths for concentrated work.
-•	Collaboration zones. Informal spaces for brainstorming or casual conversation.
-•	Support spaces. Pantry, printing, storage, server room and washrooms.
+�	Reception and waiting. The first impression of your company, and the place where security and comfort meet.
+�	Workstations. Open desks, benching or clustered teams, sized to the work performed.
+�	Private rooms. Offices for leaders, HR discussions or sensitive calls.
+�	Meeting rooms. A mix of sizes, from two-person huddle rooms to larger boardrooms.
+�	Focus areas. Quiet corners or booths for concentrated work.
+�	Collaboration zones. Informal spaces for brainstorming or casual conversation.
+�	Support spaces. Pantry, printing, storage, server room and washrooms.
 
 Ask your architect to show alternative layouts and explain trade-offs. A layout with more meeting rooms may reduce desk count; an open plan can add flexibility but needs acoustic planning.
 
@@ -1079,11 +1441,11 @@ Ask your architect to show alternative layouts and explain trade-offs. A layout 
 
 Noise is among the most common complaints in offices. It is also often addressed too late. Consider:
 
-•	Sound-absorbing ceilings and wall panels to reduce echo
-•	Carpet tiles or other soft flooring in busy areas
-•	Partitions with acoustic ratings for meeting rooms
-•	Placement of noisy zones away from quiet ones
-•	Door seals and glazing to prevent sound leakage
+�	Sound-absorbing ceilings and wall panels to reduce echo
+�	Carpet tiles or other soft flooring in busy areas
+�	Partitions with acoustic ratings for meeting rooms
+�	Placement of noisy zones away from quiet ones
+�	Door seals and glazing to prevent sound leakage
 
 Design acoustics early, since adding them after construction is awkward and costly.
 
@@ -1091,11 +1453,11 @@ Design acoustics early, since adding them after construction is awkward and cost
 
 Good lighting improves comfort and reduces eye strain. A strong plan includes:
 
-•	Daylight access for as many workstations as possible, with glare control
-•	Even, shadow-free ambient light at the desks
-•	Task lighting where needed
-•	Warm accent lighting in reception and informal areas
-•	Controls such as dimmers, sensors and zoning to save energy
+�	Daylight access for as many workstations as possible, with glare control
+�	Even, shadow-free ambient light at the desks
+�	Task lighting where needed
+�	Warm accent lighting in reception and informal areas
+�	Controls such as dimmers, sensors and zoning to save energy
 
 Consider screen glare as well. Desk placement relative to windows can make a large difference.
 
@@ -1103,11 +1465,11 @@ Consider screen glare as well. Desk placement relative to windows can make a lar
 
 Comfort affects focus and health. Ask your architect and engineers how they will manage:
 
-•	Air conditioning layout, to avoid hot or cold spots
-•	Fresh air supply, especially in dense areas
-•	Humidity and dust control
-•	Ergonomic furniture, including adjustable chairs and correct desk heights
-•	Greenery and views, which many people find calming
+�	Air conditioning layout, to avoid hot or cold spots
+�	Fresh air supply, especially in dense areas
+�	Humidity and dust control
+�	Ergonomic furniture, including adjustable chairs and correct desk heights
+�	Greenery and views, which many people find calming
 
 These details matter more than decorative features. A beautiful office that is stuffy or uncomfortable will not be loved.
 
@@ -1115,21 +1477,21 @@ These details matter more than decorative features. A beautiful office that is s
 
 Commercial interiors must meet safety and regulatory requirements. Your design team should coordinate:
 
-•	Fire safety, including exits, signage, alarms and sprinklers where applicable
-•	Electrical load and safety
-•	Accessibility, such as step-free access and suitable washrooms
-•	Building rules, landlord guidelines and authority approvals
+�	Fire safety, including exits, signage, alarms and sprinklers where applicable
+�	Electrical load and safety
+�	Accessibility, such as step-free access and suitable washrooms
+�	Building rules, landlord guidelines and authority approvals
 
 If you are renting space in a commercial building, check the landlord's fit-out rules before committing to a design. They may restrict changes to ceilings, services or facades.
 
-### Branding Without Cliché
+### Branding Without Clich�
 
 An office can express company culture, but the best examples avoid gimmicks. Instead of oversized logos and trend-driven decor, think about:
 
-•	Materials and colours that reflect your identity
-•	Display of products or achievements in tasteful ways
-•	Spaces for team rituals, such as town halls or celebrations
-•	A reception experience that matches how you want clients to feel
+�	Materials and colours that reflect your identity
+�	Display of products or achievements in tasteful ways
+�	Spaces for team rituals, such as town halls or celebrations
+�	A reception experience that matches how you want clients to feel
 
 A confident, restrained design often communicates more than a loud one.
 
@@ -1170,12 +1532,12 @@ Some businesses also develop their own premises, whether a clinic, showroom or s
 
 ### Common Mistakes
 
-•	Designing only for headcount. Behaviour and work style matter as much as numbers.
-•	Skipping acoustics. Noise problems are hard to fix later.
-•	Overcrowding. Cramped spaces reduce comfort and increase turnover.
-•	Ignoring growth. Plan for change over the next few years.
-•	Cutting corners on services. Poor air conditioning and electrical work cause daily problems.
-•	Starting without landlord approval. This can create delays and extra costs.
+�	Designing only for headcount. Behaviour and work style matter as much as numbers.
+�	Skipping acoustics. Noise problems are hard to fix later.
+�	Overcrowding. Cramped spaces reduce comfort and increase turnover.
+�	Ignoring growth. Plan for change over the next few years.
+�	Cutting corners on services. Poor air conditioning and electrical work cause daily problems.
+�	Starting without landlord approval. This can create delays and extra costs.
 
 ### Final Thoughts
 
@@ -1205,11 +1567,11 @@ A common warning sign is a facade that could belong to any building anywhere. Go
 
 Before materials and colours, the basic geometry matters. Architects think about:
 
-•	Massing. How the building's volumes are arranged and balanced.
-•	Solid and void. The ratio of wall to window, which shapes rhythm and privacy.
-•	Horizontal and vertical lines. Bands, fins and shadow lines that guide the eye.
-•	Hierarchy. What stands out, usually the entrance, and what recedes.
-•	Symmetry or asymmetry. Both can work, but they create very different moods.
+�	Massing. How the building's volumes are arranged and balanced.
+�	Solid and void. The ratio of wall to window, which shapes rhythm and privacy.
+�	Horizontal and vertical lines. Bands, fins and shadow lines that guide the eye.
+�	Hierarchy. What stands out, usually the entrance, and what recedes.
+�	Symmetry or asymmetry. Both can work, but they create very different moods.
 
 A simple, well-proportioned elevation often looks more refined than a busy one. Be wary of adding every popular feature at once.
 
@@ -1237,11 +1599,11 @@ Ask for physical samples and, where possible, visit buildings where the same mat
 
 Chandigarh and the surrounding region have hot summers, a monsoon season and cool winters. A facade that ignores this can look good but perform poorly.
 
-•	Shading. Deep window recesses, louvres, pergolas and overhangs reduce heat gain.
-•	Rain management. Drip details, slopes and sills guide water away from walls.
-•	Glazing choices. Consider the glass type, frame quality and window sizes on sun-exposed sides.
-•	Ventilation. Operable windows and screens allow airflow while maintaining privacy.
-•	Dust and pollution. Smooth, cleanable surfaces and well-detailed joints reduce staining.
+�	Shading. Deep window recesses, louvres, pergolas and overhangs reduce heat gain.
+�	Rain management. Drip details, slopes and sills guide water away from walls.
+�	Glazing choices. Consider the glass type, frame quality and window sizes on sun-exposed sides.
+�	Ventilation. Operable windows and screens allow airflow while maintaining privacy.
+�	Dust and pollution. Smooth, cleanable surfaces and well-detailed joints reduce staining.
 
 A well-shaded facade can also lower air-conditioning use, which turns design into long-term savings.
 
@@ -1249,11 +1611,11 @@ A well-shaded facade can also lower air-conditioning use, which turns design int
 
 Many elevations are admired in daylight and ignored after dark. Thoughtful lighting can make a building feel welcoming and safe at night without glare.
 
-•	Wall washing or grazing to highlight texture
-•	Soft entrance lighting to guide visitors
-•	Concealed strips to define edges or niches
-•	Warm colour temperatures for residences
-•	Controls and timers to save energy and reduce light spill into neighbouring homes
+�	Wall washing or grazing to highlight texture
+�	Soft entrance lighting to guide visitors
+�	Concealed strips to define edges or niches
+�	Warm colour temperatures for residences
+�	Controls and timers to save energy and reduce light spill into neighbouring homes
 
 Plan conduits and fixtures during construction, not after the paint is dry.
 
@@ -1267,20 +1629,20 @@ Context is also visual. A home need not copy its neighbours, but it should sit c
 
 Elevations carry many practical features. Plan these deliberately:
 
-•	Balconies and terraces. Size them for real use and consider privacy and rain.
-•	Car porch and gate. Integrate them into the design instead of treating them as afterthoughts.
-•	Entrance. Make it clear, sheltered and welcoming, with space for lighting and signage.
-•	Meter boxes, drainpipes and AC units. Hide or integrate these services so they do not spoil the design.
-•	Name plates and numbering. Small details that finish the look.
+�	Balconies and terraces. Size them for real use and consider privacy and rain.
+�	Car porch and gate. Integrate them into the design instead of treating them as afterthoughts.
+�	Entrance. Make it clear, sheltered and welcoming, with space for lighting and signage.
+�	Meter boxes, drainpipes and AC units. Hide or integrate these services so they do not spoil the design.
+�	Name plates and numbering. Small details that finish the look.
 
 ### Cost: Where the Money Goes
 
 Elevation cost depends on materials, complexity, fixing methods and finish quality. A few principles help:
 
-•	Complex shapes cost more. Projections, curves and varied planes add labour and risk.
-•	Material cost is only part of the story. Fixing, scaffolding, waterproofing and maintenance also matter.
-•	Mock-ups reduce risk. For expensive finishes, approve a sample area on site first.
-•	Maintenance is a cost. A cheaper finish that needs frequent repainting may cost more in the long run.
+�	Complex shapes cost more. Projections, curves and varied planes add labour and risk.
+�	Material cost is only part of the story. Fixing, scaffolding, waterproofing and maintenance also matter.
+�	Mock-ups reduce risk. For expensive finishes, approve a sample area on site first.
+�	Maintenance is a cost. A cheaper finish that needs frequent repainting may cost more in the long run.
 
 Ask your architect for an itemised estimate for the facade and a maintenance plan.
 
@@ -1305,12 +1667,12 @@ A trustworthy architect welcomes these questions and answers them with specifics
 
 ### Common Mistakes
 
-•	Copying a picture without adapting it. Context and climate differ.
-•	Using too many materials. Three or four, well combined, are usually enough.
-•	Ignoring services. Visible pipes and AC units can ruin a clean design.
-•	Oversized glazing on hot sides. This increases heat and glare.
-•	Skipping waterproofing details. Leaks often start at junctions and sills.
-•	Leaving lighting to the end. It is difficult to hide wiring later.
+�	Copying a picture without adapting it. Context and climate differ.
+�	Using too many materials. Three or four, well combined, are usually enough.
+�	Ignoring services. Visible pipes and AC units can ruin a clean design.
+�	Oversized glazing on hot sides. This increases heat and glare.
+�	Skipping waterproofing details. Leaks often start at junctions and sills.
+�	Leaving lighting to the end. It is difficult to hide wiring later.
 
 ### Final Thoughts
 
@@ -1334,12 +1696,12 @@ A turnkey approach tries to close those gaps by putting design, approvals, const
 
 The word is used loosely, so define it before you sign anything. In a genuine turnkey arrangement, one firm takes responsibility for the project from concept to handover. That usually includes:
 
-•	Design and drawings
-•	Statutory approvals
-•	Structural and services coordination
-•	Construction and site management
-•	Interior finishing, in many cases
-•	Final handover with documents
+�	Design and drawings
+�	Statutory approvals
+�	Structural and services coordination
+�	Construction and site management
+�	Interior finishing, in many cases
+�	Final handover with documents
 
 The key is single-point accountability. If a delay or defect occurs, you speak to one team, not several parties who each blame the other.
 
@@ -1351,15 +1713,15 @@ Turnkey delivery suits some owners better than others.
 
 It works well for:
 
-•	Busy professionals who cannot visit the site often
-•	Families living abroad or in another city
-•	First-time builders who want one clear contact
-•	Owners who value a predictable process over micromanagement
+�	Busy professionals who cannot visit the site often
+�	Families living abroad or in another city
+�	First-time builders who want one clear contact
+�	Owners who value a predictable process over micromanagement
 
 It may be less suited to:
 
-•	Owners who want to personally select every contractor and material
-•	Projects where the budget must be split across many independent suppliers
+�	Owners who want to personally select every contractor and material
+�	Projects where the budget must be split across many independent suppliers
 
 Neither approach is superior. The right choice depends on how involved you want to be.
 
@@ -1387,10 +1749,10 @@ A well-run project moves through clear stages. Knowing them helps you judge whet
 
 Single-team delivery can help control cost in practical ways:
 
-•	Early coordination reduces rework.
-•	Clear specifications reduce arguments about quality.
-•	One schedule reduces idle time between trades.
-•	Bulk purchasing and established supplier relationships may help with material pricing, though you should not assume this.
+�	Early coordination reduces rework.
+�	Clear specifications reduce arguments about quality.
+�	One schedule reduces idle time between trades.
+�	Bulk purchasing and established supplier relationships may help with material pricing, though you should not assume this.
 
 None of this happens automatically. Ask how the firm tracks costs, how often you will receive updates and how variations are approved.
 
@@ -1432,10 +1794,10 @@ Commercial clients can use the same model. A business that needs <a href="/blog/
 
 Turnkey delivery also has risks. Be aware of them:
 
-•	Less visibility. If you do not ask for regular reports, you may not see problems early.
-•	Scope ambiguity. Vague inclusions can lead to disputes over extras.
-•	Over-reliance on one party. Ensure there are checks, such as independent structural review or periodic inspections.
-•	Unrealistic promises. Very short timelines or very low prices should raise questions.
+�	Less visibility. If you do not ask for regular reports, you may not see problems early.
+�	Scope ambiguity. Vague inclusions can lead to disputes over extras.
+�	Over-reliance on one party. Ensure there are checks, such as independent structural review or periodic inspections.
+�	Unrealistic promises. Very short timelines or very low prices should raise questions.
 
 Mitigate these by insisting on written scope, milestone-based payments and regular progress meetings.
 
@@ -1443,12 +1805,12 @@ Mitigate these by insisting on written scope, milestone-based payments and regul
 
 By handover, you should have:
 
-•	Approved and as-built drawings
-•	Structural and services drawings
-•	Material specifications and brochures
-•	Warranty documents
-•	Completion and occupancy documents, where applicable
-•	Maintenance guidance for key systems
+�	Approved and as-built drawings
+�	Structural and services drawings
+�	Material specifications and brochures
+�	Warranty documents
+�	Completion and occupancy documents, where applicable
+�	Maintenance guidance for key systems
 
 Keep these safely. They are valuable for future repairs, renovations and resale.
 
@@ -1467,25 +1829,25 @@ If you would like to discuss a project from first sketch to final handover, the 
     title: "Designing for the Indian Family: Why Standard Western Floorplans Often Fail",
     category: "Home Planning",
     date: "June 18, 2026",
-    summary: "Indian homes have specific cultural requirements—from ritual-first puja rooms, heavy spice-oriented wet kitchens, and high numbers of family guests. Here's how we plan for real life.",
+    summary: "Indian homes have specific cultural requirements�from ritual-first puja rooms, heavy spice-oriented wet kitchens, and high numbers of family guests. Here's how we plan for real life.",
     readTime: "6 min read",
-    content: "When designing homes in Chandigarh, Punjab, and broader India, we often see clients requesting open-concept plans seen in Western design magazines. While visually stunning, a purely open plan often collides with the daily realities of Indian cooking, joint-family dynamics, and hosting habits.\n\n### 1. The Necessity of the Double Kitchen\nIndian cooking is robust, involving spices, frying, and intense heat. An open kitchen directly facing a formal living room often leads to oil residues settling on expensive upholstery and food aromas dispersing across the house. We solve this by planning a 'Dual Kitchen' system: a clean, aesthetic outer kitchen for light prep, brewing tea, and family breakfasts, paired with a fully ventilated, closed 'Wet Kitchen' or pantry where heavy cooking and cleaning occur.\n\n### 2. Privacy vs. Family Interconnection\nJoint families or families with visiting parents require a fine balance between communal gathering and personal privacy. We design homes with 'split zoning.' Public spaces like formal drawing rooms are kept near the main entrance to shelter the inner family circle. The family lounge, dining space, and central courtyard are grouped at the core, while bedrooms are treated as distinct, private pods.\n\n### 3. Adapting to Festivals & Social Gatherings\nOur homes must adapt dynamically. A quiet house of four must comfortably expand to host forty guests during festivals, dinners, or rituals. This requires flexible spaces—sliding partition doors, wide verandahs that open to double the living room's footprint, and modular courtyard layouts that serve as active social gathering zones."
+    content: "When designing homes in Chandigarh, Punjab, and broader India, we often see clients requesting open-concept plans seen in Western design magazines. While visually stunning, a purely open plan often collides with the daily realities of Indian cooking, joint-family dynamics, and hosting habits.\n\n### 1. The Necessity of the Double Kitchen\nIndian cooking is robust, involving spices, frying, and intense heat. An open kitchen directly facing a formal living room often leads to oil residues settling on expensive upholstery and food aromas dispersing across the house. We solve this by planning a 'Dual Kitchen' system: a clean, aesthetic outer kitchen for light prep, brewing tea, and family breakfasts, paired with a fully ventilated, closed 'Wet Kitchen' or pantry where heavy cooking and cleaning occur.\n\n### 2. Privacy vs. Family Interconnection\nJoint families or families with visiting parents require a fine balance between communal gathering and personal privacy. We design homes with 'split zoning.' Public spaces like formal drawing rooms are kept near the main entrance to shelter the inner family circle. The family lounge, dining space, and central courtyard are grouped at the core, while bedrooms are treated as distinct, private pods.\n\n### 3. Adapting to Festivals & Social Gatherings\nOur homes must adapt dynamically. A quiet house of four must comfortably expand to host forty guests during festivals, dinners, or rituals. This requires flexible spaces�sliding partition doors, wide verandahs that open to double the living room's footprint, and modular courtyard layouts that serve as active social gathering zones."
   },
   {
     id: "passive-cooling-punjab",
     title: "Passive Cooling in Punjab: Sustainable Luxury Without Excessive AC Costs",
     category: "Home Planning",
     date: "May 10, 2026",
-    summary: "How carefully calculated sun angles, brick cavity walls, double-height central courtyards, and deep cantilevers keep homes cool during blazing 45°C Chandigarh summers.",
+    summary: "How carefully calculated sun angles, brick cavity walls, double-height central courtyards, and deep cantilevers keep homes cool during blazing 45�C Chandigarh summers.",
     readTime: "8 min read",
-    content: "With global temperatures rising, relying entirely on heavy air conditioning is neither environmentally responsible nor financially smart. True luxury lies in designing homes that remain naturally cool and well-insulated, utilizing passive climate-responsive strategies.\n\n### 1. The Double Wall (Thermal Mass)\nHeat enters a building primarily through its walls and roof. By building double-layered brick masonry with a 2-inch hollow air cavity in between, we create a powerful thermal barrier. The outer brick layer absorbs the direct solar heat, while the air cavity prevents the heat from transferring to the inner wall, keeping the indoor surfaces cool even when the outdoor temperature hits 45°C.\n\n### 2. Double-Height Courtyards as Vent Scoops\nNatural air circulation is driven by physics. Hot air rises. By planning a double-height space or central courtyard with high, operable louvers (ventilators) near the roof, we create a continuous chimney effect. Warm air naturally exits through the top, pulling cooler air in from shaded ground-level garden margins and water bodies, creating a gentle, organic air draft.\n\n### 3. The Power of Deep Cantilevers\nWe design deep concrete projections and shaded balcony decks specifically on the south and west facades. During the summer, when the sun is high in the sky, these cantilevers completely shade the glass windows. In the winter, when the sun is lower, the sunlight penetrates deep into the rooms, providing natural, comforting warmth."
+    content: "With global temperatures rising, relying entirely on heavy air conditioning is neither environmentally responsible nor financially smart. True luxury lies in designing homes that remain naturally cool and well-insulated, utilizing passive climate-responsive strategies.\n\n### 1. The Double Wall (Thermal Mass)\nHeat enters a building primarily through its walls and roof. By building double-layered brick masonry with a 2-inch hollow air cavity in between, we create a powerful thermal barrier. The outer brick layer absorbs the direct solar heat, while the air cavity prevents the heat from transferring to the inner wall, keeping the indoor surfaces cool even when the outdoor temperature hits 45�C.\n\n### 2. Double-Height Courtyards as Vent Scoops\nNatural air circulation is driven by physics. Hot air rises. By planning a double-height space or central courtyard with high, operable louvers (ventilators) near the roof, we create a continuous chimney effect. Warm air naturally exits through the top, pulling cooler air in from shaded ground-level garden margins and water bodies, creating a gentle, organic air draft.\n\n### 3. The Power of Deep Cantilevers\nWe design deep concrete projections and shaded balcony decks specifically on the south and west facades. During the summer, when the sun is high in the sky, these cantilevers completely shade the glass windows. In the winter, when the sun is lower, the sunlight penetrates deep into the rooms, providing natural, comforting warmth."
   },
   {
     id: "material-durability-guide",
     title: "Natural Materials: Choosing Sandstones, Marbles, and Woods That Age Gracefully",
     category: "Materials",
     date: "April 02, 2026",
-    summary: "A practical guide to choosing local materials that suit Chandigarh’s extreme weather, require low maintenance, and look better with each passing decade.",
+    summary: "A practical guide to choosing local materials that suit Chandigarh�s extreme weather, require low maintenance, and look better with each passing decade.",
     author: "Ar. Rajkumar Devra",
     readTime: "5 min read",
     content: "In our projects, we avoid artificial finishes, plastic composite claddings, and excessive paint. We prefer materials that are genuine, natural, and express their real weight and texture. Here is how we evaluate materials for residential architecture:\n\n### 1. Stone: Kota and Sandstone vs. Polished Marble\nWhile polished Italian marble is exceptional for interior living rooms, it can be highly slippery and prone to weathering if used on exterior porches or courtyard decks. For transition spaces, we prefer Kota stone (available in blue and green hues) with a leathered or river-washed finish. It is highly durable, non-slip, feels cool under bare feet, and develops a rich natural patina over time. For facades, we use regional Dholpur or Agra sandstones, which resist monsoon stains and sun bleaching.\n\n### 2. Shuttering Concrete as a Finish\nExposed concrete is often misunderstood as cold or industrial. However, when cast against planned wooden timber planks (board-marked concrete), the concrete permanently registers the organic grain and knots of the wood. The result is a highly tactile, stone-like wall that requires zero paint, zero scrubbing, and acts as a beautiful, neutral background for indoor art and plants.\n\n### 3. Seasoned Teak vs. Veneers\nFor doors and window frames exposed to weather, we always prioritize seasoned CP Teak or Burma Teak. It has a high natural oil content that prevents warping, swelling, and termite damage during the humid monsoons, far outlasting manufactured MDF or thin veneers."
@@ -1497,6 +1859,7 @@ If you would like to discuss a project from first sketch to final handover, the 
     date: "March 15, 2026",
     summary: "Lighting is an invisible material. Why high-contrast downlights ruin cozy evenings, and how we plan soft, hidden light sources for luxury residential interiors.",
     readTime: "5 min read",
-    content: "When people enter a luxury space that feels calm and relaxing, they often credit the furniture or the marble. In reality, the quiet hero is almost always the lighting. Poorly planned lighting—like placing a grid of powerful white LED downlights directly overhead—creates harsh shadows, eye fatigue, and ruins the natural texture of materials.\n\n### 1. Indirect Lighting First\nWe believe in concealing light sources. By placing high-quality warm LED strips inside plaster coves or behind wall wood panels, the light bounces off the ceilings and walls before reaching your eyes. This diffused, indirect light mimics the soft, ambient glow of dusk, immediately signaling the nervous system to relax.\n\n### 2. Layering: Ambient, Task, and Accent\nAn editorial room has depth. We achieve this by layering lights at different heights. Low floor lamps and table lamps establish a cozy ambient level. Recessed task lighting is focused precisely where needed, such as over kitchen counters or reading chairs. Accent lighting—like micro-spots with specialized honeycombed grids—is used to highlight artwork or stone textures without spilling light onto the surrounding walls.\n\n### 3. The 2700K Warmth Standard\nIn residential design, we strictly use light sources between 2700K and 3000K (warm white). Warm light brings out the natural red, orange, and yellow undertones of wood, copper, and stone, making a house feel secure, intimate, and deeply welcoming in the evening."
+    author: "Ar. Rajkumar Devra",
+    content: "When people enter a luxury space that feels calm and relaxing, they often credit the furniture or the marble. In reality, the quiet hero is almost always the lighting. Poorly planned lighting�like placing a grid of powerful white LED downlights directly overhead�creates harsh shadows, eye fatigue, and ruins the natural texture of materials.\n\n### 1. Indirect Lighting First\nWe believe in concealing light sources. By placing high-quality warm LED strips inside plaster coves or behind wall wood panels, the light bounces off the ceilings and walls before reaching your eyes. This diffused, indirect light mimics the soft, ambient glow of dusk, immediately signaling the nervous system to relax.\n\n### 2. Layering: Ambient, Task, and Accent\nAn editorial room has depth. We achieve this by layering lights at different heights. Low floor lamps and table lamps establish a cozy ambient level. Recessed task lighting is focused precisely where needed, such as over kitchen counters or reading chairs. Accent lighting�like micro-spots with specialized honeycombed grids�is used to highlight artwork or stone textures without spilling light onto the surrounding walls.\n\n### 3. The 2700K Warmth Standard\nIn residential design, we strictly use light sources between 2700K and 3000K (warm white). Warm light brings out the natural red, orange, and yellow undertones of wood, copper, and stone, making a house feel secure, intimate, and deeply welcoming in the evening."
   }
 ];

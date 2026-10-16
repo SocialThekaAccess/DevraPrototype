@@ -51,6 +51,8 @@ export interface BlogPost {
   imageAlt?: string;
   author?: string;
   readTime: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface Review {
@@ -60,5 +62,4 @@ export interface Review {
   rating: number;
   text: string;
   date: string;
-}
 }

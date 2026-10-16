@@ -43,6 +43,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog/Journal Pages -->
+  <url>
+    <loc>https://devra.in/journal/luxury-interior-designer-chandigarh-dream-home</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devra.in/journal/modern-elevation-design-architects-chandigarh-facades</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Project Pages -->
   <url>
     <loc>https://devra.in/projects/maison-elan</loc>
