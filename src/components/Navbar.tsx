@@ -49,6 +49,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     { label: "Journal", path: "journal" },
     { label: "About", path: "about" },
     { label: "Contact", path: "contact" },
+    { label: "Construction", path: "construction", external: true },
   ];
 
   /**
@@ -118,12 +119,15 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
         >
           {navItems.map((item) => {
             const isActive = currentPath === item.path;
+            const isExternal = (item as any).external;
             return (
               <a
                 key={item.path}
                 id={`nav-link-${item.path}`}
-                href={pathToHref[item.path] ?? `/${item.path}`}
-                onClick={(e) => handleNavClick(e, item.path)}
+                href={isExternal ? "https://www.devrabuildtech.com/" : (pathToHref[item.path] ?? `/${item.path}`)}
+                onClick={(e) => handleNavClick(e, item.path, isExternal)}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
                 className={`whitespace-nowrap text-sm uppercase tracking-widest font-sans font-medium transition-all duration-300 relative py-1 cursor-pointer no-underline ${
                   isActive
                     ? showWhiteText
@@ -189,12 +193,15 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             <nav className="flex flex-col divide-y divide-stone-200">
               {navItems.map((item) => {
                 const isActive = currentPath === item.path;
+                const isExternal = (item as any).external;
                 return (
                   <a
                     key={item.path}
                     id={`mobile-nav-link-${item.path}`}
-                    href={pathToHref[item.path] ?? `/${item.path}`}
-                    onClick={(e) => handleNavClick(e, item.path)}
+                    href={isExternal ? "https://www.devrabuildtech.com/" : (pathToHref[item.path] ?? `/${item.path}`)}
+                    onClick={(e) => handleNavClick(e, item.path, isExternal)}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
                     className={`text-base uppercase tracking-widest text-left font-sans font-medium transition-all py-5 no-underline block ${
                       isActive
                         ? "text-stone-900 pl-2 border-l-2 border-stone-900"
