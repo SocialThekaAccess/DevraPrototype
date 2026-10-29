@@ -78,15 +78,13 @@ import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.we
 import houUnwalledExtra from "../assets/projects/Unwalledimageproject.webp";
 
 // New Projects Imports
-import comDevraArch1 from "../assets/projects/com-devra-arch-1.webp";
-import comDevraArch2 from "../assets/projects/com-devra-arch-2.webp";
-import comDevraArch3 from "../assets/projects/com-devra-arch-3.webp";
-import comDevraArch4 from "../assets/projects/com-devra-arch-4.webp";
-import comDevraArch5 from "../assets/projects/com-devra-arch-5.webp";
-import comDevraArch6 from "../assets/projects/com-devra-arch-6.webp";
-import comDevraArch7 from "../assets/projects/com-devra-arch-7.avif";
-import comDevraArch8 from "../assets/projects/com-devra-arch-8.webp";
-import comDevraArch9 from "../assets/projects/com-devra-arch-9.webp";
+import comDevraArch1 from "../assets/projects/DevraArchitects.png";
+import comDevraArch2 from "../assets/projects/DevraArchitects1.png";
+import comDevraArch3 from "../assets/projects/DevraArchitects2.png";
+import comDevraArch4 from "../assets/projects/DevraArchitects3.png";
+import comDevraArch5 from "../assets/projects/DevraArchitects4.png";
+import comDevraArch6 from "../assets/projects/DevraArchitects5.png";
+import comDevraArch7 from "../assets/projects/DevraArchitects6.png";
 
 import comFortofino1 from "../assets/projects/com-fortofino-1.avif";
 import comFortofino2 from "../assets/projects/com-fortofino-2.avif";
@@ -471,7 +469,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "Soft, layered lighting throughout creates comfort and reduces eye strain for daily operations.",
       execution: "Thoughtful spatial planning brings clarity and comfort to daily operations, creating a workspace that inspires focus, collaboration, and a sense of effortless sophistication."
     },
-    images: [comDevraArch2, comDevraArch3, comDevraArch4, comDevraArch5, comDevraArch6, comDevraArch7, comDevraArch8, comDevraArch9]
+    images: [comDevraArch2, comDevraArch3, comDevraArch4, comDevraArch5, comDevraArch6, comDevraArch7]
   },
   {
     id: "fortofino",

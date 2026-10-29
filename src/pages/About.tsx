@@ -7,7 +7,7 @@ import resVilla361 from "../../assets/projects/res-villa-361.avif";
 import fhGills from "../../assets/projects/fh-gills-1.avif";
 import resVilla201d from "../../assets/projects/res-villa-201d.webp";
 import resVilla58 from "../../assets/projects/res-villa-58.webp";
-import comDevra from "../../assets/projects/com-devra-arch-1.webp";
+import comDevra from "../../assets/projects/DevraArchitects.png";
 import houSansarg from "../../assets/projects/hou-sansarg-1.avif";
 
 interface AboutProps {

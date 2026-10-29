@@ -34,7 +34,7 @@ export default function Contact() {
     return newErrors;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -45,11 +45,46 @@ export default function Contact() {
     setErrors({});
     setIsSubmitting(true);
 
-    // Simulate submission delay
-    setTimeout(() => {
+    try {
+      // W3Forms submission
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'YOUR_W3FORMS_ACCESS_KEY', // Replace with your actual W3Forms access key
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          subject: `New Project Inquiry - ${formData.projectType}`,
+          message: `
+Project Type: ${formData.projectType}
+Location: ${formData.location}
+Budget Range: ${formData.budgetRange}
+
+Message:
+${formData.message}
+          `.trim(),
+          from_name: formData.name,
+          replyto: formData.email
+        })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+      setErrors({ submit: 'Failed to submit form. Please try WhatsApp option or contact directly.' });
+    }
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -279,6 +314,13 @@ export default function Contact() {
                   />
                   {errors.message && <p className="text-red-400 text-[10px] font-mono mt-0.5">{errors.message}</p>}
                 </div>
+
+                {/* Error message display */}
+                {errors.submit && (
+                  <div className="bg-red-50 border border-red-300 p-4 rounded-none">
+                    <p className="text-red-600 text-xs font-mono">{errors.submit}</p>
+                  </div>
+                )}
 
                 {/* Form CTA Submit Buttons - Two Options */}
                 <div className="pt-2 grid grid-cols-1 md:grid-cols-2 gap-4">

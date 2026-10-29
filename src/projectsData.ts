@@ -16,7 +16,7 @@ import panchkulaHero from "../assets/PanchkulaHousing.webp";
 import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
 import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
 import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.webp";
-import comDevraArchHero from "../assets/projects/com-devra-arch-1.webp";
+import comDevraArchHero from "../assets/projects/DevraArchitects.png";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";

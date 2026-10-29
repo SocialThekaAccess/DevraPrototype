@@ -3,7 +3,7 @@ import SEOMeta from "../components/SEOMeta";
 import residentialImg from "../../assets/residential.avif";
 import houSansarg from "../../assets/projects/hou-sansarg-1.avif";
 import fhGills from "../../assets/projects/fh-gills-1.avif";
-import comDevra from "../../assets/projects/com-devra-arch-1.webp";
+import comDevra from "../../assets/projects/DevraArchitects.png";
 import resVilla201d from "../../assets/projects/res-villa-201d.webp";
 
 export default function Vision() {
