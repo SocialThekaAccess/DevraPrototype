@@ -162,18 +162,20 @@ import schOakwood from "../assets/projects/OAKWODDSCHOOL1.webp";
 
 import maisonElan1 from "../assets/projects/MaisonElan1.webp";
 import maisonElan2 from "../assets/projects/MaisonElan2.webp";
+const maisonElanMobile = "/assets/projects/MaisonElanSliderMobileImage.png";
 
 export const PROJECTS: Project[] = [
   {
     id: "maison-elan",
-    title: "Maison �lan",
+    title: "Maison Élan",
     category: "Residential",
     location: "Omaxe, New Chandigarh",
     year: "2025",
     size: "",
     scope: "Architecture & Interiors",
     heroImage: maisonElan1,
-    description: "A classical residential masterpiece where timeless European elegance meets refined contemporary living. Maison �lan is defined by ornate detailing, grand proportions, and a warm, gracious character that feels both stately and deeply personal.",
+    mobileHeroImage: maisonElanMobile,
+    description: "A classical residential masterpiece where timeless European elegance meets refined contemporary living. Maison Élan is defined by ornate detailing, grand proportions, and a warm, gracious character that feels both stately and deeply personal.",
     narrative: {
       site: "",
       planning: "",

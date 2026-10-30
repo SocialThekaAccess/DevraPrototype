@@ -16,7 +16,7 @@ import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.webp";
 import slider5 from "../../assets/PanchkulaHousing.webp";
 import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.webp";
 import slider6 from "../../assets/projects/MaisonElanSliderimage.webp";
-import slider6Mobile from "../../assets/projects/MaisonElanSliderimage.webp";
+import slider6Mobile from "/assets/projects/MaisonElanSliderMobileImage.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.webp";
@@ -74,7 +74,8 @@ const HERO_SLIDES = [
 
 // Slides jinme image crop nahi honi chahiye (0 = first, 5 = last).
 // In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
-// Agar kisi aur slide mein bhi cut ho raha ho to uska index yahan add kar do, jaise [0, 3, 5]
+// NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai
+// (side ki kaali/blurred patti nahi aati).
 const CONTAIN_SLIDES = [5];
 
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
@@ -163,7 +164,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       <StructuredData type="localBusiness" />
       
       {/* 1. Full-screen Hero Slider */}
-      <section id="home-hero" className="relative h-screen w-full overflow-hidden bg-stone-900">
+      {/* h-[100svh]: mobile browser ke address bar ke saath bhi poori screen sahi bharti hai */}
+      <section id="home-hero" className="relative h-[100svh] w-full overflow-hidden bg-stone-900">
         {!imagesLoaded && (
           <div className="absolute inset-0 z-30 flex items-center justify-center bg-stone-900">
             <div className="w-8 h-8 border-2 border-stone-500 border-t-stone-200 rounded-full animate-spin" />
@@ -189,9 +191,10 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             {(() => {
               const slide = HERO_SLIDES[currentSlide];
               const src = isMobile ? slide.mobileImage : slide.image;
-              const useContain = isMobile || CONTAIN_SLIDES.includes(currentSlide);
 
-              // First & last slide (aur mobile): blurred background + poori uncropped image
+              // Contain sirf desktop pe lagega. Mobile pe sab slides cover se poori screen bharengi.
+              const useContain = CONTAIN_SLIDES.includes(currentSlide) && !isMobile;
+
               if (useContain) {
                 return (
                   <>
@@ -200,7 +203,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       src={src}
                       alt=""
                       aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover object-center blur-3xl scale-125 brightness-50"
+                      className="absolute inset-0 w-full h-full object-cover object-center blur-3xl scale-125 brightness-75"
                     />
                     {/* Asli image - poori dikhti hai, upar-neeche se cut nahi hoti */}
                     <img
@@ -215,7 +218,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 );
               }
 
-              // Baaki slides: pehle jaisa cover
+              // Baaki slides (aur mobile pe sab): cover (poori screen bharti hai, sides pe koi gap nahi)
               return (
                 <img
                   src={src}
@@ -228,7 +231,9 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100'
                       : currentSlide === 4
                         ? 'object-cover object-center brightness-110'
-                        : 'object-cover object-center'
+                        : currentSlide === 5
+                          ? 'object-cover object-[center_65%]'
+                          : 'object-cover object-center'
                   }`}
                 />
               );

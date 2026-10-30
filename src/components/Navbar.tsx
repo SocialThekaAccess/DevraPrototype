@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import logoImage from "/assets/DEVRAArchitects.png";
 
 interface NavbarProps {
   currentPath: string;
@@ -94,22 +95,15 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           id="nav-logo"
           href="/"
           onClick={(e) => handleNavClick(e, "home")}
-          className="flex flex-col items-start cursor-pointer group shrink-0 leading-none no-underline"
+          className="flex items-center cursor-pointer group shrink-0 no-underline"
         >
-          <span
-            className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors ${
-              showWhiteText ? "text-white" : "text-stone-900"
+          <img
+            src={logoImage}
+            alt="DEVRA Architects"
+            className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 ${
+              shouldShowWhiteLogo ? "brightness-0 invert" : ""
             } group-hover:opacity-80`}
-          >
-            DEVRA
-          </span>
-          <span
-            className={`font-sans text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-semibold transition-colors ${
-              showWhiteText ? "text-white/80" : "text-stone-600"
-            } group-hover:opacity-80 -mt-0.5`}
-          >
-            Architects
-          </span>
+          />
         </a>
 
         {/* Desktop Navigation */}
