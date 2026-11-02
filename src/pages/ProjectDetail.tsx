@@ -188,7 +188,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
         <section className="pt-4 pb-10 md:pt-5 md:pb-14">
           <div className="proj-meta-strip__inner">
             <div className="space-y-8 w-full">
-            {rows.map((row, rowIndex) => (
+              {rows.map((row, rowIndex) => (
               <motion.div
                 key={`row-${rowIndex}`}
                 initial={{ opacity: 0, y: 30 }}
@@ -227,6 +227,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
                 })}
               </motion.div>
             ))}
+            </div>
           </div>
         </section>
       )}
