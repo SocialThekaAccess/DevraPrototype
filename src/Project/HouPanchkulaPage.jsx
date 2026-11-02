@@ -10,7 +10,7 @@ import img8 from '../../assets/projects/hou-panchkula-8.avif'
 import heroDesktop from '../../assets/PanchkulaHousing.webp'
 import heroMobile from '../../assets/projects/Panchkulamobilerisponsivesliderig.webp'
 
-export default function HouPanchkulaPage() {
+export default function HouPanchkulaPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
       backTo="/services/housing"
@@ -27,6 +27,8 @@ export default function HouPanchkulaPage() {
       heroAspectRatio="1672 / 941"
       heroObjectPosition="center center"
       images={[img1, img2, img3, img4, img5, img6, img7, img8]}
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
     />
   )
 }
