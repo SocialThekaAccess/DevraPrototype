@@ -8,7 +8,7 @@ import StructuredData from "../components/StructuredData";
 import slider1 from "../../assets/projects/Villaa303.webp";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.webp";
 import slider2 from "../../assets/projects/villa361PDHero20.webp";
-import slider2Mobile from "../../public/assets/projects/Villa361SliderMobilerisponsive.png";
+import slider2Mobile from "../../assets/Villa361Mobilerisponsiveimage.png";
 import slider3 from "../../assets/projects/Unwalledimageproject.webp";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.webp";
 import slider4 from "../../assets/projects/Villaa58.webp";
