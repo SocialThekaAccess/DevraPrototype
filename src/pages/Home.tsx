@@ -16,7 +16,9 @@ import slider4Mobile from "../../assets/projects/Villa58Mobilerisponsive.webp";
 import slider5 from "../../assets/PanchkulaHousing.webp";
 import slider5Mobile from "../../assets/projects/Panchkulamobilerisponsivesliderig.webp";
 import slider6 from "../../assets/projects/MaisonElanSliderimage.webp";
-import slider6Mobile from "../../assets/projects/MaisonElan2.webp";
+// FIX: pehle MaisonElan2.webp tha (slider ke liye nahi bani thi, zoom ho jati thi).
+// Ab slider-specific mobile image use ho rahi hai.
+import slider6Mobile from "../../assets/projects/MaisonElanSliderMobileImage.png";
 import residentialImg from "../../assets/residential.avif";
 import hospitalityImg from "../../assets/hospitality.avif";
 import commercialImg from "../../assets/commercial.webp";
@@ -77,6 +79,16 @@ const HERO_SLIDES = [
 // NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai
 // (side ki kaali/blurred patti nahi aati).
 const CONTAIN_SLIDES = [5];
+
+const REVIEWS = [
+  { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
+  { name: "Rupin Dang", time: "4 months ago", text: "We had a great experience working with Devra Architects on our home. They understood our vision perfectly and delivered exceptional results. The attention to detail and quality of work was outstanding. Highly recommend!", initials: "RD", color: "bg-blue-600" },
+  { name: "A Pr", time: "5 months ago", text: "Very innovative and out of the box thinking of Mr. Devra. Had great experience, built a wonderful home with his guidance. His design sensibility is remarkable and he brings a unique perspective to every project.", initials: "AP", color: "bg-green-600" },
+  { name: "Deepak Katoch", time: "1 year ago", text: "Great experience, she has given ample time to solve our every small query. Excellent work and professionalism throughout the entire project. The team is responsive and truly cares about client satisfaction.", initials: "DK", color: "bg-purple-600" },
+  { name: "Anandambha Sharma", time: "6 months ago", text: "Working with Devra Architects was an absolute pleasure. Their design concepts are fresh, modern and perfectly tailored to our lifestyle. The final result exceeded all our expectations.", initials: "AS", color: "bg-red-500" },
+  { name: "Navdeep Singh", time: "8 months ago", text: "Ar. Varun Devra and his team are truly passionate about architecture. They transformed our plot into a dream home. The blend of functionality and aesthetics in the design is exceptional.", initials: "NS", color: "bg-teal-600" },
+  { name: "Priya Malhotra", time: "10 months ago", text: "One of the best decisions we made was choosing Devra Architects for our farmhouse project. Professional, punctual, and incredibly creative. Every corner reflects thoughtful design and superior craftsmanship.", initials: "PM", color: "bg-pink-600" },
+];
 
 export default function Home({ onNavigate, onSelectProject }: HomeProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -162,7 +174,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       />
       <StructuredData type="organization" />
       <StructuredData type="localBusiness" />
-      
+
       {/* 1. Full-screen Hero Slider */}
       {/* h-[100svh]: mobile browser ke address bar ke saath bhi poori screen sahi bharti hai */}
       <section id="home-hero" className="relative h-[100svh] w-full overflow-hidden bg-stone-900">
@@ -171,7 +183,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             <div className="w-8 h-8 border-2 border-stone-500 border-t-stone-200 rounded-full animate-spin" />
           </div>
         )}
-        
+
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -184,7 +196,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             {/* Dark overlay for readability - lighter for slide 4 */}
             <div className={`absolute inset-0 z-10 ${
               currentSlide === 1 ? 'bg-black/50 md:bg-black/40' :
-              currentSlide === 3 ? 'bg-black/20' : 
+              currentSlide === 3 ? 'bg-black/20' :
               'bg-black/40'
             }`} />
 
@@ -232,7 +244,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       : currentSlide === 4
                         ? 'object-cover object-center brightness-110'
                         : currentSlide === 5
-                          ? 'object-cover object-[center_65%]'
+                          // FIX: mobile par building neeche se dikhe (80%), desktop par pehle jaisa (65%)
+                          ? 'object-cover object-[center_80%] md:object-[center_65%]'
                           : 'object-cover object-center'
                   }`}
                 />
@@ -250,19 +263,21 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/60 via-black/30 to-transparent py-6 md:py-10"
+              // FIX: mobile par neeche extra jagah (pb-8) taaki dots ke liye room rahe
+              className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/60 via-black/30 to-transparent pt-6 pb-8 md:py-10"
             >
               <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="max-w-2xl text-stone-50 space-y-3 md:space-y-4">
                   <p className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono font-bold">
                     {HERO_SLIDES[currentSlide].subtitle}
                   </p>
-                  
+
                   <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] font-medium">
                     {HERO_SLIDES[currentSlide].title}
                   </h1>
 
-                  <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed tracking-wide">
+                  {/* FIX: mobile par max 3 lines (lamba text image ko na dhake), desktop par poora */}
+                  <p className="text-stone-200 text-xs md:text-sm font-light leading-relaxed tracking-wide line-clamp-3 md:line-clamp-none">
                     {HERO_SLIDES[currentSlide].text}
                   </p>
 
@@ -275,7 +290,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       View Projects
                       <ArrowRight className="w-3 md:w-3.5 h-3 md:h-3.5 group-hover:translate-x-1 transition-transform" />
                     </button>
-                    
+
                     <button
                       id="hero-start-project"
                       onClick={() => onNavigate("contact")}
@@ -291,8 +306,9 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         )}
 
         {/* Floating Slide Indicators - only show when images are loaded */}
+        {/* FIX: mobile par bottom-center (text ke upar overlap nahi), desktop par bottom-right */}
         {imagesLoaded && (
-          <div className="absolute bottom-32 sm:bottom-24 md:bottom-10 right-6 md:right-12 z-20 flex items-center space-x-3">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 md:bottom-10 md:left-auto md:translate-x-0 md:right-12 z-20 flex items-center space-x-3">
             {HERO_SLIDES.map((_, index) => (
               <button
                 key={index}
@@ -310,7 +326,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       {/* 4. Selected Projects (6 featured projects) */}
       <section id="home-selected-projects" className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-stone-200 pb-6">
             <div className="space-y-2">
               <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-semibold">
@@ -330,13 +346,13 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Featured Projects: Villa 303, Villa 361, Unwalled, Villa 58, Panchkula Housing */}
-            {PROJECT_CARDS.filter(p => 
+            {/* Featured Projects: Maison Élan, Villa 303, Villa 361, Unwalled, Villa 58, Panchkula Housing */}
+            {PROJECT_CARDS.filter(p =>
               ['maison-elan', 'villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'].includes(p.id)
             ).sort((a, b) => {
               const order = ['maison-elan', 'villa-303', 'villa-361', 'unwalled-housing', 'villa-58', 'panchkula-housing'];
               return order.indexOf(a.id) - order.indexOf(b.id);
-            }).map((project, index) => (
+            }).map((project) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -381,7 +397,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
             ))}
 
             {/* Empty placeholder for future content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -432,28 +448,13 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         {/* Marquee track */}
         <div className="relative">
           {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{background: 'linear-gradient(to right, #fafaf9, transparent)'}} />
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #fafaf9, transparent)' }} />
           {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{background: 'linear-gradient(to left, #fafaf9, transparent)'}} />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #fafaf9, transparent)' }} />
 
           <div className="flex gap-6 reviews-marquee">
-            {[
-              { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
-              { name: "Rupin Dang", time: "4 months ago", text: "We had a great experience working with Devra Architects on our home. They understood our vision perfectly and delivered exceptional results. The attention to detail and quality of work was outstanding. Highly recommend!", initials: "RD", color: "bg-blue-600" },
-              { name: "A Pr", time: "5 months ago", text: "Very innovative and out of the box thinking of Mr. Devra. Had great experience, built a wonderful home with his guidance. His design sensibility is remarkable and he brings a unique perspective to every project.", initials: "AP", color: "bg-green-600" },
-              { name: "Deepak Katoch", time: "1 year ago", text: "Great experience, she has given ample time to solve our every small query. Excellent work and professionalism throughout the entire project. The team is responsive and truly cares about client satisfaction.", initials: "DK", color: "bg-purple-600" },
-              { name: "Anandambha Sharma", time: "6 months ago", text: "Working with Devra Architects was an absolute pleasure. Their design concepts are fresh, modern and perfectly tailored to our lifestyle. The final result exceeded all our expectations.", initials: "AS", color: "bg-red-500" },
-              { name: "Navdeep Singh", time: "8 months ago", text: "Ar. Varun Devra and his team are truly passionate about architecture. They transformed our plot into a dream home. The blend of functionality and aesthetics in the design is exceptional.", initials: "NS", color: "bg-teal-600" },
-              { name: "Priya Malhotra", time: "10 months ago", text: "One of the best decisions we made was choosing Devra Architects for our farmhouse project. Professional, punctual, and incredibly creative. Every corner reflects thoughtful design and superior craftsmanship.", initials: "PM", color: "bg-pink-600" },
-              // duplicate set for seamless loop
-              { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
-              { name: "Rupin Dang", time: "4 months ago", text: "We had a great experience working with Devra Architects on our home. They understood our vision perfectly and delivered exceptional results. The attention to detail and quality of work was outstanding. Highly recommend!", initials: "RD", color: "bg-blue-600" },
-              { name: "A Pr", time: "5 months ago", text: "Very innovative and out of the box thinking of Mr. Devra. Had great experience, built a wonderful home with his guidance. His design sensibility is remarkable and he brings a unique perspective to every project.", initials: "AP", color: "bg-green-600" },
-              { name: "Deepak Katoch", time: "1 year ago", text: "Great experience, she has given ample time to solve our every small query. Excellent work and professionalism throughout the entire project. The team is responsive and truly cares about client satisfaction.", initials: "DK", color: "bg-purple-600" },
-              { name: "Anandambha Sharma", time: "6 months ago", text: "Working with Devra Architects was an absolute pleasure. Their design concepts are fresh, modern and perfectly tailored to our lifestyle. The final result exceeded all our expectations.", initials: "AS", color: "bg-red-500" },
-              { name: "Navdeep Singh", time: "8 months ago", text: "Ar. Varun Devra and his team are truly passionate about architecture. They transformed our plot into a dream home. The blend of functionality and aesthetics in the design is exceptional.", initials: "NS", color: "bg-teal-600" },
-              { name: "Priya Malhotra", time: "10 months ago", text: "One of the best decisions we made was choosing Devra Architects for our farmhouse project. Professional, punctual, and incredibly creative. Every corner reflects thoughtful design and superior craftsmanship.", initials: "PM", color: "bg-pink-600" },
-            ].map((review, i) => (
+            {/* Duplicate set for seamless loop */}
+            {[...REVIEWS, ...REVIEWS].map((review, i) => (
               <div key={i} className="bg-white border border-stone-200 p-6 flex flex-col gap-4 shrink-0 w-[320px]">
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center text-white text-sm font-bold shrink-0`}>
@@ -534,7 +535,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       {/* 5. What We Do Capabilities Grid */}
       <section id="home-capabilities" className="py-12 md:py-16 bg-stone-900 text-stone-50">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="max-w-3xl mb-20 space-y-4">
             <span className="text-[10px] tracking-[0.3em] uppercase text-stone-400 font-mono font-semibold">
               OUR CAPABILITIES
@@ -571,7 +572,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 </div>
               </div>
             </div>
-            
+
             <div className="border border-stone-800 hover:border-stone-700 transition-all overflow-hidden flex flex-col bg-stone-950">
               <div className="h-44 overflow-hidden relative group">
                 <img

@@ -19,8 +19,7 @@ export default function ProjectDetailPage({
   onNavigate,
   onSelectProject,
   // Purane props (heroObjectPosition / heroAspectRatio / heroFit) ab zaroorat nahi:
-  // hero image ab hamesha poori, natural aspect ratio mein dikhti hai.
-  // Agar kisi page se yeh props pass ho rahe hain to koi problem nahi, bas ignore honge.
+  // hero ka size CSS se control hota hai, aur crop position image se auto decide hoti hai.
 }) {
   const heroImg = heroImage || images[0]
   const heroImgMobile = heroImageMobile || heroImg
@@ -30,6 +29,8 @@ export default function ProjectDetailPage({
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  // true jab hero image portrait (lambi) ho — tab building wala neeche ka hissa dikhayenge
+  const [heroPortrait, setHeroPortrait] = useState(false)
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768)
@@ -67,6 +68,10 @@ export default function ProjectDetailPage({
             src={displayHeroImg}
             alt={title}
             className="proj-hero__img"
+            style={{ objectPosition: heroPortrait ? 'center 80%' : 'center center' }}
+            onLoad={(e) =>
+              setHeroPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)
+            }
             referrerPolicy="no-referrer"
             loading="eager"
             fetchPriority="high"
@@ -128,7 +133,7 @@ export default function ProjectDetailPage({
                 src={image}
                 alt={`${title} image ${index + 2}`}
                 className="proj-gallery__img"
-                loading="lazy" 
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
               <div className="proj-gallery__overlay">
@@ -173,7 +178,7 @@ export default function ProjectDetailPage({
       {(() => {
         const currentProject = PROJECTS.find(p => p.title === title);
         if (!currentProject) return null;
-        
+
         const currentIndex = PROJECTS.findIndex(p => p.id === currentProject.id);
         const prevProject = currentIndex > 0 ? PROJECTS[currentIndex - 1] : PROJECTS[PROJECTS.length - 1];
         const nextProject = currentIndex < PROJECTS.length - 1 ? PROJECTS[currentIndex + 1] : PROJECTS[0];
