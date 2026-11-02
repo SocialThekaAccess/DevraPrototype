@@ -1,7 +1,6 @@
 import { Project, Service, ProcessStep, BlogPost } from "./types";
 
 import houSansarg1 from "../assets/projects/hou-sansarg-1.avif";
-import houSansargMobile from "/assets/projects/SARANGMobilerisponsive.png";
 import houSansarg2 from "../assets/projects/hou-sansarg-2.avif";
 import houSansarg3 from "../assets/projects/hou-sansarg-3.avif";
 import houSansarg4 from "../assets/projects/hou-sansarg-4.avif";
@@ -66,7 +65,6 @@ import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
 import hou3PMDCPanchkula from "../assets/projects/3PMDCPanchkula.webp";
-import hou3PMDCMobile from "/assets/projects/3PMDCPanchkulaMobilerisponsive.png";
 import panchkulaHousingHero from "../assets/PanchkulaHousing.webp";
 import houUnwalled1 from "../assets/projects/hou-unwalled-1.webp";
 import houUnwalled2 from "../assets/projects/hou-unwalled-2.webp";
@@ -196,7 +194,6 @@ export const PROJECTS: Project[] = [
     size: "6,500 sq. ft.",
     scope: "Architecture, Interiors & Landscaping",
     heroImage: houSansarg1,
-    mobileHeroImage: houSansargMobile,
     description: "Featured on Buildofy, Sansarg is a celebration of interconnected spaces, deep courtyards, and honest material usage. Designed as a sanctuary for a multi-generational family, the residence plays with double-height volumes and the gentle movement of natural light throughout the day.",
     narrative: {
       site: "The site is located in a quiet residential pocket of Patiala, experiencing hot summers and cold winters. Privacy from neighboring plots was a primary constraint, which led to an introverted, courtyard-centric design.",
@@ -416,7 +413,6 @@ export const PROJECTS: Project[] = [
     size: "2,50,000 sq. ft.",
     scope: "Architecture, Masterplanning & Urban Design",
     heroImage: hou3PMDCPanchkula,
-    mobileHeroImage: hou3PMDCMobile,
     description: "A visionary mixed-density housing development blending contemporary architectural language with sustainable urban planning principles. Designed to create a vibrant, pedestrian-friendly community with integrated green spaces and modern amenities.",
     narrative: {
       site: "Located in the rapidly developing MDC sector of Panchkula, this site offers excellent connectivity and panoramic views of the Shivalik foothills. The masterplan strategically responds to the natural topography and prevailing wind patterns.",
