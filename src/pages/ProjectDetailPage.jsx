@@ -182,9 +182,6 @@ export default function ProjectDetailPage({
           if (onSelectProject) onSelectProject(id);
           if (onNavigate) {
             onNavigate(`project-${id}`);
-          } else {
-            // Fallback to direct navigation if props not available
-            window.location.href = `/projects/${id}`;
           }
           window.scrollTo({ top: 0, behavior: "smooth" });
         };
