@@ -4,6 +4,7 @@
 
 import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
 import houSansargHero from "../assets/projects/hou-sansarg-1.avif";
+import houSansargHeroMobile from "/assets/projects/SARANGMobilerisponsive.png";
 import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
 import resVilla58HeroMobile from "../assets/projects/res-villa-58.webp";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
@@ -56,6 +57,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Patiala, Punjab",
     year: "2022",
     heroImage: houSansargHero,
+    mobileHeroImage: houSansargHeroMobile,
   },
   {
     id: "villa-58",

@@ -1,6 +1,7 @@
 import { Project, Service, ProcessStep, BlogPost } from "./types";
 
 import houSansarg1 from "../assets/projects/hou-sansarg-1.avif";
+import houSansargMobile from "/assets/projects/SARANGMobilerisponsive.png";
 import houSansarg2 from "../assets/projects/hou-sansarg-2.avif";
 import houSansarg3 from "../assets/projects/hou-sansarg-3.avif";
 import houSansarg4 from "../assets/projects/hou-sansarg-4.avif";
@@ -194,6 +195,7 @@ export const PROJECTS: Project[] = [
     size: "6,500 sq. ft.",
     scope: "Architecture, Interiors & Landscaping",
     heroImage: houSansarg1,
+    mobileHeroImage: houSansargMobile,
     description: "Featured on Buildofy, Sansarg is a celebration of interconnected spaces, deep courtyards, and honest material usage. Designed as a sanctuary for a multi-generational family, the residence plays with double-height volumes and the gentle movement of natural light throughout the day.",
     narrative: {
       site: "The site is located in a quiet residential pocket of Patiala, experiencing hot summers and cold winters. Privacy from neighboring plots was a primary constraint, which led to an introverted, courtyard-centric design.",

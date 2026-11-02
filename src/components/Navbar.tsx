@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import logoImage from "/assets/DEVRAArchitects.png";
+import whiteLogoImage from "/assets/DEVRAArchitects.png";
+import blackLogoImage from "/assets/projects/DEVRAblackLogo.png";
 
 interface NavbarProps {
   currentPath: string;
@@ -25,7 +26,10 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const isHomePage = currentPath === "home";
-  const shouldShowWhiteLogo = isHomePage && !isScrolled;
+  const isProjectPage =
+    currentPath.startsWith("project/") ||
+    window.location.pathname.includes("/projects/");
+  const shouldShowWhiteLogo = (isHomePage || isProjectPage) && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +46,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
     };
   }, [isOpen]);
 
-  const showWhiteText = isHomePage && !isScrolled;
+  const showWhiteText = (isHomePage || isProjectPage) && !isScrolled;
 
   const navItems = [
     { label: "Projects", path: "projects" },
@@ -90,20 +94,33 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
-        {/* Brand Logo */}
+        {/* Brand Logo — dono logos ek hi fixed box (170px x 50px) mein, taaki size same dikhe */}
         <a
           id="nav-logo"
           href="/"
           onClick={(e) => handleNavClick(e, "home")}
           className="flex items-center cursor-pointer group shrink-0 no-underline"
         >
-          <img
-            src={logoImage}
-            alt="DEVRA Architects"
-            className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 ${
-              shouldShowWhiteLogo ? "brightness-0 invert" : ""
-            } group-hover:opacity-80`}
-          />
+          <div className="relative h-[50px] w-[170px]">
+            {/* White logo (DEVRAArchitects.png)
+                Size tune karne ke liye scale-[0.85] badlo:
+                chhota karna ho → scale-[0.75], bada karna ho → scale-[0.95] / scale-100 */}
+            <img
+              src={whiteLogoImage}
+              alt="DEVRA Architects"
+              className={`absolute inset-0 h-full w-full object-contain object-left origin-left scale-[0.85] pointer-events-none transition-opacity duration-300 group-hover:opacity-80 ${
+                shouldShowWhiteLogo ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            {/* Black logo */}
+            <img
+              src={blackLogoImage}
+              alt="DEVRA Architects"
+              className={`absolute inset-0 h-full w-full object-contain object-left origin-left transition-opacity duration-300 group-hover:opacity-80 ${
+                shouldShowWhiteLogo ? "opacity-0" : "opacity-100"
+              }`}
+            />
+          </div>
         </a>
 
         {/* Desktop Navigation */}
@@ -118,7 +135,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
               <a
                 key={item.path}
                 id={`nav-link-${item.path}`}
-                href={isExternal ? "https://www.devrabuildtech.com/" : (pathToHref[item.path] ?? `/${item.path}`)}
+                href={
+                  isExternal
+                    ? "https://www.devrabuildtech.com/"
+                    : pathToHref[item.path] ?? `/${item.path}`
+                }
                 onClick={(e) => handleNavClick(e, item.path, isExternal)}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
@@ -192,7 +213,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                   <a
                     key={item.path}
                     id={`mobile-nav-link-${item.path}`}
-                    href={isExternal ? "https://www.devrabuildtech.com/" : (pathToHref[item.path] ?? `/${item.path}`)}
+                    href={
+                      isExternal
+                        ? "https://www.devrabuildtech.com/"
+                        : pathToHref[item.path] ?? `/${item.path}`
+                    }
                     onClick={(e) => handleNavClick(e, item.path, isExternal)}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
