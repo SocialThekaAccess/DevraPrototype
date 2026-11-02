@@ -1,7 +1,8 @@
 import SEOMeta from '../components/SEOMeta'
 import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { X, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react'
+import { PROJECTS } from '../data'
 import './ProjectDetailPage.css'
 
 export default function ProjectDetailPage({
@@ -15,6 +16,8 @@ export default function ProjectDetailPage({
   heroImage,
   heroImageMobile,
   images = [],
+  onNavigate,
+  onSelectProject,
   // Purane props (heroObjectPosition / heroAspectRatio / heroFit) ab zaroorat nahi:
   // hero image ab hamesha poori, natural aspect ratio mein dikhti hai.
   // Agar kisi page se yeh props pass ho rahe hain to koi problem nahi, bas ignore honge.
@@ -165,6 +168,64 @@ export default function ProjectDetailPage({
           </div>
         </div>
       )}
+
+      {/* Project Navigation - Next/Previous */}
+      {onNavigate && onSelectProject && (() => {
+        const currentProject = PROJECTS.find(p => p.title === title);
+        if (!currentProject) return null;
+        
+        const currentIndex = PROJECTS.findIndex(p => p.id === currentProject.id);
+        const prevProject = currentIndex > 0 ? PROJECTS[currentIndex - 1] : PROJECTS[PROJECTS.length - 1];
+        const nextProject = currentIndex < PROJECTS.length - 1 ? PROJECTS[currentIndex + 1] : PROJECTS[0];
+
+        const handleNavigateToProject = (id) => {
+          onSelectProject(id);
+          onNavigate(`project-${id}`);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        return (
+          <section className="py-16 border-t border-stone-200 bg-stone-100">
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Previous Project */}
+                <button
+                  onClick={() => handleNavigateToProject(prevProject.id)}
+                  className="group text-left cursor-pointer hover:bg-stone-50 p-6 border border-stone-200 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-stone-500 font-mono font-bold mb-3">
+                    <ArrowLeft className="w-3 h-3" />
+                    Previous Project
+                  </div>
+                  <h3 className="font-serif text-xl text-stone-900 font-medium group-hover:text-stone-600 transition-colors">
+                    {prevProject.title}
+                  </h3>
+                  <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-2">
+                    {prevProject.category}
+                  </p>
+                </button>
+
+                {/* Next Project */}
+                <button
+                  onClick={() => handleNavigateToProject(nextProject.id)}
+                  className="group text-right cursor-pointer hover:bg-stone-50 p-6 border border-stone-200 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-end gap-2 text-[10px] uppercase tracking-widest text-stone-500 font-mono font-bold mb-3">
+                    Next Project
+                    <ArrowRight className="w-3 h-3" />
+                  </div>
+                  <h3 className="font-serif text-xl text-stone-900 font-medium group-hover:text-stone-600 transition-colors">
+                    {nextProject.title}
+                  </h3>
+                  <p className="text-[10px] text-stone-500 uppercase tracking-widest font-mono mt-2">
+                    {nextProject.category}
+                  </p>
+                </button>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
     </div>
   )
 }

@@ -167,25 +167,25 @@ function AppInner() {
           <Routes location={location}>
                 <Route path="/" element={<Home onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects" element={<Projects onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
-                <Route path="/projects/devra-architects" element={<ComDevraArchPage />} />
-                <Route path="/projects/fortofino" element={<ComFortofinoPage />} />
-                <Route path="/projects/milk-point" element={<ComMilkPointPage />} />
-                <Route path="/projects/gills-farmhouse" element={<FhGillsFarmhousePage />} />
-                <Route path="/projects/castle-grey" element={<HosCastleGreyPage />} />
-                <Route path="/projects/panchkula-housing" element={<HouPanchkulaPage />} />
-                <Route path="/projects/121-122" element={<Res121122Page />} />
-                <Route path="/projects/midhas" element={<ResMidhasPage />} />
-                <Route path="/projects/maison-elan" element={<ResMaisonElanPage />} />
-                <Route path="/projects/minzs" element={<ResMinzsPage />} />
-                <Route path="/projects/col-supreet" element={<ResSupreetPage />} />
-                <Route path="/projects/villa-201d" element={<ResVilla201DPage />} />
-                <Route path="/projects/villa-303" element={<ResVilla303Page />} />
-                <Route path="/projects/villa-361" element={<ResVilla361Page />} />
-                <Route path="/projects/villa-58" element={<ResVilla58Page />} />
-                <Route path="/projects/ms-school" element={<SchMsSchoolPage />} />
-                <Route path="/projects/the-kangs" element={<ResKangsPage />} />
-                <Route path="/projects/oakwood-school" element={<SchOakwoodPage />} />
-                <Route path="/projects/hlp-project" element={<ComHlpPage />} />
+                <Route path="/projects/devra-architects" element={<ComDevraArchPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/fortofino" element={<ComFortofinoPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/milk-point" element={<ComMilkPointPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/gills-farmhouse" element={<FhGillsFarmhousePage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/castle-grey" element={<HosCastleGreyPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/panchkula-housing" element={<HouPanchkulaPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/121-122" element={<Res121122Page onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/midhas" element={<ResMidhasPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/maison-elan" element={<ResMaisonElanPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/minzs" element={<ResMinzsPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/col-supreet" element={<ResSupreetPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/villa-201d" element={<ResVilla201DPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/villa-303" element={<ResVilla303Page onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/villa-361" element={<ResVilla361Page onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/villa-58" element={<ResVilla58Page onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/ms-school" element={<SchMsSchoolPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/the-kangs" element={<ResKangsPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/oakwood-school" element={<SchOakwoodPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/hlp-project" element={<ComHlpPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/:id" element={<ProjectDetailWrapper onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/about" element={<About onNavigate={onNavigate} />} />
                 <Route path="/vision" element={<Vision />} />
