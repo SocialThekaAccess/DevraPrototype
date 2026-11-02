@@ -23,7 +23,7 @@ export default function About({ onNavigate }: AboutProps) {
         keywords={[
           "Ar. Varun Devra architect",
           "principal architect DEVRA",
-          "New Chandigarh architecture firm",
+          "Chandigarh architecture firm",
           "sustainable luxury architects punjab",
           "corbusier style modernism india",
           "luxury home builders tricity",
@@ -103,7 +103,7 @@ export default function About({ onNavigate }: AboutProps) {
                 <div className="space-y-1">
                   <span className="text-[9px] tracking-[0.3em] uppercase text-stone-400 font-mono font-bold block">Firm</span>
                   <span className="text-xs text-stone-800 font-medium leading-snug block mt-1">DEVRA Architects</span>
-                  <span className="text-[10px] text-stone-500 font-light block">New Chandigarh</span>
+                  <span className="text-[10px] text-stone-500 font-light block">Chandigarh</span>
                 </div>
               </div>
             </div>
@@ -118,13 +118,13 @@ export default function About({ onNavigate }: AboutProps) {
             </h2>
             <div className="h-[1px] w-20 bg-stone-300" />
             <p className="text-stone-600 text-xs md:text-sm leading-relaxed font-light">
-              We operate at the intersection of craftsmanship and architectural logic. Based out of New Chandigarh, our team is equipped to handle complex private residential plots, modern estate farmhouses, complete interior designs, and corporate hospitality spaces from the very first soil test down to final handover audits.
+              We operate at the intersection of craftsmanship and architectural logic. Based out of Chandigarh, our team is equipped to handle complex private residential plots, modern estate farmhouses, complete interior designs, and corporate hospitality spaces from the very first soil test down to final handover audits.
             </p>
           </div>
 
           <div className="lg:col-span-7 bg-stone-100 p-8 md:p-12 border border-stone-200">
             <p className="font-serif text-lg text-stone-850 leading-relaxed italic text-stone-800">
-              "DEVRA Architects is a New Chandigarh-based architecture and interior design studio focused on creating homes and spaces that balance beauty, comfort, function, and execution. Our work brings together architecture, interiors, materials, site detailing, and design-to-build coordination so that every project is not only designed well, but built with clarity."
+              "DEVRA Architects is a Chandigarh-based architecture and interior design studio focused on creating homes and spaces that balance beauty, comfort, function, and execution. Our work brings together architecture, interiors, materials, site detailing, and design-to-build coordination so that every project is not only designed well, but built with clarity."
             </p>
           </div>
         </div>
@@ -304,7 +304,7 @@ export default function About({ onNavigate }: AboutProps) {
               Where We Practice
             </h4>
             <p className="text-stone-400 text-xs font-light max-w-xl">
-              We operate primarily in New Chandigarh, Chandigarh, Mohali, and Panchkula (Tricity), and handle premium estates and residential projects across Punjab, Haryana, and pan-India.
+              We operate primarily in Chandigarh, Mohali, and Panchkula (Tricity), and handle premium estates and residential projects across Punjab, Haryana, and pan-India.
             </p>
           </div>
           <button
