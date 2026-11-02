@@ -3,9 +3,11 @@ import img1 from '../../assets/projects/sch-ms-school-a.avif'
 import img2 from '../../assets/projects/sch-ms-school-b.avif'
 import img3 from '../../assets/projects/sch-ms-school-c.avif'
 
-export default function SchMsSchoolPage() {
+export default function SchMsSchoolPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/schools"
       backLabel="Schools"
       title="M S School"

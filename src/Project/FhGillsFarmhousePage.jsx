@@ -8,9 +8,11 @@ import img6 from '../../assets/projects/fh-gills-6.avif'
 import img7 from '../../assets/projects/fh-gills-7.avif'
 import img8 from '../../assets/projects/fh-gills-8.avif'
 
-export default function FhGillsFarmhousePage() {
+export default function FhGillsFarmhousePage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/farm-houses"
       backLabel="Farm Houses"
       title="Gill's Farmhouse"

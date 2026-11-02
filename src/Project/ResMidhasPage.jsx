@@ -4,9 +4,11 @@ import img1 from '../../assets/projects/MIDHAJI1.webp'
 import img2 from '../../assets/projects/MIDHAJI2.webp'
 import img3 from '../../assets/projects/MIDHAJI3.webp'
 
-export default function ResMidhasPage() {
+export default function ResMidhasPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="The Midha's"

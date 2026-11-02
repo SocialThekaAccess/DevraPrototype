@@ -20,9 +20,11 @@ import gf9 from '../../assets/projects/201DGROUNDFLOORINTERIORS9.webp'
 import gf10 from '../../assets/projects/201DGROUNDFLOORINTERIORS10.webp'
 import gf11 from '../../assets/projects/201DGROUNDFLOORINTERIORS11.webp'
 
-export default function ResVilla201DPage() {
+export default function ResVilla201DPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="Villa 201D"

@@ -112,19 +112,6 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
       {/* Hero Section — full image, natural height (no h-screen crop) */}
       <section className="proj-hero">
-        {/* Back Button - positioned over hero image */}
-        <button
-          onClick={() => {
-            onNavigate("projects");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          className="absolute top-24 left-6 md:left-12 z-20 flex items-center gap-2 text-white hover:text-white/80 transition-colors group"
-          aria-label="Back to Projects"
-        >
-          <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:-translate-x-1" />
-          <span className="text-xs md:text-sm uppercase tracking-widest font-semibold">Back to Projects</span>
-        </button>
-
         <div
           className="proj-hero__img-wrapper"
           // Mobile par hero ko 4:5 (Villa 58 jaisa) rakho; desktop par natural height

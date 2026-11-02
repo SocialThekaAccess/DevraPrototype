@@ -3,9 +3,11 @@ import img1 from '../../assets/projects/res-121-122.avif'
 import img2 from '../../assets/projects/res-121-122-2.avif'
 import img3 from '../../assets/projects/res-121-122-3.avif'
 
-export default function Res121122Page() {
+export default function Res121122Page({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="121 & 122"

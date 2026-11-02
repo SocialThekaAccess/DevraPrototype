@@ -3,9 +3,11 @@ import heroImg from '../../assets/projects/Lt.ColSupreetSinghHome.webp'
 import img1 from '../../assets/projects/Lt.ColSupreetSingh.webp'
 import img2 from '../../assets/projects/Lt.ColSupreetSingh1.webp'
 
-export default function ResSupreetPage() {
+export default function ResSupreetPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="Col. Supreet Ji"

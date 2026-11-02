@@ -9,9 +9,11 @@ import img7 from '../../assets/projects/CASTLEGREY7.webp'
 import img8 from '../../assets/projects/CASTLEGREY8.webp'
 import img9 from '../../assets/projects/CASTLEGREY9.webp'
 
-export default function HosCastleGreyPage() {
+export default function HosCastleGreyPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/hospitality"
       backLabel="Hospitality"
       title="Castle Grey"

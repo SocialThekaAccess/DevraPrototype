@@ -9,9 +9,11 @@ import img7 from '../../assets/projects/res-minzs-7.webp'
 import img8 from '../../assets/projects/res-minzs-8.webp'
 import img9 from '../../assets/projects/res-minzs-9.webp'
 
-export default function ResMinzsPage() {
+export default function ResMinzsPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="The Minz's"

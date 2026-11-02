@@ -7,9 +7,11 @@ import img5 from '../../assets/projects/DevraArchitects4.png'
 import img6 from '../../assets/projects/DevraArchitects5.png'
 import img7 from '../../assets/projects/DevraArchitects6.png'
 
-export default function ComDevraArchPage() {
+export default function ComDevraArchPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/commercial"
       backLabel="Commercial"
       title="Devra Architects"

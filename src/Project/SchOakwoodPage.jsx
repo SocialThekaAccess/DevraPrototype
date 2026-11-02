@@ -3,9 +3,11 @@ import heroImg from '../../assets/projects/OAKWODDSCHOOL1.webp'
 import img2 from '../../assets/projects/OAKWODDSCHOOL2.webp'
 import img3 from '../../assets/projects/OAKWODDSCHOOL3.webp'
 
-export default function SchOakwoodPage() {
+export default function SchOakwoodPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/schools"
       backLabel="Schools"
       title="The Oakwood School"

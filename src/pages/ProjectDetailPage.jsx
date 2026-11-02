@@ -170,7 +170,7 @@ export default function ProjectDetailPage({
       )}
 
       {/* Project Navigation - Next/Previous */}
-      {onNavigate && onSelectProject && (() => {
+      {(() => {
         const currentProject = PROJECTS.find(p => p.title === title);
         if (!currentProject) return null;
         
@@ -179,8 +179,13 @@ export default function ProjectDetailPage({
         const nextProject = currentIndex < PROJECTS.length - 1 ? PROJECTS[currentIndex + 1] : PROJECTS[0];
 
         const handleNavigateToProject = (id) => {
-          onSelectProject(id);
-          onNavigate(`project-${id}`);
+          if (onSelectProject) onSelectProject(id);
+          if (onNavigate) {
+            onNavigate(`project-${id}`);
+          } else {
+            // Fallback to direct navigation if props not available
+            window.location.href = `/projects/${id}`;
+          }
           window.scrollTo({ top: 0, behavior: "smooth" });
         };
 

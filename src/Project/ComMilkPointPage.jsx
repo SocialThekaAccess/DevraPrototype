@@ -2,9 +2,11 @@ import ProjectDetailPage from '../pages/ProjectDetailPage'
 import img1 from '../../assets/projects/com-milk-point-1.avif'
 import img2 from '../../assets/projects/com-milk-point-2.avif'
 
-export default function ComMilkPointPage() {
+export default function ComMilkPointPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/commercial"
       backLabel="Commercial"
       title="Milk Point"

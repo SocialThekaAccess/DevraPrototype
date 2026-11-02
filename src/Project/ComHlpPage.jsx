@@ -18,9 +18,11 @@ const hlpImages = [
   '/assets/projects/hlp12.webp',
 ]
 
-export default function ComHlpPage() {
+export default function ComHlpPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/commercial"
       backLabel="Commercial"
       title="HLP Project"

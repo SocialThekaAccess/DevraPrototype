@@ -26,9 +26,11 @@ import img23 from '../../assets/projects/villa361PD23.webp'
 import img24 from '../../assets/projects/villa361PD24.webp'
 import img25 from '../../assets/projects/villa361PD25.webp'
 
-export default function ResVilla361Page() {
+export default function ResVilla361Page({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="Villa 361"

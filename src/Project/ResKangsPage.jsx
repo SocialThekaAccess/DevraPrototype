@@ -1,9 +1,11 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/projects/TheKangs2.webp'
 
-export default function ResKangsPage() {
+export default function ResKangsPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="The Kangs"

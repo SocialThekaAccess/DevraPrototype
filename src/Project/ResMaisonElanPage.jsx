@@ -2,9 +2,11 @@ import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/projects/MaisonElan1.webp'
 import img2 from '../../assets/projects/MaisonElan2.webp'
 
-export default function ResMaisonElanPage() {
+export default function ResMaisonElanPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
+      onNavigate={onNavigate}
+      onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
       title="Maison Élan"
