@@ -8,7 +8,7 @@ import StructuredData from "../components/StructuredData";
 import slider1 from "../../assets/projects/Villaa303.webp";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.webp";
 import slider2 from "../../assets/projects/villa361PDHero20.webp";
-import slider2Mobile from "../../assets/projects/Villa361Mobileview.webp";
+import slider2Mobile from "/assets/projects/Villa361SliderMobilerisponsive.png";
 import slider3 from "../../assets/projects/Unwalledimageproject.webp";
 import slider3Mobile from "../../assets/projects/Unwalledimagemobileview.webp";
 import slider4 from "../../assets/projects/Villaa58.webp";
@@ -423,7 +423,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 CLIENT TESTIMONIALS
               </span>
               <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
-                What Our Clients Say
+                What Clients Say Through Google Reviews
               </h3>
             </div>
           </div>
