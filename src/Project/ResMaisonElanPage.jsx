@@ -1,6 +1,6 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/projects/MaisonElan1.webp'
-import heroImgMobile from './MaisonElanMobilerisponsive.png'
+import heroImgMobile from '../../assets/projects/MaisonElanMobilerisponsive.png'
 import img2 from '../../assets/projects/MaisonElan2.webp'
 
 export default function ResMaisonElanPage({ onNavigate, onSelectProject }) {
