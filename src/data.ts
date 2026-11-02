@@ -66,6 +66,7 @@ import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
 import hou3PMDCPanchkula from "../assets/projects/3PMDCPanchkula.webp";
+import hou3PMDCMobile from "/assets/projects/3PMDCPanchkulaMobilerisponsive.png";
 import panchkulaHousingHero from "../assets/PanchkulaHousing.webp";
 import houUnwalled1 from "../assets/projects/hou-unwalled-1.webp";
 import houUnwalled2 from "../assets/projects/hou-unwalled-2.webp";
@@ -415,6 +416,7 @@ export const PROJECTS: Project[] = [
     size: "2,50,000 sq. ft.",
     scope: "Architecture, Masterplanning & Urban Design",
     heroImage: hou3PMDCPanchkula,
+    mobileHeroImage: hou3PMDCMobile,
     description: "A visionary mixed-density housing development blending contemporary architectural language with sustainable urban planning principles. Designed to create a vibrant, pedestrian-friendly community with integrated green spaces and modern amenities.",
     narrative: {
       site: "Located in the rapidly developing MDC sector of Panchkula, this site offers excellent connectivity and panoramic views of the Shivalik foothills. The masterplan strategically responds to the natural topography and prevailing wind patterns.",

@@ -60,9 +60,12 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
   // Use mobile images if available, otherwise fallback to regular images
   const displayImages = isMobile && project.mobileImages ? project.mobileImages : project.images;
-  const heroImage = isMobile && project.mobileHeroImage ? project.mobileHeroImage : project.heroImage;
 
   const rows = buildRows(displayImages || []);
+
+  // Overview paragraphs (Villa 58 jaisa): pehla = description, doosra = site narrative
+  const overviewText = project.description;
+  const overviewText2 = project.narrative?.site;
 
   // Find adjacent projects for navigation
   const currentIndex = PROJECTS.findIndex((p) => p.id === project.id);
@@ -107,96 +110,78 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
         path={`project-${project.id}`}
       />
 
-      {/* Hero Section with Project Image */}
-      <section className="relative w-full h-screen overflow-hidden bg-stone-900">
-        <div className="absolute inset-0 bg-black/30 z-10" />
-        <picture>
-          {project.mobileHeroImage && (
-            <source media="(max-width: 767px)" srcSet={project.mobileHeroImage} />
-          )}
-          <img
-            src={project.heroImage}
-            alt={project.title}
-            referrerPolicy="no-referrer"
-            fetchPriority="high"
-            decoding="async"
-            className="w-full h-full object-cover object-center"
-          />
-        </picture>
-
-        {/* Hero Title Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 max-w-7xl mx-auto px-6 md:px-12 pb-2">
-          <div className="text-stone-50 space-y-4 max-w-3xl">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-300 font-mono font-bold">
-              {project.category} // {project.location}
-            </span>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight font-medium">
-              {project.title}
-            </h1>
-          </div>
+      {/* Hero Section — full image, natural height (no h-screen crop) */}
+      <section className="proj-hero">
+        <div
+          className="proj-hero__img-wrapper"
+          // Mobile par hero ko 4:5 (Villa 58 jaisa) rakho; desktop par natural height
+          style={isMobile ? { aspectRatio: "1 / 1", height: "auto" } : undefined}
+        >
+          <picture style={isMobile ? { display: "block", width: "100%", height: "100%" } : undefined}>
+            {project.mobileHeroImage && (
+              <source media="(max-width: 767px)" srcSet={project.mobileHeroImage} />
+            )}
+            <img
+              src={project.heroImage}
+              alt={project.title}
+              referrerPolicy="no-referrer"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="proj-hero__img"
+              style={isMobile ? { width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" } : undefined}
+            />
+          </picture>
+        </div>
+        <div className="proj-hero__overlay" />
+        <div className="proj-hero__title-wrap">
+          <h1 className="proj-hero__title">{project.title}</h1>
+          <span className="proj-hero__category">{project.category}</span>
         </div>
       </section>
 
       {/* Project Metadata Strip */}
       <section className="proj-meta-strip">
         <div className="proj-meta-strip__inner">
-          <div className="proj-meta-strip__item">
-            <span className="proj-meta-strip__label">Location</span>
-            <span className="proj-meta-strip__value">{project.location}</span>
-          </div>
-          <div className="proj-meta-strip__item">
-            <span className="proj-meta-strip__label">Project Size</span>
-            <span className="proj-meta-strip__value">{project.size}</span>
-          </div>
-          <div className="proj-meta-strip__item">
-            <span className="proj-meta-strip__label">Year</span>
-            <span className="proj-meta-strip__value">{project.year}</span>
-          </div>
-          <div className="proj-meta-strip__item proj-meta-strip__item--last">
-            <span className="proj-meta-strip__label">Category</span>
-            <span className="proj-meta-strip__value">{project.category}</span>
-          </div>
+          {project.location && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Location</span>
+              <span className="proj-meta-strip__value">{project.location}</span>
+            </div>
+          )}
+          {project.size && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Project Size</span>
+              <span className="proj-meta-strip__value">{project.size}</span>
+            </div>
+          )}
+          {project.year && (
+            <div className="proj-meta-strip__item">
+              <span className="proj-meta-strip__label">Year</span>
+              <span className="proj-meta-strip__value">{project.year}</span>
+            </div>
+          )}
+          {project.category && (
+            <div className="proj-meta-strip__item proj-meta-strip__item--last">
+              <span className="proj-meta-strip__label">Category</span>
+              <span className="proj-meta-strip__value">{project.category}</span>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Project Narrative Section */}
-      {project.narrative && (
-        <section className="pt-3 pb-8 md:pt-4 md:pb-12">
-          <div className="proj-meta-strip__inner">
-
-            {/* OVERVIEW label — above paragraph */}
-            <div className="mb-3">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
-                Overview
-              </span>
-            </div>
-
-            {/* Paragraph */}
-            <div className="space-y-3">
-              <p className="text-stone-700 text-sm leading-relaxed font-light">
-                {[
-                  project.narrative.site,
-                  project.narrative.planning,
-                ]
-                  .filter(Boolean)
-                  .join(" ")}
-              </p>
-              {(project.narrative.materials || project.narrative.lightVentilation || project.narrative.execution) && (
-                <p className="text-stone-700 text-sm leading-relaxed font-light">
-                  {[
-                    project.narrative.materials,
-                    project.narrative.lightVentilation,
-                    project.narrative.execution,
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                </p>
-              )}
-            </div>
-
+      {/* Overview Section */}
+      <section className="proj-overview">
+        <div className="proj-overview__inner">
+          <div className="proj-overview__label-col">
+            <span className="proj-overview__label">Overview</span>
           </div>
-        </section>
-      )}
+          <div className="proj-overview__text-col">
+            {overviewText && <p className="proj-overview__text">{overviewText}</p>}
+            {overviewText2 && <p className="proj-overview__text">{overviewText2}</p>}
+          </div>
+        </div>
+      </section>
 
       {/* Image Gallery with Dynamic Rows */}
       {rows.length > 0 && (

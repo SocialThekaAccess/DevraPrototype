@@ -15,6 +15,7 @@ import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.webp";
 import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.webp";
 import panchkulaHero from "../assets/PanchkulaHousing.webp";
 import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
+import hou3PMDCHeroMobile from "/assets/projects/3PMDCPanchkulaMobilerisponsive.png";
 import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
 import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.webp";
 import comDevraArchHero from "../assets/projects/DevraArchitects.png";
@@ -124,6 +125,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "3P MDC Panchkula",
     year: "2026",
     heroImage: hou3PMDCHero,
+    mobileHeroImage: hou3PMDCHeroMobile,
   },
   {
     id: "unwalled-housing",
