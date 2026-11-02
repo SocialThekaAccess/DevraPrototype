@@ -228,7 +228,6 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
               </motion.div>
             ))}
           </div>
-          </div>
         </section>
       )}
 

@@ -101,14 +101,14 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           onClick={(e) => handleNavClick(e, "home")}
           className="flex items-center cursor-pointer group shrink-0 no-underline"
         >
-          <div className="relative h-[50px] w-[170px]">
+          <div className="relative h-[50px] w-[170px] transition-opacity duration-300 group-hover:opacity-80">
             {/* White logo (DEVRAArchitects.png)
                 Size tune karne ke liye scale-[0.85] badlo:
                 chhota karna ho → scale-[0.75], bada karna ho → scale-[0.95] / scale-100 */}
             <img
               src={whiteLogoImage}
               alt="DEVRA Architects"
-              className={`absolute inset-0 h-full w-full object-contain object-left origin-left scale-[0.85] pointer-events-none transition-opacity duration-300 group-hover:opacity-80 ${
+              className={`absolute inset-0 h-full w-full object-contain object-left origin-left scale-[0.85] pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -116,7 +116,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
             <img
               src={blackLogoImage}
               alt="DEVRA Architects"
-              className={`absolute inset-0 h-full w-full object-contain object-left origin-left transition-opacity duration-300 group-hover:opacity-80 ${
+              className={`absolute inset-0 h-full w-full object-contain object-left origin-left pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-0" : "opacity-100"
               }`}
             />
