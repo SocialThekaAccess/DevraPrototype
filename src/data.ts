@@ -162,7 +162,7 @@ import schOakwood from "../assets/projects/OAKWODDSCHOOL1.webp";
 
 import maisonElan1 from "../assets/projects/MaisonElan1.webp";
 import maisonElan2 from "../assets/projects/MaisonElan2.webp";
-import maisonElanMobile from "../assets/projects/MaisonElanSliderimage.webp";
+import maisonElanMobile from "../assets/projects/MaisonElanSliderMobileImage.png";
 
 export const PROJECTS: Project[] = [
   {
