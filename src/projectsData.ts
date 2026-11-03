@@ -3,7 +3,7 @@
 // Full gallery images stay in data.ts (loaded only when a project detail page opens).
 
 import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
-import maisonElanHeroMobile from "../assets/projects/MaisonElanSliderMobileImage.png";
+import maisonElanHeroMobile from "../assets/projects/MaisonElanMobileImage.png";
 import houSansargHero from "../assets/projects/hou-sansarg-1.avif";
 import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
 import resVilla58HeroMobile from "../assets/projects/res-villa-58.webp";
