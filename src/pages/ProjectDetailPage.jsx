@@ -60,7 +60,10 @@ export default function ProjectDetailPage({
       />
 
       <section className="proj-hero">
-        <div className="proj-hero__img-wrapper">
+        <div
+          className="proj-hero__img-wrapper"
+          style={isMobile ? { backgroundImage: `url(${displayHeroImg})` } : undefined}
+        >
           <img
             src={displayHeroImg}
             alt={title}
