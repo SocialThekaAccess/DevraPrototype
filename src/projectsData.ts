@@ -30,6 +30,7 @@ import res121122HeroMobile from "../assets/projects/121&122Moilerisponsive.png";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
 import resMinzsHero from "../assets/projects/res-minzs.webp";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
+import resVilla303HeroMobile from "../assets/projects/Villa303Risponsiveimg.webp";
 import fhNagraHero from "../assets/projects/fh-nagra-1.avif";
 import schJpHero from "../assets/projects/sch-jp-3.avif";
 
@@ -213,6 +214,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "PH-1 Cassia, New Chandigarh",
     year: "2023",
     heroImage: resVilla303Hero,
+    mobileHeroImage: resVilla303HeroMobile,
   },
   {
     id: "nagra-farmhouse",
