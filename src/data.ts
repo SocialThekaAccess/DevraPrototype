@@ -41,7 +41,7 @@ import resVilla201d8 from "../assets/projects/res-villa-201d-8.webp";
 import resVilla201d9 from "../assets/projects/res-villa-201d-9.webp";
 import resKangsNew from "../assets/projects/TheKangs2.webp";
 import resVilla361 from "../assets/projects/villa361PDHero20.webp";
-import resVilla361Mobile from "../assets/projects/Mobilerisponsiveimagevilla361.png";
+const resVilla361Mobile = "/assets/projects/resVilla361HeroMobile.png";
 import resVilla3612 from "../assets/projects/res-villa-361-2.avif";
 import resVilla3613 from "../assets/projects/res-villa-361-3.avif";
 import resVilla3614 from "../assets/projects/res-villa-361-4.avif";
