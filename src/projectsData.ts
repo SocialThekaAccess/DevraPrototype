@@ -2,40 +2,45 @@
 // Used by Projects page and Home "Selected Works" section.
 // Full gallery images stay in data.ts (loaded only when a project detail page opens).
 
+// Desktop hero images (src/assets se bundle hoti hain)
 import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
-import maisonElanHeroMobile from "../assets/projects/MaisonElanMobileImage.png";
 import houSansargHero from "../assets/projects/hou-sansarg-1.avif";
 import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
-import resVilla58HeroMobile from "../assets/projects/Villa58Mobilerisponsive.png";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
 import resKangsHero from "../assets/projects/TheKangs2.webp";
 import resVilla361Hero from "../assets/projects/villa361PDHero20.webp";
-const resVilla361HeroMobile = "/assets/projects/resVilla361HeroMobile.png";
 import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.webp";
-const resSupreetHeroMobile = "/assets/projects/ColSupreetJiMobilerisponsiveimg.png";
 import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.webp";
-import schOakwoodHeroMobile from "../assets/projects/TheOakwoodSchoolMobilerisponsiveimg.png";
 import panchkulaHero from "../assets/PanchkulaHousing.webp";
 import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
-import hou3PMDCHeroMobile from "../assets/projects/3PMDCPanchkulaMobileImg.png";
 import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
-import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.webp";
 import comDevraArchHero from "../assets/projects/DevraArchitects.png";
-import comDevraArchHeroMobile from "../assets/projects/DevraArchitectsMobileRisImg.png";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
-import comFortofinoHeroMobile from "../assets/projects/FortoFinoMobilerisponsiveimg.png";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/res-121-122.avif";
-import res121122HeroMobile from "../assets/projects/121&122Moilerisponsive.png";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
 import resMinzsHero from "../assets/projects/res-minzs.webp";
-import resMinzsHeroMobile from "../assets/projects/TheMinzsMobilerisponsiveimage.png";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
-import resVilla303HeroMobile from "../assets/projects/Villa303Risponsiveimg.webp";
 import fhNagraHero from "../assets/projects/fh-nagra-1.avif";
 import schJpHero from "../assets/projects/sch-jp-3.avif";
+
+// Mobile hero images: public/assets/projects/ se seedhe URL (build crash nahi hota,
+// space ya & wale naam bhi chalte hain). Files public/assets/projects/ mein honi chahiye.
+const P = "/assets/projects/";
+const maisonElanHeroMobile = P + "MaisonElanMobileImage.png";
+const resVilla58HeroMobile = P + "Villa58Mobilerisponsive.png";
+const resVilla361HeroMobile = P + "resVilla361HeroMobile.png";
+const resSupreetHeroMobile = P + "ColSupreetJiMobilerisponsiveimg.png";
+const schOakwoodHeroMobile = P + "TheOakwoodSchoolMobilerisponsiveimg.png";
+const hou3PMDCHeroMobile = P + "3PMDCPanchkulaMobileImg.png";
+const houUnwalledHeroMobile = P + "Unwalledimagemobileview.webp";
+const comDevraArchHeroMobile = P + "DevraArchitectsMobileRisImg.png";
+const comFortofinoHeroMobile = P + "FortoFinoMobilerisponsiveimg.png";
+const res121122HeroMobile = P + "121%26122Moilerisponsive.png";
+const resMinzsHeroMobile = P + "TheMinzsMobilerisponsiveimage.png";
+const resVilla303HeroMobile = P + "Villa303Risponsiveimg.webp";
 
 export interface ProjectCard {
   id: string;
