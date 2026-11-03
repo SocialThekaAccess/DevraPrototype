@@ -22,8 +22,14 @@ export default function ProjectDetailPage({
 }) {
   const heroImg = heroImage || images[0]
   // Mobile image: projectsData.ts ki image ko pehle priority
-  const cardProject = PROJECT_CARDS.find((p) => p.title === title)
-  const matchedProject = PROJECTS.find((p) => p.title === title)
+  // URL ke last part (jaise "col-supreet") se match karo, kyunki title page par alag ho sakta hai
+  const slug = typeof window !== 'undefined' ? window.location.pathname.split('/').filter(Boolean).pop() : ''
+  const cardProject =
+    PROJECT_CARDS.find((p) => p.id === slug) ||
+    PROJECT_CARDS.find((p) => p.title === title)
+  const matchedProject =
+    PROJECTS.find((p) => p.id === slug) ||
+    PROJECTS.find((p) => p.title === title)
   const heroImgMobile =
     cardProject?.mobileHeroImage ||
     heroImageMobile ||
