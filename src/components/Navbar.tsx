@@ -94,7 +94,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
-        {/* Brand Logo — dono logos ek hi fixed box (170px x 50px) mein, taaki size same dikhe */}
+        {/* Brand Logo — dono logos ek hi fixed box (170px x 50px) mein, same scale */}
         <a
           id="nav-logo"
           href="/"
@@ -102,9 +102,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           className="flex items-center cursor-pointer group shrink-0 no-underline"
         >
           <div className="relative h-[50px] w-[170px] transition-opacity duration-300 group-hover:opacity-80">
-            {/* White logo (DEVRAArchitects.png)
-                Size tune karne ke liye scale-[0.85] badlo:
-                chhota karna ho → scale-[0.75], bada karna ho → scale-[0.95] / scale-100 */}
+            {/* White logo — size tune: scale-[0.85] badlo (dono logos mein same rakhna) */}
             <img
               src={whiteLogoImage}
               alt="DEVRA Architects"
@@ -112,11 +110,11 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
                 shouldShowWhiteLogo ? "opacity-100" : "opacity-0"
               }`}
             />
-            {/* Black logo */}
+            {/* Black logo — white jitna hi size (same scale) */}
             <img
               src={blackLogoImage}
               alt="DEVRA Architects"
-              className={`absolute inset-0 h-full w-full object-contain object-left origin-left pointer-events-none transition-opacity duration-300 ${
+              className={`absolute inset-0 h-full w-full object-contain object-left origin-left scale-[0.85] pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-0" : "opacity-100"
               }`}
             />
