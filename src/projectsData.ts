@@ -23,6 +23,7 @@ import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.we
 import comDevraArchHero from "../assets/projects/DevraArchitects.png";
 import comDevraArchHeroMobile from "../assets/projects/DevraArchitectsMobileRisImg.png";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
+import comFortofinoHeroMobile from "../assets/projects/FortoFinoMobilerisponsiveimg.png";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
@@ -159,6 +160,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Srinagar",
     year: "2024",
     heroImage: comFortofinoHero,
+    mobileHeroImage: comFortofinoHeroMobile,
   },
   {
     id: "gills-farmhouse",
