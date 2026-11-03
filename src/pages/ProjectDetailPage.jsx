@@ -1,5 +1,5 @@
 import SEOMeta from '../components/SEOMeta'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { X, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import { PROJECTS } from '../data'
@@ -31,6 +31,14 @@ export default function ProjectDetailPage({
     heroImg
   const galleryImages = images
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
+
+  // Page khulte hi (ya project badalte hi) hamesha top par
+  useLayoutEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+    window.scrollTo(0, 0)
+  }, [title])
 
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -190,7 +198,7 @@ export default function ProjectDetailPage({
           if (onNavigate) {
             onNavigate(`project-${id}`);
           }
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          window.scrollTo(0, 0);
         };
 
         return (

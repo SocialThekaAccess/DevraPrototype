@@ -32,7 +32,7 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
   const handleProjectClick = (id: string) => {
     onSelectProject(id);
     onNavigate(`project-${id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   };
 
   return (

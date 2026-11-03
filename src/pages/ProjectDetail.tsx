@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import SEOMeta from "../components/SEOMeta";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
@@ -49,6 +49,14 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Page khulte hi (ya project badalte hi) hamesha top par
+  useLayoutEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, [project.id]);
+
   // Update isMobile on window resize
   useEffect(() => {
     const handleResize = () => {
@@ -68,7 +76,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   const cardMobileHero = PROJECT_CARDS.find((p) => p.id === project.id)?.mobileHeroImage;
   const mobileHero = cardMobileHero || project.mobileHeroImage;
 
-  // Overview paragraphs (Villa 58 jaisa): pehla = description, doosra = site narrative
+  // Overview paragraphs: pehla = description, doosra = site narrative
   const overviewText = project.description;
   const overviewText2 = project.narrative?.site;
 
@@ -80,7 +88,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   const handleNavigateToProject = (id: string) => {
     onSelectProject(id);
     onNavigate(`project-${id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   };
 
   const openLightbox = (index: number) => {
@@ -115,7 +123,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
         path={`project-${project.id}`}
       />
 
-      {/* Hero Section — mobile par hamesha 4:5 (Villa 58 jaisa), desktop par natural height */}
+      {/* Hero Section — mobile par hamesha 4:5, desktop par natural height */}
       <section className="proj-hero">
         <div
           className="proj-hero__img-wrapper"
