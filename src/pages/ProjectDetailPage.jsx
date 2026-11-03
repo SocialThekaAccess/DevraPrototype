@@ -21,8 +21,7 @@ export default function ProjectDetailPage({
   onSelectProject,
 }) {
   const heroImg = heroImage || images[0]
-  // Mobile image: prop se, nahi to data.ts mein us project ki mobileHeroImage se
-  // projectsData.ts ki image ko pehle priority (wahan nayi mobile images hain)
+  // Mobile image: projectsData.ts ki image ko pehle priority
   const cardProject = PROJECT_CARDS.find((p) => p.title === title)
   const matchedProject = PROJECTS.find((p) => p.title === title)
   const heroImgMobile =
@@ -36,10 +35,10 @@ export default function ProjectDetailPage({
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
-  const [heroPortrait, setHeroPortrait] = useState(false)
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
@@ -69,26 +68,18 @@ export default function ProjectDetailPage({
       />
 
       <section className="proj-hero">
-        <div
-          className={`proj-hero__img-wrapper ${
-            heroPortrait ? 'proj-hero__img-wrapper--portrait' : 'proj-hero__img-wrapper--landscape'
-          }`}
-          style={{ backgroundImage: `url(${displayHeroImg})` }}
-        >
+        <div className="proj-hero__img-wrapper">
           <img
             src={displayHeroImg}
             alt={title}
             className="proj-hero__img"
-            style={{ objectPosition: heroPortrait ? (isMobile ? 'center bottom' : 'center 80%') : 'center center' }}
-            onLoad={(e) =>
-              setHeroPortrait(e.currentTarget.naturalHeight >= e.currentTarget.naturalWidth * 1.1)
-            }
             referrerPolicy="no-referrer"
             loading="eager"
             fetchPriority="high"
             decoding="async"
           />
         </div>
+        <div className="proj-hero__overlay" />
         <div className="proj-hero__title-wrap">
           <h1 className="proj-hero__title">{title}</h1>
           <span className="proj-hero__category">{category}</span>

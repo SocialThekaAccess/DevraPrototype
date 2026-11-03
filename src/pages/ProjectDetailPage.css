@@ -8,7 +8,7 @@
 /* ============================================
    HERO
    Desktop: image apni natural height pe
-   Mobile: fixed 4:5 ratio (Villa 58 jaisa)
+   Mobile: fixed 4:5 ratio, cover (local jaisa)
    ============================================ */
 .proj-hero {
   position: relative;
@@ -453,9 +453,8 @@
 }
 
 /* ============================================
-   MOBILE HERO — hamesha Villa 58 jitni height (4:5)
-   Image poori dikhti hai (koi side cut nahi),
-   khali jagah image ke soft blur se bharti hai
+   MOBILE HERO — hamesha 4:5, image poori bhari (cover)
+   Koi blur / mask fade / white patti nahi (local jaisa)
    ============================================ */
 @media (max-width: 768px) {
   .proj-hero__img-wrapper,
@@ -465,41 +464,25 @@
     aspect-ratio: 4 / 5;
     height: auto;
     min-height: 0;
-    background-size: cover;
-    background-position: center;
+    background: #000 !important;
+    background-image: none !important;
   }
 
   .proj-hero__img-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    backdrop-filter: blur(30px) brightness(0.75);
-    -webkit-backdrop-filter: blur(30px) brightness(0.75);
+    display: none !important;
+    content: none !important;
   }
 
   .proj-hero__img-wrapper .proj-hero__img {
     position: absolute;
     inset: 0;
-    z-index: 1;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
     background: transparent;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
-  }
-
-  /* Portrait image (jaise Villa 58): poori bhari, koi blur/fade nahi */
-  .proj-hero__img-wrapper--portrait .proj-hero__img {
-    object-fit: cover;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .proj-hero__img-wrapper--portrait::before {
-    display: none;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
 }
 
