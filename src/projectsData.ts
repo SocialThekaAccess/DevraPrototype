@@ -23,6 +23,7 @@ import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/res-121-122.avif";
+import res121122HeroMobile from "../assets/projects/121&122Moilerisponsive.png";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
 import resMinzsHero from "../assets/projects/res-minzs.webp";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
@@ -181,6 +182,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "PH-1 OMAXE, New Chandigarh",
     year: "2024",
     heroImage: res121122Hero,
+    mobileHeroImage: res121122HeroMobile,
   },
   {
     id: "the-midhas",
