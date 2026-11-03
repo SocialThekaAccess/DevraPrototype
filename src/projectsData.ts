@@ -14,6 +14,7 @@ const resVilla361HeroMobile = "/assets/projects/resVilla361HeroMobile.png";
 import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.webp";
 import resSupreetHeroMobile from "../assets/projects/ColSupreetJiMobileris.png";
 import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.webp";
+import schOakwoodHeroMobile from "../assets/projects/TheOakwoodSchoolMobilerisponsiveimg.png";
 import panchkulaHero from "../assets/PanchkulaHousing.webp";
 import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
 import hou3PMDCHeroMobile from "../assets/projects/3PMDCPanchkulaMobileImg.png";
@@ -114,6 +115,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Punjab",
     year: "2020",
     heroImage: schOakwoodHero,
+    mobileHeroImage: schOakwoodHeroMobile,
   },
   {
     id: "panchkula-housing",
