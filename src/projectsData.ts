@@ -18,6 +18,7 @@ import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
 import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
 import houUnwalledHeroMobile from "../assets/projects/Unwalledimagemobileview.webp";
 import comDevraArchHero from "../assets/projects/DevraArchitects.png";
+import comDevraArchHeroMobile from "../assets/projects/DevraArchitectsMobileRisImg.png";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
@@ -142,6 +143,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "PH-1 Cassia, New Chandigarh",
     year: "2025",
     heroImage: comDevraArchHero,
+    mobileHeroImage: comDevraArchHeroMobile,
   },
   {
     id: "fortofino",
