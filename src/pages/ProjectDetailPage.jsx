@@ -79,7 +79,7 @@ export default function ProjectDetailPage({
             src={displayHeroImg}
             alt={title}
             className="proj-hero__img"
-            style={{ objectPosition: !isMobile && heroPortrait ? 'center 80%' : 'center center' }}
+            style={{ objectPosition: heroPortrait ? (isMobile ? 'center bottom' : 'center 80%') : 'center center' }}
             onLoad={(e) =>
               setHeroPortrait(e.currentTarget.naturalHeight >= e.currentTarget.naturalWidth * 1.1)
             }
