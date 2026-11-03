@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SEOMeta from "../components/SEOMeta";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
+import { PROJECT_CARDS } from "../projectsData";
 import "./ProjectDetailPage.css";
 
 interface ProjectDetailProps {
@@ -63,6 +64,10 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
 
   const rows = buildRows(displayImages || []);
 
+  // Mobile hero image: projectsData.ts ki (nayi) image ko pehle priority
+  const cardMobileHero = PROJECT_CARDS.find((p) => p.id === project.id)?.mobileHeroImage;
+  const mobileHero = cardMobileHero || project.mobileHeroImage;
+
   // Overview paragraphs (Villa 58 jaisa): pehla = description, doosra = site narrative
   const overviewText = project.description;
   const overviewText2 = project.narrative?.site;
@@ -110,16 +115,15 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
         path={`project-${project.id}`}
       />
 
-      {/* Hero Section — full image, natural height (no h-screen crop) */}
+      {/* Hero Section — mobile par hamesha 4:5 (Villa 58 jaisa), desktop par natural height */}
       <section className="proj-hero">
         <div
           className="proj-hero__img-wrapper"
-          // Mobile par hero ko 4:5 (Villa 58 jaisa) rakho; desktop par natural height
-          style={isMobile ? { aspectRatio: "1 / 1", height: "auto" } : undefined}
+          style={isMobile ? { aspectRatio: "4 / 5", height: "auto" } : undefined}
         >
           <picture style={isMobile ? { display: "block", width: "100%", height: "100%" } : undefined}>
-            {project.mobileHeroImage && (
-              <source media="(max-width: 767px)" srcSet={project.mobileHeroImage} />
+            {mobileHero && (
+              <source media="(max-width: 767px)" srcSet={mobileHero} />
             )}
             <img
               src={project.heroImage}
@@ -129,7 +133,18 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
               fetchPriority="high"
               decoding="async"
               className="proj-hero__img"
-              style={isMobile ? { width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" } : undefined}
+              style={
+                isMobile
+                  ? {
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }
+                  : undefined
+              }
             />
           </picture>
         </div>
