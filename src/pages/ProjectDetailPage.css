@@ -453,37 +453,53 @@
 }
 
 /* ============================================
-   MOBILE HERO
-   Portrait photo  -> 4:5 poori bhari (Villa 58 jaisa)
-   Landscape photo -> poori width, ghar poora, koi cut nahi
+   MOBILE HERO — hamesha Villa 58 jitni height (4:5)
+   Image poori dikhti hai (koi side cut nahi),
+   khali jagah image ke soft blur se bharti hai
    ============================================ */
 @media (max-width: 768px) {
-  .proj-hero__img-wrapper--portrait {
+  .proj-hero__img-wrapper,
+  .proj-hero__img-wrapper--unwalled,
+  .proj-hero__img-wrapper--portrait,
+  .proj-hero__img-wrapper--landscape {
     aspect-ratio: 4 / 5;
     height: auto;
     min-height: 0;
+    background-size: cover;
+    background-position: center;
   }
 
-  .proj-hero__img-wrapper--portrait .proj-hero__img {
+  .proj-hero__img-wrapper::before {
+    content: '';
     position: absolute;
     inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(30px) brightness(0.75);
+    -webkit-backdrop-filter: blur(30px) brightness(0.75);
+  }
+
+  .proj-hero__img-wrapper .proj-hero__img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .proj-hero__img-wrapper--landscape {
-    aspect-ratio: auto;
-    height: auto;
-    min-height: 0;
-  }
-
-  .proj-hero__img-wrapper--landscape .proj-hero__img {
-    position: static;
-    width: 100%;
-    height: auto;
     object-fit: contain;
+    object-position: center center;
+    background: transparent;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  }
+
+  /* Portrait image (jaise Villa 58): poori bhari, koi blur/fade nahi */
+  .proj-hero__img-wrapper--portrait .proj-hero__img {
+    object-fit: cover;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .proj-hero__img-wrapper--portrait::before {
+    display: none;
   }
 }
 

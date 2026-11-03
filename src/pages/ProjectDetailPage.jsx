@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { X, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import { PROJECTS } from '../data'
+import { PROJECT_CARDS } from '../projectsData'
 import './ProjectDetailPage.css'
 
 export default function ProjectDetailPage({
@@ -20,7 +21,15 @@ export default function ProjectDetailPage({
   onSelectProject,
 }) {
   const heroImg = heroImage || images[0]
-  const heroImgMobile = heroImageMobile || heroImg
+  // Mobile image: prop se, nahi to data.ts mein us project ki mobileHeroImage se
+  // projectsData.ts ki image ko pehle priority (wahan nayi mobile images hain)
+  const cardProject = PROJECT_CARDS.find((p) => p.title === title)
+  const matchedProject = PROJECTS.find((p) => p.title === title)
+  const heroImgMobile =
+    cardProject?.mobileHeroImage ||
+    heroImageMobile ||
+    matchedProject?.mobileHeroImage ||
+    heroImg
   const galleryImages = images
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
 
@@ -64,6 +73,7 @@ export default function ProjectDetailPage({
           className={`proj-hero__img-wrapper ${
             heroPortrait ? 'proj-hero__img-wrapper--portrait' : 'proj-hero__img-wrapper--landscape'
           }`}
+          style={{ backgroundImage: `url(${displayHeroImg})` }}
         >
           <img
             src={displayHeroImg}
