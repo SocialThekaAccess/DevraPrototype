@@ -18,8 +18,6 @@ export default function ProjectDetailPage({
   images = [],
   onNavigate,
   onSelectProject,
-  // Purane props (heroObjectPosition / heroAspectRatio / heroFit) ab zaroorat nahi:
-  // hero ka size CSS se control hota hai, aur crop position image se auto decide hoti hai.
 }) {
   const heroImg = heroImage || images[0]
   const heroImgMobile = heroImageMobile || heroImg
@@ -29,7 +27,6 @@ export default function ProjectDetailPage({
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
-  // true jab hero image portrait (lambi) ho — tab building wala neeche ka hissa dikhayenge
   const [heroPortrait, setHeroPortrait] = useState(false)
 
   useEffect(() => {
@@ -68,7 +65,7 @@ export default function ProjectDetailPage({
             src={displayHeroImg}
             alt={title}
             className="proj-hero__img"
-            style={{ objectPosition: heroPortrait ? 'center 80%' : 'center center' }}
+            style={{ objectPosition: !isMobile && heroPortrait ? 'center 80%' : 'center center' }}
             onLoad={(e) =>
               setHeroPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)
             }
