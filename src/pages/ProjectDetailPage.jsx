@@ -61,8 +61,9 @@ export default function ProjectDetailPage({
 
       <section className="proj-hero">
         <div
-          className="proj-hero__img-wrapper"
-          style={isMobile ? { backgroundImage: `url(${displayHeroImg})` } : undefined}
+          className={`proj-hero__img-wrapper ${
+            heroPortrait ? 'proj-hero__img-wrapper--portrait' : 'proj-hero__img-wrapper--landscape'
+          }`}
         >
           <img
             src={displayHeroImg}
@@ -70,7 +71,7 @@ export default function ProjectDetailPage({
             className="proj-hero__img"
             style={{ objectPosition: !isMobile && heroPortrait ? 'center 80%' : 'center center' }}
             onLoad={(e) =>
-              setHeroPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)
+              setHeroPortrait(e.currentTarget.naturalHeight >= e.currentTarget.naturalWidth * 1.1)
             }
             referrerPolicy="no-referrer"
             loading="eager"
