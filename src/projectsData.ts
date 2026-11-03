@@ -12,7 +12,7 @@ import resKangsHero from "../assets/projects/TheKangs2.webp";
 import resVilla361Hero from "../assets/projects/villa361PDHero20.webp";
 const resVilla361HeroMobile = "/assets/projects/resVilla361HeroMobile.png";
 import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.webp";
-import resSupreetHeroMobile from "../assets/projects/ColSupreetJiMobileImg.png";
+import resSupreetHeroMobile from "../assets/projects/ColSupreetJiMobileris.png";
 import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.webp";
 import panchkulaHero from "../assets/PanchkulaHousing.webp";
 import hou3PMDCHero from "../assets/projects/3PMDCPanchkula.webp";
