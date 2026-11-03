@@ -6,7 +6,7 @@ import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
 import maisonElanHeroMobile from "../assets/projects/MaisonElanMobileImage.png";
 import houSansargHero from "../assets/projects/hou-sansarg-1.avif";
 import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
-import resVilla58HeroMobile from "../assets/projects/res-villa-58.webp";
+import resVilla58HeroMobile from "../assets/projects/Villa58Mobilerisponsive.png";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
 import resKangsHero from "../assets/projects/TheKangs2.webp";
 import resVilla361Hero from "../assets/projects/villa361PDHero20.webp";
