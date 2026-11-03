@@ -10,7 +10,7 @@ import resVilla58HeroMobile from "../assets/projects/res-villa-58.webp";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
 import resKangsHero from "../assets/projects/TheKangs2.webp";
 import resVilla361Hero from "../assets/projects/villa361PDHero20.webp";
-import resVilla361HeroMobile from "../assets/projects/Mobilerisponsiveimagevilla361.png";
+const resVilla361HeroMobile = "/assets/projects/resVilla361HeroMobile.png";
 import resSupreetHero from "../assets/projects/Lt.ColSupreetSinghHome.webp";
 import resSupreetHeroMobile from "../assets/projects/ColSupreetJiMobileImg.png";
 import schOakwoodHero from "../assets/projects/OAKWODDSCHOOL1.webp";
