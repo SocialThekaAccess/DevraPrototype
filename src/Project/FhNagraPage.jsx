@@ -1,6 +1,6 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
 import heroImg from '../../assets/NagraDesktopimageHero.png'
-import heroImgMobile from '../../assets/projects/NagraFarmhouseMobilerisponsiveimage.png'
+import heroImgMobile from '../../assets/projects/NagraFarmhouseMobileimage.png'
 import img2 from '../../assets/projects/fh-nagra-2.avif'
 import img3 from '../../assets/projects/fh-nagra-3.avif'
 
