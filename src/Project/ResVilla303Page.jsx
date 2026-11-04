@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../public/assets/projects/Villa303HeroImage.png'
+import heroImg from '/assets/projects/Villa303HeroImage.png'
 import heroImgMobile from '../../assets/projects/Villa303Risponsiveimg.webp'
 import img1 from '../../assets/projects/res-villa-303-1.webp'
 import img2 from '../../assets/projects/res-villa-303-2.webp'

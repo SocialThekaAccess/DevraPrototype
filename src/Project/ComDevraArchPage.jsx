@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../public/assets/projects/DevraArchitectsHerokimage.jpg'
+import heroImg from '/assets/projects/DevraArchitectsHerokimage.jpg'
 import img1 from '../../assets/projects/DevraArchitects.png'
 import img2 from '../../assets/projects/DevraArchitects1.png'
 import img3 from '../../assets/projects/DevraArchitects2.png'

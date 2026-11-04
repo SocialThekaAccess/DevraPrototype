@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../public/assets/projects/MaisonElanHeroimage.png'
+import heroImg from '/assets/projects/MaisonElanHeroimage.png'
 import heroImgMobile from '../../assets/projects/MaisonElanMobilerisponsive.png'
 import img2 from '../../assets/projects/MaisonElan2.webp'
 

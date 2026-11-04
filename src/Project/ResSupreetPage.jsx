@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../public/assets/projects/Col.SupreetJiHeroImage.jpg'
+import heroImg from '/assets/projects/Col.SupreetJiHeroImage.jpg'
 import img1 from '../../assets/projects/Lt.ColSupreetSingh.webp'
 import img2 from '../../assets/projects/Lt.ColSupreetSingh1.webp'
 

@@ -7,7 +7,7 @@ import img5 from '../../assets/projects/hou-panchkula-5.avif'
 import img6 from '../../assets/projects/hou-panchkula-6.avif'
 import img7 from '../../assets/projects/hou-panchkula-7.avif'
 import img8 from '../../assets/projects/hou-panchkula-8.avif'
-import heroDesktop from '../../public/assets/projects/PanchkulaHousingHeroImage.png'
+import heroDesktop from '/assets/projects/PanchkulaHousingHeroImage.png'
 import heroMobile from '../../assets/projects/Panchkulamobilerisponsivesliderig.webp'
 
 export default function HouPanchkulaPage({ onNavigate, onSelectProject }) {

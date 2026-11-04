@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '../../public/assets/projects/TheKangsHeroImage.png'
+import heroImg from '/assets/projects/TheKangsHeroImage.png'
 
 export default function ResKangsPage({ onNavigate, onSelectProject }) {
   return (
