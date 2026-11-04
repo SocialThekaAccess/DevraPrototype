@@ -1,5 +1,6 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '/assets/projects/TheKangsHeroImage.png'
+import heroImg from '../../assets/projects/TheKangs2.webp'
+import heroImgMobile from '../../assets/projects/TheKangsMobileimage.png'
 
 export default function ResKangsPage({ onNavigate, onSelectProject }) {
   return (
@@ -15,6 +16,7 @@ export default function ResKangsPage({ onNavigate, onSelectProject }) {
       year="2025"
       overview="A Mediterranean heritage villa distinguished by arched openings, warm stucco textures, hand-carved stone details, and deep wooden balconies. The façade balances classical charm with refined proportion, creating a home that feels elegant, inviting, and timelessly rooted in coastal architecture."
       heroImage={heroImg}
+      heroImageMobile={heroImgMobile}
       heroAspectRatio="16 / 9"
       heroObjectPosition="center center"
       images={[heroImg]}
