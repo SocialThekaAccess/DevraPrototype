@@ -21,6 +21,12 @@ const pathToHref: Record<string, string> = {
   vision: "/vision",
 };
 
+// Black logo ke andar extra khaali jagah hai, isliye scale kiya hai.
+// White logo ko black ke barabar dikhane ke liye chhota kiya hai.
+// Dono ko thoda bada/chhota karna ho to sirf yeh do numbers badlo.
+const BLACK_LOGO_SCALE = 2.3;
+const WHITE_LOGO_SCALE = 0.85;
+
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -94,7 +100,7 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
-        {/* Brand Logo — Fixed size, no scaling on scroll */}
+        {/* Brand Logo — dono logos ka size barabar */}
         <a
           id="nav-logo"
           href="/"
@@ -102,18 +108,26 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
           className="flex items-center cursor-pointer group shrink-0 no-underline"
         >
           <div className="relative h-[45px] md:h-[50px] w-[150px] md:w-[170px] transition-opacity duration-300 group-hover:opacity-80">
-            {/* White logo — fixed size, no scale changes */}
+            {/* White logo — black ke barabar chhota kiya */}
             <img
               src={whiteLogoImage}
               alt="DEVRA Architects"
+              style={{
+                transform: `scale(${WHITE_LOGO_SCALE})`,
+                transformOrigin: "left center",
+              }}
               className={`absolute inset-0 h-full w-full object-contain object-left pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-100" : "opacity-0"
               }`}
             />
-            {/* Black logo — same fixed size */}
+            {/* Black logo — same as before */}
             <img
               src={blackLogoImage}
               alt="DEVRA Architects"
+              style={{
+                transform: `scale(${BLACK_LOGO_SCALE})`,
+                transformOrigin: "left center",
+              }}
               className={`absolute inset-0 h-full w-full object-contain object-left pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-0" : "opacity-100"
               }`}
