@@ -39,17 +39,20 @@ export default function ProjectDetailPage({
   const galleryImages = images
   const pageTitle = `${title} | ${category || 'Project'} Project | Devra Architects`
 
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  // Agar mobile image load na ho to desktop image dikhao
+  const [mobileFailed, setMobileFailed] = useState(false)
+
   // Page khulte hi (ya project badalte hi) hamesha top par
   useLayoutEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
     window.scrollTo(0, 0)
+    setMobileFailed(false)
   }, [title])
-
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768)
@@ -58,7 +61,7 @@ export default function ProjectDetailPage({
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const displayHeroImg = isMobile ? heroImgMobile : heroImg
+  const displayHeroImg = isMobile && !mobileFailed ? heroImgMobile : heroImg
 
   const openLightbox = (index) => {
     setCurrentImageIndex(index)
@@ -89,6 +92,9 @@ export default function ProjectDetailPage({
             alt={title}
             className="proj-hero__img"
             style={heroObjectPosition ? { objectPosition: heroObjectPosition } : undefined}
+            onError={() => {
+              if (displayHeroImg !== heroImg) setMobileFailed(true)
+            }}
             referrerPolicy="no-referrer"
             loading="eager"
             fetchPriority="high"
