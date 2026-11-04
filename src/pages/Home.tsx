@@ -423,6 +423,23 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                     className="h-[1px] bg-stone-300 mx-auto"
                   />
                 </motion.div>
+
+                {/* Browse All Projects Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="flex justify-center mt-8"
+                >
+                  <button
+                    onClick={() => onNavigate('/projects')}
+                    className="group inline-flex items-center gap-2 px-6 py-3 bg-stone-900 hover:bg-stone-800 text-stone-50 text-xs tracking-[0.2em] uppercase font-mono font-bold transition-all duration-300 hover:gap-3"
+                  >
+                    BROWSE ALL PROJECTS
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+                </motion.div>
               </div>
             </motion.div>
           </div>

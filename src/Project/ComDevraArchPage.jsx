@@ -1,4 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
+import heroImg from '../../public/assets/projects/DevraArchitectsHerokimage.jpg'
 import img1 from '../../assets/projects/DevraArchitects.png'
 import img2 from '../../assets/projects/DevraArchitects1.png'
 import img3 from '../../assets/projects/DevraArchitects2.png'
@@ -19,6 +20,7 @@ export default function ComDevraArchPage({ onNavigate, onSelectProject }) {
       category="Commercial"
       size=""
       year="2025"
+      heroImage={heroImg}
       overview="A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette—shaping an environment that feels inviting, efficient, and elevated. Every zone is designed for comfort and flow, offering a modern workplace experience that blends functionality with quiet luxury."
       overview2="From reception to work bays, meeting rooms, and lounges, the interiors express a unified design language of warm textures, seamless lines, and ambient lighting. Thoughtful spatial planning brings clarity and comfort to daily operations, creating a workspace that inspires focus, collaboration, and a sense of effortless sophistication."
       images={[img1, img2, img3, img4, img5, img6, img7]}

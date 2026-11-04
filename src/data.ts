@@ -151,6 +151,7 @@ import resVilla3039 from "../assets/projects/res-villa-303-9.webp";
 import resVilla30310 from "../assets/projects/res-villa-303-10.webp";
 import resVilla30311 from "../assets/projects/res-villa-303-11.webp";
 
+import fhNagraHero from "../public/assets/projects/NagraFarmhouseHeroimage.jpg";
 import fhNagra1 from "../assets/projects/fh-nagra-1.avif";
 import fhNagra2 from "../assets/projects/fh-nagra-2.avif";
 import fhNagra3 from "../assets/projects/fh-nagra-3.avif";
@@ -633,7 +634,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     size: "",
     scope: "Architecture & Landscape",
-    heroImage: fhNagra1,
+    heroImage: fhNagraHero,
     description: "A serene farmhouse retreat that blends contemporary design with natural surroundings.",
     narrative: {
       site: "Situated in rural Punjab with expansive agricultural views.",

@@ -1,4 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
+import heroImg from '../../public/assets/projects/Villa201DHeroImage.png'
 import img1 from '../../assets/projects/res-villa-201d-hd1.webp'
 import img2 from '../../assets/projects/res-villa-201d-hd2.webp'
 import img3 from '../../assets/projects/res-villa-201d-hd3.webp'
@@ -32,6 +33,7 @@ export default function ResVilla201DPage({ onNavigate, onSelectProject }) {
       category="Residential"
       size="300 SQYD"
       year="2025"
+      heroImage={heroImg}
       overview="A tropical-rustic villa defined by deep clay-tile roofs, carved brick surfaces, and layered balconies that open to lush green views. The façade blends vernacular warmth with modern proportion, creating a home that feels rooted, timeless, and naturally welcoming."
       overview2="Inside, the home unfolds through light-filled rooms, textured brick accents, handcrafted details, and soft pastel palettes. Playful wall art, artisanal finishes, and warm earthy tones create a refreshing atmosphere that feels personal, lively, and effortlessly comfortable."
       images={[img3, img1, img2, ff1, ff2, ff3, ff4, ff5, ff6, gf1, gf2, gf3, gf4, gf5, gf6, gf7, gf8, gf9, gf10, gf11]}

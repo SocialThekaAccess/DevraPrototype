@@ -7,8 +7,8 @@
 
 /* ============================================
    HERO
-   Desktop: image apni natural height pe
-   Mobile: fixed 4:5 ratio, cover (local jaisa)
+   Desktop: poori screen (home slider jaisa)
+   Mobile: fixed 4:5 ratio, cover
    ============================================ */
 .proj-hero {
   position: relative;
@@ -38,6 +38,33 @@
   object-fit: contain;
   display: block;
   background: #000;
+}
+
+/* ============================================
+   DESKTOP HERO — home slider jaisa
+   Poori screen (100svh), image cover + center
+   Overview agli screen par (scroll karne par)
+   ============================================ */
+@media (min-width: 769px) {
+  .proj-hero__img-wrapper,
+  .proj-hero__img-wrapper--unwalled {
+    height: 100vh;
+    height: 100svh;
+    min-height: 360px;
+  }
+
+  .proj-hero__img-wrapper picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .proj-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
 }
 
 .proj-hero__overlay {
@@ -454,7 +481,7 @@
 
 /* ============================================
    MOBILE HERO — hamesha 4:5, image poori bhari (cover)
-   Koi blur / mask fade / white patti nahi (local jaisa)
+   Koi blur / mask fade / white patti nahi
    ============================================ */
 @media (max-width: 768px) {
   .proj-hero__img-wrapper,
