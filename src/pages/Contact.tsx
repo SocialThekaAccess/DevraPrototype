@@ -54,7 +54,7 @@ export default function Contact() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: 'YOUR_W3FORMS_ACCESS_KEY', // Replace with your actual W3Forms access key
+          access_key: import.meta.env.VITE_W3FORMS_ACCESS_KEY || 'YOUR_W3FORMS_ACCESS_KEY',
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
