@@ -24,7 +24,7 @@ const pathToHref: Record<string, string> = {
 // Black logo ke andar extra khaali jagah hai, isliye scale kiya hai.
 // White logo ko black ke barabar dikhane ke liye chhota kiya hai.
 // Dono ko thoda bada/chhota karna ho to sirf yeh do numbers badlo.
-const BLACK_LOGO_SCALE = 2.3;
+const BLACK_LOGO_SCALE = 0.85;
 const WHITE_LOGO_SCALE = 0.85;
 
 export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
