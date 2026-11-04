@@ -4,6 +4,7 @@ import img3 from '../../assets/projects/fh-nagra-3.avif'
 
 // public folder ki image: import ki jagah seedha URL string
 const heroImg = '/assets/projects/NagraFarmhouseHeroImage.jpg'
+const heroImgMobile = '/assets/projects/NagraFarmhouseMobilerisponsiveimage.png'
 
 export default function FhNagraPage({ onNavigate, onSelectProject }) {
   return (
@@ -19,6 +20,7 @@ export default function FhNagraPage({ onNavigate, onSelectProject }) {
       year="2023"
       overview="A serene farmhouse retreat that blends contemporary design with natural surroundings."
       heroImage={heroImg}
+      heroImageMobile={heroImgMobile}
       heroAspectRatio="16 / 9"
       heroObjectPosition="center 0%"
       images={[heroImg, img2, img3]}
