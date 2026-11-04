@@ -16,6 +16,7 @@ export default function ProjectDetailPage({
   overview2,
   heroImage,
   heroImageMobile,
+  heroObjectPosition,
   images = [],
   onNavigate,
   onSelectProject,
@@ -87,6 +88,7 @@ export default function ProjectDetailPage({
             src={displayHeroImg}
             alt={title}
             className="proj-hero__img"
+            style={heroObjectPosition ? { objectPosition: heroObjectPosition } : undefined}
             referrerPolicy="no-referrer"
             loading="eager"
             fetchPriority="high"
