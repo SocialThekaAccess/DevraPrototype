@@ -11,7 +11,7 @@ export default function ResSupreetPage({ onNavigate, onSelectProject }) {
       onSelectProject={onSelectProject}
       backTo="/services/residential"
       backLabel="Residential"
-      title="Col. Supreet Ji"
+      title="Col. Supreet Residence"
       location="Eco City, New Chandigarh"
       category="Residential"
       overview="A sleek modern villa defined by strong horizontal lines, deep overhangs, and a warm palette of wood, glass, and stone. The façade sits low and confident, blending minimal geometry with rich natural textures to create a refined, contemporary presence surrounded by greenery."
