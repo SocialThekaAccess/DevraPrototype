@@ -94,27 +94,27 @@ export default function Navbar({ currentPath, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full h-[70px] md:h-[80px] px-4 md:px-6 flex flex-nowrap items-center justify-between gap-8">
-        {/* Brand Logo — dono logos ek hi fixed box (170px x 50px) mein, same scale */}
+        {/* Brand Logo — Fixed size, no scaling on scroll */}
         <a
           id="nav-logo"
           href="/"
           onClick={(e) => handleNavClick(e, "home")}
           className="flex items-center cursor-pointer group shrink-0 no-underline"
         >
-          <div className="relative h-[50px] w-[170px] transition-opacity duration-300 group-hover:opacity-80">
-            {/* White logo — size tune: scale-[0.85] badlo (dono logos mein same rakhna) */}
+          <div className="relative h-[45px] md:h-[50px] w-[150px] md:w-[170px] transition-opacity duration-300 group-hover:opacity-80">
+            {/* White logo — fixed size, no scale changes */}
             <img
               src={whiteLogoImage}
               alt="DEVRA Architects"
-              className={`absolute inset-0 h-full w-full object-contain object-left origin-left scale-[0.85] pointer-events-none transition-opacity duration-300 ${
+              className={`absolute inset-0 h-full w-full object-contain object-left pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-100" : "opacity-0"
               }`}
             />
-            {/* Black logo — white jitna hi size (same scale) */}
+            {/* Black logo — same fixed size */}
             <img
               src={blackLogoImage}
               alt="DEVRA Architects"
-              className={`absolute inset-0 h-full w-full object-contain object-left origin-left scale-[0.85] pointer-events-none transition-opacity duration-300 ${
+              className={`absolute inset-0 h-full w-full object-contain object-left pointer-events-none transition-opacity duration-300 ${
                 shouldShowWhiteLogo ? "opacity-0" : "opacity-100"
               }`}
             />
