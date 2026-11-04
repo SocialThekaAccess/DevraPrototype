@@ -433,7 +433,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   className="flex justify-center mt-8"
                 >
                   <button
-                    onClick={() => onNavigate('/projects')}
+                    onClick={() => onNavigate('projects')}
                     className="group inline-flex items-center gap-2 px-6 py-3 bg-stone-900 hover:bg-stone-800 text-stone-50 text-xs tracking-[0.2em] uppercase font-mono font-bold transition-all duration-300 hover:gap-3"
                   >
                     BROWSE ALL PROJECTS
