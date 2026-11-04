@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import whiteLogoImage from "../../assets/DevraWhiteLogo.webp";
-import blackLogoImage from "../../assets/devraBlack.webp";
+import whiteLogoImage from "../../assets/DevraWhiteLogo.png";
+import blackLogoImage from "../../assets/DevrallBlackLogo.png";
 
 interface NavbarProps {
   currentPath: string;
