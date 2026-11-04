@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import whiteLogoImage from "../../assets/DevraWhiteLogo.webp";
-import blackLogoImage from "../../assets/DEVRAlogo.png";
+import blackLogoImage from "../../assets/devraBlack.webp";
 
 interface NavbarProps {
   currentPath: string;
