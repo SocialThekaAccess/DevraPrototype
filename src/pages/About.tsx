@@ -3,12 +3,6 @@ import { Award, Compass, Heart, Users, MapPin, Sparkles } from "lucide-react";
 import SEOMeta from "../components/SEOMeta";
 import residentialImg from "../../assets/residential.avif";
 import varunDevraImg from "../../assets/VarunDevra.webp";
-import resVilla361 from "../../assets/projects/res-villa-361.avif";
-import fhGills from "../../assets/projects/fh-gills-1.avif";
-import resVilla201d from "../../assets/projects/res-villa-201d.webp";
-import resVilla58 from "../../assets/projects/res-villa-58.webp";
-import comDevra from "../../assets/projects/DevraArchitects.png";
-import houSansarg from "../../assets/projects/hou-sansarg-1.avif";
 
 interface AboutProps {
   onNavigate: (path: string) => void;
@@ -187,114 +181,7 @@ export default function About({ onNavigate }: AboutProps) {
           </div>
         </div>
 
-        {/* Brand Material & Detail Gallery */}
-        <div className="mt-24 space-y-12">
-          <div className="border-b border-stone-200 pb-4">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-stone-500 font-mono font-bold">
-              MATERIAL ARCHIVE // STUDIO DETAILS
-            </span>
-            <h3 className="font-serif text-3xl text-stone-900 font-medium tracking-tight mt-1"
-              dangerouslySetInnerHTML={{
-                __html: 'Craft <span style="font-family:Inter,sans-serif;font-style:normal">&</span> Materiality Gallery'
-              }}
-            />
-            <p className="text-stone-500 text-xs font-light mt-2 max-w-xl">
-              We focus heavily on regional material sourcing, textures that age gracefully, and custom timber/concrete joinery executed directly on-site.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {/* Pic 1: res-villa-361 → Contemporary Architecture */}
-            <div className="space-y-2">
-              <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
-                <img
-                  src={resVilla361}
-                  alt="Contemporary Architecture"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Contemporary Architecture</p>
-            </div>
-
-            {/* Pic 2: fh-gills → Exposed Brickwork ✅ */}
-            <div className="space-y-2">
-              <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
-                <img
-                  src={fhGills}
-                  alt="Wire-cut Exposed Brickwork"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Exposed Brickwork</p>
-            </div>
-
-            {/* Pic 3: res-villa-201d → Vernacular Architecture */}
-            <div className="space-y-2">
-              <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
-                <img
-                  src={resVilla201d}
-                  alt="Vernacular Architecture"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Vernacular Architecture</p>
-            </div>
-
-            {/* Pic 4: res-villa-58 → Facade Geometry */}
-            <div className="space-y-2">
-              <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
-                <img
-                  src={resVilla58}
-                  alt="Facade Geometry & Elevation"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Facade Geometry</p>
-            </div>
-
-            {/* Pic 5: com-devra-arch → Drafting & Detail ✅ */}
-            <div className="space-y-2">
-              <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
-                <img
-                  src={comDevra}
-                  alt="Drafting & Site Layouts"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Drafting & Detail</p>
-            </div>
-
-            {/* Pic 6: hou-sansarg → Housing ✅ */}
-            <div className="space-y-2">
-              <div className="aspect-square bg-stone-100 overflow-hidden border border-stone-200">
-                <img
-                  src={houSansarg}
-                  alt="Housing Project"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-stone-800 font-medium text-center">Housing</p>
-            </div>
-          </div>
-        </div>
 
         {/* Geographic serving locations */}
         <div className="mt-24 p-8 bg-stone-900 text-stone-50 flex flex-col md:flex-row items-center justify-between gap-6">
