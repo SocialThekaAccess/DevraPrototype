@@ -456,7 +456,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 CLIENT TESTIMONIALS
               </span>
               <h3 className="font-serif text-3xl md:text-4xl text-stone-900 font-medium tracking-tight">
-                What Clients Say Through Google Reviews
+               What clients use through our Google reviews
               </h3>
             </div>
           </div>

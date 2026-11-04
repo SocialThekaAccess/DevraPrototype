@@ -1,5 +1,5 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import heroImg from '/assets/ColSupreetJiMobileImg.png'
+import heroImg from '../../public/assets/projects/Col.SupreetJiHeroImage.jpg'
 import img1 from '../../assets/projects/Lt.ColSupreetSingh.webp'
 import img2 from '../../assets/projects/Lt.ColSupreetSingh1.webp'
 
@@ -13,8 +13,6 @@ export default function ResSupreetPage({ onNavigate, onSelectProject }) {
       title="Col. Supreet Ji"
       location="Eco City, New Chandigarh"
       category="Residential"
-      size="300 SQYD"
-      year="2025"
       overview="A sleek modern villa defined by strong horizontal lines, deep overhangs, and a warm palette of wood, glass, and stone. The façade sits low and confident, blending minimal geometry with rich natural textures to create a refined, contemporary presence surrounded by greenery."
       heroImage={heroImg}
       heroAspectRatio="1565 / 1005"

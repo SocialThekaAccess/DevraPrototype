@@ -24,6 +24,7 @@ const ComDevraArchPage = rLazy(() => import("./Project/ComDevraArchPage"));
 const ComFortofinoPage = rLazy(() => import("./Project/ComFortofinoPage"));
 const ComMilkPointPage = rLazy(() => import("./Project/ComMilkPointPage"));
 const FhGillsFarmhousePage = rLazy(() => import("./Project/FhGillsFarmhousePage"));
+const FhNagraPage = rLazy(() => import("./Project/FhNagraPage"));
 const HosCastleGreyPage = rLazy(() => import("./Project/HosCastleGreyPage"));
 const HouPanchkulaPage = rLazy(() => import("./Project/HouPanchkulaPage"));
 const Res121122Page = rLazy(() => import("./Project/Res121122Page"));
@@ -56,6 +57,7 @@ function PrefetchAll() {
       import("./Project/ComFortofinoPage");
       import("./Project/ComMilkPointPage");
       import("./Project/FhGillsFarmhousePage");
+      import("./Project/FhNagraPage");
       import("./Project/HosCastleGreyPage");
       import("./Project/HouPanchkulaPage");
       import("./Project/Res121122Page");
@@ -148,6 +150,7 @@ function AppInner() {
                 <Route path="/projects/fortofino" element={<ComFortofinoPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/milk-point" element={<ComMilkPointPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/gills-farmhouse" element={<FhGillsFarmhousePage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
+                <Route path="/projects/nagra-farmhouse" element={<FhNagraPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/castle-grey" element={<HosCastleGreyPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/panchkula-housing" element={<HouPanchkulaPage onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
                 <Route path="/projects/121-122" element={<Res121122Page onNavigate={onNavigate} onSelectProject={onSelectProject} />} />
