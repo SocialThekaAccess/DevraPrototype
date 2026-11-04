@@ -2,9 +2,12 @@ import ProjectDetailPage from '../pages/ProjectDetailPage'
 import img2 from '../../assets/projects/fh-nagra-2.avif'
 import img3 from '../../assets/projects/fh-nagra-3.avif'
 
-// public folder ki image: import ki jagah seedha URL string
-const heroImg = '/assets/projects/NagraFarmhouseHeroImage.jpg'
-const heroImgMobile = '/assets/projects/NagraFarmhouseMobilerisponsiveimage.png'
+// Import statement se better reliability in production
+import heroImgJpg from '/assets/projects/NagraFarmhouseHeroImage.jpg'
+import heroImgMobileJpg from '/assets/projects/NagraFarmhouseMobilerisponsiveimage.png'
+
+const heroImg = heroImgJpg
+const heroImgMobile = heroImgMobileJpg
 
 export default function FhNagraPage({ onNavigate, onSelectProject }) {
   return (
