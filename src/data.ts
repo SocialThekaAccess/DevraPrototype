@@ -10,7 +10,7 @@ import houSansarg6 from "../assets/projects/hou-sansarg-6.avif";
 import houSansarg7 from "../assets/projects/hou-sansarg-7.avif";
 import houSansarg8 from "../assets/projects/hou-sansarg-8.avif";
 import houSansarg9 from "../assets/projects/hou-sansarg-9.avif";
-import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
+import resVilla58Hero from "../assets/Villa58MobileVersion.webp";
 import resVilla581 from "../assets/projects/res-villa-58-1.webp";
 import resVilla582 from "../assets/projects/res-villa-58-2.webp";
 import resVilla583 from "../assets/projects/res-villa-58-3.webp";
