@@ -151,7 +151,7 @@ import resVilla3039 from "../assets/projects/res-villa-303-9.webp";
 import resVilla30310 from "../assets/projects/res-villa-303-10.webp";
 import resVilla30311 from "../assets/projects/res-villa-303-11.webp";
 
-import fhNagraHero from "/assets/projects/NagraFarmhouseHeroimage.jpg";
+import fhNagraHero from "/assets/projects/NagraFarmhouseHeroImage.jpg";
 import fhNagra1 from "../assets/projects/fh-nagra-1.avif";
 import fhNagra2 from "../assets/projects/fh-nagra-2.avif";
 import fhNagra3 from "../assets/projects/fh-nagra-3.avif";
