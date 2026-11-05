@@ -1,5 +1,6 @@
 import SEOMeta from '../components/SEOMeta'
 import { useState, useEffect, useLayoutEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { Helmet } from 'react-helmet-async'
 import { X, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import { PROJECTS } from '../data'
@@ -52,6 +53,7 @@ export default function ProjectDetailPage({
     }
     window.scrollTo(0, 0)
     setMobileFailed(false)
+    setLightboxOpen(false)
   }, [title])
 
   useEffect(() => {
@@ -60,6 +62,28 @@ export default function ProjectDetailPage({
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  // Lightbox khule to background scroll band
+  useEffect(() => {
+    document.body.style.overflow = lightboxOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [lightboxOpen])
+
+  // Keyboard: Esc band, arrows se next/prev
+  useEffect(() => {
+    if (!lightboxOpen) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setLightboxOpen(false)
+      if (e.key === 'ArrowRight')
+        setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)
+      if (e.key === 'ArrowLeft')
+        setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightboxOpen, galleryImages.length])
 
   const displayHeroImg = isMobile && !mobileFailed ? heroImgMobile : heroImg
 
@@ -155,7 +179,7 @@ export default function ProjectDetailPage({
             <div key={index} className="proj-gallery__cell" onClick={() => openLightbox(index)}>
               <img
                 src={image}
-                alt={`${title} image ${index + 2}`}
+                alt={`${title} image ${index + 1}`}
                 className="proj-gallery__img"
                 loading="lazy"
                 referrerPolicy="no-referrer"
@@ -168,52 +192,63 @@ export default function ProjectDetailPage({
         </section>
       )}
 
-      {lightboxOpen && (
-        <div className="proj-lightbox" onClick={closeLightbox}>
-          <button className="proj-lightbox__close" onClick={closeLightbox}>
-            <X size={32} />
-          </button>
-          <button
-            className="proj-lightbox__prev"
-            onClick={(e) => { e.stopPropagation(); prevImage() }}
-          >
-            <ChevronLeft size={40} />
-          </button>
-          <button
-            className="proj-lightbox__next"
-            onClick={(e) => { e.stopPropagation(); nextImage() }}
-          >
-            <ChevronRight size={40} />
-          </button>
-          <div className="proj-lightbox__content" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={galleryImages[currentImageIndex]}
-              alt={`${title} ${currentImageIndex + 2}`}
-              className="proj-lightbox__img"
-            />
-            <div className="proj-lightbox__counter">
-              {currentImageIndex + 1} / {galleryImages.length}
+      {/* Lightbox: document.body mein portal, taaki koi parent usse cut na kare */}
+      {lightboxOpen &&
+        createPortal(
+          <div className="proj-lightbox" onClick={closeLightbox}>
+            <button className="proj-lightbox__close" onClick={closeLightbox} aria-label="Close">
+              <X size={32} />
+            </button>
+            <button
+              className="proj-lightbox__prev"
+              aria-label="Previous image"
+              onClick={(e) => {
+                e.stopPropagation()
+                prevImage()
+              }}
+            >
+              <ChevronLeft size={40} />
+            </button>
+            <button
+              className="proj-lightbox__next"
+              aria-label="Next image"
+              onClick={(e) => {
+                e.stopPropagation()
+                nextImage()
+              }}
+            >
+              <ChevronRight size={40} />
+            </button>
+            <div className="proj-lightbox__content" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={galleryImages[currentImageIndex]}
+                alt={`${title} ${currentImageIndex + 1}`}
+                className="proj-lightbox__img"
+              />
+              <div className="proj-lightbox__counter">
+                {currentImageIndex + 1} / {galleryImages.length}
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
 
       {/* Project Navigation - Next/Previous */}
       {(() => {
-        const currentProject = PROJECTS.find(p => p.title === title);
-        if (!currentProject) return null;
+        const currentProject = PROJECTS.find((p) => p.title === title)
+        if (!currentProject) return null
 
-        const currentIndex = PROJECTS.findIndex(p => p.id === currentProject.id);
-        const prevProject = currentIndex > 0 ? PROJECTS[currentIndex - 1] : PROJECTS[PROJECTS.length - 1];
-        const nextProject = currentIndex < PROJECTS.length - 1 ? PROJECTS[currentIndex + 1] : PROJECTS[0];
+        const currentIndex = PROJECTS.findIndex((p) => p.id === currentProject.id)
+        const prevProject = currentIndex > 0 ? PROJECTS[currentIndex - 1] : PROJECTS[PROJECTS.length - 1]
+        const nextProject = currentIndex < PROJECTS.length - 1 ? PROJECTS[currentIndex + 1] : PROJECTS[0]
 
         const handleNavigateToProject = (id) => {
-          if (onSelectProject) onSelectProject(id);
+          if (onSelectProject) onSelectProject(id)
           if (onNavigate) {
-            onNavigate(`project-${id}`);
+            onNavigate(`project-${id}`)
           }
-          window.scrollTo(0, 0);
-        };
+          window.scrollTo(0, 0)
+        }
 
         return (
           <section className="py-16 border-t border-stone-200 bg-stone-100">
@@ -255,7 +290,7 @@ export default function ProjectDetailPage({
               </div>
             </div>
           </section>
-        );
+        )
       })()}
     </div>
   )

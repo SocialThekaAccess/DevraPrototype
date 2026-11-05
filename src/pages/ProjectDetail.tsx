@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useLayoutEffect } from "react";
+import { createPortal } from "react-dom";
 import SEOMeta from "../components/SEOMeta";
 import { Project } from "../types";
 import { PROJECTS } from "../data";
@@ -55,6 +56,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
       window.history.scrollRestoration = "manual";
     }
     window.scrollTo(0, 0);
+    setLightboxOpen(false);
   }, [project.id]);
 
   // Update isMobile on window resize
@@ -68,9 +70,32 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   }, []);
 
   // Use mobile images if available, otherwise fallback to regular images
-  const displayImages = isMobile && project.mobileImages ? project.mobileImages : project.images;
+  const displayImages: string[] =
+    (isMobile && project.mobileImages ? project.mobileImages : project.images) || [];
 
-  const rows = buildRows(displayImages || []);
+  const rows = buildRows(displayImages);
+
+  // Lightbox khule to background scroll band
+  useEffect(() => {
+    document.body.style.overflow = lightboxOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightboxOpen]);
+
+  // Keyboard: Esc band, arrows se next/prev
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxOpen(false);
+      if (e.key === "ArrowRight")
+        setCurrentImageIndex((prev) => (prev + 1) % displayImages.length);
+      if (e.key === "ArrowLeft")
+        setCurrentImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen, displayImages.length]);
 
   // Mobile hero image: projectsData.ts ki (nayi) image ko pehle priority
   const cardMobileHero = PROJECT_CARDS.find((p) => p.id === project.id)?.mobileHeroImage;
@@ -212,44 +237,44 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
           <div className="proj-meta-strip__inner">
             <div className="space-y-8 w-full">
               {rows.map((row, rowIndex) => (
-              <motion.div
-                key={`row-${rowIndex}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: rowIndex * 0.1 }}
-                className={`grid gap-6 ${
-                  row.type === 'full' ? 'grid-cols-1' :
-                  row.type === 'two' ? 'grid-cols-1 md:grid-cols-2' :
-                  'grid-cols-1 md:grid-cols-3'
-                }`}
-              >
-                {row.items.map((image, imageIndex) => {
-                  const globalIndex = displayImages.indexOf(image);
-                  return (
-                    <div
-                      key={`img-${rowIndex}-${imageIndex}`}
-                      className="relative overflow-hidden bg-stone-200 aspect-[4/3] group cursor-pointer"
-                      onClick={() => openLightbox(globalIndex >= 0 ? globalIndex : imageIndex)}
-                    >
-                      <img
-                        src={image}
-                        alt={`${project.title} detail ${globalIndex + 1}`}
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="bg-white/90 text-stone-900 text-[10px] uppercase tracking-widest font-semibold px-4 py-2">
-                          View Full
-                        </span>
+                <motion.div
+                  key={`row-${rowIndex}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, delay: rowIndex * 0.1 }}
+                  className={`grid gap-6 ${
+                    row.type === 'full' ? 'grid-cols-1' :
+                    row.type === 'two' ? 'grid-cols-1 md:grid-cols-2' :
+                    'grid-cols-1 md:grid-cols-3'
+                  }`}
+                >
+                  {row.items.map((image, imageIndex) => {
+                    const globalIndex = displayImages.indexOf(image);
+                    return (
+                      <div
+                        key={`img-${rowIndex}-${imageIndex}`}
+                        className="relative overflow-hidden bg-stone-200 aspect-[4/3] group cursor-pointer"
+                        onClick={() => openLightbox(globalIndex >= 0 ? globalIndex : imageIndex)}
+                      >
+                        <img
+                          src={image}
+                          alt={`${project.title} detail ${globalIndex + 1}`}
+                          referrerPolicy="no-referrer"
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <span className="bg-white/90 text-stone-900 text-[10px] uppercase tracking-widest font-semibold px-4 py-2">
+                            View Full
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </motion.div>
-            ))}
+                    );
+                  })}
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -322,67 +347,77 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
         </div>
       </section>
 
-      {/* Lightbox Modal */}
-      {lightboxOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
-          onClick={closeLightbox}
-        >
-          {/* Close Button */}
-          <button
+      {/* Lightbox Modal — document.body mein portal, navbar ke upar, poori screen */}
+      {lightboxOpen &&
+        displayImages.length > 0 &&
+        createPortal(
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/95 flex items-center justify-center"
+            style={{ zIndex: 2147483000, width: "100vw", height: "100dvh" }}
             onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white hover:text-stone-300 transition-colors z-50"
           >
-            <X className="w-8 h-8" />
-          </button>
+            {/* Close Button */}
+            <button
+              onClick={closeLightbox}
+              aria-label="Close"
+              className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-stone-300 transition-colors p-2"
+              style={{ zIndex: 2 }}
+            >
+              <X className="w-8 h-8" />
+            </button>
 
-          {/* Previous Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              prevImage();
-            }}
-            className="absolute left-6 text-white hover:text-stone-300 transition-colors z-50"
-          >
-            <ChevronLeft className="w-12 h-12" />
-          </button>
+            {/* Previous Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                prevImage();
+              }}
+              aria-label="Previous image"
+              className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-stone-300 transition-colors p-2"
+              style={{ zIndex: 2 }}
+            >
+              <ChevronLeft className="w-10 h-10 md:w-12 md:h-12" />
+            </button>
 
-          {/* Next Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              nextImage();
-            }}
-            className="absolute right-6 text-white hover:text-stone-300 transition-colors z-50"
-          >
-            <ChevronRight className="w-12 h-12" />
-          </button>
+            {/* Next Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextImage();
+              }}
+              aria-label="Next image"
+              className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-stone-300 transition-colors p-2"
+              style={{ zIndex: 2 }}
+            >
+              <ChevronRight className="w-10 h-10 md:w-12 md:h-12" />
+            </button>
 
-          {/* Image Container */}
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="relative max-w-7xl max-h-[90vh] w-full mx-6"
-          >
+            {/* Image */}
             <motion.img
               key={currentImageIndex}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
               src={displayImages[currentImageIndex]}
               alt={`${project.title} ${currentImageIndex + 1}`}
-              className="w-full h-full object-contain"
+              className="object-contain"
+              style={{ maxWidth: "92vw", maxHeight: "82vh", width: "auto", height: "auto" }}
             />
 
             {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-mono">
+            <div
+              className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm font-mono"
+              style={{ zIndex: 2 }}
+            >
               {currentImageIndex + 1} / {displayImages.length}
             </div>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>,
+          document.body
+        )}
 
     </div>
   );
