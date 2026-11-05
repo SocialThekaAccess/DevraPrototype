@@ -1,6 +1,6 @@
 import { Project, Service, ProcessStep, BlogPost } from "./types";
 
-import houSansargHero from "/assets/SansargHeroimage.png";
+import houSansargHero from "/assets/projects/Sansarg1.png";
 import houSansarg1 from "../assets/projects/hou-sansarg-1.avif";
 import houSansarg2 from "../assets/projects/hou-sansarg-2.avif";
 import houSansarg3 from "../assets/projects/hou-sansarg-3.avif";
@@ -216,14 +216,12 @@ export const PROJECTS: Project[] = [
       execution: "Special care was given to the concrete casting. The shuttering patterns were carefully coordinated with local artisans, resulting in a textured, rhythmic surface that changes character as the sun shifts."
     },
     images: [
-      houSansarg2,
-      houSansarg3,
-      houSansarg4,
-      houSansarg5,
-      houSansarg6,
-      houSansarg7,
-      houSansarg8,
-      houSansarg9
+      "/assets/projects/Sansarg2.png",
+      "/assets/projects/Sansarg3.png",
+      "/assets/projects/Sansarg4.png",
+      "/assets/projects/Sansarg5.png",
+      "/assets/projects/Sansarg6.png",
+      "/assets/projects/Sansarg7.png"
     ]
   },
   {

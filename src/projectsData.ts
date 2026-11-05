@@ -4,7 +4,7 @@
 
 // Desktop hero images (src/assets se bundle hoti hain)
 import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
-import houSansargHero from "../assets/projects/hou-sansarg-1.avif";
+import houSansargHero from "/assets/projects/Sansarg1.png";
 import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
 import resKangsHero from "../assets/projects/TheKangs2.webp";
