@@ -66,6 +66,17 @@ import houPanchkula6 from "../assets/projects/hou-panchkula-6.avif";
 import houPanchkula7 from "../assets/projects/hou-panchkula-7.avif";
 import houPanchkula8 from "../assets/projects/hou-panchkula-8.avif";
 import hou3PMDCPanchkula from "../assets/projects/3PMDCPanchkula.webp";
+import panchkula3P_1 from "../assets/projects/3P Panchkula 1.png";
+import panchkula3P_2 from "../assets/projects/3P Panchkula (2).png";
+import panchkula3P_3 from "../assets/projects/3P Panchkula (3).png";
+import panchkula3P_4 from "../assets/projects/3P Panchkula (4).png";
+import panchkula3P_5 from "../assets/projects/3P Panchkula (5).png";
+import panchkula3P_6 from "../assets/projects/3P Panchkula (6).png";
+import panchkula3P_7 from "../assets/projects/3P Panchkula (7).png";
+import panchkula3P_8 from "../assets/projects/3P Panchkula (8).png";
+import panchkula3P_9 from "../assets/projects/3P Panchkula (9).png";
+import panchkula3P_10 from "../assets/projects/3P Panchkula (10).png";
+import panchkula3P_12 from "../assets/projects/3P Panchkula (12).png";
 import panchkulaHousingHero from "../assets/PanchkulaHousing.webp";
 import houUnwalled1 from "../assets/projects/hou-unwalled-1.webp";
 import houUnwalled2 from "../assets/projects/hou-unwalled-2.webp";
@@ -424,7 +435,17 @@ export const PROJECTS: Project[] = [
       execution: "Phased development strategy allows for flexible market response while maintaining architectural coherence. Advanced BIM coordination ensures precise execution of complex facade systems and structural elements."
     },
     images: [
-      hou3PMDCPanchkula
+      panchkula3P_1,
+      panchkula3P_2,
+      panchkula3P_3,
+      panchkula3P_4,
+      panchkula3P_5,
+      panchkula3P_6,
+      panchkula3P_7,
+      panchkula3P_8,
+      panchkula3P_9,
+      panchkula3P_10,
+      panchkula3P_12
     ]
   },
   {
@@ -1840,7 +1861,7 @@ If you would like to discuss a project from first sketch to final handover, the 
     title: "Passive Cooling in Punjab: Sustainable Luxury Without Excessive AC Costs",
     category: "Home Planning",
     date: "May 10, 2026",
-    summary: "How carefully calculated sun angles, brick cavity walls, double-height central courtyards, and deep cantilevers keep homes cool during blazing 45�C Chandigarh summers.",
+    summary: "How carefully calculated sun angles, brick cavity walls, double-height central courtyards, and deep cantilevers keep homes cool during blazing 45C Chandigarh summers.",
     readTime: "8 min read",
     content: "With global temperatures rising, relying entirely on heavy air conditioning is neither environmentally responsible nor financially smart. True luxury lies in designing homes that remain naturally cool and well-insulated, utilizing passive climate-responsive strategies.\n\n### 1. The Double Wall (Thermal Mass)\nHeat enters a building primarily through its walls and roof. By building double-layered brick masonry with a 2-inch hollow air cavity in between, we create a powerful thermal barrier. The outer brick layer absorbs the direct solar heat, while the air cavity prevents the heat from transferring to the inner wall, keeping the indoor surfaces cool even when the outdoor temperature hits 45�C.\n\n### 2. Double-Height Courtyards as Vent Scoops\nNatural air circulation is driven by physics. Hot air rises. By planning a double-height space or central courtyard with high, operable louvers (ventilators) near the roof, we create a continuous chimney effect. Warm air naturally exits through the top, pulling cooler air in from shaded ground-level garden margins and water bodies, creating a gentle, organic air draft.\n\n### 3. The Power of Deep Cantilevers\nWe design deep concrete projections and shaded balcony decks specifically on the south and west facades. During the summer, when the sun is high in the sky, these cantilevers completely shade the glass windows. In the winter, when the sun is lower, the sunlight penetrates deep into the rooms, providing natural, comforting warmth."
   },
