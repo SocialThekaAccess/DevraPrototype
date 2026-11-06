@@ -41,6 +41,7 @@ const comFortofinoHeroMobile = P + "FortoFinoMobilerisponsiveimg.png";
 const res121122HeroMobile = P + "121%26122Moilerisponsive.png";
 const resMinzsHeroMobile = P + "TheMinzsMobilerisponsiveimage.png";
 const resVilla303HeroMobile = P + "Villa303Risponsiveimg.webp";
+const houSansargHeroMobile = P + "SansargMobileviewimg.png";
 
 export interface ProjectCard {
   id: string;
@@ -71,6 +72,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Patiala, Punjab",
     year: "2022",
     heroImage: houSansargHero,
+    mobileHeroImage: houSansargHeroMobile,
   },
   {
     id: "villa-58",
