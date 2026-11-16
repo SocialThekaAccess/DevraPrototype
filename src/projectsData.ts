@@ -21,7 +21,7 @@ import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/res-121-122.avif";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
-import resMinzsHero from "../assets/projects/res-minzs.webp";
+import resMinzsHero from "../assets/projects/TheMinzHero.png";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
 import fhNagraHero from "../assets/projects/fh-nagra-1.avif";
 import schJpHero from "../assets/projects/sch-jp-3.avif";
@@ -137,7 +137,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
   {
     id: "3p-mdc-panchkula",
     title: "3P MDC Panchkula",
-    category: "Housing",
+    category: "Residential",
     location: "3P MDC Panchkula",
     year: "2026",
     heroImage: hou3PMDCHero,

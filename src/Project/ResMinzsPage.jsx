@@ -1,13 +1,13 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/res-minzs.webp'
-import img2 from '../../assets/projects/res-minzs-2.webp'
-import img3 from '../../assets/projects/res-minzs-3.webp'
-import img4 from '../../assets/projects/res-minzs-4.webp'
-import img5 from '../../assets/projects/res-minzs-5.webp'
-import img6 from '../../assets/projects/res-minzs-6.webp'
-import img7 from '../../assets/projects/res-minzs-7.webp'
-import img8 from '../../assets/projects/res-minzs-8.webp'
-import img9 from '../../assets/projects/res-minzs-9.webp'
+import img1 from '../../assets/projects/TheMinzHero.png'
+import img2 from '../../assets/projects/TheMinz1.png'
+import img3 from '../../assets/projects/TheMinz2.png'
+import img4 from '../../assets/projects/TheMinz3.png'
+import img5 from '../../assets/projects/TheMinz4.png'
+import img6 from '../../assets/projects/TheMinz5.png'
+import img7 from '../../assets/projects/TheMinz6.png'
+import img8 from '../../assets/projects/TheMinz7.png'
+import img9 from '../../assets/projects/TheMinz8.png'
 
 export default function ResMinzsPage({ onNavigate, onSelectProject }) {
   return (

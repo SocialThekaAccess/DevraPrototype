@@ -140,15 +140,15 @@ import resMidhas2 from "../assets/projects/MIDHAJI1.webp";
 import resMidhas3 from "../assets/projects/MIDHAJI2.webp";
 import resMidhas4 from "../assets/projects/MIDHAJI3.webp";
 
-import resMinzs from "../assets/projects/res-minzs.webp";
-import resMinzs2 from "../assets/projects/res-minzs-2.webp";
-import resMinzs3 from "../assets/projects/res-minzs-3.webp";
-import resMinzs4 from "../assets/projects/res-minzs-4.webp";
-import resMinzs5 from "../assets/projects/res-minzs-5.webp";
-import resMinzs6 from "../assets/projects/res-minzs-6.webp";
-import resMinzs7 from "../assets/projects/res-minzs-7.webp";
-import resMinzs8 from "../assets/projects/res-minzs-8.webp";
-import resMinzs9 from "../assets/projects/res-minzs-9.webp";
+import resMinzsHero from "../assets/projects/TheMinzHero.png";
+import resMinzs1 from "../assets/projects/TheMinz1.png";
+import resMinzs2 from "../assets/projects/TheMinz2.png";
+import resMinzs3 from "../assets/projects/TheMinz3.png";
+import resMinzs4 from "../assets/projects/TheMinz4.png";
+import resMinzs5 from "../assets/projects/TheMinz5.png";
+import resMinzs6 from "../assets/projects/TheMinz6.png";
+import resMinzs7 from "../assets/projects/TheMinz7.png";
+import resMinzs8 from "../assets/projects/TheMinz8.png";
 
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
 import resVilla3031 from "../assets/projects/res-villa-303-1.webp";
@@ -418,7 +418,7 @@ export const PROJECTS: Project[] = [
   {
     id: "3p-mdc-panchkula",
     title: "3P MDC Panchkula",
-    category: "Farm Houses",
+    category: "Residential",
     location: "3P MDC Panchkula",
     year: "2026",
     size: "2,50,000 sq. ft.",
@@ -616,7 +616,7 @@ export const PROJECTS: Project[] = [
     year: "2024",
     size: "300 SQYD",
     scope: "Architecture & Interior Design",
-    heroImage: resMinzs,
+    heroImage: resMinzsHero,
     description: "A warm contemporary home defined by its pitched roofline, clean geometry, and tropical landscape setting.",
     narrative: {
       site: "Residential plot in New Chandigarh surrounded by lush greenery.",
@@ -625,7 +625,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "Soft lighting and generous glazing create naturally lit, warm living spaces.",
       execution: "Inside, the home blends artistry and comfort�every room reflects a warm, personal character with inviting lived-in charm."
     },
-    images: [resMinzs2, resMinzs3, resMinzs4, resMinzs5, resMinzs6, resMinzs7, resMinzs8, resMinzs9]
+    images: [resMinzs1, resMinzs2, resMinzs3, resMinzs4, resMinzs5, resMinzs6, resMinzs7, resMinzs8]
   },
   {
     id: "villa-303",
