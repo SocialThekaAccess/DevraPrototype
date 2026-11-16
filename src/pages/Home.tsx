@@ -78,7 +78,7 @@ const HERO_SLIDES = [
 // In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
 // NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai
 // (side ki kaali/blurred patti nahi aati).
-const CONTAIN_SLIDES = [5];
+const CONTAIN_SLIDES: number[] = [];
 
 const REVIEWS = [
   { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
@@ -176,8 +176,8 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       <StructuredData type="localBusiness" />
 
       {/* 1. Full-screen Hero Slider */}
-      {/* h-[100svh]: mobile browser ke address bar ke saath bhi poori screen sahi bharti hai */}
-      <section id="home-hero" className="relative h-[100svh] w-full overflow-hidden bg-stone-900">
+      {/* FIX: h-screen on desktop + -mb-px so no dark strip shows below the hero */}
+      <section id="home-hero" className="relative h-screen md:h-[100svh] w-full overflow-hidden bg-stone-900 -mb-px">
         {!imagesLoaded && (
           <div className="absolute inset-0 z-30 flex items-center justify-center bg-stone-900">
             <div className="w-8 h-8 border-2 border-stone-500 border-t-stone-200 rounded-full animate-spin" />
@@ -215,7 +215,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                       src={src}
                       alt=""
                       aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover object-center blur-3xl scale-125 brightness-75"
+                      className="absolute -inset-24 w-[calc(100%+12rem)] h-[calc(100%+12rem)] max-w-none object-cover object-center blur-3xl scale-110 brightness-75"
                     />
                     {/* Asli image - poori dikhti hai, upar-neeche se cut nahi hoti */}
                     <img
@@ -245,7 +245,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                         ? 'object-cover object-center brightness-110'
                         : currentSlide === 5
                           // FIX: mobile par building neeche se dikhe (80%), desktop par pehle jaisa (65%)
-                          ? 'object-cover object-[center_80%] md:object-[center_65%]'
+                          ? 'object-cover object-[center_80%] md:object-[center_35%]'
                           : 'object-cover object-center'
                   }`}
                 />
@@ -324,7 +324,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
       </section>
 
       {/* 4. Selected Projects (6 featured projects) */}
-      <section id="home-selected-projects" className="py-12 md:py-16">
+      <section id="home-selected-projects" className="pt-12 md:pt-16 pb-12 md:pb-16 bg-stone-50 relative z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-stone-200 pb-6">
