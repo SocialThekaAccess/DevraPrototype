@@ -131,9 +131,9 @@ import hosCg7 from "../assets/projects/hos-cg-7.avif";
 import hosCg8 from "../assets/projects/hos-cg-8.avif";
 import hosCg9 from "../assets/projects/hos-cg-9.avif";
 
-import res121122 from "../assets/projects/res-121-122.avif";
-import res1211222 from "../assets/projects/res-121-122-2.avif";
-import res1211223 from "../assets/projects/res-121-122-3.avif";
+import res121122Hero from "../assets/projects/121&122Hero.png";
+import res121122_2 from "../assets/projects/121&122-2.png";
+import res121122_3 from "../assets/projects/121&122-3.png";
 
 import resMidhas from "../assets/projects/THEMidhasHero.webp";
 import resMidhas2 from "../assets/projects/MIDHAJI1.webp";
@@ -578,7 +578,7 @@ export const PROJECTS: Project[] = [
     year: "2024",
     size: "300 + 300 SQYD",
     scope: "Architecture & Planning",
-    heroImage: res121122,
+    heroImage: res121122Hero,
     description: "A contemporary residence defined by strong horizontal planes and interlocking volumes.",
     narrative: {
       site: "Twin plots in New Chandigarh's premium residential sector.",
@@ -587,7 +587,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "The fa�ade composition is clean yet layered, creating depth without unnecessary complexity.",
       execution: "Strong horizontal planes define the modern architectural expression."
     },
-    images: [res1211222, res1211223]
+    images: [res121122_2, res121122_3]
   },
   {
     id: "the-midhas",

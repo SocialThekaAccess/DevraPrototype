@@ -1,7 +1,7 @@
 import ProjectDetailPage from '../pages/ProjectDetailPage'
-import img1 from '../../assets/projects/res-121-122.avif'
-import img2 from '../../assets/projects/res-121-122-2.avif'
-import img3 from '../../assets/projects/res-121-122-3.avif'
+import img1 from '../../assets/projects/121&122Hero.png'
+import img2 from '../../assets/projects/121&122-2.png'
+import img3 from '../../assets/projects/121&122-3.png'
 
 export default function Res121122Page({ onNavigate, onSelectProject }) {
   return (

@@ -19,7 +19,7 @@ import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
-import res121122Hero from "../assets/projects/res-121-122.avif";
+import res121122Hero from "../assets/projects/121&122Hero.png";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
 import resMinzsHero from "../assets/projects/TheMinzHero.png";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
