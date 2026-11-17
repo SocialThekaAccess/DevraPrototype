@@ -43,6 +43,7 @@ const res121122HeroMobile = P + "121%26122Moilerisponsive.png";
 const resMinzsHeroMobile = P + "TheMinzsMobilerisponsiveimage.png";
 const resVilla303HeroMobile = P + "Villa303Risponsiveimg.webp";
 const houSansargHeroMobile = P + "SansargMobileviewimg.png";
+const resSaurabhGuptaHeroMobile = P + "SaurabhGuptaResidentialHeroMobile.png";
 
 export interface ProjectCard {
   id: string;
@@ -237,6 +238,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Rohtak",
     year: "2025",
     heroImage: resSaurabhGuptaHero,
+    mobileHeroImage: resSaurabhGuptaHeroMobile,
   },
   {
     id: "nagra-farmhouse",
