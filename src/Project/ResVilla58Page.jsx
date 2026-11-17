@@ -10,6 +10,7 @@ import img7 from '../../assets/projects/res-villa-58-7.webp'
 import img8 from '../../assets/projects/res-villa-58-8.webp'
 import img9 from '../../assets/projects/res-villa-58-9.webp'
 import img10 from '../../assets/projects/res-villa-58-10.webp'
+import imgOuter from '/assets/projects/Villa58Outerimage.png'
 
 export default function ResVilla58Page({ onNavigate, onSelectProject }) {
   return (
@@ -28,7 +29,7 @@ export default function ResVilla58Page({ onNavigate, onSelectProject }) {
       heroImage={heroImg}
       heroImageMobile={heroImgMobile}
       heroObjectPosition="center center"
-      images={[img1, img2, img3, img4, img6, img7, img8, img9, img10]}
+      images={[img1, img2, img3, img4, img6, img7, img8, img9, img10, imgOuter]}
     />
   )
 }

@@ -5,7 +5,8 @@
 // Desktop hero images (src/assets se bundle hoti hain)
 import maisonElanHero from "../assets/projects/MaisonElanSliderimage.webp";
 import houSansargHero from "/assets/projects/Sansarg1.png";
-import resVilla58Hero from "../assets/projects/Villa58heroimg.webp";
+// Villa 58 card: landscape image (public/assets se) — purani Villa58heroimg.webp portrait thi, isliye cut / blue patti aa rahi thi
+const resVilla58Hero = "/assets/Villa58Heroimage.png";
 import resVilla201dHero from "../assets/projects/res-villa-201d-hd3.webp";
 import resKangsHero from "../assets/projects/TheKangs2.webp";
 import resVilla361Hero from "../assets/projects/villa361PDHero20.webp";
@@ -31,7 +32,7 @@ import schJpHero from "../assets/projects/sch-jp-3.avif";
 // space ya & wale naam bhi chalte hain). Files public/assets/projects/ mein honi chahiye.
 const P = "/assets/projects/";
 const maisonElanHeroMobile = P + "MaisonElanMobileImage.png";
-const resVilla58HeroMobile = P + "Villa58Mobilerisponsive.png";
+const resVilla58HeroMobile = P + "Villa58Outerimage.png";
 const resVilla361HeroMobile = P + "resVilla361HeroMobile.png";
 const resSupreetHeroMobile = P + "ColSupreetJiMobilerisponsiveimg.png";
 const schOakwoodHeroMobile = P + "TheOakwoodSchoolMobilerisponsiveimg.png";
@@ -55,6 +56,8 @@ export interface ProjectCard {
   mobileHeroImage?: string;
   cardAspectRatio?: string;
   cardPosition?: string;
+  cardFit?: "cover" | "contain"; // "contain" = poori image dikhe, crop nahi
+  cardBg?: string; // "contain" ke bars ka background color
 }
 
 export const PROJECT_CARDS: ProjectCard[] = [
@@ -84,6 +87,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     year: "2023",
     heroImage: resVilla58Hero,
     mobileHeroImage: resVilla58HeroMobile,
+    cardPosition: "center center",
   },
   {
     id: "villa-201d",

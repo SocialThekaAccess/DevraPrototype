@@ -110,15 +110,21 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                 onMouseLeave={handleMouseLeave}
               >
                 {/* Image Card Container */}
-                <div className="relative overflow-hidden bg-stone-200 w-full" style={{ aspectRatio: project.cardAspectRatio || '4/3' }}>
+                <div className="relative overflow-hidden bg-stone-200 w-full" style={{
+                  aspectRatio: project.cardAspectRatio || '4/3',
+                  background: project.cardFit === 'contain' ? (project.cardBg || '#111') : undefined,
+                }}>
                   <img
                     src={project.heroImage}
                     alt={project.title}
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
-                    className={`w-full h-full object-cover object-center transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
-                    style={project.cardPosition ? { objectPosition: project.cardPosition } : undefined}
+                    className={`w-full h-full transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
+                    style={{
+                      objectFit: project.cardFit || 'cover',
+                      objectPosition: project.cardPosition || 'center',
+                    }}
                   />
                   {/* Subtle hover overlay and zoom */}
                   <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>
