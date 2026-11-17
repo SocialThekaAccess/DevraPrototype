@@ -150,6 +150,9 @@ import resMinzs6 from "../assets/projects/TheMinz6.png";
 import resMinzs7 from "../assets/projects/TheMinz7.png";
 import resMinzs8 from "../assets/projects/TheMinz8.png";
 
+import resSaurabhGuptaHero from "../assets/projects/SaurabhGuptaResidentialHero.png";
+import resSaurabhGupta2 from "../assets/projects/SaurabhGuptaResidential2.jpg";
+
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
 import resVilla3031 from "../assets/projects/res-villa-303-1.webp";
 import resVilla3032 from "../assets/projects/res-villa-303-2.webp";
@@ -645,6 +648,25 @@ export const PROJECTS: Project[] = [
       execution: "The interiors blend soft luxury with expressive details�calm colours, warm materials, and purposeful layouts create curated, comfortable, unmistakably elegant spaces."
     },
     images: [resVilla3031, resVilla3032, resVilla3033, resVilla3034, resVilla3035, resVilla3036, resVilla3037, resVilla3038, resVilla3039, resVilla30310, resVilla30311]
+  },
+  {
+    id: "saurabh-gupta-residential",
+    title: "Saurabh Gupta Residential",
+    category: "Residential",
+    location: "Rohtak",
+    year: "2025",
+    size: "500 SQYD",
+    scope: "Architecture & Planning",
+    heroImage: resSaurabhGuptaHero,
+    description: "A contemporary residential design combining modern aesthetics with functional living spaces.",
+    narrative: {
+      site: "Premium residential plot in Rohtak with excellent accessibility and infrastructure.",
+      planning: "The design focuses on creating well-proportioned spaces that balance privacy and openness with a modern architectural expression.",
+      materials: "Contemporary materials and finishes creating a clean, modern residential character.",
+      lightVentilation: "Well-planned openings ensure natural light and cross-ventilation throughout the residence.",
+      execution: "Thoughtful design execution balancing aesthetics with practical living requirements."
+    },
+    images: [resSaurabhGupta2]
   },
   {
     id: "nagra-farmhouse",
