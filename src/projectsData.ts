@@ -32,7 +32,6 @@ import schJpHero from "../assets/projects/sch-jp-3.avif";
 // space ya & wale naam bhi chalte hain). Files public/assets/projects/ mein honi chahiye.
 const P = "/assets/projects/";
 const maisonElanHeroMobile = P + "MaisonElanMobileImage.png";
-const resVilla58HeroMobile = P + "Villa58Outerimage.png";
 const resVilla361HeroMobile = P + "resVilla361HeroMobile.png";
 const resSupreetHeroMobile = P + "ColSupreetJiMobilerisponsiveimg.png";
 const schOakwoodHeroMobile = P + "TheOakwoodSchoolMobilerisponsiveimg.png";
@@ -86,7 +85,6 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Sector 58, Mohali",
     year: "2023",
     heroImage: resVilla58Hero,
-    mobileHeroImage: resVilla58HeroMobile,
     cardPosition: "center center",
   },
   {
