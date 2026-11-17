@@ -122,33 +122,46 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Preload hero images — show first slide as soon as it's ready
+  // Preload hero images — show first slide ASAP, then preload next 2 slides only
   useEffect(() => {
     const firstSlide = HERO_SLIDES[0];
     const firstUrl = isMobile ? firstSlide.mobileImage : firstSlide.image;
     const firstImg = new Image();
     firstImg.src = firstUrl;
     firstImg.onload = () => setImagesLoaded(true);
-    firstImg.onerror = () => setImagesLoaded(true); // show anyway on error
+    firstImg.onerror = () => setImagesLoaded(true);
 
-    // Preload rest in background
-    HERO_SLIDES.slice(1).forEach(slide => {
-      [slide.image, slide.mobileImage].forEach(url => {
+    // Preload only next 2 slides for faster perceived performance
+    const preloadNextSlides = () => {
+      HERO_SLIDES.slice(1, 3).forEach(slide => {
+        const url = isMobile ? slide.mobileImage : slide.image;
         const img = new Image();
         img.src = url;
       });
-    });
+    };
+    
+    // Preload after a small delay to prioritize first slide
+    setTimeout(preloadNextSlides, 100);
   }, [isMobile]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
         const nextSlide = (prev + 1) % HERO_SLIDES.length;
+        
+        // Progressive loading: Preload slide after next
+        const slideToPreload = (nextSlide + 1) % HERO_SLIDES.length;
+        const urlToPreload = isMobile 
+          ? HERO_SLIDES[slideToPreload].mobileImage 
+          : HERO_SLIDES[slideToPreload].image;
+        const img = new Image();
+        img.src = urlToPreload;
+        
         return nextSlide;
       });
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isMobile]);
 
   const handleProjectClick = (id: string) => {
     onSelectProject(id);
@@ -371,6 +384,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
+                    {...({ fetchpriority: "low" } as any)}
                     className={`w-full h-full object-cover transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-105' : 'scale-100'}`}
                   />
                   <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>

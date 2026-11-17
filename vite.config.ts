@@ -19,6 +19,8 @@ export default defineConfig(() => {
             if (id.includes('node_modules/motion')) return 'motion';
             if (id.includes('node_modules/lucide-react')) return 'lucide';
             if (id.includes('src/data.ts')) return 'project-data';
+            // Separate chunk for large images
+            if (id.includes('/assets/') && /\.(png|jpe?g|webp|avif)$/.test(id)) return 'images';
           },
         },
       },
@@ -26,6 +28,8 @@ export default defineConfig(() => {
       target: 'esnext',
       minify: 'esbuild',
       cssMinify: true,
+      // Optimize asset handling
+      assetsInlineLimit: 4096, // Inline small images as base64
     },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
