@@ -117,7 +117,8 @@ const comParkQueen1 = "/assets/TheQueenPrkHome.png";
 const comParkQueen2 = "/assets/TheQueenPark.png";
 const comParkQueen3 = "/assets/TheQueenPark1.png";
 const comParkQueen4 = "/assets/TheQueenPark2.png";
-const comParkQueen5 = "/assets/TheQueenPark4.png";
+const comParkQueen5 = "/assets/thequeenpark3.png";
+const comParkQueen6 = "/assets/TheQueenPark4.png";
 
 const comYorkBuilders1 = "/assets/projects/YORKBUILDERSHomeimg.png";
 const comYorkBuilders2 = "/assets/projects/YORKBUILDERS1.png";
@@ -572,7 +573,7 @@ export const PROJECTS: Project[] = [
       lightVentilation: "Optimized natural lighting and ventilation systems ensure comfortable interior spaces.",
       execution: "The project delivers a commercial space that balances functionality with aesthetic excellence."
     },
-    images: [comParkQueen2, comParkQueen3, comParkQueen4, comParkQueen5]
+    images: [comParkQueen2, comParkQueen3, comParkQueen4, comParkQueen5, comParkQueen6]
   },
   {
     id: "york-builders",
