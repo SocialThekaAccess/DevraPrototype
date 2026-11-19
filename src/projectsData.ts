@@ -204,6 +204,10 @@ export const PROJECT_CARDS: ProjectCard[] = [
     year: "2024",
     heroImage: resMinzsHero,
     mobileHeroImage: resMinzsHeroMobile,
+    cardImage: "/assets/TheMinzgrid.png",
+    // FIX: detail page ka desktop hero poori screen bhare aur ghar poora dikhe
+    // (beech mein asli image, dono side mirror copy) -> upar/neeche se cut nahi hoga
+    heroShowFull: true, // <-- NEW
   },
   {
     id: "saurabh-gupta-residential",
