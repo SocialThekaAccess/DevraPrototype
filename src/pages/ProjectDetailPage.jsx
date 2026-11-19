@@ -43,6 +43,8 @@ export default function ProjectDetailPage({
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  // Screen kitni wide hai (width/height). 16:9 image ke liye >= 1.7 chahiye, warna normal cover chalega.
+  const [isWideViewport, setIsWideViewport] = useState(window.innerWidth / window.innerHeight >= 1.7)
   // Agar mobile image load na ho to desktop image dikhao
   const [mobileFailed, setMobileFailed] = useState(false)
 
@@ -57,7 +59,10 @@ export default function ProjectDetailPage({
   }, [title])
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+      setIsWideViewport(window.innerWidth / window.innerHeight >= 1.7)
+    }
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
@@ -87,6 +92,12 @@ export default function ProjectDetailPage({
 
   const displayHeroImg = isMobile && !mobileFailed ? heroImgMobile : heroImg
 
+  // FIX: Park Queen jaisi images desktop pe cut nahi honi chahiye, aur scroll bhi nahi karna padega.
+  // projectsData.ts mein jis card pe heroShowFull: true hai, uska hero poori screen bharta hai:
+  // beech mein asli image (poori height, building poori), dono side uski mirror copy.
+  // Screen bahut tall/narrow ho (ratio < 1.7) to normal cover chalega.
+  const useContainHero = !!cardProject?.heroShowFull && !isMobile && isWideViewport
+
   const openLightbox = (index) => {
     setCurrentImageIndex(index)
     setLightboxOpen(true)
@@ -96,6 +107,22 @@ export default function ProjectDetailPage({
     setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length)
   const prevImage = () =>
     setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
+
+  const heroImgElement = (
+    <img
+      src={displayHeroImg}
+      alt={title}
+      className="proj-hero__img"
+      style={heroObjectPosition ? { objectPosition: heroObjectPosition } : undefined}
+      onError={() => {
+        if (displayHeroImg !== heroImg) setMobileFailed(true)
+      }}
+      referrerPolicy="no-referrer"
+      loading="eager"
+      fetchPriority="high"
+      decoding="async"
+    />
+  )
 
   return (
     <div className="proj-page">
@@ -111,19 +138,47 @@ export default function ProjectDetailPage({
 
       <section className="proj-hero">
         <div className="proj-hero__img-wrapper">
-          <img
-            src={displayHeroImg}
-            alt={title}
-            className="proj-hero__img"
-            style={heroObjectPosition ? { objectPosition: heroObjectPosition } : undefined}
-            onError={() => {
-              if (displayHeroImg !== heroImg) setMobileFailed(true)
-            }}
-            referrerPolicy="no-referrer"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
+          {useContainHero ? (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
+                background: '#000',
+              }}
+            >
+              {/* Left mirror copy */}
+              <img
+                src={displayHeroImg}
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                style={{ height: '100%', width: 'auto', flexShrink: 0, transform: 'scaleX(-1)' }}
+              />
+              {/* Asli image — poori height, building poori dikhti hai */}
+              <img
+                src={displayHeroImg}
+                alt={title}
+                referrerPolicy="no-referrer"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                style={{ height: '100%', width: 'auto', flexShrink: 0 }}
+              />
+              {/* Right mirror copy */}
+              <img
+                src={displayHeroImg}
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                style={{ height: '100%', width: 'auto', flexShrink: 0, transform: 'scaleX(-1)' }}
+              />
+            </div>
+          ) : (
+            heroImgElement
+          )}
         </div>
         <div className="proj-hero__overlay" />
         <div className="proj-hero__title-wrap">

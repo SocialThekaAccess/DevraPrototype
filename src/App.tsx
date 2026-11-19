@@ -85,7 +85,9 @@ function PrefetchAll() {
 function ProjectDetailWrapper({ onNavigate, onSelectProject }: { onNavigate: (p: string) => void; onSelectProject: (id: string) => void }) {
   const { id } = useParams<{ id: string }>();
   const project = PROJECTS.find((p) => p.id === id) || PROJECTS[0];
-  return <ProjectDetail project={project} onNavigate={onNavigate} onSelectProject={onSelectProject} />;
+  // Get category from sessionStorage (set by Projects page)
+  const category = sessionStorage.getItem('lastProjectCategory') || undefined;
+  return <ProjectDetail project={project} onNavigate={onNavigate} onSelectProject={onSelectProject} category={category} />;
 }
 
 const LoadingSpinner = () => (

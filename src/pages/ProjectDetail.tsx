@@ -12,6 +12,7 @@ interface ProjectDetailProps {
   project: Project;
   onNavigate: (path: string) => void;
   onSelectProject: (id: string) => void;
+  category?: string; // Filter category from Projects page
 }
 
 function buildRows(images: string[]) {
@@ -45,8 +46,10 @@ function buildRows(images: string[]) {
   return rows;
 }
 
-export default function ProjectDetail({ project, onNavigate, onSelectProject }: ProjectDetailProps) {
+export default function ProjectDetail({ project, onNavigate, onSelectProject, category }: ProjectDetailProps) {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  // Screen kitni wide hai (width/height). 16:9 image ke liye >= 1.7 chahiye, warna normal cover chalega.
+  const [isWideViewport, setIsWideViewport] = useState(() => window.innerWidth / window.innerHeight >= 1.7);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -63,6 +66,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      setIsWideViewport(window.innerWidth / window.innerHeight >= 1.7);
     };
     handleResize(); // run immediately on mount
     window.addEventListener('resize', handleResize);
@@ -98,17 +102,30 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
   }, [lightboxOpen, displayImages.length]);
 
   // Mobile hero image: projectsData.ts ki (nayi) image ko pehle priority
-  const cardMobileHero = PROJECT_CARDS.find((p) => p.id === project.id)?.mobileHeroImage;
+  const cardProject = PROJECT_CARDS.find((p) => p.id === project.id);
+  const cardMobileHero = cardProject?.mobileHeroImage;
   const mobileHero = cardMobileHero || project.mobileHeroImage;
+
+  // FIX: Park Queen jaisi images desktop pe cut nahi honi chahiye, aur scroll bhi nahi karna padega.
+  // projectsData.ts mein jis card pe heroShowFull: true hai, uska hero poori screen bharta hai:
+  // beech mein asli image (poori height, building poori), dono side uski mirror copy.
+  // Screen bahut tall/narrow ho (ratio < 1.7) to normal cover chalega.
+  const useContainHero = !!cardProject?.heroShowFull && !isMobile && isWideViewport;
 
   // Overview paragraphs: pehla = description, doosra = site narrative
   const overviewText = project.description;
   const overviewText2 = project.narrative?.site;
 
-  // Find adjacent projects for navigation
-  const currentIndex = PROJECTS.findIndex((p) => p.id === project.id);
-  const prevProject = currentIndex > 0 ? PROJECTS[currentIndex - 1] : PROJECTS[PROJECTS.length - 1];
-  const nextProject = currentIndex < PROJECTS.length - 1 ? PROJECTS[currentIndex + 1] : PROJECTS[0];
+  // Find adjacent projects for navigation based on current category filter
+  // Agar category filter hai (Residential, Commercial, etc.) to sirf usi category ke projects dikhe
+  // Agar "All" ya koi filter nahi to saare projects dikhe
+  const filteredProjects = category && category !== "All"
+    ? PROJECTS.filter((p) => p.category === category)
+    : PROJECTS;
+
+  const currentIndex = filteredProjects.findIndex((p) => p.id === project.id);
+  const prevProject = currentIndex > 0 ? filteredProjects[currentIndex - 1] : filteredProjects[filteredProjects.length - 1];
+  const nextProject = currentIndex < filteredProjects.length - 1 ? filteredProjects[currentIndex + 1] : filteredProjects[0];
 
   const handleNavigateToProject = (id: string) => {
     onSelectProject(id);
@@ -154,7 +171,48 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
           className="proj-hero__img-wrapper"
           style={isMobile ? { aspectRatio: "4 / 5", height: "auto" } : undefined}
         >
-          <picture style={isMobile ? { display: "block", width: "100%", height: "100%" } : undefined}>
+          {useContainHero ? (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+                overflow: "hidden",
+                background: "#000",
+              }}
+            >
+              {/* Left mirror copy */}
+              <img
+                src={project.heroImage}
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                style={{ height: "100%", width: "auto", flexShrink: 0, transform: "scaleX(-1)" }}
+              />
+              {/* Asli image — poori height, building poori dikhti hai */}
+              <img
+                src={project.heroImage}
+                alt={project.title}
+                referrerPolicy="no-referrer"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                style={{ height: "100%", width: "auto", flexShrink: 0 }}
+              />
+              {/* Right mirror copy */}
+              <img
+                src={project.heroImage}
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                style={{ height: "100%", width: "auto", flexShrink: 0, transform: "scaleX(-1)" }}
+              />
+            </div>
+          ) : (
+          <picture
+            style={isMobile ? { display: "block", width: "100%", height: "100%" } : undefined}
+          >
             {mobileHero && (
               <source media="(max-width: 767px)" srcSet={mobileHero} />
             )}
@@ -180,6 +238,7 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject }: 
               }
             />
           </picture>
+          )}
         </div>
         <div className="proj-hero__overlay" />
         <div className="proj-hero__title-wrap">

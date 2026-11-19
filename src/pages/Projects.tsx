@@ -30,6 +30,8 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
     : PROJECT_CARDS.filter((p) => p.category === selectedCategory);
 
   const handleProjectClick = (id: string) => {
+    // Store current category in sessionStorage so ProjectDetail can use it
+    sessionStorage.setItem('lastProjectCategory', selectedCategory);
     onSelectProject(id);
     onNavigate(`project-${id}`);
     window.scrollTo(0, 0);

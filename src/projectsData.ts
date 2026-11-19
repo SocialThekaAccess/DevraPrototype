@@ -58,8 +58,11 @@ export interface ProjectCard {
   mobileHeroImage?: string;
   cardAspectRatio?: string;
   cardPosition?: string;
-  cardFit?: "cover" | "contain"; // "contain" = poori image dikhe, crop nahi
+  cardFit?: "cover" | "contain"; // "contain" = poori image dikhe, crop nahi (card pe)
   cardBg?: string; // "contain" ke bars ka background color
+  // Detail page ka desktop hero poori screen bhare, building poori dikhe (beech mein asli image,
+  // dono side mirror copy). Card pe iska koi asar nahi hota.
+  heroShowFull?: boolean;
 }
 
 export const PROJECT_CARDS: ProjectCard[] = [
@@ -236,8 +239,11 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Rohtak",
     year: "2023",
     heroImage: comParkQueenHero,
-    cardFit: "contain",
-    cardBg: "#1a1a1a",
+    // FIX: card pe ab cover (kaali patti nahi). 16:9 image 4:3 card mein cover hone par
+    // building poori dikhti hai, sirf side ke palm trees thode kat'te hain.
+    cardPosition: "center center",
+    // Detail page ka hero poori screen bhare aur building poori dikhe (scroll nahi)
+    heroShowFull: true,
   },
   {
     id: "york-builders",
