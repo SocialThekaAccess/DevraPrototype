@@ -132,6 +132,7 @@ const comYorkBuilders8 = "/assets/projects/YORKBUILDERS7.png";
 import comMilkPoint1 from "../assets/projects/com-milk-point-1.avif";
 import comMilkPoint2 from "../assets/projects/com-milk-point-2.avif";
 
+// Updated: GillFarmhouseNeww.png - Force rebuild
 const fhGills1 = "/assets/GillFarmhouseNeww.png";
 import fhGills2 from "../assets/projects/fh-gills-2.avif";
 import fhGills3 from "../assets/projects/fh-gills-3.avif";
