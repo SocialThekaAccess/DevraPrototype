@@ -22,7 +22,7 @@ const comTallTreeManaliMobileHero = "/assets/TallTreeManaliMobilerisponsiveHero.
 const comParkQueenHero = "/assets/TheQueenPrkHome.png";
 const comYorkBuildersHero = "/assets/projects/YORKBUILDERSHomeimg.png";
 const comYorkBuildersMobileHero = "/assets/YORKBUILDERSMobilerisHero.png";
-import fhGillsHero from "../assets/projects/fh-gills-1.avif";
+const fhGillsHero = "/assets/GillFarmhouseHeroimg.png";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/121&122Hero.png";
