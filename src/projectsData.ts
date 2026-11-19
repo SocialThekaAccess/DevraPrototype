@@ -18,6 +18,7 @@ import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
 import comDevraArchHero from "../assets/projects/DevraArchitects.png";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 const comTallTreeManaliHero = "/assets/projects/TheManaliTreeHeroimg.png";
+const comParkQueenHero = "/assets/TheQueenPrkHome.png";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
@@ -226,6 +227,14 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Manali",
     year: "2025",
     heroImage: comTallTreeManaliHero,
+  },
+  {
+    id: "the-park-queen",
+    title: "The Park Queen",
+    category: "Commercial",
+    location: "Rohtak",
+    year: "2023",
+    heroImage: comParkQueenHero,
   },
   {
     id: "gills-farmhouse",

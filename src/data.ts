@@ -113,6 +113,12 @@ const comTallTreeManali2 = "/assets/projects/ThemanaliTree1.png";
 const comTallTreeManali3 = "/assets/projects/ThemanaliTree2.png";
 const comTallTreeManali4 = "/assets/projects/TheMnalaiTree3.png";
 
+const comParkQueen1 = "/assets/TheQueenPrkHome.png";
+const comParkQueen2 = "/assets/TheQueenPark.png";
+const comParkQueen3 = "/assets/TheQueenPark1.png";
+const comParkQueen4 = "/assets/TheQueenPark2.png";
+const comParkQueen5 = "/assets/TheQueenPark4.png";
+
 import comMilkPoint1 from "../assets/projects/com-milk-point-1.avif";
 import comMilkPoint2 from "../assets/projects/com-milk-point-2.avif";
 
@@ -539,6 +545,25 @@ export const PROJECTS: Project[] = [
       execution: "Every detail is crafted to create a commercial space that feels both sophisticated and in harmony with its natural surroundings."
     },
     images: [comTallTreeManali2, comTallTreeManali3, comTallTreeManali4]
+  },
+  {
+    id: "the-park-queen",
+    title: "The Park Queen",
+    category: "Commercial",
+    location: "Rohtak",
+    year: "2023",
+    size: "",
+    scope: "Commercial Architecture & Interior Design",
+    heroImage: comParkQueen1,
+    description: "A distinctive commercial development in Rohtak, combining contemporary design with functional elegance.",
+    narrative: {
+      site: "Strategically located in Rohtak, this commercial project serves as a landmark in the area.",
+      planning: "The design focuses on creating versatile commercial spaces that cater to diverse business needs while maintaining visual appeal.",
+      materials: "Modern materials and finishes create a professional yet welcoming environment.",
+      lightVentilation: "Optimized natural lighting and ventilation systems ensure comfortable interior spaces.",
+      execution: "The project delivers a commercial space that balances functionality with aesthetic excellence."
+    },
+    images: [comParkQueen2, comParkQueen3, comParkQueen4, comParkQueen5]
   },
   {
     id: "gills-farmhouse",
