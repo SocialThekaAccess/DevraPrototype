@@ -205,6 +205,9 @@ export const PROJECT_CARDS: ProjectCard[] = [
     heroImage: resMinzsHero,
     mobileHeroImage: resMinzsHeroMobile,
     cardImage: "/assets/TheMinzgrid.png",
+    cardFit: "contain",
+    cardBg: "#87CEEB",
+    cardPosition: "center center",
     // FIX: detail page ka desktop hero poori screen bhare aur ghar poora dikhe
     // (beech mein asli image, dono side mirror copy) -> upar/neeche se cut nahi hoga
     heroShowFull: true, // <-- NEW
