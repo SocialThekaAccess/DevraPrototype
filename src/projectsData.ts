@@ -236,6 +236,8 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Rohtak",
     year: "2023",
     heroImage: comParkQueenHero,
+    cardFit: "contain",
+    cardBg: "#1a1a1a",
   },
   {
     id: "york-builders",
