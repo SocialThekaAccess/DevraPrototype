@@ -74,10 +74,10 @@ const HERO_SLIDES = [
   }
 ];
 
-// FIX: Pehle yahan [0] tha (Villa 303 contain mode mein). Contain mode mein live pe
-// side ki blurred patti dark/kaali render hoti thi. Ab khali hai, to sab slides
-// "cover" se poori screen bharengi (corners tak, koi kaali patti nahi).
-const CONTAIN_SLIDES: number[] = [];
+// Slides jinme image crop nahi honi chahiye (0 = Villa 303, first slide).
+// In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
+// NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai.
+const CONTAIN_SLIDES: number[] = [0]; // Villa 303 - trees neeche dikhni chahiye
 
 const REVIEWS = [
   { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
