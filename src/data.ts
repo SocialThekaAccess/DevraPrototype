@@ -108,6 +108,11 @@ import comFortofino7 from "../assets/projects/com-fortofino-7.avif";
 import comFortofino8 from "../assets/projects/com-fortofino-8.avif";
 import comFortofino9 from "../assets/projects/com-fortofino-9.avif";
 
+const comTallTreeManali1 = "/assets/projects/TheManaliTreeHeroimg.png";
+const comTallTreeManali2 = "/assets/projects/ThemanaliTree1.png";
+const comTallTreeManali3 = "/assets/projects/ThemanaliTree2.png";
+const comTallTreeManali4 = "/assets/projects/TheMnalaiTree3.png";
+
 import comMilkPoint1 from "../assets/projects/com-milk-point-1.avif";
 import comMilkPoint2 from "../assets/projects/com-milk-point-2.avif";
 
@@ -371,16 +376,16 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "oakwood-school",
-    title: "The Oakwood School",
+    title: "MS Public School",
     category: "Schools",
-    location: "Punjab",
+    location: "UP",
     year: "2020",
     size: "24,000 sq. ft.",
     scope: "Architecture & Campus Masterplanning",
     heroImage: schOakwood,
     description: "An institutional environment that redefines classroom layouts by surrounding them with interactive courtyard corridors, passive light scoops, and robust, maintenance-free finishes.",
     narrative: {
-      site: "A flat 2-acre campus in rural Punjab. The masterplan was oriented to shield the main playing grounds from strong dust-carrying winds.",
+      site: "A flat 2-acre campus in UP. The masterplan was oriented to shield the main playing grounds from strong dust-carrying winds.",
       planning: "The school is designed around a single, massive central courtyard that acts as an amphitheater and assembly ground. Classrooms open on one side to this courtyard and on the other to pocket gardens, ensuring continuous air flow and dual-aspect daylighting.",
       materials: "Locally crafted exposed brick walling, rough Kota stone floors that are highly slip-resistant, and structural steel colonnades left unclad.",
       lightVentilation: "Classrooms feature north-facing light monitors that eliminate direct sun glare on boards while flooding the desks with soft, shadow-free overhead light. This minimizes the need for artificial lighting during school hours.",
@@ -515,6 +520,25 @@ export const PROJECTS: Project[] = [
       execution: "From intimate display zones to lounge-like seating, each corner reflects sophistication and comfort, shaping a boutique that feels both premium and inviting."
     },
     images: [comFortofino2, comFortofino3, comFortofino4, comFortofino5, comFortofino6, comFortofino7, comFortofino8, comFortofino9]
+  },
+  {
+    id: "tall-tree-manali",
+    title: "Tall Tree Manali",
+    category: "Commercial",
+    location: "Manali",
+    year: "2025",
+    size: "",
+    scope: "Commercial Interior Design",
+    heroImage: comTallTreeManali1,
+    description: "A contemporary commercial space in Manali, designed to blend modern aesthetics with the natural beauty of the mountain landscape.",
+    narrative: {
+      site: "Located in the scenic hill station of Manali, this commercial project embraces the surrounding natural environment.",
+      planning: "The design integrates modern functionality with elements that complement the mountain setting, creating a welcoming commercial space.",
+      materials: "Contemporary finishes paired with natural textures create a balanced, inviting atmosphere.",
+      lightVentilation: "Strategic use of natural light and ventilation maximizes the connection with the outdoor environment.",
+      execution: "Every detail is crafted to create a commercial space that feels both sophisticated and in harmony with its natural surroundings."
+    },
+    images: [comTallTreeManali2, comTallTreeManali3, comTallTreeManali4]
   },
   {
     id: "gills-farmhouse",
@@ -787,7 +811,7 @@ export const SERVICES: Service[] = [
       "Acoustic lining and sound control integration"
     ],
     clientType: "Business owners, hospitality brands, and corporate institutions looking to build high-performance offices or retail spaces.",
-    projects: ["The Oakwood School", "Villa 201D"]
+    projects: ["MS Public School", "Villa 201D"]
   }
 ];
 

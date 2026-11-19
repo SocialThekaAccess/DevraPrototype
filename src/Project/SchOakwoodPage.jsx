@@ -10,8 +10,8 @@ export default function SchOakwoodPage({ onNavigate, onSelectProject }) {
       onSelectProject={onSelectProject}
       backTo="/services/schools"
       backLabel="Schools"
-      title="The Oakwood School"
-      location="Punjab"
+      title="MS Public School"
+      location="UP"
       category="Schools"
       size="24,000 sq. ft."
       year="2020"
