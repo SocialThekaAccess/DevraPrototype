@@ -78,7 +78,7 @@ const HERO_SLIDES = [
 // In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
 // NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai
 // (side ki kaali/blurred patti nahi aati).
-const CONTAIN_SLIDES: number[] = [];
+const CONTAIN_SLIDES: number[] = [0]; // Villa 303
 
 const REVIEWS = [
   { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
