@@ -98,59 +98,66 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
-                layout
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.5 }}
-                key={project.id}
-                onClick={() => handleProjectClick(project.id)}
-                className="group cursor-pointer space-y-4"
-                onMouseEnter={() => handleMouseEnter(project.id)}
-                onMouseLeave={handleMouseLeave}
-              >
-                {/* Image Card Container */}
-                <div className="relative overflow-hidden bg-stone-200 w-full" style={{
-                  aspectRatio: project.cardAspectRatio || '4/3',
-                  background: project.cardFit === 'contain' ? (project.cardBg || '#111') : undefined,
-                }}>
-                  <img
-                    src={project.heroImage}
-                    alt={project.title}
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    decoding="async"
-                    {...({ fetchpriority: "low" } as any)}
-                    className={`w-full h-full transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
+            {filteredProjects.map((project) => {
+              const isContain = project.cardFit === 'contain';
+              return (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5 }}
+                  key={project.id}
+                  onClick={() => handleProjectClick(project.id)}
+                  className="group cursor-pointer space-y-4"
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {/* Image Card Container */}
+                  <div
+                    className="relative overflow-hidden bg-stone-200 w-full"
                     style={{
-                      objectFit: project.cardFit || 'cover',
-                      objectPosition: project.cardPosition || 'center',
+                      aspectRatio: project.cardAspectRatio || '4/3',
+                      background: isContain ? (project.cardBg || '#111') : undefined,
                     }}
-                  />
-                  {/* Subtle hover overlay and zoom */}
-                  <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>
-                    <span className={`bg-stone-50 text-stone-950 text-[10px] uppercase tracking-widest font-semibold py-2.5 px-5 shadow-lg transition-all duration-500 ${activeHover === project.id ? 'translate-y-0' : 'translate-y-2'}`}>
-                      Explore Case Study
-                    </span>
-                  </div>
-                </div>
+                  >
+                    <img
+                      src={project.cardImage || project.heroImage}
+                      alt={project.title}
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
+                      {...({ fetchpriority: "low" } as any)}
+                      className={`w-full h-full transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
+                      style={{
+                        objectFit: project.cardFit || 'cover',
+                        objectPosition: project.cardPosition || 'center',
+                      }}
+                    />
 
-                {/* Info block */}
-                <div className="flex justify-between items-start pt-1 border-t border-stone-200/50">
-                  <div>
-                    <h3 className={`font-serif text-lg font-medium transition-colors ${activeHover === project.id ? 'text-stone-600' : 'text-stone-900'}`}>
-                      {project.title}
-                    </h3>
-                    <p className="text-[9px] md:text-[10px] tracking-wide uppercase text-stone-900 font-light mt-1">
-                      {project.category} // {project.location}
-                    </p>
+                    {/* Subtle hover overlay and zoom */}
+                    <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>
+                      <span className={`bg-stone-50 text-stone-950 text-[10px] uppercase tracking-widest font-semibold py-2.5 px-5 shadow-lg transition-all duration-500 ${activeHover === project.id ? 'translate-y-0' : 'translate-y-2'}`}>
+                        Explore Case Study
+                      </span>
+                    </div>
                   </div>
 
-                </div>
-              </motion.div>
-            ))}
+                  {/* Info block */}
+                  <div className="flex justify-between items-start pt-1 border-t border-stone-200/50">
+                    <div>
+                      <h3 className={`font-serif text-lg font-medium transition-colors ${activeHover === project.id ? 'text-stone-600' : 'text-stone-900'}`}>
+                        {project.title}
+                      </h3>
+                      <p className="text-[9px] md:text-[10px] tracking-wide uppercase text-stone-900 font-light mt-1">
+                        {project.category} // {project.location}
+                      </p>
+                    </div>
+
+                  </div>
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
 

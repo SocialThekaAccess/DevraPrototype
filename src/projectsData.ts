@@ -56,6 +56,7 @@ export interface ProjectCard {
   year: string;
   heroImage: string;
   mobileHeroImage?: string;
+  cardImage?: string; // Projects page card pe alag image (hero ki jagah), optional
   cardAspectRatio?: string;
   cardPosition?: string;
   cardFit?: "cover" | "contain"; // "contain" = poori image dikhe, crop nahi (card pe)
@@ -74,6 +75,9 @@ export const PROJECT_CARDS: ProjectCard[] = [
     year: "2026",
     heroImage: hou3PMDCHero,
     mobileHeroImage: hou3PMDCHeroMobile,
+    // FIX: card pe portrait wali image (poori width dikhti hai) -> koi side se cut nahi, koi khaali jagah nahi
+    cardImage: hou3PMDCHeroMobile,
+    cardPosition: "center center",
   },
   {
     id: "panchkula-housing",
