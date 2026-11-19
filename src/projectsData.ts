@@ -21,6 +21,7 @@ const comTallTreeManaliHero = "/assets/projects/TheManaliTreeHeroimg.png";
 const comTallTreeManaliMobileHero = "/assets/TallTreeManaliMobilerisponsiveHero.png";
 const comParkQueenHero = "/assets/TheQueenPrkHome.png";
 const comYorkBuildersHero = "/assets/projects/YORKBUILDERSHomeimg.png";
+const comYorkBuildersMobileHero = "/assets/YORKBUILDERSMobilerisHero.png";
 import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
@@ -268,6 +269,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Rohtak",
     year: "2024",
     heroImage: comYorkBuildersHero,
+    mobileHeroImage: comYorkBuildersMobileHero,
   },
   {
     id: "gills-farmhouse",
