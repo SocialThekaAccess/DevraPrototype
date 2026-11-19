@@ -74,11 +74,10 @@ const HERO_SLIDES = [
   }
 ];
 
-// Slides jinme image crop nahi honi chahiye (0 = first, 5 = last).
-// In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
-// NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai
-// (side ki kaali/blurred patti nahi aati).
-const CONTAIN_SLIDES: number[] = [0]; // Villa 303
+// FIX: Pehle yahan [0] tha (Villa 303 contain mode mein). Contain mode mein live pe
+// side ki blurred patti dark/kaali render hoti thi. Ab khali hai, to sab slides
+// "cover" se poori screen bharengi (corners tak, koi kaali patti nahi).
+const CONTAIN_SLIDES: number[] = [];
 
 const REVIEWS = [
   { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
@@ -139,7 +138,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
         img.src = url;
       });
     };
-    
+
     // Preload after a small delay to prioritize first slide
     setTimeout(preloadNextSlides, 100);
   }, [isMobile]);
@@ -148,15 +147,15 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => {
         const nextSlide = (prev + 1) % HERO_SLIDES.length;
-        
+
         // Progressive loading: Preload slide after next
         const slideToPreload = (nextSlide + 1) % HERO_SLIDES.length;
-        const urlToPreload = isMobile 
-          ? HERO_SLIDES[slideToPreload].mobileImage 
+        const urlToPreload = isMobile
+          ? HERO_SLIDES[slideToPreload].mobileImage
           : HERO_SLIDES[slideToPreload].image;
         const img = new Image();
         img.src = urlToPreload;
-        
+
         return nextSlide;
       });
     }, 6000);
@@ -217,7 +216,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
               const slide = HERO_SLIDES[currentSlide];
               const src = isMobile ? slide.mobileImage : slide.image;
 
-              // Contain sirf desktop pe lagega. Mobile pe sab slides cover se poori screen bharengi.
+              // Contain sirf desktop pe lagega (abhi CONTAIN_SLIDES khali hai, to koi slide contain nahi).
               const useContain = CONTAIN_SLIDES.includes(currentSlide) && !isMobile;
 
               if (useContain) {
@@ -243,7 +242,7 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                 );
               }
 
-              // Baaki slides (aur mobile pe sab): cover (poori screen bharti hai, sides pe koi gap nahi)
+              // Sab slides: cover (poori screen bharti hai, sides pe koi gap nahi)
               return (
                 <img
                   src={src}
@@ -252,14 +251,18 @@ export default function Home({ onNavigate, onSelectProject }: HomeProps) {
                   decoding="async"
                   referrerPolicy="no-referrer"
                   className={`w-full h-full ${
-                    currentSlide === 1
-                      ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100'
-                      : currentSlide === 4
-                        ? 'object-cover object-center brightness-110'
-                        : currentSlide === 5
-                          // FIX: mobile par building neeche se dikhe (80%), desktop par pehle jaisa (65%)
-                          ? 'object-cover object-[center_80%] md:object-[center_35%]'
-                          : 'object-cover object-center'
+                    currentSlide === 0
+                      // FIX: Villa 303 ab cover mode mein, corners tak full-bleed.
+                      // Building cut ho to 60% ko adjust karo (kam = upar ka hissa, zyada = neeche ka hissa dikhega)
+                      ? 'object-cover object-[center_60%]'
+                      : currentSlide === 1
+                        ? 'object-cover object-[center_35%] md:object-[center_40%] scale-110 md:scale-100'
+                        : currentSlide === 4
+                          ? 'object-cover object-center brightness-110'
+                          : currentSlide === 5
+                            // FIX: mobile par building neeche se dikhe (80%), desktop par pehle jaisa (35%)
+                            ? 'object-cover object-[center_80%] md:object-[center_35%]'
+                            : 'object-cover object-center'
                   }`}
                 />
               );
