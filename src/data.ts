@@ -119,6 +119,15 @@ const comParkQueen3 = "/assets/TheQueenPark1.png";
 const comParkQueen4 = "/assets/TheQueenPark2.png";
 const comParkQueen5 = "/assets/TheQueenPark4.png";
 
+const comYorkBuilders1 = "/assets/projects/YORKBUILDERSHomeimg.png";
+const comYorkBuilders2 = "/assets/projects/YORKBUILDERS1.png";
+const comYorkBuilders3 = "/assets/projects/YORKBUILDERS2.png";
+const comYorkBuilders4 = "/assets/projects/YORKBUILDERS3.png";
+const comYorkBuilders5 = "/assets/projects/YORKBUILDERS4.png";
+const comYorkBuilders6 = "/assets/projects/YORKBUILDERS5.png";
+const comYorkBuilders7 = "/assets/projects/YORKBUILDERS6.png";
+const comYorkBuilders8 = "/assets/projects/YORKBUILDERS7.png";
+
 import comMilkPoint1 from "../assets/projects/com-milk-point-1.avif";
 import comMilkPoint2 from "../assets/projects/com-milk-point-2.avif";
 
@@ -564,6 +573,25 @@ export const PROJECTS: Project[] = [
       execution: "The project delivers a commercial space that balances functionality with aesthetic excellence."
     },
     images: [comParkQueen2, comParkQueen3, comParkQueen4, comParkQueen5]
+  },
+  {
+    id: "york-builders",
+    title: "YORK BUILDERS",
+    category: "Commercial",
+    location: "Rohtak",
+    year: "2024",
+    size: "",
+    scope: "Commercial Architecture & Interior Design",
+    heroImage: comYorkBuilders1,
+    description: "A modern commercial development showcasing innovative design and premium finishes.",
+    narrative: {
+      site: "Located in Rohtak, this commercial project represents contemporary architectural excellence.",
+      planning: "The design integrates functionality with aesthetic appeal, creating spaces that enhance business operations.",
+      materials: "High-quality materials and contemporary finishes define the sophisticated character of the spaces.",
+      lightVentilation: "Strategic design ensures optimal natural light and air circulation throughout.",
+      execution: "Every element is crafted to deliver a commercial environment that combines style with practical functionality."
+    },
+    images: [comYorkBuilders2, comYorkBuilders3, comYorkBuilders4, comYorkBuilders5, comYorkBuilders6, comYorkBuilders7, comYorkBuilders8]
   },
   {
     id: "gills-farmhouse",
