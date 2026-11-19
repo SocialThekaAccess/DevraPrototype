@@ -5,7 +5,7 @@ import { PROJECT_CARDS } from "../projectsData";
 import type { ProjectCard } from "../projectsData";
 import SEOMeta from "../components/SEOMeta";
 import StructuredData from "../components/StructuredData";
-import slider1 from "../../assets/projects/Villaa303.webp";
+import slider1 from "../../assets/projects/Villa303Sliderimage.png";
 import slider1Mobile from "../../assets/projects/Villa303Risponsiveimg.webp";
 import slider2 from "../../assets/projects/villa361PDHero20.webp";
 import slider2Mobile from "../../assets/Villa361Mobilerisponsiveimage.png";
@@ -74,10 +74,10 @@ const HERO_SLIDES = [
   }
 ];
 
-// Slides jinme image crop nahi honi chahiye (0 = Villa 303, first slide).
-// In slides mein: peeche blurred image poori screen bharegi, aage asli image bina cut hue dikhegi.
-// NOTE: Contain sirf DESKTOP pe lagta hai. Mobile pe har slide "cover" se poori screen bharti hai.
-const CONTAIN_SLIDES: number[] = [0]; // Villa 303 - trees neeche dikhni chahiye
+// Slides jinme image crop nahi honi chahiye - currently EMPTY because we use cover mode
+// with adjusted positioning (see object-position in render code below).
+// NOTE: Contain mode creates dark side borders on desktop.
+const CONTAIN_SLIDES: number[] = []; // Empty - using cover with position adjustment
 
 const REVIEWS = [
   { name: "Mohd Sarfaraz", time: "4 months ago", text: "I recently visited the office of Devra Architect and had a great experience. The team is highly professional, creative, and detail-oriented. They listen carefully to your requirements and deliver designs that truly reflect your vision.", initials: "MS", color: "bg-orange-500" },
