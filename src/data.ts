@@ -162,7 +162,7 @@ import resMidhas2 from "../assets/projects/MIDHAJI1.webp";
 import resMidhas3 from "../assets/projects/MIDHAJI2.webp";
 import resMidhas4 from "../assets/projects/MIDHAJI3.webp";
 
-import resMinzsHero from "../assets/projects/TheMinzHero.png";
+const resMinzsHero = "/assets/TheMinzHousehero.png";
 import resMinzs1 from "../assets/projects/TheMinz1.png";
 import resMinzs2 from "../assets/projects/TheMinz2.png";
 import resMinzs3 from "../assets/projects/TheMinz3.png";

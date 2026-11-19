@@ -30,7 +30,7 @@ import res121122Hero from "../assets/projects/121&122Hero.png";
 // 121 & 122 ka Projects page card image (public/assets/Villa121&122Proj.png)
 const res121122Card = "/assets/Villa121&122Proj.png";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
-import resMinzsHero from "../assets/projects/TheMinzHero.png";
+const resMinzsHero = "/assets/TheMinzHousehero.png";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
 import resSaurabhGuptaHero from "../assets/projects/SaurabhGuptaResidentialHero.png";
 import fhNagraHero from "../assets/projects/fh-nagra-1.avif";
