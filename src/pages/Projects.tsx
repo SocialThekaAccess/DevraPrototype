@@ -10,6 +10,87 @@ interface ProjectsProps {
 
 const CATEGORIES = ["All", "Residential", "Housing", "Commercial", "Schools", "Farm Houses"];
 
+
+const BOX_RATIO = 4 / 3; // card ka ratio (width / height)
+
+// Poori image dikhata hai. Image ka ratio card se alag ho to bachi jagah usi image ki
+// mirror copy se bharta hai (seam nahi dikhta, crop nahi hota, patti nahi aati).
+function MirrorFillImage({ src, alt, fallback }: { src: string; alt: string; fallback: string }) {
+  const [ratio, setRatio] = useState<number | null>(null);
+
+  const common = {
+    referrerPolicy: "no-referrer" as const,
+    decoding: "async" as const,
+  };
+
+  // Jab tak image load nahi hui, normal cover dikhao
+  if (!ratio) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        {...common}
+        loading="lazy"
+        onLoad={(e) => {
+          const el = e.currentTarget;
+          if (el.naturalWidth && el.naturalHeight) setRatio(el.naturalWidth / el.naturalHeight);
+        }}
+        onError={(e) => {
+          const el = e.currentTarget;
+          if (el.dataset.fallback !== "1") {
+            el.dataset.fallback = "1";
+            el.src = fallback;
+          }
+        }}
+        className="w-full h-full"
+        style={{ objectFit: "cover" }}
+      />
+    );
+  }
+
+  const wide = ratio > BOX_RATIO; // image card se zyada wide -> upar/neeche mirror
+  const pct = wide ? 100 * (BOX_RATIO / ratio) : 100 * (ratio / BOX_RATIO);
+  const start = (100 - pct) / 2;
+
+  const layer = (offset: number, flip: boolean, key: string, label: string) => (
+    <img
+      key={key}
+      src={src}
+      alt={label}
+      aria-hidden={label === "" ? true : undefined}
+      {...common}
+      className="absolute"
+      style={
+        wide
+          ? {
+              left: 0,
+              width: "100%",
+              top: `${offset}%`,
+              height: `${pct}%`,
+              objectFit: "fill",
+              transform: flip ? "scaleY(-1)" : undefined,
+            }
+          : {
+              top: 0,
+              height: "100%",
+              left: `${offset}%`,
+              width: `${pct}%`,
+              objectFit: "fill",
+              transform: flip ? "scaleX(-1)" : undefined,
+            }
+      }
+    />
+  );
+
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {layer(start - pct, true, "a", "")}
+      {layer(start + pct, true, "c", "")}
+      {layer(start, false, "b", alt)}
+    </div>
+  );
+}
+
 export default function Projects({ onNavigate, onSelectProject }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeHover, setActiveHover] = useState<string | null>(null);
@@ -121,19 +202,39 @@ export default function Projects({ onNavigate, onSelectProject }: ProjectsProps)
                       background: isContain ? (project.cardBg || '#111') : undefined,
                     }}
                   >
-                    <img
-                      src={project.cardImage || project.heroImage}
-                      alt={project.title}
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
-                      {...({ fetchpriority: "low" } as any)}
-                      className={`w-full h-full transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
-                      style={{
-                        objectFit: project.cardFit || 'cover',
-                        objectPosition: project.cardPosition || 'center',
-                      }}
-                    />
+                    <div
+                      className={`absolute inset-0 transition-transform duration-700 ease-out ${activeHover === project.id ? 'scale-[1.03]' : 'scale-100'}`}
+                    >
+                      {project.cardMirror ? (
+                        <MirrorFillImage
+                          src={project.cardImage || project.heroImage}
+                          alt={project.title}
+                          fallback={project.heroImage}
+                        />
+                      ) : (
+                        <img
+                          src={project.cardImage || project.heroImage}
+                          onError={(e) => {
+                            // card wali image load na ho to hero image dikhao (card kabhi toota hua na dikhe)
+                            const el = e.currentTarget as HTMLImageElement;
+                            if (el.dataset.fallback !== "1") {
+                              el.dataset.fallback = "1";
+                              el.src = project.heroImage;
+                            }
+                          }}
+                          alt={project.title}
+                          referrerPolicy="no-referrer"
+                          loading="lazy"
+                          decoding="async"
+                          {...({ fetchpriority: "low" } as any)}
+                          className="w-full h-full"
+                          style={{
+                            objectFit: project.cardFit || 'cover',
+                            objectPosition: project.cardPosition || 'center',
+                          }}
+                        />
+                      )}
+                    </div>
 
                     {/* Subtle hover overlay and zoom */}
                     <div className={`absolute inset-0 bg-stone-950/20 transition-opacity duration-500 flex items-center justify-center ${activeHover === project.id ? 'opacity-100' : 'opacity-0'}`}>

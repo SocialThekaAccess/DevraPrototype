@@ -117,17 +117,11 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject, ca
   const overviewText2 = project.narrative?.site;
 
   // Find adjacent projects for navigation based on current category filter
-  // Agar category parameter hai (Projects page se aaye) to use it
-  // Warna current project ki category use karo (direct URL se aaye to bhi same category ke projects dikhe)
-  const activeCategory = category && category !== "All" ? category : project.category;
+  const activeCategory = (category && category !== "All") ? category : project.category;
   
-  console.log('Debug - Project:', project.title, 'Category:', project.category, 'Active Category:', activeCategory);
-  
-  const filteredProjects = activeCategory && activeCategory !== "All"
+  const filteredProjects = (activeCategory && activeCategory !== "All")
     ? PROJECTS.filter((p) => p.category === activeCategory)
     : PROJECTS;
-  
-  console.log('Debug - Filtered Projects:', filteredProjects.map(p => p.title));
 
   const currentIndex = filteredProjects.findIndex((p) => p.id === project.id);
   const prevProject = currentIndex > 0 ? filteredProjects[currentIndex - 1] : filteredProjects[filteredProjects.length - 1];

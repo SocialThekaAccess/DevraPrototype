@@ -24,6 +24,8 @@ import fhGillsHero from "../assets/projects/fh-gills-1.avif";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/121&122Hero.png";
+// 121 & 122 ka Projects page card image (public/assets/Villa121&122Proj.png)
+const res121122Card = "/assets/Villa121&122Proj.png";
 import resMidhasHero from "../assets/projects/THEMidhasHero.webp";
 import resMinzsHero from "../assets/projects/TheMinzHero.png";
 import resVilla303Hero from "../assets/projects/Villa303HeroSlider.webp";
@@ -57,6 +59,7 @@ export interface ProjectCard {
   heroImage: string;
   mobileHeroImage?: string;
   cardImage?: string; // Projects page card pe alag image (hero ki jagah), optional
+  cardMirror?: boolean; // true = card pe poori image, bachi jagah usi image ki mirror copy se bhari (crop/patti nahi)
   cardAspectRatio?: string;
   cardPosition?: string;
   cardFit?: "cover" | "contain"; // "contain" = poori image dikhe, crop nahi (card pe)
@@ -113,6 +116,13 @@ export const PROJECT_CARDS: ProjectCard[] = [
     year: "2024",
     heroImage: res121122Hero,
     mobileHeroImage: res121122HeroMobile,
+    // FIX: card pe 4:3 padded image -> card ki height baaki cards (Villa 361, UNWALLED) jaisi,
+    // aur ghar poora dikhega (koi corner / top / bottom cut nahi).
+    cardImage: res121122Card,
+    cardAspectRatio: "4 / 3",
+    cardPosition: "center center",
+    // Detail page ka desktop hero poori screen bhare aur ghar poora dikhe (beech mein asli image, dono side mirror copy)
+    heroShowFull: true,
   },
   {
     id: "unwalled-housing",
