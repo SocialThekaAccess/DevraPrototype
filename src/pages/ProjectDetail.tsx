@@ -117,10 +117,10 @@ export default function ProjectDetail({ project, onNavigate, onSelectProject, ca
   const overviewText2 = project.narrative?.site;
 
   // Find adjacent projects for navigation based on current category filter
-  const activeCategory = (category && category !== "All") ? category : project.category;
-  
-  const filteredProjects = (activeCategory && activeCategory !== "All")
-    ? PROJECTS.filter((p) => p.category === activeCategory)
+  // Agar category filter hai (Residential, Commercial, etc.) to sirf usi category ke projects dikhe
+  // Agar "All" ya koi filter nahi to saare projects dikhe
+  const filteredProjects = category && category !== "All"
+    ? PROJECTS.filter((p) => p.category === category)
     : PROJECTS;
 
   const currentIndex = filteredProjects.findIndex((p) => p.id === project.id);

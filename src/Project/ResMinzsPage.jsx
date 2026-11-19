@@ -9,6 +9,9 @@ import img7 from '../../assets/projects/TheMinz6.png'
 import img8 from '../../assets/projects/TheMinz7.png'
 import img9 from '../../assets/projects/TheMinz8.png'
 
+// Nayi 16:9 hero image (public/assets/TheMinzHousehero.png)
+const minzHero = '/assets/TheMinzHousehero.png'
+
 export default function ResMinzsPage({ onNavigate, onSelectProject }) {
   return (
     <ProjectDetailPage
@@ -21,6 +24,7 @@ export default function ResMinzsPage({ onNavigate, onSelectProject }) {
       category="Residential"
       size="300 SQYD"
       year="2024"
+      heroImage={minzHero}
       overview="A warm contemporary home defined by its pitched roofline, clean geometry, and tropical landscape setting. Natural materials, deep overhangs, and generous glazing create a balanced façade — modern in expression yet grounded in earthy simplicity."
       overview2="Inside, the home blends artistry and comfort — textured walls, crafted partitions, and soft lighting shaping calm, expressive spaces. Every room reflects a warm, personal character, bringing together elegance, detail, and an inviting lived-in charm."
       images={[img1, img2, img3, img4, img5, img6, img7, img8, img9]}

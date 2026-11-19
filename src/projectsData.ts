@@ -204,13 +204,12 @@ export const PROJECT_CARDS: ProjectCard[] = [
     year: "2024",
     heroImage: resMinzsHero,
     mobileHeroImage: resMinzsHeroMobile,
-    cardImage: "/assets/TheMinzgrid.png",
-    cardFit: "contain",
-    cardBg: "#87CEEB",
+    // FIX: TheMinzgrid.png + contain + sky-blue bg hata diya (upar/neeche blur wahi se aa raha tha).
+    // Ab card pe seedha hero image cover mein dikhegi.
     cardPosition: "center center",
-    // FIX: detail page ka desktop hero poori screen bhare aur ghar poora dikhe
+    // Detail page ka desktop hero poori screen bhare aur ghar poora dikhe
     // (beech mein asli image, dono side mirror copy) -> upar/neeche se cut nahi hoga
-    heroShowFull: true, // <-- NEW
+    heroShowFull: true,
   },
   {
     id: "saurabh-gupta-residential",
