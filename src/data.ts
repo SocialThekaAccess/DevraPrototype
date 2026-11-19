@@ -132,7 +132,7 @@ const comYorkBuilders8 = "/assets/projects/YORKBUILDERS7.png";
 import comMilkPoint1 from "../assets/projects/com-milk-point-1.avif";
 import comMilkPoint2 from "../assets/projects/com-milk-point-2.avif";
 
-import fhGills1 from "../assets/projects/fh-gills-1.avif";
+const fhGills1 = "/assets/GillFarmhouseHeroimg.png";
 import fhGills2 from "../assets/projects/fh-gills-2.avif";
 import fhGills3 from "../assets/projects/fh-gills-3.avif";
 import fhGills4 from "../assets/projects/fh-gills-4.avif";
