@@ -20,8 +20,10 @@ import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 const comTallTreeManaliHero = "/assets/projects/TheManaliTreeHeroimg.png";
 const comParkQueenHero = "/assets/TheQueenPrkHome.png";
 const comYorkBuildersHero = "/assets/projects/YORKBUILDERSHomeimg.png";
+const comYorkBuildersMobileHero = "/assets/YORKBUILDERSMobilerisHero.png";
 // Gill's Farmhouse: nayi image (data.ts wali same file) -> detail page aur Projects card dono pe same
 const fhGillsHero = "/assets/GillFarmhouseNeww.png";
+const fhGillsMobileHero = "/assets/GillFarmhouseMobilerisHero.png";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/121&122Hero.png";
@@ -275,6 +277,7 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Baddi Road",
     year: "2020",
     heroImage: fhGillsHero,
+    mobileHeroImage: fhGillsMobileHero,
   },
   {
     id: "castle-grey",
