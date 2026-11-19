@@ -509,7 +509,7 @@ export const PROJECTS: Project[] = [
     size: "",
     scope: "Office Interior Design",
     heroImage: comDevraArch1,
-    description: "A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette�shaping an environment that feels inviting, efficient, and elevated.",
+    description: "A refined workspace crafted with soft lighting, curved forms, and a calm neutral palette - shaping an environment that feels inviting, efficient, and elevated.",
     narrative: {
       site: "Located in New Chandigarh's premium commercial hub, this workspace redesign was focused on creating a contemporary office that balances professionalism with warmth.",
       planning: "From reception to work bays, meeting rooms, and lounges, the interiors express a unified design language of warm textures, seamless lines, and ambient lighting.",
