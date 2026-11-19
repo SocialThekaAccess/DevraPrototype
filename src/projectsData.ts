@@ -18,11 +18,10 @@ import houUnwalledHero from "../assets/projects/Unwalledimageproject.webp";
 import comDevraArchHero from "../assets/projects/DevraArchitects.png";
 import comFortofinoHero from "../assets/projects/com-fortofino-1.avif";
 const comTallTreeManaliHero = "/assets/projects/TheManaliTreeHeroimg.png";
-const comTallTreeManaliMobileHero = "/assets/TallTreeManaliMobilerisponsiveHero.png";
 const comParkQueenHero = "/assets/TheQueenPrkHome.png";
 const comYorkBuildersHero = "/assets/projects/YORKBUILDERSHomeimg.png";
-const comYorkBuildersMobileHero = "/assets/YORKBUILDERSMobilerisHero.png";
-const fhGillsHero = "/assets/GillFarmhouseHeroimg.png";
+// Gill's Farmhouse: nayi image (data.ts wali same file) -> detail page aur Projects card dono pe same
+const fhGillsHero = "/assets/GillFarmhouseNeww.png";
 import hosCgHero from "../assets/projects/hos-cg-1.avif";
 import hplHero from "../assets/projects/HPL.webp";
 import res121122Hero from "../assets/projects/121&122Hero.png";
@@ -247,7 +246,6 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Manali",
     year: "2025",
     heroImage: comTallTreeManaliHero,
-    mobileHeroImage: comTallTreeManaliMobileHero,
   },
   {
     id: "the-park-queen",
@@ -269,7 +267,6 @@ export const PROJECT_CARDS: ProjectCard[] = [
     location: "Rohtak",
     year: "2024",
     heroImage: comYorkBuildersHero,
-    mobileHeroImage: comYorkBuildersMobileHero,
   },
   {
     id: "gills-farmhouse",
