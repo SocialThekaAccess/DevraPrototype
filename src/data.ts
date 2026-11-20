@@ -924,8 +924,6 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "DEVRA Architects",
     metaTitle: "Architects in Chandigarh: Designing Homes for Modern Living",
     metaDescription: "Explore how experienced architects in Chandigarh create functional, elegant homes through thoughtful planning, contemporary design, natural light and lasting materials.",
-    image: "/assets/residential.avif",
-    imageAlt: "Modern residential architecture design in Chandigarh",
     content: `A home is more than a building. It is a space where everyday routines, personal preferences and family experiences come together. From the layout of the living room to the placement of windows, every architectural decision influences how comfortably a home functions.
 
 As residential preferences continue to evolve, homeowners are looking beyond conventional layouts. They want spaces that offer privacy, natural light, efficient planning, contemporary aesthetics and a strong connection with their surroundings. This has made architectural planning an important part of creating a home that remains relevant for years.
@@ -1130,8 +1128,6 @@ Planning your next residential project? Connect with DEVRA Architects to discuss
     author: "DEVRA Architects",
     metaTitle: "Premium Bungalow Architects Chandigarh for Timeless Homes",
     metaDescription: "Discover how premium bungalow architects Chandigarh homeowners choose create elegant residences through thoughtful layouts, refined materials, privacy and personalised design.",
-    image: "/assets/residential.avif",
-    imageAlt: "Premium luxury bungalow architecture in Chandigarh",
     content: `A premium bungalow is not defined only by its size or expensive finishes. Its true character comes from the way architecture, interiors, outdoor spaces and everyday functionality work together.
 
 For homeowners planning a bungalow, the design process is an opportunity to create a residence that reflects their personality and lifestyle. Some may prefer a contemporary home with bold architectural volumes, while others may want a quieter design built around natural materials, landscaped spaces and understated details.
@@ -1362,8 +1358,6 @@ Planning a premium bungalow? Discuss your residential vision with DEVRA Architec
     author: "DEVRA Architects",
     metaTitle: "Farmhouse Architects Near Chandigarh for Elegant Living",
     metaDescription: "Explore how farmhouse architects near Chandigarh plan elegant countryside homes with open layouts, natural materials, outdoor living, privacy and practical site planning.",
-    image: "/assets/residential.avif",
-    imageAlt: "Elegant farmhouse architecture near Chandigarh",
     content: `A farmhouse offers a different experience from a conventional city residence. It provides an opportunity to enjoy more open surroundings, landscaped areas and a lifestyle that places greater emphasis on outdoor living.
 
 For many homeowners around Chandigarh, a farmhouse is not simply a weekend property. It may serve as a second residence, a family retreat or a private estate designed for gatherings and extended stays.
@@ -1620,8 +1614,6 @@ Have a farmhouse site in mind? Connect with DEVRA Architects to discuss your des
     author: "DEVRA Architects",
     metaTitle: "Luxury Villa Design Services Chandigarh: From Plan to Build",
     metaDescription: "Discover how luxury villa design services Chandigarh homeowners need bring architecture, interiors, materials and execution together for a cohesive residential experience.",
-    image: "/assets/residential.avif",
-    imageAlt: "Luxury villa design and construction services in Chandigarh",
     content: `Designing a luxury villa is a detailed process that goes far beyond selecting an attractive facade. It involves understanding the site, planning the layout, coordinating interiors, selecting materials and ensuring that the design can be executed properly.
 
 For homeowners, the experience should feel organised from the first discussion to the final stages of construction. Every decision, from room proportions to lighting positions, contributes to the finished home.
@@ -1892,8 +1884,6 @@ Planning a luxury villa in Chandigarh or nearby areas? Speak with DEVRA Architec
     author: "DEVRA Architects",
     metaTitle: "Commercial Architects Chandigarh: Designing Better Workspaces",
     metaDescription: "Learn how commercial architects Chandigarh businesses need create functional offices and workspaces through smart layouts, lighting, brand identity and practical planning.",
-    image: "/assets/commercial.webp",
-    imageAlt: "Modern commercial office architecture in Chandigarh",
     content: `A commercial space has a direct influence on how a business operates and how people experience its brand. Whether it is an office, studio, showroom or professional workplace, its design affects movement, communication, productivity and customer interaction.
 
 Modern businesses expect more from their work environments. They want spaces that support collaboration, provide comfortable individual work areas, represent the company's identity and adapt to changing requirements.
