@@ -22,7 +22,7 @@ export default function SEOMeta({
   const fullTitle = title.includes(baseTitle) ? title : `${title} | ${baseTitle}`;
   
   // Best practice absolute URL resolution for metadata sharing (e.g. WhatsApp, LinkedIn)
-  const origin = typeof window !== "undefined" ? window.location.origin : "https://devrachandigarh.com";
+  const origin = typeof window !== "undefined" ? window.location.origin : "https://devra.in";
   const absoluteUrl = `${origin}/${path.replace(/^\//, "")}`;
 
   // Broad set of baseline keywords focused on the premium Indian architectural landscape

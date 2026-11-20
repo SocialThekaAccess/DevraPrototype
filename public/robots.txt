@@ -1,4 +1,15 @@
+# robots.txt for DEVRA Architects - https://devra.in
+
+# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
+# Disallow admin or sensitive directories (if any)
+# Disallow: /admin/
+# Disallow: /.git/
+
+# Sitemap location
 Sitemap: https://devra.in/sitemap.xml
+
+# Crawl-delay (optional - only if experiencing server load issues)
+# Crawl-delay: 1
